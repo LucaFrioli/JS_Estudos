@@ -34,23 +34,3 @@ ____________________________________________________________
     OBS : Referencia Aula_13/script.js
 ------------------------------------------------------------
 ____________________________________________________________
-
-
-
-
-# Estudo_Comunitario
- ### Estudos em conjunto é onde se agrega conhecimento : 
- - Fique a vontade para adicionar comentários, curiosidades, e novos conhecimentos;
- - Todo Arquivo novo deve ser feito primeiro em uma branch separada da main por gentileza !!
- - Fique a vontade de abrir quantas issues forem necessárias, tanto para troca de conhecimento quanto para melhora do código.
- - Aqui estamos todos para compartilhar conhecimento então sempre tenha respeito !
-
-
- 
-
-JavaScript_básico/sets.js
-JavaScript_básico/Aula_18
-JavaScript_básico/Aula_19
-JavaScript_básico/Aula_20
-JavaScript_básico/Aula_21
-JavaScript_básico/Aula_22
