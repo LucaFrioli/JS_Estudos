@@ -1,0 +1,20 @@
+.form{
+    width: min-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10pt;
+}
+
+.form button{
+    margin-bottom: 1.5rem;
+    color: bisque;
+    background-color: darkgray;
+    padding: 0.9em;
+    border: none;
+    border-radius: 2rem;
+}
+
+.form button:hover{
+    background-color: rgb(129, 128, 128);
+    cursor: pointer;
+}

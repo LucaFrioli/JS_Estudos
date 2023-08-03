@@ -1,10 +1,11 @@
-Os exenrcícios se encontram nas pastas : 
+Os exercícios se encontram nas pastas : 
     - Aula_6/js/index.js;(rode com node)
     - Aula_11/js/script.js; (execute o index.html)
     - Aula_12/script.js; (Utilize node)
     - Aula_14/js/scripts.js; (execute o index.html)
     - Aula_17/js/script.js; (execute o index.html)
-
+    - Aula_22/js/scripts.js; (Execute o index.html, abra o console para mais informações)
+    - *Aula_23/js/script.js;(executar o index.html com o console integrado aberto)
 
 Indice de aulas importantes : 
     - Aula_7/index.js;(aula com demonstração da importancia do let)
@@ -15,5 +16,9 @@ Indice de aulas importantes :
     - Aula_16/script.js;(objeto Math)
     - Aula_18/script.js;(Arrays básico)
     - Aula_19/script.js;(Funções básico)
-    - Aula_20/script.js;(Objetos básico)
+    - Aula_20/script.js;(Objetos básico)[ainda em revisão]
     - Aula_21/script.js;(Valores primitivos e valores por referencia)
+
+Exercício extra para fixação :
+    -  *Capturar o nome, o sobrenome, a idade, e a nacionalidade dentro de um html, dentro de um objeto, retornar dentro do console um array com os objetos, imprimir na tela do navegador o nome e o sobrenome em letras MAIUSCULAS, e retornar o ano de nascimento da pessoa; 
+
