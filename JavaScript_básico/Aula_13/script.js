@@ -47,7 +47,7 @@ console.log(`Erro ao buscar aspas no texto1 : ${texto1.indexOf(`aspas`)}\n`);
 
 
 //Buscando indices
-console.log(`\nDemosntração de como funciona o indice utilizando o texto1 : ${texto1[5]}\nO indice é o sete, da string : "${texto1}"`);
+console.log(`\nDemosntração de como funciona o indice utilizando o texto1 : ${texto1[5]}\nO indice é o cinco, da string : "${texto1}"`);
 //também pode ser feito desta outra maneira usando o .charAt()
 console.log(`Podemos captar com charAt : ${texto1.charAt(5)}`);
 
