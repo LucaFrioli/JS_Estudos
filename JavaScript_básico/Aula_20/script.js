@@ -86,7 +86,7 @@ function criarPessoa (nome,sobrenome,idade){
         idade, 
         /*Curiosidade sobre funções dentro de objetos, podemos ter mais de uma */
         fala(){
-            console.log(`Olá meu nome é ${this.nome} ${this.sobrenome}, e tenho ${this.idade} anos!`);
+            return `Olá meu nome é ${this.nome} ${this.sobrenome}, e tenho ${this.idade} anos!`;
         }
     }; 
 }
