@@ -4,10 +4,23 @@ function main() {
     const resposta = document.querySelector(`div#resposta`);
     form.addEventListener(`submit`, function (e) {
         e.preventDefault();
-        const peso = document.querySelector(`input#Peso`).value;
-        const altura = document.querySelector(`input#Altura`).value;
+        //Adicionei o number só por uma questão de segurança, mesmo que dentro do html já esteja declarado isso, em projetos maiores pode ocorrer de ser mudado propositalmente ou não propositalmente o type do input, além de previnir e preparar o terreno para criação de testes unitários mais sólidos;
+        const peso = Number(document.querySelector(`input#Peso`).value);
+        const altura = Number(document.querySelector(`input#Altura`).value);
 
-        RespostaImpressa(peso, altura);
+        //estrutura de averiguação para controle de campos 
+        if (!peso) {
+            return RespostaIMC(`Peso Inválido`, false);//finaliza a função 
+        }
+        if (!altura) {
+            return RespostaIMC(`Altura inválida`, false);
+        }
+
+        const resultado = Calculo(peso, altura);//retorna o valor do cálculo
+        const complemento = Conplemento(resultado);//faz a definição de faixa
+        const msg = `Seu IMC é igual a ${resultado}, você está ${complemento}`;
+
+        RespostaIMC(msg, true);
     });
 
     function Calculo(peso, altura) {//calcula o imc
@@ -19,18 +32,18 @@ function main() {
 
     function Conplemento(imc) {//define a graduação
         let caso;
-        if (imc < 18.5) {
-            caso = `abaixo do peso`;
-        } else if (imc >= 18.6 && imc < 25) {
-            caso = `com o peso normal`;
-        } else if (imc >= 25 && imc < 30) {
-            caso = `com sobre peso`;
-        } else if (imc >= 30 && imc < 35) {
-            caso = `com obesidade Grau 1`;
-        } else if (imc >= 35 && imc < 40) {
-            caso = `com obesidade Grau 2`;
-        } else if (imc >= 40) {
+        if (imc >= 39.9) {
             caso = (alert(`Busque ajuda médica`), `com obesidade Grau 3`);
+        } else if (imc >= 34.9) {
+            caso = `com obesidade Grau 2`;
+        } else if (imc >= 29.9) {
+            caso = `com obesidade Grau 1`;
+        } else if (imc >= 24.9) {
+            caso = `com sobre peso`;
+        } else if (imc >= 18.5) {
+            caso = `com o peso normal`;
+        } else {
+            caso = `abaixo do peso`;
         }//particularmente eu utilizaria um switch case, porém como ainda não abordamos, vamos deixar com uma estrutura if encadeada 
         return caso;
     }
@@ -40,19 +53,16 @@ function main() {
         return p;
     }
 
-    function RespostaIMC(peso, altura) {
+    function RespostaIMC(msg, isValid) {
+        resposta.innerHTML = ``;
+
         const p = CriaParagrafo();
         p.classList.add(`resposta`);//adiciona uma classe a tag criada
-        const resultado = Calculo(peso, altura);//retorna o valor do cálculo
-        const complemento = Conplemento(resultado);//faz a definição de faixa
-        p.innerHTML = `Seu IMC é igual a ${resultado}, você está ${complemento}`;//adiciona a resposta na tag criada
-        return p;
+        isValid?p.classList.add(`respSaudavel`):p.classList.add(`respNsaudavel`);//adiciona um detalhe de fundo
+        p.innerHTML = msg;
+        resposta.appendChild(p);//injeta o p na div;
     }
 
-    function RespostaImpressa(peso, altura) {
-        resposta.appendChild(RespostaIMC(peso, altura));//injeta a tag na div
-        return resposta
-    }
 }
 
 main();

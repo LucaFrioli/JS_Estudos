@@ -1,2 +1,10 @@
+<<<<<<< Updated upstream
 Exercícios : 
     - Aula_06(execute index.html);
+=======
+Exercícios :
+    - Aula_06(execute o index.html)
+
+Modelo escopo :
+    -Modelo(copie os arquivos html e css para os próximos exercícios,arquitetura antiga);
+>>>>>>> Stashed changes

@@ -77,7 +77,17 @@
  }
 
  /* Classe que será adicionada a tag p que será injetada */
- p.resposta{
+ p.resposta, .respSaudavel, .respNsaudavel{
     text-transform: uppercase;
+    border-radius: 7px;
+    padding: 2px;
+ }
+
+ p.respSaudavel{
+    background-color: rgb(71, 133, 133);
+ }
+
+ p.respNsaudavel{
+    background-color: crimson;
  }
  
