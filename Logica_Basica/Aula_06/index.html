@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- ./ é oq chamamos de caminho relativo  -->
+</head>
+
+<body>
+    <section class="container">
+        <h1 class="titulo">Tabela IMC : </h1>
+        <table class="tabela">
+            <tr>
+                <th class="subTitulo">IMC : </th>
+                <th class="subTitulo">Resultado : </th>
+            </tr>
+
+            <tr>
+                <td>Menos de 18,5</td>
+                <td>Abaixo do peso</td>
+            </tr>
+
+            <tr>
+                <td>Entre 18,6 e 24,9</td>
+                <td>Peso Normal</td>
+            </tr>
+
+            <tr>
+                <td>Entre 25 e 29,9</td>
+                <td>Sobre Peso</td>
+            </tr>
+
+            <tr>
+                <td>Entre 30 e 34,9</td>
+                <td>Obesidade Grau 1</td>
+            </tr>
+
+            <tr>
+                <td>Entre 35 e 39,9</td>
+                <td>Obesidade Grau 2</td>
+            </tr>
+
+            <tr>
+                <td>Mais que 40</td>
+                <td>Obesidade Grau 3</td>
+            </tr>
+        </table>
+
+        <h1>Calcule seu IMC : </h1>
+        <form action="" id="formulario">
+            <label for="Peso">Peso : </label>
+            <input type="number" name="Peso" id="Peso">
+            <label for="Altura">Altura : </label>
+            <input type="number" name="Altura" id="Altura">
+            <button type="submit" id="submition">Enviar</button>
+        </form>
+
+        <div class="resposta" id="resposta"></div>
+    </section>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
