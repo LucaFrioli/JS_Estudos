@@ -1,10 +1,18 @@
-<<<<<<< Updated upstream
-Exercícios : 
-    - Aula_06(execute index.html);
-=======
 Exercícios :
     - Aula_06(execute o index.html)
+    - Aula_10(execute o index.html){OBS : temos dois modos de resolver, para quem não leu a MDN está na pasta, menor_prioridade, o modo mais correto se encontra na pasta maior_prioridade}
+
+Aulas + importantes :
+    - Aula_05 (execute com node){tema de estruturas if else}
+    - Aula_07 (execute com node){operações ternárias}
+    - Aula_09 (execute com node){estrutura switch}
+        
+        MUITO IMPORTANTE : {OBS: facilita e reduz muitas vezes várias linhas de códigos;}
+    *****************************************************************************************
+    *           - Aula_12 (atribuição via desestruturação com arrays)                       *
+    *           - Aula_13 (atribuição via desestruturação com objetos)                      *
+    *****************************************************************************************
+    p.s. : em referencia as aulas demarcadas, lembre-se que serve como métodos de extração
 
 Modelo escopo :
     -Modelo(copie os arquivos html e css para os próximos exercícios,arquitetura antiga);
->>>>>>> Stashed changes
