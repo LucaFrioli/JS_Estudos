@@ -1,0 +1,10 @@
+Tente manipular o cor de fundo do h1 dentro do console do computador, lembre-se que podemos selecionar objetos dom apenas declarando um objeto pai específico, como container que pode ser entendido como section ou um objeto body por exemplo, podemos tabém ter um objeto filho do h1 que chamamos de style para manipular seu css, e dentro desse objeto pai temos ainda vários objetos com as diversas propriedades de manipulação css:
+    OBS : faça este exercício utilizando o console do computador, mesmo que possamos fazer isso dentro do arquivo script.js, utilizar o console do navegador te drá varias opções e demonstrações dos filhos que se podem utilizar da API DOM;
+
+
+solução : 
+
+const h1 = container.querySelector(`h1.titulo`); //para selecionar o h1 que se encontra dentro da section container
+
+h1.style.backgroundColor = `#fff`; //podemos trocar a cor de hexa decimal para qualquer cor desejada
+

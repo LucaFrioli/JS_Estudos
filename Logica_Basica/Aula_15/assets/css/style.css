@@ -1,0 +1,69 @@
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+ :root {
+     --primary-color: rgb(5, 30, 59);
+     --primary-color-darker: rgb(0, 18, 43);
+     --secondary-color: rgb(241, 227, 163);
+     --terciary-color: rgb(35, 124, 226);
+ }
+
+ * {
+     box-sizing: border-box;
+     outline: 0;
+ }
+
+ body {
+     margin: 0;
+     padding: 0;
+     background: var(--primary-color);
+     color: var(--secondary-color);
+     font-family: 'Open Sans', sans-serif;
+     font-size: 1.3em;
+     line-height: 1.5em;
+ }
+
+ .container {
+     max-width: 640px;
+     margin: 2rem auto;
+     padding: 2rem;
+     border-radius: 15px;
+     background: var(--primary-color-darker);
+ }
+
+ form input,
+ form label,
+ form button {
+     display: block;
+     width: 100%;
+     margin-bottom: 0.5em;
+ }
+
+ form input {
+     font-size: 1.15rem;
+     height: 30px;
+     padding: 0 20px;
+ }
+
+ form input:focus {
+     outline: 1px solid var(--secondary-color);
+ }
+
+ form button {
+     border: none;
+     border-radius: 25px;
+     color: var(--secondary-color);
+     background-color: var(--terciary-color);
+     font-size: 17px;
+     font-weight: bold;
+     height: 1.7rem;
+     cursor: pointer;
+     padding: 7px;
+     margin-top: 30px;
+ }
+ 
+ form button:hover {
+     border: 1px solid var(--terciary-color);
+     border-radius: 25px;
+     color: var(--secondary-color);
+     background-color: var(--primary-color);
+ }

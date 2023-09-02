@@ -1,6 +1,8 @@
 Exercícios :
     - Aula_06(execute o index.html)
     - Aula_10(execute o index.html){OBS : temos dois modos de resolver, para quem não leu a MDN está na pasta, menor_prioridade, o modo mais correto se encontra na pasta maior_prioridade}
+    
+    - Aula_15 (execute o index,html){OBS: note que paraa realização correta dessa aula e a analise, deve-se     primeiro observar o html como um código no seu editor, depois observar e analizar o código JS, é interessante pesquisar um pouco mais sobre DOM e olhar o resumo dentro da Aula_16};
 
 Aulas + importantes :
     - Aula_05 (execute com node){tema de estruturas if else}
@@ -13,6 +15,10 @@ Aulas + importantes :
     *           - Aula_13 (atribuição via desestruturação com objetos)                      *
     *****************************************************************************************
     p.s. : em referencia as aulas demarcadas, lembre-se que serve como métodos de extração
+
+
+
+
 
 Modelo escopo :
     -Modelo(copie os arquivos html e css para os próximos exercícios,arquitetura antiga);
