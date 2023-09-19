@@ -20,20 +20,20 @@ const nome = `José`;
 const jogos = [`Assasins Creed`, `Assassins Creed 2`, `Assassins Creed Brotherhood`];
 
 console.log(`Nome utilizando for in : `);
-for(let indice in nome){
+for (let indice in nome) {
     console.log(nome[indice]);
 }
 
 
 console.log(`\nNome utilizando for of  : `);
 //porém veja como fica muito mais simples utilizando o for of 
-for (let letra of nome){
+for (let letra of nome) {
     console.log(letra);
 }
 
 
-//vamos fazer o jogos apenas com for of 
+//vamos fazer a variavel jogos apenas com for of 
 console.log(`\nIterando o vetor Jogos : `);
-for(let game of jogos){
+for (let game of jogos) {
     console.log(game);
 }

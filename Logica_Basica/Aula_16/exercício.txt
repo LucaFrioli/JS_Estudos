@@ -1,4 +1,4 @@
-Tente manipular o cor de fundo do h1 dentro do console do computador, lembre-se que podemos selecionar objetos dom apenas declarando um objeto pai específico, como container que pode ser entendido como section ou um objeto body por exemplo, podemos tabém ter um objeto filho do h1 que chamamos de style para manipular seu css, e dentro desse objeto pai temos ainda vários objetos com as diversas propriedades de manipulação css:
+Tente manipular o cor de fundo do h1 dentro do console do computador, lembre-se que podemos selecionar objetos dom apenas declarando um objeto pai específico, como container que faz referencia a classe da section, assim retornará a section, o podemos utilizazr o próprrio nome da tag como body por exemplo, podemos tabém ter um objeto filho do h1 que chamamos de style para manipular seu css, e dentro desse objeto pai temos ainda vários objetos com as diversas propriedades de manipulação css:
     OBS : faça este exercício utilizando o console do computador, mesmo que possamos fazer isso dentro do arquivo script.js, utilizar o console do navegador te drá varias opções e demonstrações dos filhos que se podem utilizar da API DOM;
 
 

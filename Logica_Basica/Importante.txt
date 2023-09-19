@@ -1,11 +1,21 @@
 Exercícios :
     - Aula_06(execute o index.html)
+
     - Aula_10(execute o index.html){OBS : temos dois modos de resolver, para quem não leu a MDN está na pasta, menor_prioridade, o modo mais correto se encontra na pasta maior_prioridade}
     
-    - Aula_15 (execute o index,html){OBS: note que paraa realização correta dessa aula e a analise, deve-se     primeiro observar o html como um código no seu editor, depois observar e analizar o código JS, é interessante pesquisar um pouco mais sobre DOM e olhar o resumo dentro da Aula_16};
+    - Aula_15 (execute o index,html){OBS: note que paraa realização correta dessa aula e a analise, deve-se   primeiro observar o html como um código no seu editor, depois observar e analizar o código JS, é interessante pesquisar um pouco mais sobre DOM e olhar o resumo dentro da Aula_16};
+
+    - Aula_16 Um pouco sobre DOM (execute o index.html) {OBS :Leia os resumos para mais informações, recomendo uma breve revisada sobre o assunto utilizando a documentação da MDN} [está aula foi um reforço auto proposto, recomendo o fazer];
+
+    - Aula_19 Exercício sobre manipulação DOM (execute o index.htm){OBS: revise o código js para enteder o que está acontecendo}
+
+    - Aula_22 (execute utilizando node) {Exercício de lógica um}
+    - Aula_23 (execute com node) {Exercício de lógica dois}
+    - Aula_24 (execute com node) {Exercício de lógica três}
 
 Aulas + importantes :
     - Aula_05 (execute com node){tema de estruturas if else}
+    - Aula_08 (execute com node){objeto Date}
     - Aula_07 (execute com node){operações ternárias}
     - Aula_09 (execute com node){estrutura switch}
         
@@ -16,8 +26,23 @@ Aulas + importantes :
     *****************************************************************************************
     p.s. : em referencia as aulas demarcadas, lembre-se que serve como métodos de extração
 
+    - Aula_14 (executar com node) {utilizando laço de repetição clássico for}
+    - Aula_17 (executar com node) {laço de repetição for in}
+    - Aula_18 (executar com node) {Laço de repetição for of}
 
+    - Aula_20 (executar com node) {laços de repetição while e do while}
 
+    - Aula_21 (executar com node) {Conceitos de controle de laço utilizando break e continue}
+
+    MUITO IMPORTANTE : {OBS: melhor prática, além de deixar o programa mais amigavel, ajuda a 
+                       manter a seguraça do código;}
+    *********************************************************************************************
+    *   - Aula_25 (executar com node) {Conceitos básicos de uso de erros try, catch, e throw}   *
+    *   - Aula_26 (executar com node) {Um pouco mais sobre erros, try, catch, e finally}        *
+    *********************************************************************************************
+    p.s. : Em relação a estas duas aulas demarcadas, lembre-se, o maior objetivo é
+     gerar respostas de erro mais amigaveis, controle de erros será visto mais para 
+     frente com testes jest.
 
 
 Modelo escopo :
