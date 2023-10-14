@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- ./ é oq chamamos de caminho relativo  -->
+</head>
+
+<body>
+    <section class="container">
+        <h1 class="titulo">Lista de tarefas : </h1>
+
+        <p>
+            <label for="input1">Adicionar Tarefa : </label>
+            <input type="text" name="taskName" id="taskName">
+            <button id="addTask">Adicionar</button>
+        </p>
+
+        <h1 class="titulo">Tarefas : </h1>
+        <div class="displayTasks" id="displayTasks">
+            <ul class="tasks" id="tasks">
+                <!--
+                    Irá ser renderizado uma tag nesse espaço com a seguinte aparencia : 
+                    <li class="task">teste 1<button id="doneTask" class="doneTask">Concluir</button></li>
+                    para alterar seus aspectos de design é só alteral pelo atributo class normalmente
+                -->
+            </ul>
+        </div>
+
+    </section>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

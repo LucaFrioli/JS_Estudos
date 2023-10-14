@@ -13,6 +13,9 @@ Exercícios :
     - Aula_23 (execute com node) {Exercício de lógica dois}
     - Aula_24 (execute com node) {Exercício de lógica três}
 
+    - Aula_28 (execute o arquivo index.html) {Exercíco de criação de um temporizador}
+    - Aula_29 (execute o arquivo index.html) {Exercício de ciação de uma lista de tarefas}
+
 Aulas + importantes :
     - Aula_05 (execute com node){tema de estruturas if else}
     - Aula_08 (execute com node){objeto Date}
@@ -44,6 +47,7 @@ Aulas + importantes :
      gerar respostas de erro mais amigaveis, controle de erros será visto mais para 
      frente com testes jest.
 
+    - Aula_27 (executar com node) {conceitos de tempos e intervalos com comandos setTimeout, e setInterval, e clearInterval}
 
 Modelo escopo :
     -Modelo(copie os arquivos html e css para os próximos exercícios,arquitetura antiga);

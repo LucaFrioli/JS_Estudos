@@ -1,0 +1,7 @@
+ìndice : 
+    Aula_01 : declarações de função em JS e suas várias maneiras ;
+    Aula_02 : parametros dentor de funções e suas importâncias ;
+    Aula_03 : retornos de funções ; 
+    Aula_04 : Escopos Léxicos ;
+    Aula_05 : Closures ;
+    
