@@ -1,7 +1,19 @@
 ìndice : 
     Aula_01 : declarações de função em JS e suas várias maneiras ;
-    Aula_02 : parametros dentor de funções e suas importâncias ;
+    Aula_02 : parametros dentro de funções e suas importâncias ;
     Aula_03 : retornos de funções ; 
     Aula_04 : Escopos Léxicos ;
     Aula_05 : Closures ;
-    
+    Aula_06 : Funções de callback ;
+    Aula_07 : Funções imediatas (IIFE) ;	
+    Aula_08 : Funções fábricas (factory Functions) ;
+    Aula_10 : Contruct FUnctions (funções construtoras) ;
+    Aula_12 : Funções recursivas ;
+    Aula_13 : Funções geradores ;
+
+
+Exercícios : 
+    Aula_09 : Prática de factory functions ;
+    Aula_11 : Prática de funções construtoras (projeto calculadora) ;
+    desafio : Prática de funções e paradigma funcional (projeto calculadora com menos linhas);
+

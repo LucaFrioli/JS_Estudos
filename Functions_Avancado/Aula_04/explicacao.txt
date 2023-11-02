@@ -1,0 +1,38 @@
+O Escopo léxico funciona da seguinte maneira
+    toda e qualquer varivel declarada com o mesmo nome e com let em escopos diferentes, a primeira a ser buscada em uma operação é a que se encontra mais perto do escopo em que a operação está sendo executada  assim uma função cointém um escopo léxico na qual será priorizado para operação, veja o exemplo a seguir :
+
+
+
+1. Primeiramente, uma variável global `nome` é definida com o valor "Juninho".
+
+2. Em seguida, há três funções definidas:
+   - `falaNome`: Essa função simplesmente imprime o valor da variável `nome`. Ela tem acesso à variável global `nome`.
+
+   - `falaNomeDois`: Esta função define uma variável local `nome` com o valor "José" e, em seguida, imprime essa variável. Ela tem acesso apenas à variável local `nome` dentro do seu próprio escopo.
+
+   - `falaNomeTres`: Aqui, a função `falaNomeTres` define outra variável local `nome` com o valor "Pedro" e, em seguida, chama a função `falaNome`. Essa função utiliza a variável `nome` do seu escopo léxico (ou seja, o escopo onde foi definida), que é a variável local "Pedro".
+
+3. Logo após a definição das funções, são feitas chamadas para essas funções e seus respectivos escopos léxicos são demonstrados:
+   - `falaNome()`: Esta função imprime "Juninho", pois ela utiliza a variável global `nome`.
+
+   - `falaNomeDois()`: Esta função imprime "José", já que ela utiliza a variável local `nome` definida dentro de sua função.
+
+   - `falaNomeTres()`: Primeiro, essa função define uma variável local `nome` com o valor "Pedro" e, em seguida, chama a função `falaNome`. No entanto, a função `falaNome` usa a variável global `nome`, então ela imprime "Juninho", não "Pedro".
+
+4. Em seguida, há um exemplo de funções aninhadas:
+   - `aninhada` define uma variável local `nome` com o valor "Não será utilizada" e, em seguida, define uma função aninhada `aninhadoL2`, que imprime a variável local `nome`. No entanto, a função `aninhadoL2` não é chamada aqui.
+
+   - `aninhada2` define uma variável local `nome` com o valor "João" e, em seguida, define uma função aninhada `aninhadaL2`, que imprime a variável local `nome`. Neste caso, a função `aninhadaL2` não é chamada diretamente, mas será chamada posteriormente.
+
+   - `aninhada3` define apenas a função aninhada `aninhadaL2`, que tenta imprimir a variável `nome`. No entanto, a variável `nome` não está definida dentro do escopo dessa função.
+
+5. A seguir, são criadas três variáveis `testeDeAninhamento1`, `testeDeAninhamento2` e `testeDeAninhamento3`, que armazenam referências para as funções aninhadas.
+
+6. Por fim, essas funções aninhadas são chamadas:
+   - `testeDeAninhamento1()`: Chama a função `aninhadoL2` que imprime "Maria" (variável local dentro do escopo de `aninhada`).
+
+   - `testeDeAninhamento2()`: Chama a função `aninhadaL2` que imprime "João" (variável local dentro do escopo de `aninhada2`).
+
+   - `testeDeAninhamento3()`: Chama a função `aninhadaL2`, que tenta imprimir a variável `nome`. No entanto, a variável `nome` não está definida dentro do escopo dessa função, resultando em um erro.
+
+Resumindo, o código ilustra o conceito de escopos léxicos, onde as funções têm acesso às variáveis definidas em seus escopos léxicos (escopos onde foram declaradas) e, caso não encontrem uma variável local, elas procuram no escopo pai, até alcançar o escopo global. A resolução das variáveis é feita com base na hierarquia de escopos léxicos.

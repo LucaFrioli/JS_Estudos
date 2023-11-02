@@ -1,0 +1,64 @@
+Recapitulando aulas anteriores, já sabemos que para retornar valores de dentro de uma função basta utilizarmos a palavra return :
+     Quando o fazemos acontece uma sucessão de coisas já explicadas  : retorna valor, e trermina a função não permitindo a execução de nada que se encontre abaixo da função em questão.
+
+     ex :
+     function soma (a =1, b=1){
+        return a+b;
+     }
+     soma();
+     Isso não irá retornar nada dentro do console, porém está com um valor carrgado na memóri de 2, mas por ter um retorno, isto abre margem para salvarmos esse valor na memória em uma variavel utilizavel dentro do código observe :
+
+     function soma (a =1, b=1){
+        return a+b;
+     }
+     const r1 = soma();
+     console.log(r1); //irá escrever na tela o valor que retorna da função;
+
+    Retorno de objetos a partir de atribuição de parâmetros :
+        function retornaPessoa(nome, sobrenome) {
+            return { nome: nome, sobrenome: sobrenome };
+        }
+        console.log(retornaPessoa(`João`, `da Silva`));
+
+     Podemos salvar está função em uma varivael e retornala pegando parâmetros específicos apartir da variavel :
+
+        function retornaPessoa(nome, sobrenome) {
+            return { nome: nome, sobrenome: sobrenome };
+        }
+        const rp1 = retornaPessoa(`José`, `Medeiros`);
+        console.log(rp1.nome, rp1.sobrenome);
+
+     Assim a variavel com a função pode reagir como uma variavel padrão com atribuição de objetos.
+
+    Retornando função com outra função:
+        Podemos retornar funções com outras funções, tanto iniciando um parametro com uma função, quanto podemos fazer uma função retornar uma outra função que está aninhada dentro dela. Observe :
+
+        function falaOi(saudacao = `Olá...`) {
+         function continuidade(complemento) {
+            console.log(saudacao);
+            setTimeout(() => {
+                return console.log(`${saudacao}  ${complemento}`);
+            }, 2500);
+          }
+         return continuidade;
+        }
+
+        const teste = falaOi(`oi...`)(`Você me ouve`);
+    Nesse exmplo temos uma função que cham uma outra função que se encontra aninhada dentro dela.
+
+    Chamndo funções apartir de parametros:
+
+        function multiplica(multiplicador) {
+            return function multiplicar(n) {
+                return n * multiplicador;
+            }
+        }
+
+        const duplica = multiplica(2);// quando criamos está funçao duplicar ela já salva que o paramtro multiplicar é dois, assim toda vez que for chamada o multiplicar valerá dois 
+        const triplica = multiplica(3);
+        const quadriplica = multiplica(4);
+        const n = 2;
+
+        console.log(duplica(n))
+        console.log(triplica(n))
+        console.log(quadriplica(n))

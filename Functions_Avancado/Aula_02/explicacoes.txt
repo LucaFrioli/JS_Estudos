@@ -1,0 +1,57 @@
+Aula_02 : 
+        - Recaptulando o básico sobre parametros, lembre que toda vez que passamos um valor dentro dos parenteses na chamada daa função, estamos enviando dados que são chamados de parametros para está função. estes parametros podem ser referênciados ou não, para uso posterir dentro do escopo da função referente. OBS: em javascript é possível passar quantos parametros quiser, mesmo que ele estoure a quantidade referenciada na hora da criação da função, ex : 
+            function exeplo (a,b,c){...} 
+            exemplo(1,2,3,4,5,6,7);        
+        
+        No exemplo acima em outras linguagens era esperado um erro, porém dentro do js quando utilizado em function expressions e function declarations, isto não é considerado um erro, e nem mesmo os paramtros passados em excesso são perdidos, eles são salvos em um váriavel interna a função chamada arguments, que inclusive pode ser chamada dentro da respectiva função, e utilizada com um objeto/array, veja o exemplo : 
+              function exeplo (a,b,c){
+                console.log(arguments);
+              } 
+            exemplo(1,2,3,4,5,6,7); 
+
+        É esperado um retorno como o seguinte dentro do console : 
+            [Arguments] { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5, '5': 6, '6': 7 }
+        
+        Podemos chamar um argumento especifico utilizando dentro da função o seguinte méto, vamos supor que queremos o argumento com o número 6 :
+           function exeplo (a,b,c){
+                console.log(arguments[5]);
+            }
+
+            exemplo(1,2,3,4,5,6,7); 
+
+        saída de console : 6;   ele retorna o valor sustentado pelo índice em questão, no caso citado indice 5
+
+        Podemos também inicializar parametros basta que na hora de fazer sua declaração atribuamos algum valor, veja um exemplo :
+            function soma(a,b=0){
+                cosnole.log(a+b);
+            }
+            soma(1);//O b=0 previne que o retorno desta função seja NaN;
+
+        Isso se trona muito útil quando uma função realizará calculos, ou quando um dos dois paramtrôs éimprecindivel para seu funcionamento, assim evitando que erros ocorram durante a sua execução. Para forçar que um parametro utilize o valor padrão imposto, basta não definir o argumento para aquele parametro, ou defini-lo como undefined, veja a seguir  : 
+
+            function soma(a, b=0, c =3){
+                cosnole.log(a+b+c);
+            }
+            //Suponhamos que por algum motivo o valor de b deve assumir sua sua forma padrão, poréem o  valor de c deve ser argumentado com um valor diferente de seu padrão, como utilizar a chamda da função de modo correto ? Veja : 
+            soma(1,undefined,17);
+        
+        Podemos também passar parâmetros via desestruturação utilizando objetos : 
+
+            function retornaNome({ nome , sobrenome, idade }){
+                console.log(nome, sobrenome, idade);
+            }
+            retornaNome({
+                nome : `teste`,
+                sobrenome : `pois não`,
+                idade : 25
+            })
+
+        E também podemos fazer utilizando arrays  :
+
+            function arrayJogos([jogo1, jogo2, jogo3, jogo4]){
+                console.log(jogo1,jogo2,jogo3,jogo4);
+            }
+            
+            let games = [`Mario Odyssey`,`Zelda Ocarina of time`,`Assassin's Creed Origens`,`The Witcher 3`];
+
+            arrayJogos(games);

@@ -5,7 +5,7 @@ let tasksListJSON;
 
 //aqui onde toda a cadeia de funções se iniciam, recebendo o valor do input
 document.addEventListener(`click`, (e) => {
-    const el = e.target;//todoelemento clicado é retornado por está linha
+    const el = e.target;//todo elemento clicado é retornado por está linha
     const elId = el.id;//é lido o id deste elemento e salvo na varivel elId para ser utilizado posteriorment
 
     if (elId === `doneTask`) {//aciona a seguinte função caso o elemento contenha um id doneTask
@@ -21,9 +21,9 @@ document.addEventListener(`click`, (e) => {
     }
 });
 
-//este evento está sendo adicionado para adicionar mais funcionalidade e acessibilidade 
-inputElement.addEventListener(`keypress`, function (e) {//evento keypress reconehece quais teclas estão sendo precionadas 
-    //console.log(e); //retire o comentário desta linha e observe como ele funcona dentro do console de seu navegador 
+//este evento está sendo adicionado para adicionar mais funcionalidade e acessibilidade
+inputElement.addEventListener(`keypress`, function (e) {//evento keypress reconehece quais teclas estão sendo precionadas
+    //console.log(e); //retire o comentário desta linha e observe como ele funcona dentro do console de seu navegador
     if (e.keyCode === 13) {//caso enter for precionado também será realizada a função
         getValue();
     }
@@ -31,14 +31,14 @@ inputElement.addEventListener(`keypress`, function (e) {//evento keypress recone
 
 function getValue() {
     if (!inputElement.value) return
-    createTask(inputElement.value);//cria uma tarefa 
+    createTask(inputElement.value);//cria uma tarefa
 }
 
-function createTask(inputText) {//renderiza as tarefas na tela 
+function createTask(inputText) {//renderiza as tarefas na tela
     const task = createLi();//cria um elemento li para rceber o valor de get value
     task.innerHTML = `${inputText}`;
     taskDisplay.appendChild(task);//adiciona na lista de tarefas
-    task.appendChild(createButton());//cria o botão de conclusão de tarefa 
+    task.appendChild(createButton());//cria o botão de conclusão de tarefa
     saveTasks();//salva as tarefas em um LocalStorage
     clearInput();//limpa o input
 }
@@ -74,7 +74,7 @@ function saveTasks() {
     for (let task of elementsTasks) {//itera sobre todos os elementos criados que são tarefas
         let taskText = task.innerText;//retorna só o textto referente ao que a tarefa é ;
         taskText = taskText.replace(`Concluir`, ``).trim();//retira o texto referente ao botão criado com o método .replace() e após isso retira o espaço em branco ou quebra de linha resultante com o método .trim()
-        listOfTasks.push(taskText);//adiciona os nomes das tarefaz no array criado anteriormente 
+        listOfTasks.push(taskText);//adiciona os nomes das tarefaz no array criado anteriormente
     }
 
     tasksListJSON = JSON.stringify(listOfTasks);
