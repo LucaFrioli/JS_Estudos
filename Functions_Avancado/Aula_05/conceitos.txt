@@ -1,0 +1,32 @@
+|Antes de começarmos fica indicado que é importante averiguar o console do computador para averiguação da diferença de console.log e console.dir
+
+Porém o conceito é o seguinte: dentro do console.log() podese ver qual o retorno da função em questão, e saída de registros gerais, enquanto no console.dir exibe uma lista das propriedades de objetos Javascript(lembre-se tudo dentro do Javascript é tratado como objeto), dando acesso a visão dos escopos, prototypes e afins.
+P.S.: Isso só é visto dentro do console do navegador;
+
+
+Uma closure trata-se de um tipo especial de objeto que combina duas coisas: a função e o ambiente onde a função foi criada. Este ambiente consiste de quaisquer variáveis que estavam no escopo naquele momento em que a função foi criada.
+
+Muito Impotante sw lembrar dos escopos para uma boa compreensão desta aula, lembre-se, uma função pode ter acesso ao próprio escopo, aos escopos de suas funções e blocos vizinhos e pais, e ao escopo global.
+
+Resumindo uma closure é basicamente uma função com a capacidade de acessar o seu escopo léxico.
+
+Resumindo : Uma closure é a combinação de uma função com as referências ao estado que a circunda (o ambiente léxico). Em outras palavras, uma closure lhe dá acesso ao escopo de uma função externa a partir de uma função interna. Em JavaScript, as closures são criadas toda vez que uma função é criada, no momento da criação da função.
+
+################################################################################################################################
+
+
+Você já brincou de bonecas ou carrinhos? Imagine que você tem uma caixa especial onde guarda seus brinquedos favoritos. Essa caixa é como um tesouro mágico que mantém seus brinquedos seguros. Agora, imagine que você pode colocar um segredo nessa caixa que faz algo especial acontecer sempre que você a abrir. Isso é mais ou menos o que uma "closure" faz em JavaScript.
+
+Uma closure é como um segredo especial que você coloca na sua caixa de brinquedos (função) para que ela possa fazer coisas especiais toda vez que você a abre. Ela guarda informações e as usa quando necessário, como um superpoder para suas funções.
+
+Texto com conceitos técnicos:
+
+Agora, vamos explorar um pouco mais sobre o que é uma closure em JavaScript. Uma closure é um conceito avançado que envolve funções e escopos léxicos.
+
+Em JavaScript, uma closure acontece quando uma função é declarada dentro de outra função e a função interna mantém acesso às variáveis da função externa, mesmo após a função externa ter sido executada. Isso significa que a função interna "lembra" o ambiente em que foi criada, e pode usar as variáveis desse ambiente mesmo depois que a função externa terminou sua execução.
+
+Pense nisso como a caixa de brinquedos da criança, onde a função externa é a caixa que guarda as variáveis e a função interna é o segredo especial que usa essas variáveis. Mesmo que a função externa termine, o segredo ainda pode acessar e usar as variáveis da caixa.
+
+Closures são úteis para criar funções que "lembram" informações específicas, como contadores ou configurações personalizadas. Elas são poderosas e flexíveis, mas é importante usá-las com cuidado para evitar vazamento de memória ou problemas de desempenho.
+
+Em resumo, uma closure em JavaScript é como um segredo especial que permite que uma função interna acesse variáveis de uma função externa, mesmo depois que a função externa terminou sua execução. Isso é útil para criar funções flexíveis e personalizadas, mas é importante entender como usá-las corretamente.

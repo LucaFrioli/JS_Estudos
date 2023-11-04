@@ -51,3 +51,21 @@ let testeDeAninhamento3 = aninhada3()
 testeDeAninhamento1()
 testeDeAninhamento2()
 testeDeAninhamento3()
+
+//exempo algoritmico retirado do stackOverflow
+let x = 0;
+
+function foo() {
+    let x = 10;
+    return function() {
+        return x;
+    }
+}
+let bar = foo();
+
+function baz() {
+    let x = 20;
+    return bar();
+}
+const retorno = baz(); // O que é retornado?
+console.log(retorno);// o retorno neste caso é dez pois o retorno pega imediatamente a variavel com o mesmo nome do retorno do escopo mais próximo

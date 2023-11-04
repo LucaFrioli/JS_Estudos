@@ -1,0 +1,36 @@
+Refrências de leitura  :
+    Aula_01 :
+        - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/function
+        - https://blog.matheuscastiglioni.com.br/definindo-funcoes-em-javascript/ (atenha-se mais as functions declaration, function expression, e arrow functions);
+        - https://medium.com/reactbrasil/como-o-javascript-funciona-entendendo-as-funções-e-suas-formas-de-uso-eb387c7fa138 (para a primeira aula se atenha as functions declarations, arrow functions e functions expression, por curiosidade e ambientação prossiga para próximos temas);
+
+    Aula_02 :
+        - https://www.digitalocean.com/community/tutorials/understanding-default-parameters-in-javascript-pt
+        - https://pt.stackoverflow.com/questions/284804/par%C3%A2metros-em-fun%C3%A7%C3%B5es-em-javascript
+        - https://www.treinaweb.com.br/blog/contexto-e-escopo-no-javascript
+        - https://javascript.reativa.dev/interview-14/
+
+    Aula_03 :
+        - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/return
+        - https://cursos.alura.com.br/forum/topico-duvida-o-que-e-e-o-que-faz-o-return-em-js-297046#:~:text=Em%20JavaScript%2C%20a%20palavra%2Dchave,tarefa%20espec%C3%ADfica%20quando%20%C3%A9%20chamada.
+        - https://pt.stackoverflow.com/questions/5664/como-funciona-exatamente-o-return-javascript
+        - https://www.w3schools.com/jsref/jsref_return.asp
+        - https://www.geeksforgeeks.org/javascript-return-statement/
+
+    Aula_04 :
+        - https://pt.stackoverflow.com/questions/13034/o-que-s%C3%A3o-escopo-l%C3%A9xico-e-escopo-din%C3%A2mico-e-quais-s%C3%A3o-suas-principais-diferen%C3%A7as
+        - https://dev.to/nandobfr/escopo-de-funcao-escopo-de-bloco-e-escopo-lexico-173n
+        - https://ricardo-reis.medium.com/closures-fechamentos-em-javascript-423564e7738b {OBS : ESTA REFERÊNCIA SERVIRÁ TAMBÉM PARA AS AULAS 05 E 07. }
+        - https://learn.microsoft.com/pt-br/cpp/c-language/scope-and-visibility?view=msvc-170 (conceitos de escopos gerais)
+
+    Aula_05 :
+        -   https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Closures
+        -   https://www.w3schools.com/js/js_function_closures.asp
+        -   https://www.geeksforgeeks.org/how-closure-works-in-javascript/
+        -   https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
+
+    Aula_06 :
+        -   https://developer.mozilla.org/pt-BR/docs/Glossary/Callback_function
+        -   https://www.simplilearn.com/tutorials/javascript-tutorial/callback-function-in-javascript#:~:text=A%20JavaScript%20callback%20is%20a,called%20as%20a%20callback%20function.
+        -   https://www.w3schools.com/js/js_callback.asp
+        -   https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/

@@ -11,7 +11,9 @@ function retornaPessoa(nome, sobrenome) {
 }
 console.log(retornaPessoa(`João`, `da Silva`));
 const rp1 = retornaPessoa(`José`, `Medeiros`);
-console.log(rp1.nome, rp1.sobrenome);
+console.log(rp1.nome, rp1.sobrenome);//ou temos a seguinte opção
+let {nome, sobrenome} = rp1;
+console.log(nome,sobrenome)
 
 //Funções que retornam funções
 function falaOi(saudacao = `Olá...`) {

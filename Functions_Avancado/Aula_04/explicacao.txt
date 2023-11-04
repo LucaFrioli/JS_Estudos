@@ -1,38 +1,15 @@
-O Escopo léxico funciona da seguinte maneira
-    toda e qualquer varivel declarada com o mesmo nome e com let em escopos diferentes, a primeira a ser buscada em uma operação é a que se encontra mais perto do escopo em que a operação está sendo executada  assim uma função cointém um escopo léxico na qual será priorizado para operação, veja o exemplo a seguir :
+Você já ouviu falar sobre o esconde-esconde que você brinca? Bem, programadores também têm um tipo de esconderijo em suas linguagens de programação, como o JavaScript! É como quando você esconde seus brinquedos em um lugar especial para que ninguém mais os encontre.
 
+Os programadores também têm lugares especiais onde podem esconder informações e dar nomes a elas. Isso se chama "escopo léxico" em JavaScript. É como se cada lugar onde você esconde seus brinquedos tivesse um nome especial, e apenas algumas pessoas podem encontrá-los lá. Isso ajuda a manter as coisas organizadas e evita que baguncem tudo.
 
+Texto com conceitos técnicos:
 
-1. Primeiramente, uma variável global `nome` é definida com o valor "Juninho".
+Agora, vamos explorar um pouco mais sobre o que é um escopo léxico em JavaScript. Um escopo léxico refere-se à forma como as variáveis e funções são organizadas e acessadas em um programa de JavaScript. Quando você declara uma variável ou uma função em JavaScript, ela é colocada em um determinado escopo, que pode ser uma função, um bloco de código, ou o escopo global.
 
-2. Em seguida, há três funções definidas:
-   - `falaNome`: Essa função simplesmente imprime o valor da variável `nome`. Ela tem acesso à variável global `nome`.
+Pense em um escopo como uma área de visibilidade para variáveis e funções. Dentro de um escopo, você pode acessar essas variáveis e funções, mas elas podem ser diferentes em escopos diferentes. Isso ajuda a evitar conflitos e a manter seu código organizado.
 
-   - `falaNomeDois`: Esta função define uma variável local `nome` com o valor "José" e, em seguida, imprime essa variável. Ela tem acesso apenas à variável local `nome` dentro do seu próprio escopo.
+Por exemplo, se você criar uma variável chamada "idade" dentro de uma função, essa variável só será visível dentro dessa função. Ela não poderá ser acessada de fora da função, a menos que você a passe como um valor de retorno. Isso ajuda a manter as informações separadas e protegidas.
 
-   - `falaNomeTres`: Aqui, a função `falaNomeTres` define outra variável local `nome` com o valor "Pedro" e, em seguida, chama a função `falaNome`. Essa função utiliza a variável `nome` do seu escopo léxico (ou seja, o escopo onde foi definida), que é a variável local "Pedro".
+No entanto, se você criar uma variável fora de qualquer função ou bloco de código, ela será uma variável global e estará disponível em todo o programa. Isso é útil para armazenar informações que precisam ser compartilhadas por várias partes do código, mas você deve ter cuidado para não causar conflitos com outras variáveis do mesmo nome em escopos diferentes.
 
-3. Logo após a definição das funções, são feitas chamadas para essas funções e seus respectivos escopos léxicos são demonstrados:
-   - `falaNome()`: Esta função imprime "Juninho", pois ela utiliza a variável global `nome`.
-
-   - `falaNomeDois()`: Esta função imprime "José", já que ela utiliza a variável local `nome` definida dentro de sua função.
-
-   - `falaNomeTres()`: Primeiro, essa função define uma variável local `nome` com o valor "Pedro" e, em seguida, chama a função `falaNome`. No entanto, a função `falaNome` usa a variável global `nome`, então ela imprime "Juninho", não "Pedro".
-
-4. Em seguida, há um exemplo de funções aninhadas:
-   - `aninhada` define uma variável local `nome` com o valor "Não será utilizada" e, em seguida, define uma função aninhada `aninhadoL2`, que imprime a variável local `nome`. No entanto, a função `aninhadoL2` não é chamada aqui.
-
-   - `aninhada2` define uma variável local `nome` com o valor "João" e, em seguida, define uma função aninhada `aninhadaL2`, que imprime a variável local `nome`. Neste caso, a função `aninhadaL2` não é chamada diretamente, mas será chamada posteriormente.
-
-   - `aninhada3` define apenas a função aninhada `aninhadaL2`, que tenta imprimir a variável `nome`. No entanto, a variável `nome` não está definida dentro do escopo dessa função.
-
-5. A seguir, são criadas três variáveis `testeDeAninhamento1`, `testeDeAninhamento2` e `testeDeAninhamento3`, que armazenam referências para as funções aninhadas.
-
-6. Por fim, essas funções aninhadas são chamadas:
-   - `testeDeAninhamento1()`: Chama a função `aninhadoL2` que imprime "Maria" (variável local dentro do escopo de `aninhada`).
-
-   - `testeDeAninhamento2()`: Chama a função `aninhadaL2` que imprime "João" (variável local dentro do escopo de `aninhada2`).
-
-   - `testeDeAninhamento3()`: Chama a função `aninhadaL2`, que tenta imprimir a variável `nome`. No entanto, a variável `nome` não está definida dentro do escopo dessa função, resultando em um erro.
-
-Resumindo, o código ilustra o conceito de escopos léxicos, onde as funções têm acesso às variáveis definidas em seus escopos léxicos (escopos onde foram declaradas) e, caso não encontrem uma variável local, elas procuram no escopo pai, até alcançar o escopo global. A resolução das variáveis é feita com base na hierarquia de escopos léxicos.
+Em resumo, um escopo léxico em JavaScript é como o lugar onde você esconde seus brinquedos, com nomes especiais para cada lugar. Isso ajuda a manter seu código organizado e evita que as coisas se misturem. Entender como os escopos funcionam é importante para escrever código eficiente e sem erros em JavaScript.
