@@ -1,0 +1,3 @@
+Um dos objetivos das funções IIFE é fazer uma proteção de sobreposição de dados devido se manter fora do escopo global, além de faze-la ser executada sem precisar declarar um nome, ou seja ela pode ser uma função anônima, o que previne ainda mais, os dados que estarão sendo tratados por ela sejam utilizados indevidamente.
+
+
