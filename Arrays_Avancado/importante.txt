@@ -1,0 +1,10 @@
+Indice :
+
+    Aula 01 :   Revisão sobre Arrays
+    Aula 02 :   Método Splice
+    Aula 03 :   Concatenando Arrays
+    Aula 04 :   Filter - Filtrando Arrays
+    Aula 05 :   Map - mapeando Arrays
+    Aula 06 :   Reduce - Reduzindo Arrays
+    Aula 07 :   Filter + Map + Reduce
+    Aula 08 :   forEach
