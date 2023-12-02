@@ -5,7 +5,7 @@ const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
 const BiggerThan10 = numeros.filter(v => v > 10);//oque esta entre parenteses é a mesma coisa que a função cbFilter que se encontra a baixo;
 console.log(BiggerThan10);
 
-function cbFilter(value) {
+function cbFilter(value, index, array) {//a funçãoque é embutida dentro do método, recebe respectivamente em seus parametro o valor, o indice, e o array completo neste caso só estamos trabalhandop com valor
     return value > 10;
 }
 
