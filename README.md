@@ -7,7 +7,7 @@
 
  OBS :  Os códigos estão sendo limpos aos poucos, indíces e documentações em produção;
 
- ### Ordem de EStudos recomendada :
+ ### Ordem de Estudos recomendada :
  - JavaScript_básico
  - Logica_Basica
  - Functions_Avancado
