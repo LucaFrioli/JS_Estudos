@@ -3,7 +3,7 @@
     Aula_02 : Object.defineProperty e Object.defineProperties
     Aula_03 : Getters e Setters
     Aula_04 : Métodos ùteis para Objetos*
-    Aula_05 : Prototypes
+    Aula_05 : Prototypes (execute o console do navegador utilizando o arquivo index.html da pasta)
     Aula_06 : Manipulando Prototypes
     Aula_07 : Herança / Delegação
     Aula_10 : Polimorfismo
@@ -16,4 +16,4 @@ Ecxercícios :
     Aula_09 : Exercício validando um cpf (resolução)
 
 
-*prestar muita atenção nessa aula, aula bem densa e cheia de detalhes novos 
+*prestar muita atenção nessa aula, aula bem densa e cheia de detalhes novos
