@@ -4,6 +4,7 @@
  - Todo arquivo novo, deve ser feito primeiro em uma branch separada da main, por gentileza !
  - Fique a vontade de abrir quantas issues forem necessárias, tanto para troca de conhecimento quanto para melhora dos código, vamos utilizar como um Fórum.
  - Aqui estamos todos para compartilhar conhecimento então sempre tenha respeito !
+ - Recomendação pessoal de CASE -> VisualStudio Code (tópico para iniciantes);
 
  OBS :  Os códigos estão sendo limpos aos poucos, indíces e documentações em produção;
 
@@ -19,5 +20,7 @@
  - ...
 
  ### Recomendação de configuração do VSCode e projeto para melhor experiência (para iniciantes) :
- - VSCode -> Word Wrap = on
+ - VSCode -> Word Wrap = on (em configurações da IDE);
+ - VSCode -> extensão Code Runner (recomendação pessoal);
+ - VSCode -> extensão EditorConfig for VS Code (necessária para o bom funcionamento do arquivo .editorconfig);
  - ...

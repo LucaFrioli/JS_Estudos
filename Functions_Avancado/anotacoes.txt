@@ -34,3 +34,8 @@ Refrências de leitura  :
         -   https://www.simplilearn.com/tutorials/javascript-tutorial/callback-function-in-javascript#:~:text=A%20JavaScript%20callback%20is%20a,called%20as%20a%20callback%20function.
         -   https://www.w3schools.com/js/js_callback.asp
         -   https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/
+
+    Aula_07 :
+        - https://developer.mozilla.org/pt-BR/docs/Glossary/IIFE
+        - https://medium.com/larimaza-pt/p%C3%ADlulas-de-javascript-express%C3%A3o-de-fun%C3%A7%C3%A3o-invocada-imediatamente-iife-7b2a2cee209f
+        - https://ricardo-reis.medium.com/express%C3%A3o-de-fun%C3%A7%C3%A3o-imediatamente-invocada-b706a7ee02f4

@@ -1,5 +1,5 @@
-Lista de Leitura Recomendada  : 
-    Básico : 
+Lista de Leitura Recomendada  :
+    Básico :
      - https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/JavaScript_basics (noções básicas);
 
      - https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps (primeiros passos);
@@ -7,7 +7,7 @@ Lista de Leitura Recomendada  :
      - https://medium.com/reactbrasil/como-o-javascript-funciona-uma-visão-geral-da-engine-runtime-e-da-call-stack-471dd5e1aa30 ;
 
      - https://medium.com/reactbrasil/como-o-javascript-funciona-dentro-da-engine-v8-5-dicas-sobre-como-escrever-código-otimizado-e05af6088fd5 (nota-se que algumas informações principalmente referentes aos projetos populares, está um pouco desatualizada, recomendo pesquisar um pouco mais sobre o assunto, pois deste post em diante a linguagem deu grandes saltos );
-     
+
      - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Grammar_and_types (explicação mais detalhada sobre os diferentes tipos de declaração de variaveis);
 
      - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_operators (sobre operadores aritméticos e lógicos) OBS : Se Atenha apenas a estes dois conceitos dentro desta página inicialmente, leia os outros por mera curiosidade, porém estude apenas inicialmente operadores aritméticos e lógicos;
@@ -18,13 +18,13 @@ typeof : função para averiguar o tipo de uma variavel ou constante
 toFixed(), limita as casas decimais;
 
 
-Como resgatar a data atual do sistema por meio de código : 
+Como resgatar a data atual do sistema por meio de código :
 
 utilizar a função **new Date();** ela retornara a data do sistema.
 para isolar os diferentes casos podemos então declarar uma variavel que recebrá co caso, e iniciaremos ela com a variavel **novaData.get"mes, ano, hora e afins"**, vamos para um exemplo.
 
     para recuperar mes ano e dia :
-     
+
     let dataAtual = new Date();
     let mes = dataAtual.getMonth();
     let ano = dataAtual.getFullYear();
@@ -39,12 +39,12 @@ Utilizar a função Number() para converter uma string em numero:
     reajuste+=parseInt(preço);
     //ou
     reajuste+=parseFloat(preço);
-    
+
 
 ____________________________________________________________
 ------------------------------------------------------------
     *****************************************************
-     ******REVER A AULA 24 SOBRE STRING DO BÁSICO*******
+     ******REVER A AULA 13 SOBRE STRING DO BÁSICO*******
     *****************************************************
     OBS : Referencia Aula_13/script.js
 ------------------------------------------------------------

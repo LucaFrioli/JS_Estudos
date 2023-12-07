@@ -1,0 +1,15 @@
+Lista de recomendações de Leitura :
+- https://www.javascripttutorial.net/javascript-array/
+- https://www.w3schools.com/js/js_arrays.asp
+- https://www.w3schools.com/js/js_array_methods.asp
+- https://www.w3schools.com/js/js_array_iteration.asp
+- https://www.w3schools.com/js/js_array_const.asp
+- https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array (atente-se aos subtópicos gerados dentro da documentação da mdn);
+
+Para conhecimento adicional leitura recomendada (metodo não tratado no modulo, porém útil):
+- https://www.w3schools.com/js/js_array_sort.asp
+
+
+ps: leia com muita atenção muitos dos conteúdos passados nos links sofrem alterações ao longo do tempo,
+então sempre se mantenha atento a eles, muitos métodos especificos não foram abordados no módulo.
+Sempre busque mais e mais informações.
