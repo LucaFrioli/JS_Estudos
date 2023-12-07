@@ -1,0 +1,32 @@
+Exercício: Objetos e arrays com protótipos
+
+Objetivo:
+
+- Trabalhar conceitos de objetos, arrays e protótipos em JavaScript.
+- Criar objetos e arrays com propriedades e métodos.
+- Usar herança para compartilhar propriedades e métodos entre objetos.
+
+Instruções:
+
+ ° Crie um construtor Pessoa com as seguintes propriedades:
+
+    - nome: o nome da pessoa
+    - idade: a idade da pessoa
+
+    ° Seu Prototipo :
+      - deve ter uma função que retrona o ano em que a pessoa nasceu;
+
+ ° Crie um construtor Aluno que herda do construtor Pessoa. O construtor Aluno deve ter a seguinte propriedade adicional:
+
+    - curso: o curso do aluno
+
+    ° Seu prototipo deve ter uma herança do contrutor pessoa e o seguinte metodo :
+     - o metodo deve retornar uma frase contendo o nome do Aluno e Seu curso;
+
+ ° Crie uma função criarAlunos() que cria um array de Alunos. A função deve receber como parâmetro o número de alunos a serem criados.
+
+ ° Use a função criarAlunos() para criar um array de 5 alunos.
+
+ ° Imprima o array de alunos no console, imprima os métodos de cada objeto gerado do array.
+
+ °obs : torne os metodos criado em imutaveis 
