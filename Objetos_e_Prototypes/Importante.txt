@@ -4,7 +4,7 @@
     Aula_03 : Getters e Setters
     Aula_04 : Métodos ùteis para Objetos*
     Aula_05 : Prototypes (execute o console do navegador utilizando o arquivo index.html da pasta)
-    Aula_06 : Manipulando Prototypes
+    Aula_06 : Manipulando Prototypes (execute o console do navegador utilizando o arquivo index.html da pasta)
     Aula_07 : Herança / Delegação
     Aula_10 : Polimorfismo
     Aula_11 : Factroy_functions + Prototypes
