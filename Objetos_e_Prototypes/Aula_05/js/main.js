@@ -1,4 +1,4 @@
-//Prototypes -> permitem reuso de métodos por instâncias de uma mesma classe(função contrutora ou factory function)
+//Prototypes -> permitem reuso de métodos por instâncias de uma mesma classe(função contrutora ou factory function) isso deixa o código muito mais performático 
 
 //função contrutora -> (molde, classe) :
 function Person(name, lastname, age) {
