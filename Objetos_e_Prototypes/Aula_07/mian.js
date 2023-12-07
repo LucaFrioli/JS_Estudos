@@ -54,7 +54,7 @@ Mug.prototype.fillMug = function (quantity = 0) {
             return `Vamos não se sinta envergonhado encha mais ${this.name}`;
         case (quantity < 0):
             return `Não é possivel encher com numeros negativos ${this.name}, ao menos que vc faça uma singularidade`;
-        default: `Escreva um numero válido`;
+        default: return `Escreva um numero válido`;
     }
 }
 
