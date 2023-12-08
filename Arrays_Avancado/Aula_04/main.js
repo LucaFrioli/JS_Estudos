@@ -24,7 +24,7 @@ const peapoles = [
 
 const bigNamedPeapoles = peapoles.filter(value => value.nome.length >= 5);
 const betterAgePeapoles = peapoles.filter(value => value.idade > 50);
-const peapolesWhithLastLetterA = peapoles.filter(value => value.nome.toLocaleLowerCase().endsWith(`a`));// Veja que utilizamos um novo metodo chamado .endsWith(``); ele serve para testar se a string termina com a letra passada em seu paramtro, e rretorna true ou false
+const peapolesWhithLastLetterA = peapoles.filter(value => value.nome.toLocaleLowerCase().endsWith(`a`));// Veja que utilizamos um novo metodo chamado .endsWith(``); ele serve para testar se a string termina com a letra passada em seu parametro, e retorna true ou false
 console.log(`Pessoas com nomes maiores ou iguais a 5 Letras :`);
 console.log(bigNamedPeapoles);
 
