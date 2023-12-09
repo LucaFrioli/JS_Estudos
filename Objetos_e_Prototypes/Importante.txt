@@ -12,8 +12,8 @@
 
 
 Ecxercícios :
-    Aula_08 : Exercício validando um cpf
-    Aula_09 : Exercício validando um cpf (resolução)
+    Aula_08 : Exercício validando um cpf (resolução própria)
+    Aula_09 : Exercício validando um cpf (resolução sugerida)
     Exercicio_de_fixacao_01 : Exercício para fixação do conteúdo até a Aula_07 (resolução em ./src/main.js);
 
 
