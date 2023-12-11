@@ -40,11 +40,10 @@ function createPoliceOfficer(name, lastname, age, patente) {
 
 const p1 = createPerson(`José`, `Tavares`, 47);
 const officer1 = createPoliceOfficer(`Jefferson`, `Pinto`, 38, `Tenente`);
-console.dir(`Função createPerson :\n`, p1, `\n`);
+console.log(`Função createPerson :\n`, p1, `\n`);
 p1.talk();
 p1.drink();
 p1.eat();
-console.dir(`\nFunção createPoliceOfficer :\n`, officer1, `\n`);
+console.log(`\nFunção createPoliceOfficer :\n`, officer1, `\n`);
 officer1.drink();
 officer1.eat();
-officer1.talk();

@@ -40,6 +40,8 @@ function Mug(name, price, stock, volume, material) {
     this.volume = volume;
     this.material = material;
 }
+Mug.prototype = Object.create(Product.prototype);
+Mug.prototype.constructor = Mug;
 Mug.prototype.fillMug = function (quantity = 0) {
     switch (true) {
         case (quantity > this.volume):
@@ -59,7 +61,7 @@ Mug.prototype.fillMug = function (quantity = 0) {
 }
 
 Mug.prototype.exitStock = function (amount) { this.stock -= (amount * 2) };
-Object.setPrototypeOf(Mug.prototype, Product.prototype)
+
 
 
 const generic = new Product(`generico`, 10, 10);
