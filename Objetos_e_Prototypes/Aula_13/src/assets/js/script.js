@@ -60,9 +60,21 @@ ElectricCar.prototype.calculateConsumption = function (travelledDistance, kWhUse
 }
 
 
+function Motorcycle(make, model, year, fuelType, mileage, color) {
+    Vehicle.call(this, make, model, year, fuelType, mileage);
+    this.color = color;
+}
+
+Motorcycle.prototype = Object.create(Vehicle.prototype);
+
+Motorcycle.prototype.constructor = Motorcycle;
+
+Motorcycle.prototype.displayInfo = function () {
+    console.log(`Fabricante: ${this.make}\nModelo: ${this.model}\nAno: ${this.year}\nCor: ${this.color}`);
+}
+
 function createMotorcycle(make, model, year, fuelType, mileage, color) {
-    const motorcycle = new Vehicle(make, model, year, fuelType, mileage);
-    motorcycle.color = color;
+    const motorcycle = new Motorcycle(make, model, year, fuelType, mileage, color);
     return motorcycle;
 }
 

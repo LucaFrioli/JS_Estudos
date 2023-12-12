@@ -35,8 +35,8 @@ Vamos criar um sistema relativamente complexo de gestão de veículos em JavaScr
 
 
 Observações:
-- Teste cada parte do código no console do navegador usando o arquivo `index.html` fornecido.
+- Teste cada parte do código no console do navegador usando o arquivo `index.html` fornecido.[x]
 - Certifique-se de entender como os conceitos de herança, polimorfismo e protótipos são aplicados em diferentes partes do exercício.
-- Explore as propriedades específicas de cada tipo de veículo e verifique se os métodos fornecem resultados esperados.
+- Explore as propriedades específicas de cada tipo de veículo e verifique se os métodos fornecem resultados esperados.[/]
 
 Este exercício abrange uma variedade de conceitos avançados em JavaScript, proporcionando uma compreensão sólida de programação orientada a objetos e técnicas avançadas de manipulação de objetos. Divirta-se explorando as possibilidades e desafios que esse sistema de gestão de veículos apresenta!
