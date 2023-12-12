@@ -1,0 +1,42 @@
+##Exercício Prático em JavaScript: Sistema de Gestão de Veículos (gerado por IA)
+
+Vamos criar um sistema relativamente complexo de gestão de veículos em JavaScript, abordando vários conceitos-chave relacionados a objetos, protótipos, herança, polimorfismo e outras técnicas avançadas.
+
+1. ###Revisão de Objetos:[x]
+   - Crie um objeto `Vehicle` com propriedades básicas como `make`, `model` e `year`.
+   - Adicione um método chamado `displayInfo` que exibe informações sobre o veículo no console.
+
+2. ###Object.defineProperty e Object.defineProperties:[x]
+   - Utilize `Object.defineProperty` para adicionar uma propriedade `fuelType` privada ao objeto `Vehicle`.
+   - Utilize `Object.defineProperties` para adicionar quilometragem (`mileage`) e mostrar combustivel (`displayFuelType`).
+
+3. ###Getters e Setters:[x]
+   - Adicione propriedades `get` e `set` para a quilometragem (`mileage`). O getter deve retornar a quilometragem atual e o setter deve permitir a atualização da quilometragem somente se o novo valor for maior que o valor atual.
+   - Adicione um getter à propriedade `displayFuelType` para exibir o tipo de combustível no console.
+
+4. ###Métodos Úteis para Objetos:[x]
+   - Crie um método `calculateConsumption` que aceita a distância percorrida e exibe a eficiência do veículo em termos de consumo de combustível.
+
+5. ###Prototypes:[x]
+   - Crie um protótipo `Car` que herda de `Vehicle`. Adicione uma propriedade específica para carros, como `numDoors`.
+   - Sobrescreva o método `displayInfo` no protótipo `Car` para incluir informações adicionais.
+
+6. ###Manipulando Prototypes:[x]
+   - Adicione um método ao protótipo `Vehicle` chamado `upgradeYear` que incrementa o ano do veículo em uma unidade.
+
+7. ###Herança / Delegação:[x]
+   - Implemente um objeto `ElectricCar` que herda de `Car`. Adicione propriedades específicas para carros elétricos, como `batteryCapacity`.
+
+8. ###Polimorfismo:[x]
+   - Sobrescreva o método `calculateConsumption` no protótipo `ElectricCar` para levar em consideração a eficiência diferente de combustível.
+
+9. ###Factory Functions + Prototypes:[x]
+   - Crie uma função fábrica chamada `createMotorcycle` que retorna um objeto de motocicleta com propriedades e métodos específicos.
+
+
+Observações:
+- Teste cada parte do código no console do navegador usando o arquivo `index.html` fornecido.
+- Certifique-se de entender como os conceitos de herança, polimorfismo e protótipos são aplicados em diferentes partes do exercício.
+- Explore as propriedades específicas de cada tipo de veículo e verifique se os métodos fornecem resultados esperados.
+
+Este exercício abrange uma variedade de conceitos avançados em JavaScript, proporcionando uma compreensão sólida de programação orientada a objetos e técnicas avançadas de manipulação de objetos. Divirta-se explorando as possibilidades e desafios que esse sistema de gestão de veículos apresenta!

@@ -14,6 +14,7 @@
 Ecxercícios :
     Aula_08 : Exercício validando um cpf (resolução própria);
     Aula_09 : Exercício validando um cpf (resolução sugerida, para fins de tópico de reuso e modulos, que serão abordados mais a diante);
+    Aula_13 : Exercício de revisão do modulo;
     Exercicio_de_fixacao_01 : Exercício para fixação do conteúdo até a Aula_07 (resolução em ./src/main.js);
 
 
