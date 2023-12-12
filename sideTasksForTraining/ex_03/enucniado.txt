@@ -1,0 +1,42 @@
+Desafio Técnico em JavaScript: Manipulação de Dados de Estudantes
+
+Você foi designado(a) para criar um sistema de análise de desempenho de estudantes em uma turma. O sistema deve ser implementado em JavaScript e deve abranger uma variedade de conceitos, incluindo lógica básica, funções, funções construtoras, funções geradoras, funções recursivas, manipulação de arrays (slice, splice, map, filter, reduce), objetos e protótipos.
+
+Parte 1: Estrutura de Dados
+Crie uma função construtora chamada Student que representará um estudante. Esta função deve ter propriedades para armazenar o nome do estudante e um array de suas notas.
+
+Crie um array chamado students contendo pelo menos 5 instâncias da função Student, cada uma representando um estudante diferente.
+
+Parte 2: Operações com Notas
+Implemente uma função chamada calculateAverage que recebe um array de notas e retorna a média.
+
+Utilize a função calculateAverage para criar um novo array chamado averageGradesArray, que contém as médias de notas de cada estudante.
+
+Parte 3: Filtragem de Estudantes
+Crie uma função chamada filterStudentsByAverage que recebe um array de estudantes e um valor de média. Esta função deve retornar um novo array contendo apenas os estudantes cuja média de notas seja superior ao valor fornecido.
+
+**Parte 4: Operações com Arrays**
+Implemente uma função recursiva chamada recursiveSum que calcula a soma de todos os elementos de um array.
+
+Utilize a função recursiveSum para calcular a soma dos elementos do array [1, 2, 3, 4, 5].
+
+Parte 5: Média Geral e Protótipos
+Utilize o método reduce para calcular a média geral da turma a partir do array de médias averageGradesArray.
+
+Adicione um método chamado calculateAverage ao protótipo da função Student para calcular a média do estudante.
+
+Utilize o método criado no protótipo para calcular a média de um estudante específico.
+
+Parte 6: Resultados e Testes
+Imprima no console os seguintes resultados:
+Estudantes com média superior a 85.[x]
+Médias de notas dos estudantes.[x]
+Média geral da turma.[x]
+Média de notas de um estudante específico.[x]
+Soma recursiva dos elementos [1, 2, 3, 4, 5].[x]
+Observações:
+
+A clareza do código e a eficiência das operações serão consideradas na avaliação.
+Comente seu código conforme achar necessário para explicar sua lógica.
+Boa sorte!
+
