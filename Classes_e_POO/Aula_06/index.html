@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formulário de cadastro :  </h1>
+        <ul>
+            <li>Nenhum campo pode estar vazio</li>
+            <li>Usuário só poderá conter letras e/ou números</li>
+            <li>Usuário deverrá ter entre 3 e 12 caracteres</li>
+            <li>Senha precisa ter entre 6 e 12 caracteres</li>
+        </ul>
+        <form action="" method="post" class="register">
+
+            <div class="name">
+                <label for="name">Nome  </label>
+                <input type="text" name="name" class="validation" id="name">
+            </div>
+
+            <div class="lastname">
+                <label for="lastname">Sobrenome  </label>
+                <input type="text" name="lastname" class="validation" id="lastname">
+            </div>
+
+            <div class="cpf">
+                <label for="cpf">CPF  </label>
+                <input type="text" name="cpf" class="validation" id="cpf">
+            </div>
+
+            <div class="user">
+                <label for="user">Usuário  </label>
+                <input type="text" name="use" class="validation" id="user">
+            </div>
+
+            <div class="psw">
+                <label for="psw">Senha  </label>
+                <input type="password" name="psw" class="validation" id="psw">
+            </div>
+
+            <div class="confirmPsw">
+                <label for="confirmPsw">Confirmar Senha  </label>
+                <input type="password" name="confirmPsw" class="validation" id="confirmPsw">
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+    <script src="./assets/js/validaCPF.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
