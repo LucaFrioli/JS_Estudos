@@ -1,0 +1,9 @@
+ìndice:
+    obs : tentarei estar anexando em cada aula uma breve explicação, para ficar mais claro, e de forma organizada os códigos !
+
+ Aula_01 : Promises
+ Aula_02 : Métodos úteis para Promises
+ Aula_03 : Async/Await
+ Aula_04 : XMLHttpRequest (GET) + Promises
+ Aula_05 : Fetch API (GET)
+ Aula_06 : Fetch API e Axios(JSON)

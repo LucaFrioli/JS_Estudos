@@ -1,0 +1,34 @@
+O código apresentado é um exemplo de como usar promises para lidar com a assincronia de forma mais organizada e eficiente do que com callbacks.
+
+As promises são objetos que representam uma promessa de que algo acontecerá no futuro. Elas podem ser usadas para representar uma operação assíncrona, como uma requisição HTTP ou uma chamada a uma API.
+
+O código começa definindo duas funções:
+
+* `time()`: gera um número aleatório entre `min` e `max` em milissegundos.
+* `esperaAi()`: retorna uma promise que resolve em `tempo` milissegundos, com o valor `msg` se `msg` for uma string, ou `valor não aceito` caso contrário.
+
+A função `esperaAi()` usa o método `new Promise()` para criar uma promise. O método `new Promise()` recebe dois argumentos: uma função de resolução e uma função de rejeição. A função de resolução é chamada quando a promise é resolvida, com o valor que a promise deve retornar. A função de rejeição é chamada quando a promise é rejeitada, com o erro que a promise deve retornar.
+
+A função `esperaAi()` verifica se `msg` é uma string. Se não for, a função chama a função de rejeição da promise com o erro `valor não aceito`. Se `msg` for uma string, a função chama o método `setTimeout()` para agendar a resolução da promise em `tempo` milissegundos.
+
+A função principal do código chama a função `esperaAi()` três vezes. A primeira vez, a função espera por um tempo aleatório entre 1 e 3 segundos, e retorna a string "teste". A segunda vez, a função espera por um tempo aleatório entre 1 e 3 segundos, e retorna o número 123. A terceira vez, a função espera por um tempo aleatório entre 1 e 2 segundos, e retorna a string "Frase3".
+
+Cada chamada à função `esperaAi()` retorna uma promise. As promises são então usadas com os métodos `then()` e `catch()` para lidar com os resultados das operações assíncronas.
+
+O método `then()` é chamado quando a promise é resolvida. O método recebe uma função como argumento, que é chamada com o valor da promise.
+
+O método `catch()` é chamado quando a promise é rejeitada. O método recebe uma função como argumento, que é chamada com o erro da promise.
+
+No código apresentado, a primeira chamada à função `then()` imprime a string "teste" no console. A segunda chamada à função `then()` imprime o número 123 no console. A terceira chamada à função `then()` imprime a string "Frase3" no console.
+
+Se qualquer uma das chamadas à função `esperaAi()` falhar, a função `catch()` será chamada com o erro. No código apresentado, a função `catch()` imprime o erro no console.
+
+Com promises, é possível lidar com a assincronia de forma mais organizada e eficiente do que com callbacks. As promises permitem que você escreva código mais legível e fácil de manter.
+
+Aqui estão alguns dos benefícios de usar promises:
+
+* Organização: As promises tornam mais fácil organizar o código assíncrono. Você pode agrupar as operações assíncronas em sequência ou em paralelo, de forma mais clara e fácil de entender.
+* Eficiência: As promises permitem que você escreva código mais eficiente. Você não precisa se preocupar em lidar com erros de callback ou com o gerenciamento da memória.
+* Legibilidade: As promises tornam o código mais legível. É mais fácil entender o que o código está fazendo quando ele usa promises.
+
+Se você está trabalhando com código assíncrono, vale a pena aprender a usar promises.
