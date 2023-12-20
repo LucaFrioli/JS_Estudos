@@ -1,0 +1,81 @@
+##1. Criação do Objeto:
+
+Crie um objeto chamado "Peapole" com os seguintes atributos: nome, sobrenome, email, senha, número de celular, CPF.[x]
+
+##2. Métodos:
+
+Implemente os seguintes métodos para o objeto Peapole:
+completeName: Este método deve exibir o nome completo do objeto.[x]
+informations: Este método deve exibir CPF, email e número de celular do objeto em uma div, desde que o email e senha estejam corretos.[x]
+
+##3. HTML para Cadastro:
+
+Desenvolva uma página HTML para o cadastro, incluindo campos para preenchimento das informações necessárias (nome, sobrenome, email, senha, número de celular,cpf).[x]
+
+##4. Armazenamento Local:
+
+Crie um array, que receberá o objeto gerado dentro destá página apartir de um map, e que seja salvo dentro do localstorage, não permita que um email seja cadastrado mais d euma vez.[x]
+
+##5. Validar campos:
+
+Antes de salvar o objeto, verifique se todos os campos estão prenchidos.[x]
+Verifique temabém se o cpf é valido.[x]
+Verifique se o email é um email válido.[x] Obs: veja o pós script de uma explicação sobre a expreção regular
+Verifique se a senha tenha entre 6 e 20 carcteres;
+
+##6. Design Amigável:
+
+Faça o design da página HTML de cadastro de forma amigável e intuitiva.
+
+##7. Condições para Salvamento:
+
+Salve o objeto apenas se todos os capos estiverem válidos.[x]
+
+##8. Exibição em Div:
+
+Utilize uma div para exibir as informações (nome completo, CPF, email, número de celular) na página HTML.
+
+Observação:
+Certifique-se de implementar a lógica necessária para atender às condições especificadas, garantindo a segurança e validação adequada dos dados antes de realizar o salvamento no localStorage. Além disso, certifique-se de que o design da página seja intuitivo e amigável para o usuário.
+
+
+
+#####################################################################################################################
+p.s :
+
+A primeira parte da expressão regular, /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@/, descreve o nome de usuário do endereço de e-mail. O nome de usuário pode conter qualquer combinação de caracteres alfanuméricos, pontos, exclamações, símbolos de libra, por cento, e comercial, aspas simples, asteriscos, adição, igualdade, interrogação, acento circunflexo, travessão, chave esquerda, chave direita, vírgula, ou hífen.
+
+Vamos analisar a expressão regular passo a passo:
+
+* `^` significa que a expressão regular deve corresponder ao início da string.
+* `[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+` significa que a expressão regular deve corresponder a uma sequência de caracteres alfanuméricos, pontos, exclamações, símbolos de libra, por cento, e comercial, aspas simples, asteriscos, adição, igualdade, interrogação, acento circunflexo, travessão, chave esquerda, chave direita, vírgula, ou hífen.
+* `@` significa que a expressão regular deve corresponder ao caractere de arroba.
+
+Portanto, a primeira parte da expressão regular diz que o nome de usuário deve começar com qualquer combinação de caracteres alfanuméricos, pontos, exclamações, símbolos de libra, por cento, e comercial, aspas simples, asteriscos, adição, igualdade, interrogação, acento circunflexo, travessão, chave esquerda, chave direita, vírgula, ou hífen, e deve terminar com o caractere de arroba.
+
+
+
+A segunda parte da expressão regular, /a-zA-Z0-9: ?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9]?(?:\.a-zA-Z0-9: ?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9]?)*$/, descreve o domínio do endereço de e-mail. O domínio pode começar com qualquer caractere alfanumérico, seguido por zero ou mais caracteres alfanuméricos ou hifens. O domínio pode ser seguido por um ponto, seguido por zero ou mais caracteres alfanuméricos ou hifens. O domínio pode ser repetido zero ou mais vezes.
+
+Vamos analisar a expressão regular passo a passo novamente:
+
+* `a-zA-Z0-9` significa que a expressão regular deve corresponder a um caractere alfanumérico.
+* `: ?` significa que o caractere de dois pontos é opcional.
+* `[a-zA-Z0-9-]{0,61}[a-zA-Z0-9]?` significa que a expressão regular deve corresponder a uma sequência de zero ou mais caracteres alfanuméricos ou hifens, seguidos por zero ou um caractere alfanumérico.
+* `(?:\.a-zA-Z0-9: ?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9]?)*` significa que a expressão regular deve corresponder a zero ou mais repetições da seguinte sequência:
+    * `.` significa que a expressão regular deve corresponder ao caractere de ponto.
+    * `[a-zA-Z0-9]` significa que a expressão regular deve corresponder a um caractere alfanumérico.
+    * `: ?` significa que o caractere de dois pontos é opcional.
+    * `[a-zA-Z0-9-]{0,61}[a-zA-Z0-9]?` significa que a expressão regular deve corresponder a uma sequência de zero ou mais caracteres alfanuméricos ou hifens, seguidos por zero ou um caractere alfanumérico.
+
+Portanto, a segunda parte da expressão regular diz que o domínio pode começar com qualquer caractere alfanumérico, seguido por zero ou mais caracteres alfanuméricos ou hifens, e pode ser seguido por um ponto, seguido por zero ou mais repetições da seguinte sequência:
+
+* Um caractere de ponto.
+* Um caractere alfanumérico.
+* Zero ou mais caracteres alfanuméricos ou hifens.
+
+Aqui estão alguns exemplos de endereços de e-mail que correspondem à expressão regular:
+
+* `fulano@gmail.com`
+* `fulano.de.silva@empresa.com.br`
+* `fulano-da-silva@dominio.net`

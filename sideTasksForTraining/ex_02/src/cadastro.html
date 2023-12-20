@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro : </title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="" method="post" class="register">
+            <label class="labelFormRegister" for="name">Nome : </label>
+            <input class="validate" type="text" name="name" id="name">
+
+            <label class="labelFormRegister" for="lastname">Sobrenome : </label>
+            <input class="validate" type="text" name="lastname" id="lastname">
+
+            <label class="labelFormRegister" for="email">Email : </label>
+            <input class="validate" type="email" name="email" id="email">
+
+            <label class="labelFormRegister" for="cellNumber">Número para contato : </label>
+            <input class="validate" type="tel" name="cellNumber" id="cellNumber">
+
+            <label class="labelFormRegister" for="cpf">Cpf : </label>
+            <input class="validate" type="text" name="cpf" id="cpf">
+
+            <label class="labelFormRegister" for="password">Senha : </label>
+            <input class="validate" type="password" name="password" id="password">
+
+            <label class="labelFormRegister" for="confirmPassword">Repetir Senha : </label>
+            <input class="validate" type="password" name="confirmPassword" id="confirmPassword">
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <script src="./assets/js/cpfValidation.js"></script>
+    <script src="./assets/js/insertIntoALocalStorage.js"></script>
+    <script src="./assets/js/Peapole.js"></script>
+    <script src="./assets/js/createARegister.js"></script>
+</body>
+
+</html>
