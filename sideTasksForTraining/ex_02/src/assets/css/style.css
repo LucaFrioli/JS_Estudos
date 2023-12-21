@@ -1,4 +1,93 @@
-.error-message{
+:root {
+    /*cores retiradas do adobe colors*/
+    --primary-color: rgba(204, 229, 239, 0.94);
+    --secundary-color: rgba(140, 174, 189, 0.74);
+    --terciary-color: rgba(137, 138, 74, 0.54);
+    --quaternary-color: rgba(29, 70, 87, 0.34);
+    --quinary-color: rgba(7, 38, 51, 0.20);
+
+    --primary-complementar: rgba(123, 161, 176, 0.69);
+    --secundary-complementar: rgba(51, 96, 113, 0.44);
+    --terciary-complementar: rgba(255, 246, 228, 0.94);
+    --quaternary-complementar: rgba(155, 127, 95, 0.61);
+
+    --shadow-25-percent: rgba(177, 177, 177, 0.8);
+    --shadow-50-percent: rgba(139, 156, 163, 0.64);
+    --shadow-75-percent: rgba(146, 146, 146, 0.48);
+    --shadow-100-percent: rgba(69, 78, 82, 0.32);
+}
+
+
+body {
+    background-color: var(--quinary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Helvetica, sans-serif;
+}
+
+div.container {
+    background-color: var(--terciary-complementar);
+    padding: 3rem 7rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    /*            x,y,esfumaçar,espalhar, cor da sobra*/
+    box-shadow: 15px 10px 14px 7px var(--shadow-25-percent);
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 130%;
+}
+
+form label {
+    margin-top: 1.3rem;
+}
+
+form input {
+    padding: 7px;
+    margin-top: 3px;
+    border: none;
+    height: 2rem;
+    box-shadow: inset 3px 4px 5px var(--shadow-25-percent);
+}
+
+form button {
+    margin-top: 1.2em;
+    background-color: var(--secundary-color);
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    color: black;
+    font-weight: bolder;
+    height: 2.5rem;
+    color: rgb(8, 20, 46);
+}
+
+form button:hover {
+    background-color: var(--secundary-complementar);
+}
+
+a {
+    background-color: var(--secundary-color);
+    padding: 0.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    background-color: var(--secundary-complementar);
+}
+
+.error-message {
     font-size: 14px;
     color: rgb(163, 8, 8);
 }

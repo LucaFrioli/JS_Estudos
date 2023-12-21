@@ -21,7 +21,7 @@ Crie um array, que receberá o objeto gerado dentro destá página apartir de um
 Antes de salvar o objeto, verifique se todos os campos estão prenchidos.[x]
 Verifique temabém se o cpf é valido.[x]
 Verifique se o email é um email válido.[x] Obs: veja o pós script de uma explicação sobre a expreção regular
-Verifique se a senha tenha entre 6 e 20 carcteres;
+Verifique se a senha tenha entre 6 e 20 carcteres;[x]
 
 ##6. Design Amigável:
 

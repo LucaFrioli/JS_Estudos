@@ -5,22 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>teste</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <form action="" method="post">
-        <label for="email">Email : </label>
-        <input type="email" name="email" id="email" required>
-        <label for="psw">Senha : </label>
-        <input type="password" name="psw" id="psw">
-    </form>
-    <a href="">Cadastre-se</a>
+    <div class="container">
+        <form action="" method="post" class="indexForm">
+            <label for="email">Email : </label>
+            <input type="email" name="email" id="email" required>
+            <label for="psw">Senha : </label>
+            <input type="password" name="psw" id="psw">
+            <button type="submit">Ver informações</button>
+        </form>
+        <a href="./cadastro.html">Cadastre-se</a>
+    </div>
 
     <div class="respose" id="response">
         <p class="completeName"></p>
     </div>
 
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/Peapole.js"></script>
+    <script src="./assets/js/validationOfRescueInfo.js"></script>
 </body>
 
 </html>

@@ -20,6 +20,7 @@ function insertIntoaLocalStorage(obj) {
         map.set(obj.email, obj);//armazena o objeto em um map utilizando o email como key de recuperação
         const mapAsJSON = JSON.stringify(Array.from(map.entries()));//o metodo entries, itera sobre o map e retorna um array
         localStorage.setItem(`register`, mapAsJSON);
+        redirectToIndex(`Cadastrado com sucesso`);
         return;
     }
 
@@ -33,8 +34,14 @@ function insertIntoaLocalStorage(obj) {
     }
 
     storedMap.set(obj.email, obj);
-    const updatedLSJson = JSON.stringify(Array.from(storedMap.entries()));//o entries metodo itera sobre os arrays para que após isso seja possivel converter em um map novamente
+    const updatedLSJson = JSON.stringify(Array.from(storedMap.entries()));//o entries metodo itera sobre os arrays para que após isso seja possivel converter o map em uma string novamente
     localStorage.setItem(`register`, updatedLSJson);
-    alert(`Enviado com sucesso`);
+    redirectToIndex(`O cadastro foi relalizado com sucesso!`);
     return;
+}
+
+
+function redirectToIndex(messageOfAlert) {
+    alert(messageOfAlert);
+    window.location.replace(`./index.html`);
 }

@@ -13,7 +13,7 @@ class Person {//será utilizado na inserção do localstorage e consumo de usuá
     }
 
     informations() {
-        return `<ol class={list-demo-info}>
+        return `<ol>
         <li>Nome completo : ${this.completeName()}</li>
         <li>Email : ${this.email}</li>
         <li>Cpf : ${this.cpf}</li>
