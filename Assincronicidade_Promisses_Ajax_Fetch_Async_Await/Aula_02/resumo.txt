@@ -1,0 +1,109 @@
+**Promise.all**
+
+O método Promise.all retorna uma nova promessa que só será resolvida quando todas as promessas passadas como argumentos forem resolvidas. Se alguma das promessas for rejeitada, a nova promessa também será rejeitada.
+
+**Sintaxe:**
+
+```js
+Promise.all([promise1, promise2, ...])
+```
+
+**Exemplo:**
+
+```js
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('Promessa 1'), 1000);
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('Promessa 2'), 2000);
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('Promessa 3'), 3000);
+});
+
+const promises = [promise1, promise2, promise3];
+
+const allPromises = Promise.all(promises);
+
+allPromises.then((values) => {
+  console.log(values); // ["Promessa 1", "Promessa 2", "Promessa 3"]
+});
+```
+
+**Promise.race**
+
+O método Promise.race retorna uma nova promessa que será resolvida ou rejeitada o mais rápido possível, com base na primeira promessa passada como argumento que for resolvida ou rejeitada.
+
+**Sintaxe:**
+
+```js
+Promise.race([promise1, promise2, ...])
+```
+
+**Exemplo:**
+
+```js
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('Promessa 1'), 1000);
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('Promessa 2'), 2000);
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => reject('Promessa 3'), 3000);
+});
+
+const promises = [promise1, promise2, promise3];
+
+const racePromises = Promise.race(promises);
+
+racePromises.then((value) => {
+  console.log(value); // "Promessa 3"
+});
+```
+
+**Promise.resolve**
+
+O método Promise.resolve retorna uma nova promessa que já está resolvida com o valor passado como argumento.
+
+**Sintaxe:**
+
+```js
+Promise.resolve(value)
+```
+
+**Exemplo:**
+
+```js
+const promise = Promise.resolve('Promessa resolvida');
+
+promise.then((value) => {
+  console.log(value); // "Promessa resolvida"
+});
+```
+
+**Promise.reject**
+
+O método Promise.reject retorna uma nova promessa que já está rejeitada com o valor passado como argumento.
+
+**Sintaxe:**
+
+```js
+Promise.reject(reason)
+```
+
+**Exemplo:**
+
+```js
+const promise = Promise.reject('Promessa rejeitada');
+
+promise.catch((reason) => {
+  console.log(reason); // "Promessa rejeitada"
+});
+```
+
+Espero que isso ajude!
