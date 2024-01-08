@@ -25,7 +25,7 @@ Verifique se a senha tenha entre 6 e 20 carcteres;[x]
 
 ##6. Design Amigável:
 
-Faça o design da página HTML de cadastro de forma amigável e intuitiva.
+Faça o design da página HTML de cadastro de forma amigável e intuitiva.[x]
 
 ##7. Condições para Salvamento:
 
