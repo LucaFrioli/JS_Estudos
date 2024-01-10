@@ -6,4 +6,9 @@
  Aula_03 : Async/Await
  Aula_04 : XMLHttpRequest (GET) + Promises
  Aula_05 : Fetch API (GET)
- Aula_06 : Fetch API e Axios(JSON)
+ Aula_07 : Fetch API e Axios(JSON)
+
+
+exercício :
+
+ Aula_06 : exercício com fetch API(GET)

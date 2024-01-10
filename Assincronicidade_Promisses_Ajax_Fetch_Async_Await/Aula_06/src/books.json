@@ -1,0 +1,58 @@
+{
+    "books": [
+      {
+        "titulo": "Admirável Mundo Novo",
+        "autor": "Aldous Huxley",
+        "ano_lancamento": 1932,
+        "num_paginas": 288
+      },
+      {
+        "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+        "autor": "J.R.R. Tolkien",
+        "ano_lancamento": 1954,
+        "num_paginas": 423
+      },
+      {
+        "titulo": "Duna",
+        "autor": "Frank Herbert",
+        "ano_lancamento": 1965,
+        "num_paginas": 412
+      },
+      {
+        "titulo": "Meditações",
+        "autor": "Marco Aurélio",
+        "ano_lancamento": 180,
+        "num_paginas": 304
+      },
+      {
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "ano_lancamento": 1949,
+        "num_paginas": 328
+      },
+      {
+        "titulo": "Assim Falou Zaratustra",
+        "autor": "Friedrich Nietzsche",
+        "ano_lancamento": 1885,
+        "num_paginas": 352
+      },
+      {
+        "titulo": "O Príncipe",
+        "autor": "Maquiavel",
+        "ano_lancamento": 1532,
+        "num_paginas": 128
+      },
+      {
+        "titulo": "O Contrato Social",
+        "autor": "Jean-Jacques Rousseau",
+        "ano_lancamento": 1762,
+        "num_paginas": 256
+      },
+      {
+        "titulo": "Neuromancer",
+        "autor": "William Gibson",
+        "ano_lancamento": 1984,
+        "num_paginas": 271
+      }
+    ]
+  }

@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(30, 42, 97);
+    color: cornsilk;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.container{
+    padding: 1.4rem;
+}
+
+ul {
+    list-style: upper-roman;
+    font-size: 1.3rem;
+    font-family: monospace;
+    margin-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 1.2rem;
+}

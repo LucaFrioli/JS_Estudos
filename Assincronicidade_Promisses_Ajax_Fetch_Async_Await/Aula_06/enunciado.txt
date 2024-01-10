@@ -1,0 +1,22 @@
+**Exercício de Treino: Fetch API com Método GET**
+
+**Objetivo:**
+Praticar o uso da Fetch API para realizar solicitações HTTP do tipo GET e manipular dados locais em formato JSON.
+
+**Instruções:**
+1. Crie uma estrutura básica de página HTML contendo um título e uma lista não ordenada (`ul`).
+2. Crie um arquivo JSON local chamado `books.json` com informações sobre livros (título, autor, etc.).
+3. Utilize a Fetch API para fazer uma solicitação GET ao arquivo `books.json`.
+4. Verifique se a solicitação foi bem-sucedida (status 200).
+5. Converta a resposta para JSON.
+6. Itere sobre os dados obtidos e, para cada livro, adicione um item à lista na página contendo o título e o autor.
+7. Caso ocorra algum erro durante a solicitação, trate-o e exiba uma mensagem de erro no console.
+
+**Observações:**
+- Certifique-se de testar a página em um navegador para garantir que os dados sejam exibidos corretamente.
+- Sinta-se à vontade para adicionar estilos à sua página para melhorar a apresentação visual dos dados.
+
+Este exercício destina-se a fornecer uma introdução prática ao uso da Fetch API para realizar solicitações GET e manipular dados JSON localmente.
+
+
+Link de referência para estudos : https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API.
