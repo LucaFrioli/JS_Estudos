@@ -1,0 +1,9 @@
+ìndice :
+ -Aula_01 : Babel e "can i use.."
+ -Aula_02 : Webpack(Boilerplate)
+ -Aula_03 : Correção core-js(de v2 para v3)
+ -Aula_04 : ES6 Modules - Import/Export
+ -Aula_05 : Modelo com webpack
+ -Aula_06 : Criando gerador de CPFs válidos
+ -Aula_07 : Criando um gerador de senhas
+ -Aula_08 : Core-js e regenerator-runtime
