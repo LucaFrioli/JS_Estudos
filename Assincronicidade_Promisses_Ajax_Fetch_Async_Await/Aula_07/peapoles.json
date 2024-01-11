@@ -1,0 +1,134 @@
+[
+    {
+      "nome": "Ana",
+      "sobrenome": "Silva",
+      "email": "ana.silva@gmail.com",
+      "salario": 50000,
+      "estado": "SP",
+      "empresa": "Plastic Inc.",
+      "idade": 28,
+      "sexo": "F",
+      "cpf": "177.081.010-26"
+    },
+    {
+      "nome": "João",
+      "sobrenome": "Santos",
+      "email": "joao.santos@gmail.com",
+      "salario": 60000,
+      "estado": "RJ",
+      "empresa": "Facebook Corp.",
+      "idade": 35,
+      "sexo": "M",
+      "cpf": "288.166.600-07"
+    },
+    {
+      "nome": "Maria",
+      "sobrenome": "Oliveira",
+      "email": "maria.oliveira@outlook.com",
+      "salario": 55000,
+      "estado": "MG",
+      "empresa": "Letter Company",
+      "idade": 32,
+      "sexo": "F",
+      "cpf": "797.240.060-18"
+    },
+    {
+      "nome": "Eliot",
+      "sobrenome": "Alderson",
+      "email": "Null@Fsociety.AnonimusPerson",
+      "salario": "undefined",
+      "estado": "?",
+      "empresa": "Allsafe Cybersecurity Corp.",
+      "idade": 40,
+      "sexo": "M",
+      "cpf": "null"
+    },
+    {
+      "nome": "Cristina",
+      "sobrenome": "Almeida",
+      "email": "cristina.almeida@outlook.com",
+      "salario": 48000,
+      "estado": "RS",
+      "empresa": "Tigre Ltda.",
+      "idade": 25,
+      "sexo": "F",
+      "cpf": "794.824.910-92"
+    },
+    {
+      "nome": "Luca",
+      "sobrenome": "F. DemonsCry",
+      "email": "CoFunder@AWC.com",
+      "salario": 950000,
+      "estado": "SP",
+      "empresa": "Ark web Criations",
+      "idade": 24,
+      "sexo": "M",
+      "cpf": "050.032.910-94"
+    },
+    {
+      "nome": "Amanda",
+      "sobrenome": "Pereira",
+      "email": "amanda.pereira@hotmail.com",
+      "salario": 51000,
+      "estado": "PR",
+      "empresa": "ABC Ltda.",
+      "idade": 29,
+      "sexo": "F",
+      "cpf": "881.745.810-49"
+    },
+    {
+      "nome": "Fernando",
+      "sobrenome": "Mendes",
+      "email": "fernando.mendes@yahoo.com",
+      "salario": 58000,
+      "estado": "CE",
+      "empresa": "MNO Solutions",
+      "idade": 33,
+      "sexo": "M",
+      "cpf": "947.587.740-13"
+    },
+    {
+      "nome": "Juliana",
+      "sobrenome": "Lima",
+      "email": "juliana.lima@yahoo.com",
+      "salario": 53000,
+      "estado": "GO",
+      "empresa": "XYZ Ltda.",
+      "idade": 31,
+      "sexo": "F",
+      "cpf": "516.637.540-80"
+    },
+    {
+      "nome": "Rafael",
+      "sobrenome": "Costa",
+      "email": "rafael.costa@hotmail.com",
+      "salario": 65000,
+      "estado": "AL",
+      "empresa": "345 Corp.",
+      "idade": 36,
+      "sexo": "M",
+      "cpf": "734.265.220-20"
+    },
+    {
+      "nome": "Patrícia",
+      "sobrenome": "Nascimento",
+      "email": "patricia.nascimento@gmail.com",
+      "salario": 47000,
+      "estado": "PI",
+      "empresa": "ABC Solutions",
+      "idade": 26,
+      "sexo": "F",
+      "cpf": "272.481.510-68"
+    },
+    {
+      "nome": "Lucas",
+      "sobrenome": "Barbosa",
+      "email": "lucas.barbosa@outlook.com",
+      "salario": 71000,
+      "estado": "PA",
+      "empresa": "678 Ltda.",
+      "idade": 41,
+      "sexo": "M",
+      "cpf":"359.929.820-35"
+    }
+]
