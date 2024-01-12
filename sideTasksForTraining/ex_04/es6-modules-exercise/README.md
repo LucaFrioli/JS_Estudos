@@ -2,7 +2,7 @@
 
 Por ser um projeto pequeno apenas para exercitar não há muitos scripts a serem executados pelo package.json. Porém é recomendada uma lida nele para compreender melhor as dependencias, sejma elas de desenvolvimento ou não.
 
-Os scripts que devem ser rodados para uma build, e execução correta dos modulos são :
+Os scripts que devem ser rodados para uma build, e execução correta dos modulos, são os comandos scripts :
 
 ~~~node
 // Roda o webpack :
