@@ -7,3 +7,8 @@
  -Aula_06 : Criando gerador de CPFs válidos
  -Aula_07 : Criando um gerador de senhas
  -Aula_08 : Core-js e regenerator-runtime
+
+
+Exercícios e obs :
+
+ - Para treinar a criação da estrutura de pastas e uso de dependencias, assim como uso dos diversos imports/exports, foi criado um exercício, que está no caminho ./sideTasksForTraining/ex_04
