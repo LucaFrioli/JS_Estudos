@@ -3,7 +3,7 @@
  -Aula_02 : Webpack(Boilerplate)
  -Aula_03 : Correção core-js(de v2 para v3)(correção de erros do boilerplate)
  -Aula_04 : ES6 Modules - Import/Export
- -Aula_05 : Modelo com webpack
+ -Aula_05 : Modelo com webpack(utilizando loaders de css);
  -Aula_06 : Criando gerador de CPFs válidos
  -Aula_07 : Criando um gerador de senhas
  -Aula_08 : Core-js e regenerator-runtime
