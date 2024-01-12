@@ -1,0 +1,8 @@
+Os comandos e ajustes que serão feitos no boilerplate da pasta zzZ_ArquivosUteis :
+    "core-js": "^2.6.12",
+    "regenerator-runtime": "^0.14.1",
+
+As duas dependÊncias serão retiradas das devDependecies e o core js será migrado para uma versão mais recente, as duas dependencias vão para as dependencias de produção.
+então ao reinstalar as dependencias se utilizara apenas : npm i core-js regenerator-runtime
+
+Assim as dependencias se tronarão primordias para o projeto
