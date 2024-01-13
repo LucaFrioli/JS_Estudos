@@ -1,0 +1,3 @@
+Sempre será recomendado utilizar o boilerplate_main, ele sempre será o mais atualizado, com todas as dependências necessárias, e ferramentas de configurações já escritas.
+
+Os outros modelos e Boileplates continuam ativos para que se possa entender melhor as mudanças de modelos e arquiteturas ao longo das aulas liberadas, além para se poder comparar um modelo com o outro. Incluindo a comparação de configurações, e disponibilização para uso eventual dentro de projetos reais, com diferentes níveis de dependências, e complexidade.
