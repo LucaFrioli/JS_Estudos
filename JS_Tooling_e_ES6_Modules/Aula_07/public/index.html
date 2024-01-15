@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gerador de senhas : </h1>
+        <h1 class="displayPsw">
+            Selecione as opções :
+        </h1>
+
+
+        <form action="" method="get" id="genPsw">
+            <div>
+                <label for="numChar">Quantidade de caracteres : </label>
+                <input type="text" name="numChar" id="numChar" value="20">
+            </div>
+
+
+            <div>
+                <label for="addNum">Adicionar números</label>
+                <input type="checkbox" name="addNum" id="addNum" checked>
+            </div>
+
+            <div>
+                <label for="capitalL">Letras maiúsculas</label>
+                <input type="checkbox" name="capitalL" id="capitalL">
+            </div>
+
+            <div>
+                <label for="smallL">Letras minúsculas</label>
+                <input type="checkbox" name="smallL" id="smallL">
+            </div>
+
+            <div>
+                <label for="specialChar">Letras símbolo</label>
+                <input type="checkbox" name="specialChar" id="specialChar">
+            </div>
+
+            <button>Gerar senha</button>
+        </form>
+
+    </div>
+    <script src="./assets/js/bundle.js"></script>
+</body>
+
+</html>
