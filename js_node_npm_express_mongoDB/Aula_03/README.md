@@ -21,7 +21,7 @@ OBS : Os próximos exeplos são apenas exeplos, e não cobrem totalmente o `pack
 
 O `package.json` é um arquivo que armazena todas as dependências utilizadas dentro de um projeto, além disso ele define quais são dependencias requeridas para funcionamento, e quais dependencias são apenas para desenvolvimento.
 
-~~~json
+~~~javascript
   "devDependencies": {
     "@babel/cli": "^7.23.4",//a versão é definida como major.minor.patch
     "@babel/core": "^7.23.7",
@@ -35,7 +35,7 @@ O `package.json` é um arquivo que armazena todas as dependências utilizadas de
 
 O arquivo também carrega os scripts que a aplicação tem, como o famoso script `dev`, ou `start`. Que podem ser configurados na área `"scripts"` do `package.js`, podemos criar scripts que quisermos.
 
-~~~json
+~~~javascript
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node public/assets/js/bundle.js",//configurado para rodar um arquivo específico
@@ -45,7 +45,7 @@ O arquivo também carrega os scripts que a aplicação tem, como o famoso script
 
 Além destes tópics importantes o arquivo acarrega mais algumas informações como `name`(referente ao nome do pacote), `version`(a versão em que o pacote se encontra), `description`(a descrição do pacote), `main`(o arquivo que desencadeara toda a execução do porgrama "arquivo principal"), `keywords`(uma lista de srtrings para categorização do pacote. OBS: serve mais para quem quer criar um pacote para publicar na npm), `author`(o autor ou autores do pacote) e `license`(a licença de uso do pacote). No momento isso servirá mais como mero adendo e curiosidade, menos o `main`.
 
-~~~json
+~~~javascript
   "name": "aula_03",
   "version": "1.0.0",
   "description": "O `npm` é o gerenciador de pacotes do Node.js, Ele permite a instalaçõa e o gerenciamento de dependências de projetos, de uma forma eficiênte e intuitiva.",
