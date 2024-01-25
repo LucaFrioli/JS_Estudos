@@ -78,13 +78,33 @@ Imagine que você está criando um utilitário de gerenciamento de diretórios e
         const removeDirectory = require('./modules/utils/fileSystem/removeDirectory');
         //criar um caminho :
         const projectFolder = path.resolve(__dirname, 'modules', 'utils', 'validations');
-        //UTILIZAR A FUNÇÃO, o diretório e os arquivos serão excluidos 
+        //UTILIZAR A FUNÇÃO, o diretório e os arquivos serão excluidos
         removeDirectory(projectFolder);
     ~~~
 
 7. Implemente uma função chamada `copyFile` que aceita um nome de arquivo de origem, um nome de arquivo de destino e caminhos opcionais e copia o conteúdo do arquivo de origem para o arquivo de destino.
 
+    - Como Utilizar :
+    ~~~javascript
+        const copyFile = require('./modules/utils/fileSystem/copyFile');
+        //criar os caminhos :
+        const origenFolder = path.resolve(__dirname, 'modules', 'utils', 'fileSystem');
+        const destinyFolder = path.resolve(__dirname,'modules','utils',);
+        //UTILIZAR A FUNÇÃO, o diretório e os arquivos serão excluidos
+        copyFile('readFile.js', 'teste.js', origenFolder, destinyFolder);
+    ~~~
+
 8. Implemente uma função chamada `moveFile` que aceita um nome de arquivo de origem, um nome de arquivo de destino e caminhos opcionais, movendo o arquivo de origem para o diretório de destino.
+
+    - Como Utilizar :
+    ~~~javascript
+        const moveFile = require('./modules/utils/fileSystem/moveFile');
+        //criar os caminhos :
+        const origenFolder = path.resolve(__dirname, 'modules', 'utils', 'fileSystem');
+        const destinyFolder = path.resolve(__dirname,'modules','utils',);
+        //UTILIZAR A FUNÇÃO, o diretório e os arquivos serão excluidos
+        moveFile('readFile.js', 'teste.js', origenFolder, destinyFolder);
+    ~~~
 
 ### Observações:
 
@@ -96,4 +116,4 @@ Imagine que você está criando um utilitário de gerenciamento de diretórios e
 Este exercício proporcionará uma oportunidade prática de aplicar os conceitos de manipulação de arquivos e diretórios no Node.js, bem como a utilização de funções assíncronas e a lida com operações I/O.
 
 
-**{completas : [1, 2, 3, 4, 5, ], pendentes : [ 6, 7, 8]}**
+**{completas : [1, 2, 3, 4, 5, 6, 7, 8 ], pendentes : [Eventuais Correções]}**

@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
 const path = require('path');
-const srcDirPath = path.resolve(__dirname, '..', 'rootDir.js');
+const srcDirPath = path.resolve(__dirname, 'rootDir.js');
 const rootDir = require(srcDirPath);
 
 module.exports = async (fileName, filePath = rootDir) => {

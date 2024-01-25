@@ -1,6 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
-const rootDir = require('../rootDir');
+const rootDirPath = path.resolve(__dirname, 'rootDir.js')
+const rootDir = require(rootDirPath);
 
 // Define o módulo que exporta uma função assíncrona
 module.exports = async (fileName, data, pathing = rootDir) => {
@@ -20,6 +21,5 @@ module.exports = async (fileName, data, pathing = rootDir) => {
     } catch (e) {
         // Em caso de erro, loga o erro e retorna false
         console.log(e);
-        return false;
     }
 }
