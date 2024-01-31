@@ -1,0 +1,18 @@
+{
+  "name": "ex_06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server/server_main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
