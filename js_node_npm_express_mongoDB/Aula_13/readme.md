@@ -47,7 +47,7 @@ npm i --save-dev @babel/cli @babel/core @babel/preset-env @babel-loader webpack 
                     use: {
                         loader : 'babel-loader',
                         option :{
-                            presets : ['@babel-env']
+                            presets : ['@babel/env']
                         }
                     }
                 },
