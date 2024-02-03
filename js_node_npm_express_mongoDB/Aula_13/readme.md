@@ -215,6 +215,36 @@ exports.renderIndexDinamic = (req,res) =>{
 ~~~
 **OBS : Vale resaltar que não precisamos passar todo o caminho relativo do server-side já que a pasta public é uma pasta acessivel em cliente-side, que é onde está sendo executado o index.ejs, é como se tivessemos o criado dentro da pasta public.**
 
+Por fim temos a seguinte estrutura de pastas  :
+
+~~~plaintext
+  root-dir
+  | -- node_modules
+  |    |-- (...)
+  | -- frontend
+  |    | -- assets
+  |    |    | -- css
+  |    |    |    | -- style.css
+  |    |    | -- img
+  |    | -- main.js
+  |-- public
+  |    | -- assets
+  |    |    | -- js
+  |    |    |    | -- bundle.js (arquivo criados pelo webpack ao ser executado);
+  |    |    |    | -- bundle.js.map (arquivo criados pelo webpack ao ser executado);
+  | -- src
+  |    | -- controllers
+  |    |    | -- homeController.js
+  |    | -- views
+  |    |    | -- index.ejs
+  |-- package.json
+  |-- package-lock.json
+  |-- .gitignore
+  |-- webpack.config.js
+  |-- app.js
+  |-- routes.js
+~~~
+
 ### Explicando o motivo de funcionar a atribuição do caminho do script dentro de `index.ejs` :
 
 A pasta `public` em um projeto web é utilizada para armazenar recursos estáticos, como arquivos CSS, JavaScript, imagens e outros ativos que serão acessados diretamente pelo navegador do usuário. Essa prática é comum em frameworks e bibliotecas como Node.js, Express, e muitos outros, pois oferece uma maneira organizada e eficiente de servir esses recursos.
