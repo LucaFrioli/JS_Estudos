@@ -1,0 +1,99 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Configurações iniciais*/
+
+:root {
+    --primary-color: rgb(5, 30, 59);
+    --primary-color-darker: rgb(0, 18, 43);
+    --secondary-color: rgb(241, 227, 163);
+    --terciary-color: rgb(35, 124, 226);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    letter-spacing: 2px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+
+body {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    line-height: 1.3rem;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.4em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 640px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    background: var(--primary-color-darker);
+}
+
+/* Sobre formulários  */
+
+form {
+    margin-top: 8px;
+    width: 100%;
+}
+
+form input,
+form label,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+form input {
+    font-size: 1.15rem;
+    height: 30px;
+    padding: 20px 20px;
+}
+
+form input:focus {
+    outline: 1px solid var(--secondary-color);
+}
+
+form button {
+    border: none;
+    border-radius: 5px;
+    color: var(--secondary-color);
+    background-color: var(--terciary-color);
+    font-size: 17px;
+    font-weight: bold;
+    height: 1.7rem;
+    cursor: pointer;
+    padding: 7px;
+    margin-top: 30px;
+}
+
+form button:hover {
+    border: 1px solid var(--terciary-color);
+    border-radius: 10px;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+p.formError {
+    font-size: 12px;
+    color: red;
+    font-weight: 300;
+}
