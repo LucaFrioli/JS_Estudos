@@ -1,0 +1,27 @@
+<%- include('includes/header'); %>
+    <section class="container">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+
+        <% if(typeof name !=='undefined' ) {%>
+
+            <%# veja que quando não enviamos uma variavel, o tipo dela fica nullo, isso é util para manter ainda mais dinamica a página,e o controle do fluxo da aplicação%>
+            <%= name %> <br>
+            <%- name %> <br><br><br>
+            <p>Ambos os nomes são a mesma variavel, o que muda é o modo de declaração da tag ejs, sendo a primeira com escape de tags html e a segunda com leitura e processamento da tag </p><br>
+
+        <% } else { %>
+            <p>Nada foi enviado</p>
+        <% } %>
+
+        <h2>Teste de iteração utilizando ejs : </h2>
+        <div class="test">
+            <% if(typeof emails !== 'undefined' && Array.isArray(emails) && emails.length > 0){ %>
+                <% for( let email of emails) { %>
+                    <h3><%= email %></h3>
+                <% } %>
+            <% } else{ %>
+                <p>nenhum email foi enfiado para ser iterado</p>
+            <% } %>
+        </div>
+    </section>
+<%- include('includes/footer'); %>

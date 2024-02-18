@@ -18,8 +18,8 @@
  Aula_17 : MongoDB - Connection e first Model (Conexão e primeiro Model)
  Aula_18 : Explicação sobre erros no connect-mongo
  Aula_19 : Express Session e Flash Messages
- Aula_20 : Explanação de erro e corrigindo connect-mongo
- Aula_21 : Injetando conteúdos nos Views
- Aula_22 : Helmet e CSRF
- Aula_23 : Helmet no localhost (Evitar durante desenvolvimento)
- Aula_24 : Resumo e redação para recaptulação dos conteúdos, exeplos práticos;
+ Aula_20 : Injetando conteúdos nos Views
+ Aula_21 : Helmet e CSRF
+ Aula_22 : Helmet no localhost (Evitar durante desenvolvimento)
+ Aula_23 : Resumo e redação para recaptulação dos conteúdos, exeplos práticos;
+ Aula_24 : Recaptulando e recontruindo o boiler plate do zero para reforço de conteúdos;
