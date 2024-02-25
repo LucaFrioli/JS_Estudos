@@ -1,0 +1,19 @@
+<%- include('includes/header') -%>
+    <section class="container">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <form action="/" method="post">
+            <label for="clientname">Nome do cliente : </label>
+            <input type="text" name="clientname" id="clientname">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button>Enviar</button>
+        </form>
+
+        <% if(typeof clientname !=='undefined' ) { %>
+            <div class="response">
+                <h3>
+                    <%= clientname %>
+                </h3>
+            </div>
+            <% } %>
+    </section>
+    <%- include('includes/footer') -%>
