@@ -21,5 +21,5 @@
  Aula_20 : Injetando conteúdos nos Views
  Aula_21 : Helmet e CSRF
  Aula_22 : Helmet no localhost (Evitar durante desenvolvimento)
- Aula_23 : Resumo e redação para recaptulação dos conteúdos, exeplos práticos;
+ Aula_23 : Resumo e redação para recaptulação dos conteúdos;
  Aula_24 : Recaptulando e recontruindo o boiler plate do zero para reforço de conteúdos;
