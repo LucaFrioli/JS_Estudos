@@ -168,8 +168,6 @@ Abra seu Visual Studio Code e vá para a aba Extensions, no caso do windows pode
 
 ## Conceitos básicos sobre variaveis javascript:
 
-## Conceitos sobre variáveis em JavaScript:
-
 **O que é uma variável?**
 
 Em JavaScript, uma variável é um espaço na memória do computador que armazena um valor. Ela é como um recipiente que você pode nomear e usar para guardar diferentes tipos de dados, como números, textos, listas, objetos, entre outros (não são fortemente tipadas).
