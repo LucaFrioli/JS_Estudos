@@ -126,7 +126,7 @@ sudo rm /etc/apt/sources.list.d/nodesource.list*
 ~~~bash
 sudo apt install curl -y
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash #sempre averigue a ultima vesão do nvm e troque o 39.7 pela ultima versão disponível
 source ~/.bashrc
 ~~~
 
@@ -141,7 +141,7 @@ sudo rm /etc/apt/sources.list.d/nodesource.list*
 sudo apt install curl -y
 
 # INSTALA O NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ~~~
 
 **4. Rode o Script:**
@@ -188,7 +188,7 @@ var nome = "João"; // Declara uma variável 'nome' com o valor "João"
 
 As variáveis em JavaScript podem armazenar diversos tipos de dados, como:
 
-* **String:** Textos entre aspas simples ou duplas. Ex: "Olá, mundo!"
+* **String:** Textos entre aspas simples, duplas ou hífens. Ex: "Olá, mundo!", 'Olá, mundo!' ou \`Olá, mundo\`
 * **Number:** Números inteiros ou decimais. Ex: 10, 3.14
 * **Boolean:** Valores `true` ou `false`. Ex: `true`, `false`
 * **Array:** Uma lista ordenada de valores. Ex: `[1, 2, 3, "banana"]`
@@ -242,7 +242,7 @@ Ao adicionar esta linha ao final do código anterior e agora rodar o código apa
 
 ## Sobre o comando `console` :
 
-O comando `console` em JavaScript é um objeto global que fornece acesso ao console do navegador. Ele permite que você imprima mensagens, execute JavaScript, inspecione elementos da página e muito mais.
+O comando `console` em JavaScript é um objeto global que fornece acesso ao console do navegador. Ele permite que você imprima mensagens, execute JavaScript, inspecione elementos da página e muito mais. Por momento vamos utilizar apenas ométodo `.log`, porém outros métodos estarão sendo citados por questões de curiosidade.
 
 **Funcionalidades:**
 
@@ -285,10 +285,8 @@ console.log("Valor de x após o problema:", x);
 
 **Observações:**
 
-* O console está disponível em todos os navegadores modernos.
+* O console também está disponível em todos os navegadores modernos.
 * A forma de acessar o console varia de acordo com o navegador.
-* No Chrome, você pode abrir o console pressionando `Ctrl`+`Shift`+`I` (Windows) ou `Cmd`+`Option`+`I` (Mac).
-* No Firefox, você pode abrir o console pressionando `Ctrl`+`Shift`+`K` (Windows) ou `Cmd`+`Option`+`K` (Mac).
 
 O comando `console` é uma ferramenta poderosa que pode ser usada para diversos fins, como exibir mensagens, executar JavaScript, inspecionar elementos da página e depurar problemas. É uma ferramenta essencial para qualquer desenvolvedor JavaScript.
 

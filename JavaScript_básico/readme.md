@@ -39,10 +39,9 @@ Para aprofundar seus conhecimentos, recomendamos a leitura dos seguintes materia
 * **Funcionamento do JavaScript:**
     * **Visão geral:** [https://medium.com/reactbrasil/como-o-javascript-funciona-uma-vis%C3%A3o-geral-da-engine-runtime-e-da-call-stack-471dd5e1aa30](https://medium.com/reactbrasil/como-o-javascript-funciona-uma-vis%C3%A3o-geral-da-engine-runtime-e-da-call-stack-471dd5e1aa30)
     * **Dentro da engine V8:** [https://medium.com/reactbrasil/como-o-javascript-funciona-dentro-da-engine-v8-5-dicas-sobre-como-escrever-c%C3%B3digo-otimizado-e05af6088fd5](https://medium.com/reactbrasil/como-o-javascript-funciona-dentro-da-engine-v8-5-dicas-sobre-como-escrever-c%C3%B3digo-otimizado-e05af6088fd5)
-
 **Observações:**
+  * O artigo sobre o funcionamento do JavaScript dentro da engine V8 contém informações desatualizadas, principalmente sobre projetos populares. Recomendo pesquisas adicionais para complementar o estudo.
 
-* O artigo sobre o funcionamento do JavaScript dentro da engine V8 contém informações desatualizadas, principalmente sobre projetos populares. Recomendo pesquisas adicionais para complementar o estudo.
 * **Tipos de variáveis:** [https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Grammar_and_types](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Grammar_and_types)
 * **Operadores aritméticos e lógicos:** [https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_operators](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_operators)
 
