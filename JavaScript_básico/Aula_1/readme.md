@@ -289,7 +289,6 @@ console.log("Valor de x após o problema:", x);
 O comando `console` é uma ferramenta poderosa que pode ser usada para diversos fins, como exibir mensagens, executar JavaScript, inspecionar elementos da página e depurar problemas. É uma ferramenta essencial para qualquer desenvolvedor JavaScript.
 
 
-
 **Recursos adicionais:**
 
 * W3Schools - JavaScript Variables: [site](https://www.w3schools.com/js/js_variables.asp)
