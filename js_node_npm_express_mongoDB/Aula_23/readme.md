@@ -239,4 +239,3 @@ Podemos definir e dividir os métodos em quatro grandes grupos :
 * Documentação do módulo `path`: [https://nodejs.org/api/path.html](https://nodejs.org/api/path.html)
 * Tutoriais sobre o módulo `path`:
     * [https://m.youtube.com/watch?v=p995SdRXw_E](https://m.youtube.com/watch?v=p995SdRXw_E)
-    * [https://m.youtube.com/watch?v=p995SdRXw_E](https://m.youtube.com/watch?v=p995SdRXw_E)
