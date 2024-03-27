@@ -1,0 +1,1 @@
+# Os arquivos desta pasta só serão escritos quando o desenvolvimento do projeto ocorrer de modo remoto, em computadores sem acesso as ferramentas necessárias.

@@ -225,17 +225,72 @@ const isAbsoluto = path.isAbsolute('/home/usuario/arquivo.txt');
 console.log(isAbsoluto); // true
 ~~~
 
-Dentro do módulo `fs` temos varias ações possíveis para manipulação das estruturas e dos arquivos. Antes do NodeJs 10 era preciso trablahar com estruturas de callbacks para evitar o fluxos de dados I/O bloqueantes, apartir da verção 10 foi disponibilizado o módulo `fs.promises`, assim permitindo estruturas assíncronas para as operações que são realizadas, assim deixando o desenvolvimento mais intuitivo, e menos verboso, sanando os bloqueis criados pelas operações realizadas.
+Dentro do módulo `fs` temos varias ações possíveis para manipulação das estruturas e dos arquivos. Antes do NodeJs 10 era preciso trablahar com estruturas de callbacks para evitar o fluxos de dados I/O bloqueantes, apartir da verção 10 foi disponibilizado o módulo `fs.promises`, assim permitindo estruturas assíncronas para as operações que são realizadas, deixando o desenvolvimento mais intuitivo, e menos verboso, sanando os bloqueios criados pelas operações realizadas.
 
 Podemos definir e dividir os métodos em quatro grandes grupos :
+**Observações:**
+* Para usar o módulo `fs:promises`, você precisa importar o módulo `fs/promises` em ESMoudules ou `('fs').promises` no seu código.
+* P.S. : primeiro abordarei a declaração dos parametros de maneira mais generalista em relação o `fs` após deixarei disponivel uma segunda lista para observarmos o comportamento de declaração de paramentros do `fs.promises` 
 
-- Leitura e Escrita;
-- Operações de Diretórios;
-- Operações de Arquivos;
-- Estatísticas de Arquivo;
+- **Leitura e Escrita**;
+
+* `fs.readFile(path, options)`: Lê o conteúdo de um arquivo.
+* `fs.writeFile(path, data, options)`: Escreve dados em um arquivo.
+* `fs.appendFile(path, data, options)`: Acrescenta dados ao final de um arquivo.
+* `fs.open(path, flags, mode, callback)`: Abre um arquivo e retorna um descritor de arquivo.
+* `fs.read(fd, buffer, offset, length, position, callback)`: Lê dados de um arquivo aberto.
+* `fs.write(fd, buffer, offset, length, position, callback)`: Escreve dados em um arquivo aberto.
+* `fs.close(fd, callback)`: Fecha um arquivo aberto.
+
+- **Operações de Diretórios**;
+
+* `fs.mkdir(path, options, callback)`: Cria um diretório.
+* `fs.rmdir(path, callback)`: Exclui um diretório vazio.
+* `fs.unlink(path, callback)`: Exclui um arquivo.
+* `fs.rename(oldPath, newPath, callback)`: Renomeia um arquivo ou diretório.
+
+- **Operações de Arquivos**;
+
+* `fs.chmod(path, mode, callback)`: Altera o modo de um arquivo ou diretório.
+* `fs.chown(path, uid, gid, callback)`: Altera o proprietário e o grupo de um arquivo ou diretório.
+* `fs.truncate(path, len, callback)`: Trunca um arquivo para um determinado tamanho.
+
+- **Estatísticas de Arquivo**;
+
+* `fs.stat(path, callback)`: Retorna informações sobre um arquivo ou diretório.
+* `fs.fstat(fd, callback)`: Retorna informações sobre um arquivo aberto.
+* `fs.lstat(path, callback)`: Retorna informações sobre um link simbólico.
+
+**Lista de comandos e ordem de declaração de parametros do módulo fs:promises:**
+
+* `readFile(path, options)`
+* `writeFile(path, data, options)`
+* `appendFile(path, data, options)`
+* `open(path, flags, mode)`
+* `read(fd, buffer, offset, length, position)`
+* `write(fd, buffer, offset, length, position)`
+* `close(fd)`
+* `mkdir(path, options)`
+* `rmdir(path)`
+* `unlink(path)`
+* `rename(oldPath, newPath)`
+* `stat(path)`
+* `fstat(fd)`
+* `lstat(path)`
+* `chmod(path, mode)`
+* `chown(path, uid, gid)`
+* `truncate(path, len)`
+
+A principio e para mantermos o foco de nossos estudos vamos dar uma pequena aprofundada apenas nos comandos utilizados ao longo desta sessão. Vamos criar um programa que cria duas pastas com nomes distintos, e faça uma leitura de um arquivo em uma terciera pasta, e crie um arquivo com este conteúdo em uma das duas pastas criadas, enquanto na outra crie um arquivo json que contenha um objeto chave valor que tenha um conteúdo Hello, World! :
+
 
 **Recursos Adicionais:**
 
-* Documentação do módulo `path`: [https://nodejs.org/api/path.html](https://nodejs.org/api/path.html)
+* Documentação do módulo `path`: [Node Documentation](https://nodejs.org/api/path.html)
 * Tutoriais sobre o módulo `path`:
-    * [https://m.youtube.com/watch?v=p995SdRXw_E](https://m.youtube.com/watch?v=p995SdRXw_E)
+    * [Nodejs Tutorial from codevolution](https://m.youtube.com/watch?v=p995SdRXw_E)
+    * [Understanding Path Module from Daily Tuition](https://youtu.be/zqYkJed6nc4?si=XVetteBbjVrTUGTg)
+    * [Node.js path module from DEV Community](https://dev.to/endeavourmonk/nodejs-path-module-16fm)
+* Documentação do módulo `fs`: [Node Documentation](https://nodejs.org/api/fs.html)
+
+
