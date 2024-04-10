@@ -225,12 +225,14 @@ const isAbsoluto = path.isAbsolute('/home/usuario/arquivo.txt');
 console.log(isAbsoluto); // true
 ~~~
 
+## Sobre o módulo fs :
+
 Dentro do módulo `fs` temos varias ações possíveis para manipulação das estruturas e dos arquivos. Antes do NodeJs 10 era preciso trablahar com estruturas de callbacks para evitar o fluxos de dados I/O bloqueantes, apartir da verção 10 foi disponibilizado o módulo `fs.promises`, assim permitindo estruturas assíncronas para as operações que são realizadas, deixando o desenvolvimento mais intuitivo, e menos verboso, sanando os bloqueios criados pelas operações realizadas.
 
 Podemos definir e dividir os métodos em quatro grandes grupos :
 **Observações:**
 * Para usar o módulo `fs:promises`, você precisa importar o módulo `fs/promises` em ESMoudules ou `('fs').promises` no seu código.
-* P.S. : primeiro abordarei a declaração dos parametros de maneira mais generalista em relação o `fs` após deixarei disponivel uma segunda lista para observarmos o comportamento de declaração de paramentros do `fs.promises` 
+* P.S. : primeiro abordarei a declaração dos parametros de maneira mais generalista em relação o `fs` após deixarei disponivel uma segunda lista para observarmos o comportamento de declaração de paramentros do `fs.promises`
 
 - **Leitura e Escrita**;
 
@@ -281,7 +283,148 @@ Podemos definir e dividir os métodos em quatro grandes grupos :
 * `chown(path, uid, gid)`
 * `truncate(path, len)`
 
+### **Aprofundando-se nos comandos principais utilizados :**
+
 A principio e para mantermos o foco de nossos estudos vamos dar uma pequena aprofundada apenas nos comandos utilizados ao longo desta sessão. Vamos criar um programa que cria duas pastas com nomes distintos, e faça uma leitura de um arquivo em uma terciera pasta, e crie um arquivo com este conteúdo em uma das duas pastas criadas, enquanto na outra crie um arquivo json que contenha um objeto chave valor que tenha um conteúdo Hello, World! :
+
+Para este progrma iremos usar apenas os comandos :
+
+* `mkdir`
+* `readFile`
+* `writeFIle`
+
+Além disso vamos usar o fs em sua modalidade assícrona, utilizando promessas. Dito isso vamos para o código e a estrutura de pastas mínimas para faze-lo e entender na prática um pouco do fileSystem dentro do NodeJs :
+
+Antes de tudo vamos criar a seguinte estrutura de diretórios :
+
+~~~plaintext
+project-root
+| -- original
+|   |-- teste.js
+| -- app.js
+~~~
+
+Para aqueles que estão lendo apenas o resumo, se acontumem a criar estruturas de diretórios, pois todo o boilerplate contruido durante essa sessão é baseado em uma boa criação de estrutura de diretórios assim como, todos os desing patterns que serão vistos ao longo da jornada de progrmação. Após isso vamos adicionar um `console.log` no arquivo teste.js
+
+Para diretivas de estudo vamos adicionar todas as funções que farão as operações de arquivos dentro do `app.js`, antes de tudo vamos importar os dois modulos referentes ao capitulo deste texto em seu cabeçalho, iremos declarar `.promises` após a chamada do modulo `fs` para que possamos trabalhar de modo assíncrono logo de uma maneira mais organizada:
+
+~~~javascript
+const fs = require('fs').promises;
+const path = require('path');
+~~~
+
+Após isso vamos utilizar o módulo `path` para criar um caminho que ainda não exite dentro do projeto, que servirá como referência posteriro para criar a pasta:
+
+~~~javascript
+const dir01 = path.resolve(__dirname, 'pastaNova01');
+const dir02 = path.resolve(__dirname, 'pastaNova02');
+~~~
+No caso iremos chmar estas duas pastas que serão criadas do nome generico, note que não iremos colocar extensão nenhuma para declara-las, isso é muito importante para que o filesystem faça um trabalho tranquilo na hora da crição dos diretórios.
+
+Agora está na hora de realmente começar a utilizar funções do modulo `fs`, vamos iniciar abstraindo o conceito da criação de diretórios e escrita de arquivos. Por que abstraindo você deve estar se perguntando. Pois bem apesar de estramos utilizando tudo dentro do mesmo arquivo, não é uma boa prática fazer isto, então é bom manter o costume de abstração e componentização, permitindo que o código funcione em seu arquivo unico. Assim já estamos fazendo uma função que poderá eventualmente se encaixar em uma pasta `fileSystem` posteriormente e usada como um código modular.
+
+~~~javascript
+async function createFolder(pathOfDirectory) {
+    try {
+        await fs.mkdir(pathOfDirectory, { recursive: false });
+        console.log(`Diretório ${pathOfDirectory} criado com sucesso`);
+    } catch (e) {
+        console.log(e);
+    }
+}
+~~~
+
+Como estamos trbalhando de forma assíncrona com o módulo observe que devomos criar a função de forma assíncrona, observando o comando `mkdir` podemos reparar que ele tem apenas dois paramentros realmente requeridos o caminho em que o diretorio deve ser criado, e opções adicionanis, que dizem respeito ao modo que isso ocorrerá, observando isso vemos que podemos então abstrair na função o cmainho de criação, e assim fizemos então. Crinado um parametro que permite uma flexibilidade de reuso do código. Como já é esperado que tenha estudado os móduos anteriores não entraremos em detalhes como funcionam as demais estruturas envolvidas na função.
+
+Agora iremos para a criação da função que nos permitirá escrever dentro de arquivos  e criá-los caso eles não existam ela é a `writeFile`, para isso chamei a função assícrona como FileFile para haver uma diferenciação, você poderá chama-la da maneira que bem entender, só deve-se seguir a regra de criação de funções. Observe como ficou o código, e após isso comentarei sobre sua abstração :
+
+~~~javascript
+async function writeFileFile(fileName, data, pathDestination) {
+    pathDestination = path.join(pathDestination, fileName);
+    try {
+        await fs.writeFile(pathDestination, data, { flag: 'a' });
+    } catch (e) {
+        console.log(e);
+    }
+}
+~~~
+
+Observe que o comando em questão tem dois parametros necessários para sua boa execução, são eles : o caminho do arquivo, e a informação que será escrita dentro dele, além de configurações opcionais, no caso vamos abordar  e abstrair passando para a função que criamos estes dois parametros de comando, assim obtendo novamente uma função ligeiramente mais flexivel em cima do comando do módulo.
+
+Agora chegou a hora de finalmente criarmos a função que fará isso tudo entrar em ação e funcionar de uma maneira satisfatória ao executar o arquivo `app.js` como convenção a chamarei de `main`, por ele utilizar diretamente outras duas funções assíncronas, ela também dverá ser assíncrona como visto no módulo de assincronicidade. Ela ficará da seguinte maneira :
+
+~~~javascript
+async function main() {
+    try {
+        await createFolder(dir01);
+        await createFolder(dir02);
+        const content = await fs.readFile(path.resolve(__dirname, 'original', 'teste.js'));
+        const data = JSON.stringify({ teste: `console.log('hello world')` }, null, 2);
+        await writeFileFile('generatedfile.js', content, dir01);
+        await writeFileFile('genrationFileTodir02.json', data, dir02);
+    } catch (e) {
+        console.log(e);
+    }
+}
+~~~
+
+Note que nela também utilizamos um comando do módulo `fs` chamado `readFile` por ele ser usado apenas uma vez, não fizemos uma função assíncrona para abstraí-lo, porém lanço um desafio para aqueles que queiram treinar além da aula específica e se aprimorar dentro do módulo `fs`, além disso para aqueles que queiram um exercício mais completo vejam `sideTasksForTraining\ex_05`. No fim de toda a criação, o arquivo `app.js` deverá ficar assim :
+
+
+~~~javascript
+const fs = require('fs').promises;
+const path = require('path');
+
+const dir01 = path.resolve(__dirname, 'pastaNova01');
+const dir02 = path.resolve(__dirname, 'pastaNova02');
+
+async function createFolder(pathOfDirectory) {
+    try {
+        await fs.mkdir(pathOfDirectory, { recursive: false });
+        console.log(`Diretório ${pathOfDirectory} criado com sucesso`);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+async function writeFileFile(fileName, data, pathDestination) {
+    pathDestination = path.join(pathDestination, fileName);
+    try {
+        await fs.writeFile(pathDestination, data, { flag: 'a' });
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+async function main() {
+    try {
+        await createFolder(dir01);
+        await createFolder(dir02);
+        const content = await fs.readFile(path.resolve(__dirname, 'original', 'teste.js'));
+        const data = JSON.stringify({ teste: `console.log('hello world')` }, null, 2);
+        await writeFileFile('generatedfile.js', content, dir01);
+        await writeFileFile('genrationFileTodir02.json', data, dir02);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+main();
+
+~~~
+
+E após executá-lo a estrutura das pastas deve ser s seguinte :
+
+~~~plaintext
+project-root
+| -- original
+|   |-- teste.js
+| -- pastaNova01
+|   | -- generatedfile
+| -- pastaNova02
+|   | -- genrationFileTodir02
+| -- app.js
+~~~
 
 
 **Recursos Adicionais:**
