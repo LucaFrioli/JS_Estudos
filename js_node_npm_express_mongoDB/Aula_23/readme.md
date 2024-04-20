@@ -420,12 +420,88 @@ project-root
 | -- original
 |   |-- teste.js
 | -- pastaNova01
-|   | -- generatedfile
+|   | -- generatedfile.js
 | -- pastaNova02
-|   | -- genrationFileTodir02
+|   | -- genrationFileTodir02.json
 | -- app.js
 ~~~
 
+## Criando servidores :
+
+Como o curso dá uma enfase na parte web, um pricipio fundamental se dá na criação de servidores, que controlam e são responsaveis pela parte do backend na web. Deve-se lembrar ao se entrar na parte de servidores web do seu funcionamento com o protocolo http. Principalmente pois ele que dita como cada uma das interações com o backend deve se comportar. O protocolo http é baseado em seus verbos que são :  **GET, POST, PUT, PATCH, DELETE**. Com estes verbos podemos definir como o site será mapeado, e reagirá as requisições feitas ao servidor.
+
+Para abstrair a complexidade de criação de um servidor com o node.js puro podemos utilizar o `express`, um framework que visa simplificar o funcionamento das requisições, o modo de acesso aos dados que transitam com ela e a integração com APIs e base de dados. Para instalar o express devemos antes de tudo iniciar um projeto com a npm, e finalmente trazer o pacote do framework para dentro deste projeto. Para fazermos isso basta realizarmos os seguintes comandos dentro do terminal :
+
+~~~bash
+## inicio da npm como visto anteriormente
+npm init -y
+
+## instalar o express
+npm i express
+## ou se sentir mais seguro
+npm install express
+~~~
+
+Além da instalação do framework, para termos de produtividade devemos instalar também uma ferramenta conhecida como `nodemon`, que fará o trabalho de recarregar o servidor criado toda vez que houverem mudanças sendo realizadas na base de código referente a ele. deve-se notar que tal dependencia deve ser adicionada nas devDependencies. Para isso utilizamos o comando refernte a isso, apenas adicionando a flag `--save-dev` após o comando `i` e antes do nome desta ferramenta, veja asseguir :
+
+~~~bash
+## instalar o nodemon
+npm i --save-dev nodemon
+~~~
+
+Com estas duas ferramentas instaladas podemos começar a criar um servidor básico para web. Para fazermos isso iremos nos utilizar o conceito dos verbos http. primeiramente devmos criar um arquivo chamado `app.js` este arquivo que irá carregar os requisitos minimos para fazer o controle em qualporta ele irá rodar, as instâncias do express e posteriormente os middlewares, a chamada do roteamento e a engine que carregara as páginas web componentizadas, como veremos ao decorrer desta sesão. por enquanto vamos criar a parte básica a seguir :
+
+~~~javascript
+// instanciando o express
+const express = require('express');
+// utilizando o pacote
+const app = express();
+// definindo a porta que será utilizada
+const port = 3000;
+
+// criando o servidor
+app.listen(port,()=>{
+    console.log('O servidor está rodando na porta '+port);
+    console.log(`Acesse http://localhost:${port}`);
+})
+~~~
+
+Com este código básico já estamos rodando um servidor, agora devemos começar a gerenciar as rotas, poderiamos por ventura criar dentro deste mesmo arquivo, porém para manter mais organizado os site, a melhor prática é utilizar um arquivode roteamento, o qual chamaremos de `routes.js`, vamos cria-lo, e gerenciar uma rota básica que diz "hello world!" :
+
+~~~javascript
+const express = require('express');
+// criando o roteador
+const routes = express.Router();
+
+// criando uma rota básica
+routes.get('/',(req, res)=>{
+    res.send('Hello world!');
+});
+
+module.exports = routes;
+~~~
+
+No código apresentado, observamos a criação de uma rota básica utilizando o Express.js. A rota `'/'`, acessível via método `GET`, utiliza uma função para processar a requisição (`req`) e gerar a resposta (`res`).
+
+**Verbo HTTP e Rota Inicial:**
+
+O verbo `GET` indica que a rota busca informações do servidor, enquanto a barra (`'/'`) representa a rota principal da aplicação. Essa barra, por ser o primeiro parâmetro obrigatório do método `get`, define o padrão para todas as rotas.
+
+**Função de Processamento e Objetos `req` e `res`:**
+
+A função de processamento recebe os objetos `req` e `res` como parâmetros. O objeto `req` contém informações sobre a requisição do cliente, como headers, parâmetros e dados do corpo. Já o objeto `res` permite enviar dados de volta ao cliente, utilizando métodos como `send` e `json`.
+
+**Método `send` e Fluxo de Dados:**
+
+O método `send` envia uma string de resposta ao cliente. No exemplo, a string enviada é "Hello world!". A requisição do cliente aciona a rota `'/'`, que por sua vez executa a função de processamento. Essa função utiliza o objeto `res` e o método `send` para enviar a string "Hello world!" como resposta ao cliente.
+
+Entendendo melhor a morfologia de como é estruturada uma requisição básica da busca de informações dentro do servidor, podemos começar também a entender melhor o funcionamento de outros verbos dentro do framework, ao construir uma rota post por exeplo, ela terá a a mesma estrutura de declaração, sendo : `routes`.`verbo http`(`'rota a que se refre'`,`(declaração dos Objetos de processamento) => {` `Lógica da rota utilizando os objetos` `}`). Vamos observar umarota post :
+
+~~~javascript
+routes.post('/',(req,res)=>{
+    //lógica sendo aplicada
+});
+~~~
 
 **Recursos Adicionais:**
 
