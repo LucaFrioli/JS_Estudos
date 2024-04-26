@@ -1,4 +1,4 @@
-# Recaptulação dos conteúdos vistos no módulo
+# Recapitulação dos conteúdos vistos no módulo
 
 Todo o projeto feito com javascript, pode ou não ser feito com ele puro. No caso neste modulo configuramos um boilerplate que engloba o fullstack do desenvolvimento.
 
@@ -449,7 +449,34 @@ Além da instalação do framework, para termos de produtividade devemos instala
 npm i --save-dev nodemon
 ~~~
 
-Com estas duas ferramentas instaladas podemos começar a criar um servidor básico para web. Para fazermos isso iremos nos utilizar o conceito dos verbos http. primeiramente devmos criar um arquivo chamado `app.js` este arquivo que irá carregar os requisitos minimos para fazer o controle em qualporta ele irá rodar, as instâncias do express e posteriormente os middlewares, a chamada do roteamento e a engine que carregara as páginas web componentizadas, como veremos ao decorrer desta sesão. por enquanto vamos criar a parte básica a seguir :
+Dentro do arquivo chamado `package.json` na seção de scripts iremos adicionar o script de nome `start`, ele será responsavel por iniciar o servidor com o `nodemon`. veja asseguir como deverá ficar o arquivo com esta adição :
+
+~~~json
+{
+  "name": "aula_21",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
+
+~~~
+
+Perceba também que na chave `main` iremos declarar `app.js` que será nosso arquivo de entrada.
+
+Com estas duas ferramentas instaladas podemos começar a criar um servidor básico para web. Para fazermos isso iremos nos utilizar o conceito dos verbos http. primeiramente devemos criar um arquivo chamado `app.js` este arquivo que irá carregar os requisitos minimos para fazer o controle em qualporta ele irá rodar, as instâncias do express e posteriormente os middlewares, a chamada do roteamento e a engine que carregara as páginas web componentizadas, como veremos ao decorrer desta sesão. por enquanto vamos criar a parte básica a seguir :
 
 ~~~javascript
 // instanciando o express
@@ -495,13 +522,112 @@ A função de processamento recebe os objetos `req` e `res` como parâmetros. O 
 
 O método `send` envia uma string de resposta ao cliente. No exemplo, a string enviada é "Hello world!". A requisição do cliente aciona a rota `'/'`, que por sua vez executa a função de processamento. Essa função utiliza o objeto `res` e o método `send` para enviar a string "Hello world!" como resposta ao cliente.
 
-Entendendo melhor a morfologia de como é estruturada uma requisição básica da busca de informações dentro do servidor, podemos começar também a entender melhor o funcionamento de outros verbos dentro do framework, ao construir uma rota post por exeplo, ela terá a a mesma estrutura de declaração, sendo : `routes`.`verbo http`(`'rota a que se refre'`,`(declaração dos Objetos de processamento) => {` `Lógica da rota utilizando os objetos` `}`). Vamos observar umarota post :
+Entendendo melhor a morfologia de como é estruturada uma requisição básica da busca de informações dentro do servidor, podemos começar também a entender melhor o funcionamento de outros verbos dentro do framework, ao construir uma rota post por exeplo, ela terá a a mesma estrutura de declaração, sendo : `routes`.`verbo http`(`'rota a que se refre'`,`(declaração dos Objetos de processamento) => {` `Lógica da rota utilizando os objetos` `}`). Vamos observar uma rota post :
 
 ~~~javascript
 routes.post('/',(req,res)=>{
     //lógica sendo aplicada
 });
 ~~~
+
+Explicado isso agora devemos fazer com que o servidor utilize destas rotas para realmente ser possível, ver o seu conteúdo para isso devemos fazer com que o `app` as use, então vamos utilizar o método `.use()`, e os conceitos do módulo `path` para tornar o código o mais responsivo possível. Para isso vamos adicionar os códigos no arquivo `app.js`. Veja aseguir :
+
+~~~javascript
+const path = require('node:path');
+const express = require('express');
+
+// cahamda do modulo desenvolvido utilizando um dos conceitos vistos no módulo path
+const routes = require(path.resolve(__dirname,'routes.js'));
+
+const app = express();
+const port = 3000;
+
+// método para fazer com que o express use outros módulos, principalmente os mais vitais para o bom funcionamento de uma aplicação web
+app.use(routes);
+
+// criando o servidor
+app.listen(port,()=>{
+    console.log('O servidor está rodando na porta '+port);
+    console.log(`Acesse http://localhost:${port}`);
+})
+~~~
+
+Agora para ver o resultado basta utilizar o script `start` que criamos lá atrás, para isso basta abrir o terminal e realizar o seguinte comando :
+**Importante : não esqueça que para parar a execução do `nodemon` sempre devemos utilizar o comando Ctrl+C.**
+
+~~~bash
+npm run start
+## ou somente
+npm start
+~~~
+
+Agora qual seria o motivo de realizar as separações de rotas pelos nomes das requisições http. Pois bem principalmente pela questão de postagens e recuperações de entrada de arquivos e dados, que podem ser recuperados com métodos vindos do objeto `req`, estes métodos permitem além disso, também a modularização e reuso de algumas rotas permitindo que haja muito mais agilidade e desempenho no momento do desenvolvimento. Os métodos são os seguintes : `.params`, `.query` e `.body`. vamos ver um pouco deles após entender como ativamos as rotas posts ao utilizar formulários html.
+
+
+Quando criamos um formulário html devemos sempre notar que em sua tag de abertura temos dois atributos importantissimos, são eles :
+
+* `action=""` que molda e define qual rota a infromação daquele formulário deve seguir.
+* `method=""` que definirá o verbo http que deverá ser utilizado na submição do fomrulário.
+
+A seguir, detalhamos como estruturar um formulário para iniciarmos a exploração de conceitos básicos de rotas, sem a necessidade de integração com frontend. Isso também permitirá que que possamos abordar os métodos do objeto `req`.
+
+~~~html
+<!-- note os atributos inseridos em questão -->
+<form action="/" method="post">
+    <label for="clientname">Nome do cliente : </label>
+    <input type="text" name="clientname" id="clientname">
+    <button>Enviar</button>
+</form>
+~~~
+
+Após entender como criar um formulário html com o minimo necessário para ele funconar em simbiose com as rotas do servidor, devemos associa-lo ao código de rotas dentro do arquivo `routes.js`, para uma demonstração inicial do funcionamento das manipulações tanto dalas, quanto os usos dos métodos do `req`, para isso devemos declarar ele da seguinte maneira.
+
+~~~javascript
+const express = require('express');
+// criando o roteador
+const routes = express.Router();
+
+// criando uma rota básica
+routes.get('/',(req, res)=>{
+    res.send(`<form action="/" method="post">
+            <label for="clientname">Nome do cliente : </label>
+            <input type="text" name="clientname" id="clientname">
+            <button>Enviar</button>
+            </form>`
+            );
+});
+
+module.exports = routes;
+~~~
+
+Após essa mudançana nossa base de códigos  vamos adicionar também nossa rota `post` que irá ser retornada ao formulário ser submetido. Para fins de testes
+
+~~~javascript
+const express = require('express');
+// criando o roteador
+const routes = express.Router();
+
+// criando uma rota básica
+routes.get('/',(req, res)=>{
+    res.send(`<form action="/" method="post">
+            <label for="clientname">Nome do cliente : </label>
+            <input type="text" name="clientname" id="clientname">
+            <button>Enviar</button>
+            </form>`
+            );
+});
+
+routes.post('/',(req,res)=>{
+    res.send('estou sendo chamado pelo method do formulário');
+});
+
+module.exports = routes;
+~~~
+
+Se tudo ocorreu bem quando recarregar a página após a implementação das mudanças, o formulário deverá ser renderizado, e ao submete-lo a mensagem envida pelo post deverá aparecer na tela.
+
+Agora com tudo funcionando vamos abordar os métodos do objeto `req` :
+
 
 **Recursos Adicionais:**
 
@@ -510,6 +636,13 @@ routes.post('/',(req,res)=>{
     * [Nodejs Tutorial from codevolution](https://m.youtube.com/watch?v=p995SdRXw_E)
     * [Understanding Path Module from Daily Tuition](https://youtu.be/zqYkJed6nc4?si=XVetteBbjVrTUGTg)
     * [Node.js path module from DEV Community](https://dev.to/endeavourmonk/nodejs-path-module-16fm)
+    * [Understanding Path Module - Node For Beginners - 20 from Daily Tuition (Youtube channel)](https://youtu.be/zqYkJed6nc4?si=EfNyRdgoJPT2GkjL)
+
 * Documentação do módulo `fs`: [Node Documentation](https://nodejs.org/api/fs.html)
+* Tutoriais sobre o módulo `fs`:
+    * [Entendendo o Módulo do Sistema de Arquivos Node.js (FS)](https://kinsta.com/pt/base-de-conhecimento/nodejs-fs/)
+    * [Node.js File System Module from W3Schools](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+    * [How To Work with Files using the fs Module in Node.js](https://www.digitalocean.com/community/tutorials/how-to-work-with-files-using-the-fs-module-in-node-js) (Como trabalhar com Arquivos usando o módulo `fs` no Node.Js)
+    * [Understanding File System | Understanding Node.js Core Concepts FREE VERSION from Codedev (Youtube channel)](https://youtu.be/hNzRoZti6vI?si=aAxJvt_K0QHRTZ_L)
 
 
