@@ -426,7 +426,7 @@ project-root
 | -- app.js
 ~~~
 
-## Criando servidores :
+# Criando servidores :
 
 Como o curso dá uma enfase na parte web, um pricipio fundamental se dá na criação de servidores, que controlam e são responsaveis pela parte do backend na web. Deve-se lembrar ao se entrar na parte de servidores web do seu funcionamento com o protocolo http. Principalmente pois ele que dita como cada uma das interações com o backend deve se comportar. O protocolo http é baseado em seus verbos que são :  **GET, POST, PUT, PATCH, DELETE**. Com estes verbos podemos definir como o site será mapeado, e reagirá as requisições feitas ao servidor.
 
@@ -626,7 +626,150 @@ module.exports = routes;
 
 Se tudo ocorreu bem quando recarregar a página após a implementação das mudanças, o formulário deverá ser renderizado, e ao submete-lo a mensagem envida pelo post deverá aparecer na tela.
 
-Agora com tudo funcionando vamos abordar os métodos do objeto `req` :
+Agora com tudo funcionando vamos abordar os métodos do objeto `req`
+
+## Uma Breve introdução aos conceitos dos métodos do Objeto `req` :
+
+No Express.js, o objeto `req` (abreviação de "requisição") fornece acesso a diversos dados sobre a requisição HTTP recebida pelo servidor. Entre esses dados, podemos destacar os métodos `req.params`, `req.query` e `req.body`, que permitem acessar diferentes tipos de informações enviadas pelo cliente.
+
+`req.params` - Parâmetros de Rota:
+
+* **Funcionalidade:** Acessa valores de parâmetros nomeados definidos na URL da requisição.
+* **Sintaxe:** `req.params[nomeDoParametro]`.
+* **Exemplo:** Rota `/users/:id` acessível via `req.params.id`.
+* **Vantagens:**
+    * Permite rotas dinâmicas e adaptáveis.
+    * Útil para buscar recursos específicos por ID ou outro valor único.
+* **Desvantagens:**
+    * Requerem a definição de parâmetros na URL.
+    * Não é adequado para enviar grandes quantidades de dados.
+
+`req.query` - Parâmetros de Consulta :
+
+* **Funcionalidade:** Acessa valores de parâmetros de consulta enviados na URL após o ponto de interrogação (`?`).
+* **Sintaxe:** `req.query[chaveDaConsulta]`.
+* **Exemplo:** `/users?search=valor` acessível via `req.query.search`.
+* **Vantagens:**
+    * Permite enviar dados simples para a rota sem a necessidade de um formulário.
+    * Útil para filtrar ou paginar resultados.
+* **Desvantagens:**
+    * Os valores são visíveis na URL, o que pode ser um problema de segurança.
+    * Não é adequado para enviar grandes quantidades de dados.
+
+`req.body` - Corpo da Requisição :
+
+* **Funcionalidade:** Acessa dados do corpo da requisição, geralmente enviados via formulários HTML ou APIs REST.
+* **Sintaxe:** `req.body[nomeDoCampo]`.
+* **Exemplo:** formulário com campo `name`, acessível via `req.body.name`.
+* **Vantagens:**
+    * Permite enviar grandes quantidades de dados de forma estruturada.
+    * Útil para receber dados de formulários ou APIs REST.
+* **Desvantagens:**
+    * Requer o uso de middleware para habilitar o parse automático de JSON ou outros formatos.
+    * Mais complexo do que `req.params` e `req.query`.
+
+Escolhendo o Método Adequado :
+
+* Utilize `req.params` quando :
+    * A rota precisa de valores dinâmicos para identificar um recurso específico.
+    * Os valores são curtos e simples.
+* Utilize `req.query` quando :
+    * Deseja enviar dados simples para filtrar ou paginar resultados.
+    * Os valores não são sensíveis e podem ser visíveis na URL.
+* Utilize `req.body` quando :
+    * Precisa receber grandes quantidades de dados de forma estruturada.
+    * Os dados são enviados através de formulários HTML ou APIs REST.
+
+**Exemplos de Uso :**
+
+**Exemplo 1 : Buscar um usuário por ID:**
+
+~~~javascript
+app.get('/users/:id', async (req, res) => {
+  const userId = req.params.id;
+  const user = await findUserById(userId);
+
+  if (!user) {
+    return res.status(404).json({ message: 'Usuário não encontrado' });
+  }
+
+  res.json(user);
+});
+~~~
+
+**Exemplo 2 : Filtrar produtos por categoria:**
+
+~~~javascript
+app.get('/products', async (req, res) => {
+  const category = req.query.category;
+  const products = await findProductsByCategory(category);
+
+  res.json(products);
+});
+~~~
+
+**Exemplo 3 : Receber dados de um formulário:**
+
+~~~javascript
+app.post('/register', async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const password = req.body.password;
+
+  await createUser(name, email, password);
+
+  res.json({ message: 'Usuário cadastrado com sucesso' });
+});
+~~~
+
+## Continuando o exemplo :
+
+Agora com um pouco de teoria passada vamos fazer uma recepção básica do nome do cliente criada na nossa base de código. Dentro da rota `post` referente a url `/`, vamos adicionar o seguinte código :
+
+~~~javascript
+    const { clientname } = req.body;
+    res.send(`<p>Olá me chamo : ${clientname}</p>`);
+~~~
+
+Ao adicionar o nosso arquivo `routes.js` deverá ter a seguinte estrutura :
+
+~~~javascript
+const express = require('express');
+// criando o roteador
+const routes = express.Router();
+
+// criando uma rota básica
+routes.get('/',(req, res)=>{
+    res.send(`<form action="/" method="post">
+            <label for="clientname">Nome do cliente : </label>
+            <input type="text" name="clientname" id="clientname">
+            <button>Enviar</button>
+            </form>`
+            );
+});
+
+routes.post('/',(req,res)=>{
+    const { clientname } = req.body;
+    res.send(`<p>Olá me chamo : ${clientname}</p>`);
+});
+
+module.exports = routes;
+~~~
+
+Percebe-se que o arquivo `routes.js` está crescendo gradualmente. Embora tenhamos apenas adicionado duas manipulações de rotas, é hora de começar a considerar mais profundamente o design da arquitetura do nosso projeto. Com a necessidade de incluir uma função anônima para cada rota, é prudente desacoplá-las do arquivo `routes.js` e movê-las para uma pasta separada que podemos chamar de controllers. A criação da pasta controllers é um dos elementos essenciais do padrão de projeto MVC.
+
+Vamos analisar até o momento como deve ter ficado o diretório de trabalho :
+
+~~~plaintext
+| -- | node_modules
+| -- app.js
+| -- package.json
+| -- package-lock.json
+| -- routes.js
+~~~
+
+# Entendendo o Padrão MVC e o implementando em nosso servidor :
+
 
 
 **Recursos Adicionais:**

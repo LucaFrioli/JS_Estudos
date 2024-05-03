@@ -22,4 +22,4 @@
  * Aula_21 : Helmet e CSRF
  * Aula_22 : Helmet no localhost (Evitar durante desenvolvimento)
  * Aula_23 : Resumo e redação para recaptulação dos conteúdos;
- * Aula_24 : Recaptulando e recontruindo o boilerplate do zero para reforço de conteúdos;
+ * Aula_24 : Recaptulando e recontruindo o boilerplate do zero para reforço de conteúdos, e adições extra curso;
