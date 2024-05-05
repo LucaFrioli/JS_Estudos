@@ -756,7 +756,31 @@ routes.post('/',(req,res)=>{
 module.exports = routes;
 ~~~
 
-Percebe-se que o arquivo `routes.js` está crescendo gradualmente. Embora tenhamos apenas adicionado duas manipulações de rotas, é hora de começar a considerar mais profundamente o design da arquitetura do nosso projeto. Com a necessidade de incluir uma função anônima para cada rota, é prudente desacoplá-las do arquivo `routes.js` e movê-las para uma pasta separada que podemos chamar de controllers. A criação da pasta controllers é um dos elementos essenciais do padrão de projeto MVC.
+Além disso para relizar uma boa manipulação de fluxo de dados deveremos adicionar mais alguns middlewares dentro de nosso arquivo `app.js` permitindo que dados enviados pelo formulário e/ou arquivos json possam ser processados de forma segura. Para isso devemos adicionar as seguintes linhas como asseguir :
+
+~~~javascript
+const path = require('node:path');
+const express = require('express');
+
+const routes = require(path.resolve(__dirname,'routes.js'));
+
+const app = express();
+const port = 3000;
+
+// middlewares utilizados para lidar com envios de informações de formulários e arquivos json
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(routes);
+
+
+app.listen(port,()=>{
+    console.log('O servidor está rodando na porta '+port);
+});
+
+~~~
+
+Percebe-se que o arquivo `routes.js` está crescendo gradualmente. Embora tenhamos apenas adicionado duas manipulações de rotas, é hora de começar a considerar mais profundamente o design da arquitetura do nosso projeto. Com a necessidade de incluir uma função anônima para cada rota, é prudente desacoplá-las do arquivo `routes.js` e movê-las para uma pasta separada que podemos chamar de controllers. Além disso percebe-se também que a inserção de html dentro do servidor desta forma não se trona a coisa mais intuitiva, prática e nem mesmo recomendada, também criaremos uma pasta dedicada a isso que poderemos chamar de Views. A criação destas pastas é um dos elementos essenciais do padrão de projeto MVC como veremos mais adiante.
+
 
 Vamos analisar até o momento como deve ter ficado o diretório de trabalho :
 
@@ -768,9 +792,79 @@ Vamos analisar até o momento como deve ter ficado o diretório de trabalho :
 | -- routes.js
 ~~~
 
-# Entendendo o Padrão MVC e o implementando em nosso servidor :
+# Entendendo o Padrão arquitetural MVC e o implementando em nosso servidor :
 
+O padrão de arquitetura MVC consiste na separação e organização do código em camadas de distintas responsabilidades, tais quais abordremos uma a uma ao longo dos próximos tópicos. Por momento vamos compreender de maneira mais básica sobre o que o Modelo MVC se trata:
 
+ - Ele serve para *Organização e Separação de Preocupações*, separando as responsabilidades em camadas distintas (Model, View, Controller) para promover organização, reutilização e testabilidade do código.
+
+ - Camada **Model (Modelo)** : A camada Model, é responsável por gerenciar os dados da aplicação, incluindo acesso a bancos de dados, validações e regras de negócio.
+
+ - Camada **View (Visão)** : A camada View, é responsável pela apresentação dos dados ao usuário, utilizando templates como EJS, Pug ou Handlebars para criar interfaces dinâmicas e interativas.
+
+ - Camada **Controller (Controlador)**: A camada Controller, é a que atua como intermediária entre as duas anteriores, delegando as responsabilidades para as camadas adequadas, e tendo controle do fluxo de direcionamento da aplicação.
+
+## Adicionando a camada de controladores :
+
+Inicalmente pra realizar uma mudança mais simples de se compreender dentro de nossa base de código vamos abordar a Letra `C` do padrão MVC. Ela é referente a camada dos **Controllers** (Controladores), são eles que atuam como os intermediarios, recebem requisições, processam dados e delegam as responsabilidades para as camadas Model e View as quais iremos abordar ao longo desta seção do resumo.
+
+Primeiro iremos começar criando uma pasta que chamaremos de `src`, e dentro dela alocaremos um subdiretorio chamado `controllers`, que por sua vez deverá conter um arquivo que iremos chamar de `homeController.js`, pois ele será o responsavel por ter os controladores das rotas de entrada do nosso site. A Estrutura agora deverá estar parecida com a seguinte :
+
+~~~plaintext
+| -- | node_modules
+| -- | src
+|    | -- | controllers
+|         | -- homeController.js
+| -- app.js
+| -- package.json
+| -- package-lock.json
+| -- routes.js
+~~~
+
+Agora vamos transferir as funções de processamento que se encontam dentro das rotas para este novo arquivo que criamos, e vamos utilizar o objeto de exportação do node para poder utiliza-las de forma modular :
+
+~~~javascript
+// homeController.js
+
+exports.getForm = (req, res)=>{
+    res.send(`<form action="/" method="post">
+            <label for="clientname">Nome do cliente : </label>
+            <input type="text" name="clientname" id="clientname">
+            <button>Enviar</button>
+            </form>`
+            );
+}
+
+exports.tellOla = (req,res)=>{
+    const { clientname } = req.body;
+    res.send(`<p>Olá me chamo : ${clientname}</p>`);
+}
+
+~~~
+
+Feito esta transferência, devemos chama-las dentro de `routes.js`, vamos faze-lo utilizando do módulo path como já foi visto anteriormente, veja como deve ficar o arquivo após as importações e o uso das funções de processamento :
+
+~~~javascript
+// routes.js
+const path = require('node:path');
+const express = require('express');
+const routes = express.Router();
+
+// importação de controllers
+const homeController = require(path.resolve(__dirname,'src','controllers','homeController.js'));
+
+// gerenciando as rotas
+routes.get('/', homeController.getForm);
+routes.post('/',homeController.tellOla);
+
+module.exports = routes;
+~~~
+
+Por uma questão de clareza é sempre muito importante organizarmos as rotas e suas morfologias derivadas do objeto `req`, em diferentes arquivos, como por exemplo : as rotas `/` e suas derivações no arquivo `homeController.js`, as rotas `/products` e suas derivações em um outro arquivo `productsController.js` e assim em diante.
+
+Ao analizarmos o arquivo `homeController.js` novamente, nos é reveladas oportunidades para desacoplar o código HTML, permitindo que a camada View assuma total responsabilidade pela entrega do formulário ao navegador e pelo retorno das informações. Assim respeitando os conceitos vistos ao abordarmos o Padrão MVC.
+
+# Sobre a camada View e a adicionando ao projeto :
 
 **Recursos Adicionais:**
 
