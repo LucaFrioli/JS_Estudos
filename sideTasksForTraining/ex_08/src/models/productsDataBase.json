@@ -1,0 +1,51 @@
+[
+	{
+		"id": 1,
+		"name": "Camiseta Branca",
+		"category": "casual",
+		"price": 29.9,
+		"description": "Camiseta básica branca de algodão com gola redonda e mangas curtas."
+	},
+	{
+		"id": 2,
+		"name": "Camiseta Preta",
+		"category": "esportiva",
+		"price": 34.9,
+		"description": "Camiseta preta de poliéster com tecnologia dry-fit, ideal para atividades físicas."
+	},
+	{
+		"id": 3,
+		"name": "Camiseta Estampada",
+		"category": "casual",
+		"price": 42.9,
+		"description": "Camiseta casual com estampa divertida e colorida, perfeita para o dia a dia."
+	},
+	{
+		"id": 4,
+		"name": "Camiseta Listrada",
+		"category": "casual",
+		"price": 39.9,
+		"description": "Camiseta listrada azul e branca com gola polo e mangas curtas."
+	},
+	{
+		"id": 5,
+		"name": "Camiseta Regata",
+		"category": "esportiva",
+		"price": 25.9,
+		"description": "Camiseta regata cinza de malha respirável, ideal para treinos e dias quentes."
+	},
+	{
+		"id": "okfjxghfk",
+		"name": "Camiseta Invernal",
+		"category": "esportiva",
+		"price": 75.86,
+		"description": "Camiseta segunda pele invernal, ideal para corridas urbanas."
+	},
+	{
+		"id": "testeDeID",
+		"name": "Camisa Polo Listrada",
+		"category": "elegante",
+		"price": 25.9,
+		"description": "Camisa polo Listrada de linho chines, ideal para dias quentes e situações casuais."
+	}
+]

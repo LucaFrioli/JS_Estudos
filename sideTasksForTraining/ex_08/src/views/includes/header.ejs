@@ -1,0 +1,43 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="eg=edge" />
+		<title>T-Shirt Project - <%= title %></title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="navigationHeaderMenuDiv">
+					<ol>
+						<li>
+							<a
+								href="<%= title === 'Home'? '#': '/' %>"
+								class="buttonNavBar"
+								>Home
+							</a>
+						</li>
+						<li>
+							<a
+								href="<%= title === 'Loja'? '#' : '/products' %>"
+								class="buttonNavBar"
+								>Loja
+							</a>
+						</li>
+						<li>
+							<a
+								href="<%= title === 'Sobre Nós'? '#' : '/about' %>"
+								class="buttonNavBar"
+								>Sobre Nós
+							</a>
+						</li>
+					</ol>
+				</div>
+				<a href="#" class="buttonNavBar">Login</a>
+			</nav>
+		</header>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<%- include('includes/header') -%>
+<main role="main">
+	<div class="showProductDisaplay">
+		<div class="infos">
+			<h1 class="name"><%= product.name %></h1>
+			<p class="category">Categoria : <b><%= product.category %></b></p>
+			<p class="price">
+				R$ <%= product.price.toFixed(2).replace('.',',') %>
+			</p>
+			<p class="description"><%= product.description %></p>
+		</div>
+	</div>
+</main>
+<%- include('includes/footer') -%>
