@@ -40,7 +40,7 @@ exports.getByProductCategory = async (req, res) => {
 		const { category } = req.query;
 		const arrayProducts = await getByCategory(category);
 		res.render('products', {
-			title: 'Loja',
+			title: 'Loja ',
 			categoryArray: cache.categories,
 			arrayProducts
 		});

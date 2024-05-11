@@ -722,6 +722,8 @@ app.post('/register', async (req, res) => {
 });
 ~~~
 
+*OBS : Veja o [Arquivo `productsController.js`](https://github.com/LucaFrioli/JS_Estudos/blob/main/sideTasksForTraining/ex_08/src/controllers/productsController.js) do projeto de treino de manipulção de rotas ex_08, para maior entendimento observe o arquivo de rotas do mesmo projeto e o teste,lembre-se de adicionar as infromações necessárias dentro de um arquivo `.env` na raíz do projeto. Veremos mais sobre isso adiante.*
+
 ## Continuando o exemplo :
 
 Agora com um pouco de teoria passada vamos fazer uma recepção básica do nome do cliente criada na nossa base de código. Dentro da rota `post` referente a url `/`, vamos adicionar o seguinte código :
@@ -879,7 +881,7 @@ Ao analizarmos o arquivo `homeController.js` novamente, nos é reveladas oportun
 * Tutoriais sobre o módulo `fs`:
     * [Entendendo o Módulo do Sistema de Arquivos Node.js (FS)](https://kinsta.com/pt/base-de-conhecimento/nodejs-fs/)
     * [Node.js File System Module from W3Schools](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-    * [How To Work with Files using the fs Module in Node.js](https://www.digitalocean.com/community/tutorials/how-to-work-with-files-using-the-fs-module-in-node-js) (Como trabalhar com Arquivos usando o módulo `fs` no Node.Js)
+    * [How To Work with Files using the fs Module in Node.js](https://www.digitalocean.com/community/tutorials/how-to-work-with-files-using-the-fs-module-in-node-js)
     * [Understanding File System | Understanding Node.js Core Concepts FREE VERSION from Codedev (Youtube channel)](https://youtu.be/hNzRoZti6vI?si=aAxJvt_K0QHRTZ_L)
 
 
