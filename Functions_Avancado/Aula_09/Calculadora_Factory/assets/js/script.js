@@ -29,7 +29,7 @@ function calculadora() {
 
         keypressEnter() {
             this.display.addEventListener(`keyup`, e => {
-                if (e.keyCode === 13) {
+                if (/*e.keyCode === 13* método obsoledo utilize o seguinte */ e.key = "Enter") {
                     this.calculateEquation();
                 }
             });

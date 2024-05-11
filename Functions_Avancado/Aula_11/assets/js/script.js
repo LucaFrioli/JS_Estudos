@@ -28,7 +28,7 @@ function Calculadora() {
 
     keypressEnter = () => {
         document.addEventListener(`keyup`, e => {
-            if (e.keyCode === 13) {
+            if (/*e.keyCode === 13 este método de declaração é considerado obseloto utilize */ e.key === "Enter") {
                 calculateEquation();
             }
         });
