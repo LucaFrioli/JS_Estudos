@@ -868,6 +868,56 @@ Ao analizarmos o arquivo `homeController.js` novamente, nos é reveladas oportun
 
 # Sobre a camada View e a adicionando ao projeto :
 
+A camada view vai conter toda a parte de `EJS` (Embedded Javascript templates), ou seja um arquivo similar ao código html só que aceitando notações javascript dentro do código por meio de tags especias (para quem progrma em Java para a web os arquivois `.ejs` é o equivalente aos arquivos `.JSP`). Estes arquivos além de receber tags hmtl padrões como em arquivos estáticos, também recebem lógica, permitindo que as informações advindas do backend possam fluir de maniera mais naturala e dinâmica para o client side, eles servem como um molde para a página.
+
+Antes de continuarmos devemos configurar o uso do `ejs` dentro de nosso arquivo de entrada `app.js`, e além disso configurar dentro de nossa estrutura de pastas um diretório que conterá a lógica do frontend, e um outro diretório para receber conteúdos estáticos, para isso useremos muito do conhecimento obtido druante as aulas de es modules vistos já anteriormente. Caso queira revisar o conteúdo [Clique aqui !](https://github.com/LucaFrioli/JS_Estudos/tree/main/JS_Tooling_e_ES6_Modules);
+
+## Adicionando os diretórios, arquivos e dependencias necessárias :
+
+Vamos mexer um pouco na estrutura de diretórios, adicionaremos a pasta `frontend` e `public` na raíz do projeto, e já criaremos a pasta responsavel pelas `views` dentro de `src`, e uma pasta `includes` dentro da `views`. Além disso criaremos uma estrutura de organização de `assets` dentro da pasta `frontend`, que conterá as pastas `css` dedicadas aos arquivos com esta extenção e `img` para imagens que serão utilizadas pelos arquivos `.css`. Neste ponto também criaremos já os arquivos básicos da pasta frontend, um arquivo `style.css` dentro da pasta `css`, e na raíz relativa de `frontend` uma arquivo `main.js` após isso o projeto ficará assim :
+
+~~~plaintext
+| -- | frontend
+|    | -- | assets
+|    |      | -- | css
+|    |      |      | -- style.css
+|    |      | -- | img
+|    |             | -- imagemFantasia.jpg // arquivo de demonstração
+|    | -- main.js
+|
+| -- | public
+|      | -- | assets
+|             | -- | js
+|
+| -- | node_modules
+|
+| -- | src
+|    | -- | controllers
+|    |      | -- homeController.js
+|    | -- | views
+|           | -- | includes
+|
+| -- app.js
+| -- package.json
+| -- package-lock.json
+| -- routes.js
+~~~
+
+
+Após isso devemos adicionar o arquivo que fará a a transpilação de códigos modernos javascript para códigos aceitos por todos os navegadores, como vimos nas aulas sobre webpack na raíz de nosso projeto, para isso vamos criar no diretório root uma arquivo chamado `webpack.config.js` e colar o código que se encontra no seguinte arquivo : [clicke aqui !](https://github.com/LucaFrioli/JS_Estudos/blob/main/JS_Tooling_e_ES6_Modules/Aula_08/webpack.config.js). Após isso iremos realizar uma mudança na chave `entry` que será a seguinte :
+
+~~~javascript
+       entry: path.resolve(__dirname, 'frontend', 'main.js'),
+~~~
+
+Devemos realizar esta mudança para indicar que nosso arquivo de entrada não é mais o main da pasta src, mas sim o arquivo `main.js` dentro da pasta dedicada `frontend`.
+
+Além disso devemos adicionar as dependências necessárias ao projeto para isso vamos abrir nosso terminal e realizar os seguintes comandos :
+
+~~~bash
+# Adicionando as dependencias necessárias 
+~~~
+
 **Recursos Adicionais:**
 
 * Documentação do módulo `path`: [Node Documentation](https://nodejs.org/api/path.html)
