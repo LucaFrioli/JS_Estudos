@@ -453,7 +453,7 @@ Dentro do arquivo chamado `package.json` na seção de scripts iremos adicionar 
 
 ~~~json
 {
-  "name": "aula_21",
+  "name": "nome_do_projeto",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -724,6 +724,8 @@ app.post('/register', async (req, res) => {
 
 *OBS : Veja o [Arquivo `productsController.js`](https://github.com/LucaFrioli/JS_Estudos/blob/main/sideTasksForTraining/ex_08/src/controllers/productsController.js) do projeto de treino de manipulção de rotas ex_08, para maior entendimento observe o arquivo de rotas do mesmo projeto e o teste,lembre-se de adicionar as infromações necessárias dentro de um arquivo `.env` na raíz do projeto. Veremos mais sobre isso adiante.*
 
+*OBS. pt.2 : Mencionamos já três vezes a palavra middleware, logo sinto pessoalmente que devo uma explicação básica ao menos o que são eles, até que não adrentemos mas a fundo em seus conceitos. Middlewares em contextos mais gerais(integração de sistema heterogênios e orquestração de microservices por exeplo) podem ser considerados softwares que varias aplicações usam para se comunicar uma com as outras. Porém dentro do contexto web Node.js/Express.js são funções que tem acesso aos objetos `req` e `res` porém não são endpoints de rotas. Muitas vezes eles são usados para definir comportamentos mais globais, utilizando o método `.use` que já vimos anteriormente. Caso queira uma recaptulação [Clique aqui!](https://github.com/LucaFrioli/JS_Estudos/blob/main/js_node_npm_express_mongoDB/Aula_14/readme.md)*
+
 ## Continuando o exemplo :
 
 Agora com um pouco de teoria passada vamos fazer uma recepção básica do nome do cliente criada na nossa base de código. Dentro da rota `post` referente a url `/`, vamos adicionar o seguinte código :
@@ -904,7 +906,7 @@ Vamos mexer um pouco na estrutura de diretórios, adicionaremos a pasta `fronten
 ~~~
 
 
-Após isso devemos adicionar o arquivo que fará a a transpilação de códigos modernos javascript para códigos aceitos por todos os navegadores, como vimos nas aulas sobre webpack na raíz de nosso projeto, para isso vamos criar no diretório root uma arquivo chamado `webpack.config.js` e colar o código que se encontra no seguinte arquivo : [clicke aqui !](https://github.com/LucaFrioli/JS_Estudos/blob/main/JS_Tooling_e_ES6_Modules/Aula_08/webpack.config.js). Após isso iremos realizar uma mudança na chave `entry` que será a seguinte :
+Após isso devemos adicionar o arquivo que fará a a transpilação de códigos modernos javascript para códigos aceitos por todos os navegadores, como vimos nas aulas sobre webpack na raíz de nosso projeto, para isso vamos criar no diretório root uma arquivo chamado `webpack.config.js` e colar o código que se encontra no seguinte arquivo : [clique aqui !](https://github.com/LucaFrioli/JS_Estudos/blob/main/JS_Tooling_e_ES6_Modules/Aula_08/webpack.config.js). Após isso iremos realizar uma mudança na chave `entry` que será a seguinte :
 
 ~~~javascript
        entry: path.resolve(__dirname, 'frontend', 'main.js'),
@@ -912,10 +914,77 @@ Após isso devemos adicionar o arquivo que fará a a transpilação de códigos 
 
 Devemos realizar esta mudança para indicar que nosso arquivo de entrada não é mais o main da pasta src, mas sim o arquivo `main.js` dentro da pasta dedicada `frontend`.
 
-Além disso devemos adicionar as dependências necessárias ao projeto para isso vamos abrir nosso terminal e realizar os seguintes comandos :
+Além disso devemos adicionar as dependências necessárias ao projeto, para isso vamos abrir nosso terminal e realizar os seguintes comandos :
 
 ~~~bash
-# Adicionando as dependencias necessárias 
+# Adicionando as dependencias necessárias de desenvolvimento
+npm i --save-dev @babel/cli @babel/core @babel/preset-env babel-loader webpack webpack-cli
+# Adicionando as dependencias necessárias
+npm i regenerator-runtime style-loader css-loader core-js ejs
+~~~
+
+Após isto devemos abrir o `package.json` e adicionar um script `dev` que ficará responsável por gerenciar o `webpack`, e devemos também reformular o script `start` para que ele ignore as novas pastas que adicionamos ao projeto :
+
+~~~json
+{
+  "name": "nome_do_projeto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "webpack -w",
+    "start": "nodemon --ignore frontend --ignore public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.37.0",
+    "css-loader": "^7.1.1",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
+    "regenerator-runtime": "^0.14.1",
+    "style-loader": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.5",
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
+    "babel-loader": "^9.1.3",
+    "nodemon": "^3.0.3",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
+~~~
+
+## Configurando o Projeto para adicionar a camada view :
+
+Após as preparações básicas para a entrada da camada view em nossa estrutura, vamos configurar os arquivos necessários para começar a compreender como ela funciona, e quais as possibilidades que o arquivos *ejs* trazem para dentro de um projeto. Vamos abrir nosso arquivo `app.js`, e adicionaremos sets e um middleware padrões para definir quais os diretórios de páginas estática, ou seja onde as páginas após serem processadas devem ser enviadas(será a pasta criada `public`), e settar que o servidor deve utilizar a engine **ejs** para processar as views, na pasta que criamos `views`. Veja como ficará o código com estas mudanças :
+
+~~~javascript
+// app.js
+const path = require('node:path');
+const express = require('express');
+
+const routes = require(path.resolve(__dirname, 'routes.js'));
+
+const app = express();
+const port = 3000;
+
+// middlewares
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static(path.resolve(__dirname, 'public'))); // middleware utilizado para definição da pasta com os contúdos estáticos
+app.use(routes);
+
+app.set('views', path.resolve(__dirname, 'src', 'views'));
+app.set('view engine', 'ejs');
+
+app.listen(port, () => {
+    console.log('O servidor está rodando na porta ' + port);
+});
 ~~~
 
 **Recursos Adicionais:**
