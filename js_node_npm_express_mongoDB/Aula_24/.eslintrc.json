@@ -1,0 +1,10 @@
+{
+	"env": {},
+	"extends": ["standard", "prettier"],
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": "latest"
+	},
+	"plugins": ["import"],
+	"rules": {}
+}

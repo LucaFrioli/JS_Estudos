@@ -2,6 +2,7 @@ const { resolve, join } = require('path');
 const express = require('express');
 const routes = express.Router();
 
+// equivalente a  './src/controllers'
 const controllersPage = join(__dirname, 'src', 'controllers');
 
 // calling controllers modules
