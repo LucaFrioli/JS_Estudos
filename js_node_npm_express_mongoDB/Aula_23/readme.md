@@ -1086,6 +1086,8 @@ index.ejs
 
 Estas adiçoes já começam a deixar o desenvolvimento mais dinâmico, permitindo que façamos por exeplo um menu dentro do header, que será replicado por toda as outras páginas de nosso site, evitando muita reescrita de códigos, isso também pode vir bem a clahar quando precisarmos criar um componente que deve ser replicado em várias páginas e endpoints que renderizem views em nossa aplicação.
 
+### Adicionando estruturas de controle e injetando conteúdos nas views :
+
 **Recursos Adicionais:**
 
 * Documentação do módulo `path`: [Node Documentation](https://nodejs.org/api/path.html)
