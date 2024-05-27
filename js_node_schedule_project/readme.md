@@ -14,11 +14,11 @@ Tasks da primeira etapa :
 
 - [x] Desenvolver uma Página de erro a qual seja amigavel ao usuário; (Tenha a total liberdade criativa);
 
-- [ ] Desenvolver um template de como deverá ser o display da agenda :
-	- [ ] Deverá conter um título dizendo do que se trata as informações;
-	- [ ] Deverá conter uma frase explicando o que está ocorrendo para o usuário ou o confortando com boas vindas;
-	- [ ] Deverá conter uma div com erro ou informação (no momento ela não precisa ser integrada a nada, mas funcionará com as flash messages posteriormente);
-	- [ ] Uma tabela ou display para informações de contatos cadastrados;
+- [x] Desenvolver um template de como deverá ser o display da agenda :
+	- [x] Deverá conter um título dizendo do que se trata as informações;
+	- [x] Deverá conter uma frase explicando o que está ocorrendo para o usuário ou o confortando com boas vindas;
+	- [x] Deverá conter uma div com erro ou informação (no momento ela não precisa ser integrada a nada, mas funcionará com as flash messages posteriormente);
+	- [x] Uma tabela ou display para informações de contatos cadastrados;
 
 - [ ] Estilizar tudo que foi criado, e deixar responsivo, siga o padrão de desing mobile-first de preferência; (caso queira pode utilizar bootstrap);
 
