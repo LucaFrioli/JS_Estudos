@@ -41,7 +41,7 @@ Neste módulo, o Node.js foi a estrela principal, abrindo um mundo de possibilid
 
 A seguir iremos discorrer sobre toda a teoria vista de uma maneira mais ampla que nas aulas, porém aprofundando em cada tópico.
 
-## Sobre a npm :
+## Sobre a npm:
 
 Para facilitar alguns processos e gerencia-los da melhor forma, existem então os gerenciadores de pacotes para o ecossistema do nodeJS, o que utilizamos e vamos utilizar é o mais famoso e um dos primeiros, e recomendado isso por vir nativo junto do node, ele se chama Node Package Maneger(NPM), com ele podemos instalar pacotes e módulos para otimizar e gerenciar funcionalidades dentro de uma aplicação.
 
@@ -62,13 +62,13 @@ Conhecemos os principais comandos para utilizar o npm, sendo eles :
 -   `npm ls` para ver todas as dependencias instaladas no projeto;
 -   `npm ls --all` para averiguar todas as dependencias e subdependencias do projeto;
 
-# Sobre leitura e escrita de arquivos com o FS :
+# Sobre leitura e escrita de arquivos com o FS:
 
 Após conhecer um pouco sobre o gerenciador de pacotes `npm` caimos de cara no código para compreender um pouco mais sobre o nodeJS em si e conecemos dois modulos muito importantes para programação backend, o `fs` e o `path`, que sao muito uteis e importantes para gerenciar logs de erros e afins, o que ajuda a manter um bom ecossistema de desenvolvimento dentro de um site. Com esses dois modulos em conjuntos além de podermos explorar arquivos, fazer contagem deles na raís do projeto, eventualmente criar automatizações,como abastecimento e leitura de planilhas e e documentos, ele ajuda a criar os logs, o que facilita na prevenção de bugs, e é muito útil a longo prazo dentro do ecossistema criado no aplicativo;
 
 Ao utilizar também abos os módulos do nodeJS usamos conceitos já vistos dentro de módulos anteriores, como recursão mútua para iterar sobre diretórios, compreendemos também um pouco sobre expressões regulares para filtragem de buscas. Utilizamos para criação de logs objetos nativos como o objeto Date, além de conceitos avançados de função e delegação de serviços.
 
-## Sobre o módulo path :
+## Sobre o módulo path:
 
 Antes de entender melhor a manipulação de arquivos devemos compreender conceitos de caminhos relativos vs. caminhos absolutos.
 
@@ -225,7 +225,7 @@ const isAbsoluto = path.isAbsolute('/home/usuario/arquivo.txt');
 console.log(isAbsoluto); // true
 ~~~
 
-## Sobre o módulo fs :
+## Sobre o módulo fs:
 
 Dentro do módulo `fs` temos varias ações possíveis para manipulação das estruturas e dos arquivos. Antes do NodeJs 10 era preciso trablahar com estruturas de callbacks para evitar o fluxos de dados I/O bloqueantes, apartir da verção 10 foi disponibilizado o módulo `fs.promises`, assim permitindo estruturas assíncronas para as operações que são realizadas, deixando o desenvolvimento mais intuitivo, e menos verboso, sanando os bloqueios criados pelas operações realizadas.
 
@@ -283,7 +283,7 @@ Podemos definir e dividir os métodos em quatro grandes grupos :
 * `chown(path, uid, gid)`
 * `truncate(path, len)`
 
-### **Aprofundando-se nos comandos principais utilizados :**
+### **Aprofundando-se nos comandos principais utilizados:**
 
 A principio e para mantermos o foco de nossos estudos vamos dar uma pequena aprofundada apenas nos comandos utilizados ao longo desta sessão. Vamos criar um programa que cria duas pastas com nomes distintos, e faça uma leitura de um arquivo em uma terciera pasta, e crie um arquivo com este conteúdo em uma das duas pastas criadas, enquanto na outra crie um arquivo json que contenha um objeto chave valor que tenha um conteúdo Hello, World! :
 
@@ -426,7 +426,7 @@ project-root
 | -- app.js
 ~~~
 
-# Criando servidores :
+# Criando servidores:
 
 Como o curso dá uma enfase na parte web, um pricipio fundamental se dá na criação de servidores, que controlam e são responsaveis pela parte do backend na web. Deve-se lembrar ao se entrar na parte de servidores web do seu funcionamento com o protocolo http. Principalmente pois ele que dita como cada uma das interações com o backend deve se comportar. O protocolo http é baseado em seus verbos que são :  **GET, POST, PUT, PATCH, DELETE**. Com estes verbos podemos definir como o site será mapeado, e reagirá as requisições feitas ao servidor.
 
@@ -726,7 +726,7 @@ app.post('/register', async (req, res) => {
 
 *OBS. pt.2 : Mencionamos já três vezes a palavra middleware, logo sinto pessoalmente que devo uma explicação básica ao menos o que são eles, até que não adrentemos mas a fundo em seus conceitos. Middlewares em contextos mais gerais(integração de sistema heterogênios e orquestração de microservices por exeplo) podem ser considerados softwares que varias aplicações usam para se comunicar uma com as outras. Porém dentro do contexto web Node.js/Express.js são funções que tem acesso aos objetos `req` e `res` porém não são endpoints de rotas. Muitas vezes eles são usados para definir comportamentos mais globais, utilizando o método `.use` que já vimos anteriormente. Caso queira uma recaptulação [Clique aqui!](https://github.com/LucaFrioli/JS_Estudos/blob/main/js_node_npm_express_mongoDB/Aula_14/readme.md)*
 
-## Continuando o exemplo :
+## Continuando o exemplo:
 
 Agora com um pouco de teoria passada vamos fazer uma recepção básica do nome do cliente criada na nossa base de código. Dentro da rota `post` referente a url `/`, vamos adicionar o seguinte código :
 
@@ -796,7 +796,7 @@ Vamos analisar até o momento como deve ter ficado o diretório de trabalho :
 | -- routes.js
 ~~~
 
-# Entendendo o Padrão arquitetural MVC e o implementando em nosso servidor :
+# Entendendo o Padrão arquitetural MVC e o implementando em nosso servidor:
 
 O padrão de arquitetura MVC consiste na separação e organização do código em camadas de distintas responsabilidades, tais quais abordremos uma a uma ao longo dos próximos tópicos. Por momento vamos compreender de maneira mais básica sobre o que o Modelo MVC se trata:
 
@@ -868,13 +868,13 @@ Por uma questão de clareza é sempre muito importante organizarmos as rotas e s
 
 Ao analizarmos o arquivo `homeController.js` novamente, nos é reveladas oportunidades para desacoplar o código HTML, permitindo que a camada View assuma total responsabilidade pela entrega do formulário ao navegador e pelo retorno das informações. Assim respeitando os conceitos vistos ao abordarmos o Padrão MVC.
 
-# Sobre a camada View e a adicionando ao projeto :
+## Sobre a camada View e a adicionando ao projeto :
 
 A camada view vai conter toda a parte de `EJS` (Embedded Javascript templates), ou seja um arquivo similar ao código html só que aceitando notações javascript dentro do código por meio de tags especias (para quem progrma em Java para a web os arquivois `.ejs` é o equivalente aos arquivos `.JSP`). Estes arquivos além de receber tags hmtl padrões como em arquivos estáticos, também recebem lógica, permitindo que as informações advindas do backend possam fluir de maniera mais naturala e dinâmica para o client side, eles servem como um molde para a página.
 
 Antes de continuarmos devemos configurar o uso do `ejs` dentro de nosso arquivo de entrada `app.js`, e além disso configurar dentro de nossa estrutura de pastas um diretório que conterá a lógica do frontend, e um outro diretório para receber conteúdos estáticos, para isso useremos muito do conhecimento obtido druante as aulas de es modules vistos já anteriormente. Caso queira revisar o conteúdo [Clique aqui !](https://github.com/LucaFrioli/JS_Estudos/tree/main/JS_Tooling_e_ES6_Modules);
 
-## Adicionando os diretórios, arquivos e dependencias necessárias :
+## Adicionando os diretórios, arquivos e dependencias necessárias:
 
 Vamos mexer um pouco na estrutura de diretórios, adicionaremos a pasta `frontend` e `public` na raíz do projeto, e já criaremos a pasta responsavel pelas `views` dentro de `src`, e uma pasta `includes` dentro da `views`. Além disso criaremos uma estrutura de organização de `assets` dentro da pasta `frontend`, que conterá as pastas `css` dedicadas aos arquivos com esta extenção e `img` para imagens que serão utilizadas pelos arquivos `.css`. Neste ponto também criaremos já os arquivos básicos da pasta frontend, um arquivo `style.css` dentro da pasta `css`, e na raíz relativa de `frontend` uma arquivo `main.js` após isso o projeto ficará assim :
 
@@ -923,7 +923,7 @@ npm i --save-dev @babel/cli @babel/core @babel/preset-env babel-loader webpack w
 npm i regenerator-runtime style-loader css-loader core-js ejs
 ~~~
 
-Após isto devemos abrir o `package.json` e adicionar um script `dev` que ficará responsável por gerenciar o `webpack`, e devemos também reformular o script `start` para que ele ignore as novas pastas que adicionamos ao projeto :
+Após isto devemos abrir o `package.json` e adicionar um script `dev` que ficará responsável por iniciar o `webpack`, e devemos também reformular o script `start` para que ele ignore as novas pastas que adicionamos ao projeto :
 
 ~~~json
 {
@@ -959,7 +959,7 @@ Após isto devemos abrir o `package.json` e adicionar um script `dev` que ficar�
 }
 ~~~
 
-## Configurando o Projeto para adicionar a camada view :
+## Configurando o Projeto para adicionar a camada view:
 
 Após as preparações básicas para a entrada da camada view em nossa estrutura, vamos configurar os arquivos necessários para começar a compreender como ela funciona, e quais as possibilidades que o arquivos *ejs* trazem para dentro de um projeto. Vamos abrir nosso arquivo `app.js`, e adicionaremos sets e um middleware padrões para definir quais os diretórios de páginas estática, ou seja onde as páginas após serem processadas devem ser enviadas(será a pasta criada `public`), e settar que o servidor deve utilizar a engine **ejs** para processar as views, na pasta que criamos `views`. Veja como ficará o código com estas mudanças :
 
@@ -986,6 +986,105 @@ app.listen(port, () => {
     console.log('O servidor está rodando na porta ' + port);
 });
 ~~~
+
+Feitas as adições podemos começar as alterações dentro dos nossos controllers, fazendo a separação dos códigos html de nossos códigos Javascript, para isso vamos criar um `index.ejs` dentro do diretório **`views`** e recortar e colar o formulário do controller `getForm`, e o parágrafo de `tellOla` para dentro do arquivo criado.
+
+Além disso devemos chamar o método do objeto `res`, responsável por renderizar páginas da `views`, no lugar do método `.send()`, vamos utilizar o método `.render()` que recebe em seus parâmetros uma string contendo o nome do arquivo a ser renderizado, e um objeto opcional que injetará conteúdos. Sendo este segundo opcional, e abordado mais adiante. No caso adicionaremos a renderização do arquivo `index` que criamos.
+
+Veja a seguir como deve ter ficado nosso `homeController.js` após as alterações :
+
+~~~javascript
+// homeController.js
+
+exports.getForm = (req, res)=>{
+    res.render('index');
+}
+
+exports.tellOla = (req,res)=>{
+    const { clientname } = req.body;
+    res.render('index');
+}
+~~~
+
+Veja como deve estar nesse momento nosso arquivo `index.ejs` :
+
+~~~html
+<!-- index.ejs -->
+
+<form action="/" method="post">
+   <label for="clientname">Nome do cliente : </label>
+   <input type="text" name="clientname" id="clientname">
+   <button>Enviar</button>
+</form>
+
+<p>Olá me chamo : ${clientname}</p>
+
+~~~
+
+
+## Começando a mexer e entender o ejs e suas etiquetas:
+
+Perceba que ao rodar o código neste momento nada irá ocorrer além da renderiação simples do index, não difernciando mais a interpolação de texto comum, e renderizando o parágrafo até antes de enviar o formulário, além disso nota-se que a página não contém nenhum metadado, e nem mesmo uma estrutura esperada dentro de um `html` (visto que já foi citado a sua similaridade).
+
+Para resolver estes problemas utilizamos as etiquetas `ejs`, que é o que diferencia códigos `ejs` de códigos `html`, uma **etiqueta ejs** é diferenciada de uma tag comum pelo modo em como ela é declarada, enquanto uma tag comum de html é representada apenas pelos sinais de menor e maior(`<nome_da_tag>`), uma etiqueta é definida por: menor porcentagem porcentagem maior (`<% %>`).
+
+As etiquetas ejs servem para que se possa utilizar javascript dentro do código html, seja adicionar informações, ou usar estruturas mais complexas como por exeplo, loops for, estruturas de decisão e até mesmo funções, além de poder componentizar as páginas podendo separar em partes, reduzindo a quantidade de linhas de código e os deixando mais organizados. Por este motivo criamos a pasta `includes`. Tudo é processado e a saída no navegador são páginas html, dada a breve explicação do conceito de ejs disponibilizarei uma lista de etiquetas, com as explicações do que elas fazem antes de prosseguirmos com o código  :
+
+ - **Expressões de código:** `<% code %>` - Executa código JavaScript e imprime o resultado na saída HTML.
+ - **Declarações de variáveis:** `<%- varName = value %>` - Define uma variável no contexto do template EJS.
+ - **Incorporando variáveis com escape de html:** `<%= title %>`- No lado do servidor um objeto é enviado contendo uma chave com o valor da variável definida, este modo mostra tags se houverem nas variaveis.
+ - **Incorporando variáveis sem escape de html:** `<%- title %>`- No lado do servidor um objeto é enviado contendo uma chave com o valor da variável definida, este modo não mostra tags se houverem nas variaveis.
+ - **Blocos de código condicional:** `<% if (condition) { %> ... <% } %>` - Executa o código dentro do bloco se a condição for verdadeira.
+ - **Loops:** `<% for (var i = 0; i < length; i++) { %> ... <% } %>` - Executa o código dentro do bloco para cada iteração do loop.
+ - **Incluido partials e layouts:** `<%- include('caminho_para_arquivo') %>` - É possível separar trechos de códigos em componentes tornando o código mais reutilizavel. Este coceito se chama de composição.
+ - **Comentários:** `<%- // comment %>` - Ignorado pelo compilador EJS e não é impresso na saída HTML.
+
+### Entendendo o conceito de includes:
+
+Vamos começar as mudanças de nossa view, adicionando os requisitos básicos de uma página web, adicionando uma head para conter os metadados da página, um body para encapsular todo o conteúdo da página e um footer para sr o róda pé desta página. Para isso dentro da pasta `includes` que deve estar no seguinte caminho em relação ao root dir do projeto ./src/views/includes vamos criar os seguintes arquivos: `header.ejs` e `footer.ejs`. E vamos começar a incluir os conteúdos :
+
+**header.ejs:**
+~~~html
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="eg=edge" />
+        <!-- caso queira adicionar mais metadados como autor, e afins sinta-se a vontade de faze-lo nesta área antes do title -->
+		<title>Project - Redação sobre o módulo : conceitos de express e mongodb</title>
+	</head>
+	<body>
+        <!-- caso queira adicione aqui um header para aplicação -->
+ ~~~
+
+**footer.ejs:**
+ ~~~html
+    <!-- caso queira adicionar um footer na aplicação o adicione aqui -->
+ </body>
+</html>
+ ~~~
+
+Feita estas adições, vamos abrir nosso arquivo `index.ejs` e adicionar em nossa página os includes do header e do footer, assim seguiremos uma boa prática de progrmação, além de que irá permitir que carreguemos toda a parte do fontend, porém isso veremos mais adiante, vamos fazer a alteração proposta:
+
+index.ejs
+~~~html
+<!-- index.ejs -->
+
+<%- include('includes/header') -%>
+
+<form action="/" method="post">
+   <label for="clientname">Nome do cliente : </label>
+   <input type="text" name="clientname" id="clientname">
+   <button>Enviar</button>
+</form>
+
+<p>Olá me chamo : ${clientname}</p>
+
+<%- include('includes/footer') -%>
+~~~
+
+Estas adiçoes já começam a deixar o desenvolvimento mais dinâmico, permitindo que façamos por exeplo um menu dentro do header, que será replicado por toda as outras páginas de nosso site, evitando muita reescrita de códigos, isso também pode vir bem a clahar quando precisarmos criar um componente que deve ser replicado em várias páginas e endpoints que renderizem views em nossa aplicação.
 
 **Recursos Adicionais:**
 

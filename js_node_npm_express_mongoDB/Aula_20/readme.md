@@ -114,7 +114,7 @@ Veja como é vantajoso utilizar composições, e como aos poucos organiza melhor
                     <h3><%= email %></h3>
                 <% } %>
             <% } else{ %>
-                <p>nenhum email foi enfiado para ser iterado</p>
+                <p>nenhum email foi enviado para ser iterado</p>
             <% } %>
         </div>
     </section>
