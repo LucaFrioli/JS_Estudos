@@ -19,6 +19,7 @@ header {
 	justify-content: space-between;
 	background-color: var(--primary-color-100);
 	color: var(--secondary-color-100);
+	margin-bottom: 1.5rem;
 }
 
 header span.brandding-infos {
@@ -124,4 +125,33 @@ footer div span {
 	display: flex;
 	flex-direction: row;
 	gap: 5px;
+}
+
+/* trabalhando com a main da agenda */
+main#agenda{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+main#agenda div.chamada{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+main#agenda div.chamada h1{
+	margin-bottom: 0.7rem;
+}
+
+main#agenda div.chamada div.messagesFlash{
+	background-color: rgba(214, 120, 120, 0.644);
+	border: solid red 0.5px;
+	color: var(--secondary-color-100);
+	padding: 0.5rem;
+	border-radius: 5rem;
+	margin: 10px 0px;
 }
