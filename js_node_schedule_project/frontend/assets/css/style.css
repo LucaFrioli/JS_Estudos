@@ -42,12 +42,23 @@ header nav {
 	padding: 1rem;
 }
 
-header nav ol {
+header nav menu {
 	list-style: none;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
 	font-family: 'Montserrat', sans-serif;
+}
+
+header nav menu span#burguer {
+	/*coloca o icone do menu mobile*/
+	display: none;
+	color: var(--secondary-color-100);
+	font-size: 2.3rem;
+	background-color: var(--primary-color-100);
+	padding: 0.5rem;
+	border-radius: 25%;
+	cursor: pointer;
 }
 
 header a.button-fake {
@@ -56,12 +67,43 @@ header a.button-fake {
 	padding: 0.4rem;
 	font-weight: 700;
 	text-decoration: none;
+	border-radius: 15%;
+	border: none;
 }
 
 header a.button-fake:hover {
 	background-color: var(--secondary-color-75);
 }
-/* adicionar mais adiante a responsividade  */
+/* adicionar responsividade  */
+
+.hidden {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	header nav menu {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	header nav menu span#burguer {
+		display: block;
+	}
+
+	header nav menu li {
+		display: none;
+	}
+
+	header nav menu li.display-mobile {
+		display: flex;
+		flex-direction: column;
+	}
+
+	header a.button-fake{
+		border-radius: 0;
+		border: solid black 1px;
+	}
+}
 
 /* trabalhando com o footer */
 
@@ -78,7 +120,7 @@ footer {
 	padding: 1rem;
 }
 
-footer div span{
+footer div span {
 	display: flex;
 	flex-direction: row;
 	gap: 5px;

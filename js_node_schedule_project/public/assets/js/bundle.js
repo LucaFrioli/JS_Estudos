@@ -1,6 +1,32 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./frontend/assets/js/burguerMenu.js":
+/*!*******************************************!*\
+  !*** ./frontend/assets/js/burguerMenu.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+exports.showMenu = function () {
+  var menu = document.querySelector('menu');
+  var liArray = menu.querySelectorAll('li');
+  var liDisplay = liArray[1].classList;
+  if (liDisplay.contains('normal')) {
+    liArray.forEach(function (item) {
+      item.classList.remove('normal');
+      item.classList.add('display-mobile');
+    });
+  } else {
+    liArray.forEach(function (item) {
+      item.classList.remove('display-mobile');
+      item.classList.add('normal');
+      item.classList.add('hidden');
+    });
+  }
+};
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./frontend/assets/css/style.css":
 /*!*****************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./frontend/assets/css/style.css ***!
@@ -64,12 +90,23 @@ header nav {
 	padding: 1rem;
 }
 
-header nav ol {
+header nav menu {
 	list-style: none;
 	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
 	font-family: 'Montserrat', sans-serif;
+}
+
+header nav menu span#burguer {
+	/*coloca o icone do menu mobile*/
+	display: none;
+	color: var(--secondary-color-100);
+	font-size: 2.3rem;
+	background-color: var(--primary-color-100);
+	padding: 0.5rem;
+	border-radius: 25%;
+	cursor: pointer;
 }
 
 header a.button-fake {
@@ -78,12 +115,43 @@ header a.button-fake {
 	padding: 0.4rem;
 	font-weight: 700;
 	text-decoration: none;
+	border-radius: 15%;
+	border: none;
 }
 
 header a.button-fake:hover {
 	background-color: var(--secondary-color-75);
 }
-/* adicionar mais adiante a responsividade  */
+/* adicionar responsividade  */
+
+.hidden {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	header nav menu {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	header nav menu span#burguer {
+		display: block;
+	}
+
+	header nav menu li {
+		display: none;
+	}
+
+	header nav menu li.display-mobile {
+		display: flex;
+		flex-direction: column;
+	}
+
+	header a.button-fake{
+		border-radius: 0;
+		border: solid black 1px;
+	}
+}
 
 /* trabalhando com o footer */
 
@@ -100,12 +168,12 @@ footer {
 	padding: 1rem;
 }
 
-footer div span{
+footer div span {
 	display: flex;
 	flex-direction: row;
 	gap: 5px;
 }
-`, "",{"version":3,"sources":["webpack://./frontend/assets/css/style.css"],"names":[],"mappings":"AAEA;CACC,oCAAoC;CACpC,yCAAyC;CACzC,wCAAwC;AACzC;;AAEA;CACC,sBAAsB;CACtB,SAAS;CACT,UAAU;CACV,oCAAoC;AACrC;;AAEA,8BAA8B;AAC9B;CACC,aAAa;CACb,8BAA8B;CAC9B,0CAA0C;CAC1C,iCAAiC;AAClC;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,mBAAmB;CACnB,uBAAuB;CACvB,gBAAgB;AACjB;;AAEA;CACC,UAAU;CACV,kBAAkB;CAClB,cAAc;AACf;;AAEA;CACC,aAAa;CACb,uBAAuB;CACvB,mBAAmB;CACnB,aAAa;AACd;;AAEA;CACC,gBAAgB;CAChB,aAAa;CACb,mBAAmB;CACnB,WAAW;CACX,qCAAqC;AACtC;;AAEA;CACC,+BAA+B;CAC/B,4CAA4C;CAC5C,eAAe;CACf,gBAAgB;CAChB,qBAAqB;AACtB;;AAEA;CACC,2CAA2C;AAC5C;AACA,6CAA6C;;AAE7C,6BAA6B;;AAE7B;CACC,0CAA0C;CAC1C,iCAAiC;CACjC,aAAa;CACb,sBAAsB;CACtB,kBAAkB;CAClB,WAAW;CACX,mBAAmB;CACnB,uBAAuB;CACvB,SAAS;CACT,aAAa;AACd;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,QAAQ;AACT","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');\n\n:root {\n\t--primary-color-100: rgb(65, 2, 184);\n\t--secondary-color-100: rgb(255, 255, 255);\n\t--secondary-color-75: rgb(216, 216, 216);\n}\n\n* {\n\tbox-sizing: border-box;\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: 'Noto Sans', sans-serif;\n}\n\n/* trabalhando como o header */\nheader {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tbackground-color: var(--primary-color-100);\n\tcolor: var(--secondary-color-100);\n}\n\nheader span.brandding-infos {\n\tdisplay: flex;\n\tflex-direction: row;\n\talign-items: center;\n\tjustify-content: center;\n\tmax-width: 150px;\n}\n\nheader span.brandding-infos img {\n\twidth: 50%;\n\tborder-radius: 50%;\n\tmargin: 0.7rem;\n}\n\nheader nav {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\tpadding: 1rem;\n}\n\nheader nav ol {\n\tlist-style: none;\n\tdisplay: flex;\n\tflex-direction: row;\n\tgap: 0.5rem;\n\tfont-family: 'Montserrat', sans-serif;\n}\n\nheader a.button-fake {\n\tcolor: var(--primary-color-100);\n\tbackground-color: var(--secondary-color-100);\n\tpadding: 0.4rem;\n\tfont-weight: 700;\n\ttext-decoration: none;\n}\n\nheader a.button-fake:hover {\n\tbackground-color: var(--secondary-color-75);\n}\n/* adicionar mais adiante a responsividade  */\n\n/* trabalhando com o footer */\n\nfooter {\n\tbackground-color: var(--primary-color-100);\n\tcolor: var(--secondary-color-100);\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\twidth: 100%;\n\talign-items: center;\n\tjustify-content: center;\n\tbottom: 0;\n\tpadding: 1rem;\n}\n\nfooter div span{\n\tdisplay: flex;\n\tflex-direction: row;\n\tgap: 5px;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./frontend/assets/css/style.css"],"names":[],"mappings":"AAEA;CACC,oCAAoC;CACpC,yCAAyC;CACzC,wCAAwC;AACzC;;AAEA;CACC,sBAAsB;CACtB,SAAS;CACT,UAAU;CACV,oCAAoC;AACrC;;AAEA,8BAA8B;AAC9B;CACC,aAAa;CACb,8BAA8B;CAC9B,0CAA0C;CAC1C,iCAAiC;AAClC;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,mBAAmB;CACnB,uBAAuB;CACvB,gBAAgB;AACjB;;AAEA;CACC,UAAU;CACV,kBAAkB;CAClB,cAAc;AACf;;AAEA;CACC,aAAa;CACb,uBAAuB;CACvB,mBAAmB;CACnB,aAAa;AACd;;AAEA;CACC,gBAAgB;CAChB,aAAa;CACb,mBAAmB;CACnB,WAAW;CACX,qCAAqC;AACtC;;AAEA;CACC,gCAAgC;CAChC,aAAa;CACb,iCAAiC;CACjC,iBAAiB;CACjB,0CAA0C;CAC1C,eAAe;CACf,kBAAkB;CAClB,eAAe;AAChB;;AAEA;CACC,+BAA+B;CAC/B,4CAA4C;CAC5C,eAAe;CACf,gBAAgB;CAChB,qBAAqB;CACrB,kBAAkB;CAClB,YAAY;AACb;;AAEA;CACC,2CAA2C;AAC5C;AACA,8BAA8B;;AAE9B;CACC,aAAa;AACd;;AAEA;CACC;EACC,sBAAsB;EACtB,MAAM;CACP;;CAEA;EACC,cAAc;CACf;;CAEA;EACC,aAAa;CACd;;CAEA;EACC,aAAa;EACb,sBAAsB;CACvB;;CAEA;EACC,gBAAgB;EAChB,uBAAuB;CACxB;AACD;;AAEA,6BAA6B;;AAE7B;CACC,0CAA0C;CAC1C,iCAAiC;CACjC,aAAa;CACb,sBAAsB;CACtB,kBAAkB;CAClB,WAAW;CACX,mBAAmB;CACnB,uBAAuB;CACvB,SAAS;CACT,aAAa;AACd;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,QAAQ;AACT","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');\n\n:root {\n\t--primary-color-100: rgb(65, 2, 184);\n\t--secondary-color-100: rgb(255, 255, 255);\n\t--secondary-color-75: rgb(216, 216, 216);\n}\n\n* {\n\tbox-sizing: border-box;\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: 'Noto Sans', sans-serif;\n}\n\n/* trabalhando como o header */\nheader {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tbackground-color: var(--primary-color-100);\n\tcolor: var(--secondary-color-100);\n}\n\nheader span.brandding-infos {\n\tdisplay: flex;\n\tflex-direction: row;\n\talign-items: center;\n\tjustify-content: center;\n\tmax-width: 150px;\n}\n\nheader span.brandding-infos img {\n\twidth: 50%;\n\tborder-radius: 50%;\n\tmargin: 0.7rem;\n}\n\nheader nav {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\tpadding: 1rem;\n}\n\nheader nav menu {\n\tlist-style: none;\n\tdisplay: flex;\n\tflex-direction: row;\n\tgap: 0.5rem;\n\tfont-family: 'Montserrat', sans-serif;\n}\n\nheader nav menu span#burguer {\n\t/*coloca o icone do menu mobile*/\n\tdisplay: none;\n\tcolor: var(--secondary-color-100);\n\tfont-size: 2.3rem;\n\tbackground-color: var(--primary-color-100);\n\tpadding: 0.5rem;\n\tborder-radius: 25%;\n\tcursor: pointer;\n}\n\nheader a.button-fake {\n\tcolor: var(--primary-color-100);\n\tbackground-color: var(--secondary-color-100);\n\tpadding: 0.4rem;\n\tfont-weight: 700;\n\ttext-decoration: none;\n\tborder-radius: 15%;\n\tborder: none;\n}\n\nheader a.button-fake:hover {\n\tbackground-color: var(--secondary-color-75);\n}\n/* adicionar responsividade  */\n\n.hidden {\n\tdisplay: none;\n}\n\n@media (max-width: 768px) {\n\theader nav menu {\n\t\tflex-direction: column;\n\t\tgap: 0;\n\t}\n\n\theader nav menu span#burguer {\n\t\tdisplay: block;\n\t}\n\n\theader nav menu li {\n\t\tdisplay: none;\n\t}\n\n\theader nav menu li.display-mobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\n\theader a.button-fake{\n\t\tborder-radius: 0;\n\t\tborder: solid black 1px;\n\t}\n}\n\n/* trabalhando com o footer */\n\nfooter {\n\tbackground-color: var(--primary-color-100);\n\tcolor: var(--secondary-color-100);\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\twidth: 100%;\n\talign-items: center;\n\tjustify-content: center;\n\tbottom: 0;\n\tpadding: 1rem;\n}\n\nfooter div span {\n\tdisplay: flex;\n\tflex-direction: row;\n\tgap: 5px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -23402,9 +23470,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
 /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _assets_css_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/css/style.css */ "./frontend/assets/css/style.css");
+/* harmony import */ var _assets_js_burguerMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/js/burguerMenu */ "./frontend/assets/js/burguerMenu.js");
 
 
 
+
+var menuIcon = document.querySelector('span#burguer');
+menuIcon.addEventListener('click', _assets_js_burguerMenu__WEBPACK_IMPORTED_MODULE_3__.showMenu);
 })();
 
 /******/ })()
