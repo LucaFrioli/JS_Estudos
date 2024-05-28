@@ -100,7 +100,7 @@ header a.button-fake:hover {
 		flex-direction: column;
 	}
 
-	header a.button-fake{
+	header a.button-fake {
 		border-radius: 0;
 		border: solid black 1px;
 	}
@@ -128,13 +128,13 @@ footer div span {
 }
 
 /* trabalhando com a main da agenda */
-main#agenda{
+main#agenda {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-main#agenda div.chamada{
+main#agenda div.chamada {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -143,15 +143,65 @@ main#agenda div.chamada{
 	text-align: center;
 }
 
-main#agenda div.chamada h1{
+main#agenda div.chamada h1 {
 	margin-bottom: 0.7rem;
 }
 
-main#agenda div.chamada div.messagesFlash{
+main#agenda div.chamada div.messagesFlash {
 	background-color: rgba(214, 120, 120, 0.644);
 	border: solid red 0.5px;
 	color: var(--secondary-color-100);
 	padding: 0.5rem;
 	border-radius: 5rem;
 	margin: 10px 0px;
+}
+
+main#agenda table.responsiveTable {
+	border-collapse: collapse;
+	width: 50%;
+}
+
+main#agenda table.responsiveTable th,
+td {
+	border: 1px solid rgba(95, 91, 91, 0.822);
+	padding: 10px;
+}
+
+@media (max-width: 768px) {
+	main#agenda table.responsiveTable {
+		border: 0;
+		width: 85%;
+	}
+
+	main#agenda table.responsiveTable thead {
+		border: none;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		width: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+	main#agenda table.responsiveTable tr {
+		border-bottom: 1px solid;
+		display: block;
+		margin-bottom: 0.7rem;
+		padding: 0;
+	}
+
+	main#agenda table.responsiveTable td {
+		border-bottom: 1px solid;
+		display: block;
+		font-size: 1rem;
+		text-align: right;
+	}
+
+	main#agenda table.responsiveTable td::before {
+		content: attr(data-label);
+		float: left;
+		font-weight: 500;
+		font-size: 0.9rem;
+	}
 }
