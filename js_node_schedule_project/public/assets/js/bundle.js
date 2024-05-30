@@ -11,16 +11,23 @@ exports.showMenu = function () {
   var menu = document.querySelector('menu');
   var liArray = menu.querySelectorAll('li');
   var liDisplay = liArray[1].classList;
-  if (liDisplay.contains('normal')) {
-    liArray.forEach(function (item) {
-      item.classList.remove('normal');
-      item.classList.add('display-mobile');
-    });
+  var widthScreen = window.screen.width;
+  if (widthScreen < 769) {
+    if (liDisplay.contains('normal')) {
+      liArray.forEach(function (item) {
+        item.classList.remove('normal');
+        item.classList.add('display-mobile');
+      });
+    } else {
+      liArray.forEach(function (item) {
+        item.classList.remove('display-mobile');
+        item.classList.add('normal');
+        item.classList.add('hidden');
+      });
+    }
   } else {
     liArray.forEach(function (item) {
-      item.classList.remove('display-mobile');
-      item.classList.add('normal');
-      item.classList.add('hidden');
+      return item.classList.remove('hidden');
     });
   }
 };
