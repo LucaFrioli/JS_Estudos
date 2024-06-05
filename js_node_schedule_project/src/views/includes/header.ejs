@@ -4,17 +4,26 @@
 			src="https://github.com/LucaFrioli.png"
 			alt="Icone do desenvolvedor"
 		/>
-		<p>Agenda</p>
+		<h1>
+			<a
+				href="<%= title === 'index' ? '#' : '/'%>"
+				rel="noopener noreferrer"
+			>
+				Agenda
+			</a>
+		</h1>
 	</span>
 
 	<nav id="burguerMenu">
 		<menu>
-			<span id="burguer" class="material-symbols-outlined">
-				menu
-			</span>
+			<span id="burguer" class="material-symbols-outlined"> menu </span>
 			<li class="normal">
-				<a href="#" rel="noopener noreferrer" class="button-fake">
-					link 1
+				<a
+					href="<%= title === 'login'? '#': '/login' %>"
+					rel="noopener noreferrer"
+					class="button-fake"
+				>
+					Login
 				</a>
 			</li>
 			<li class="normal">

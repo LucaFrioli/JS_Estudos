@@ -1,0 +1,23 @@
+<%- include('includes/head') -%> <%- include('includes/header') -%>
+
+<main id="login">
+
+	<div class="CTA">
+		<h1>Realize seu Login:</h1>
+		<div class="messagesFlash">O erro ou aviso será spamado aqui !</div>
+	</div>
+
+	<form action="" method="post" class="responsive-form">
+		<label for="EmailLogin">Email : </label>
+		<input type="email" name="EmailLogin" id="EmailLogin" />
+		<label for="PswdLogin">Senha : </label>
+		<input type="password" name="PswdLogin" id="PswdLogin" />
+		<button>Entrar</button>
+	</form>
+
+	<a href="/login/register" rel="noopener noreferrer">Ou Cadastre-se</a>
+
+
+</main>
+
+<%- include('includes/footer') -%>

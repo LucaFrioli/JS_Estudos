@@ -13,6 +13,41 @@
 	font-family: 'Noto Sans', sans-serif;
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.responsive-form{
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-bottom: 0.7rem;
+}
+
+.responsive-form input{
+	padding: 0.4rem;
+}
+
+.responsive-form button{
+	margin-top: 0.5rem;
+	padding: 0.4rem;
+	background-color: var(--primary-color-100);
+	color: var(--secondary-color-100);
+	border: none;
+	border-radius: 25px;
+}
+
+div.messagesFlash {
+	background-color: rgba(214, 120, 120, 0.644);
+	border: solid red 0.5px;
+	color: var(--secondary-color-100);
+	padding: 0.5rem;
+	border-radius: 5rem;
+	margin: 10px 0px;
+}	
+
 /* trabalhando como o header */
 header {
 	display: flex;
@@ -60,6 +95,16 @@ header nav menu span#burguer {
 	padding: 0.5rem;
 	border-radius: 25%;
 	cursor: pointer;
+}
+
+header h1 {
+	font-size: medium;
+}
+
+header a {
+	color: var(--secondary-color-100);
+	font-weight: 900;
+	text-decoration: none;
 }
 
 header a.button-fake {
@@ -128,11 +173,6 @@ footer div span {
 }
 
 /* trabalhando com a main da agenda */
-main#agenda {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
 
 main#agenda div.chamada {
 	display: flex;
@@ -147,14 +187,14 @@ main#agenda div.chamada h1 {
 	margin-bottom: 0.7rem;
 }
 
-main#agenda div.chamada div.messagesFlash {
+/* main#agenda div.chamada div.messagesFlash {
 	background-color: rgba(214, 120, 120, 0.644);
 	border: solid red 0.5px;
 	color: var(--secondary-color-100);
 	padding: 0.5rem;
 	border-radius: 5rem;
 	margin: 10px 0px;
-}
+} */
 
 main#agenda table.responsiveTable {
 	border-collapse: collapse;
@@ -204,4 +244,11 @@ td {
 		font-weight: 500;
 		font-size: 0.9rem;
 	}
+}
+
+/* Trabalhando com a main do login */
+
+main#login div.CTA{
+	margin-bottom: 0.7rem;
+	text-align: center;
 }
