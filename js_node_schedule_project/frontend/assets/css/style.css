@@ -19,18 +19,19 @@ main {
 	align-items: center;
 }
 
-.responsive-form{
+/* Cria responsividade para formulários, de formamais generalista */
+.responsive-form {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 	margin-bottom: 0.7rem;
 }
 
-.responsive-form input{
+.responsive-form input {
 	padding: 0.4rem;
 }
 
-.responsive-form button{
+.responsive-form button {
 	margin-top: 0.5rem;
 	padding: 0.4rem;
 	background-color: var(--primary-color-100);
@@ -39,6 +40,8 @@ main {
 	border-radius: 25px;
 }
 
+/* Cria um preset de desing para as mensseagens flash */
+
 div.messagesFlash {
 	background-color: rgba(214, 120, 120, 0.644);
 	border: solid red 0.5px;
@@ -46,7 +49,7 @@ div.messagesFlash {
 	padding: 0.5rem;
 	border-radius: 5rem;
 	margin: 10px 0px;
-}	
+}
 
 /* trabalhando como o header */
 header {
@@ -187,15 +190,6 @@ main#agenda div.chamada h1 {
 	margin-bottom: 0.7rem;
 }
 
-/* main#agenda div.chamada div.messagesFlash {
-	background-color: rgba(214, 120, 120, 0.644);
-	border: solid red 0.5px;
-	color: var(--secondary-color-100);
-	padding: 0.5rem;
-	border-radius: 5rem;
-	margin: 10px 0px;
-} */
-
 main#agenda table.responsiveTable {
 	border-collapse: collapse;
 	width: 50%;
@@ -246,9 +240,15 @@ td {
 	}
 }
 
-/* Trabalhando com a main do login */
+/* Trabalhando com a main do login e cadatro */
 
-main#login div.CTA{
+/* CTA = Call To Action */
+main#login div.CTA {
+	margin-bottom: 0.7rem;
+	text-align: center;
+}
+
+main#register div.CTA {
 	margin-bottom: 0.7rem;
 	text-align: center;
 }

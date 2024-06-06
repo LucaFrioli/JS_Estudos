@@ -23,6 +23,8 @@ routes.get('/', indexController.index);
 
 // login routes
 routes.get('/login', loginController.index);
+routes.post('/login', loginController.registerReceived);
+routes.get('/login/register', loginController.register);
 
 // error routes
 routes.get('/404Error', error404Page.render404);

@@ -1,6 +1,6 @@
 exports.csrfCheckErr = (err, req, res, next) => {
-	if (err && err.code === 'EBADCSRFTOKEN') {
-		return res.render('404', { title: '404' });
+	if (err) {
+		return res.render('error', { title: '404' });
 	} else {
 		next();
 	}

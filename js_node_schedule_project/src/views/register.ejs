@@ -1,0 +1,28 @@
+<%- include('includes/head') -%> <%- include('includes/header') -%>
+
+<main id="register">
+	<div class="CTA">
+		<h1>Realize seu Cadatro !</h1>
+		<div class="messagesFlash">O erro ou aviso será spamado aqui!</div>
+	</div>
+
+	<form action="/login" method="post" class="responsive-form">
+		<label for="EmailRegister">Email : </label>
+		<input type="email" name="EmailRegister" id="EmailRegister" placeholder="Entre com seu email"/>
+		<label for="PswdRegister">Senha : </label>
+		<input type="password" name="PswdRegister" id="PswdRegister" placeholder="Crie sua Senha"/>
+		<label for="ConfirmPswdRegister">Confirme a Senha : </label>
+		<input
+			type="password"
+			name="ConfirmPswdRegister"
+			id="ConfirmPswdRegister"
+			placeholder="Confirme senha criada"
+		/>
+		<input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+		<button>Cadastrar</button>
+	</form>
+
+	<a href="/login" rel="noopener noreferrer">Ou faça Login</a>
+</main>
+
+<%- include('includes/footer') -%>

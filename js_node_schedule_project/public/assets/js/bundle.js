@@ -96,18 +96,19 @@ main {
 	align-items: center;
 }
 
-.responsive-form{
+/* Cria responsividade para formulários, de formamais generalista */
+.responsive-form {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 	margin-bottom: 0.7rem;
 }
 
-.responsive-form input{
+.responsive-form input {
 	padding: 0.4rem;
 }
 
-.responsive-form button{
+.responsive-form button {
 	margin-top: 0.5rem;
 	padding: 0.4rem;
 	background-color: var(--primary-color-100);
@@ -116,6 +117,8 @@ main {
 	border-radius: 25px;
 }
 
+/* Cria um preset de desing para as mensseagens flash */
+
 div.messagesFlash {
 	background-color: rgba(214, 120, 120, 0.644);
 	border: solid red 0.5px;
@@ -123,7 +126,7 @@ div.messagesFlash {
 	padding: 0.5rem;
 	border-radius: 5rem;
 	margin: 10px 0px;
-}	
+}
 
 /* trabalhando como o header */
 header {
@@ -264,15 +267,6 @@ main#agenda div.chamada h1 {
 	margin-bottom: 0.7rem;
 }
 
-/* main#agenda div.chamada div.messagesFlash {
-	background-color: rgba(214, 120, 120, 0.644);
-	border: solid red 0.5px;
-	color: var(--secondary-color-100);
-	padding: 0.5rem;
-	border-radius: 5rem;
-	margin: 10px 0px;
-} */
-
 main#agenda table.responsiveTable {
 	border-collapse: collapse;
 	width: 50%;
@@ -323,13 +317,19 @@ td {
 	}
 }
 
-/* Trabalhando com a main do login */
+/* Trabalhando com a main do login e cadatro */
 
-main#login div.CTA{
+/* CTA = Call To Action */
+main#login div.CTA {
 	margin-bottom: 0.7rem;
 	text-align: center;
 }
-`, "",{"version":3,"sources":["webpack://./frontend/assets/css/style.css"],"names":[],"mappings":"AAEA;CACC,oCAAoC;CACpC,yCAAyC;CACzC,wCAAwC;AACzC;;AAEA;CACC,sBAAsB;CACtB,SAAS;CACT,UAAU;CACV,oCAAoC;AACrC;;AAEA;CACC,aAAa;CACb,sBAAsB;CACtB,mBAAmB;AACpB;;AAEA;CACC,aAAa;CACb,sBAAsB;CACtB,WAAW;CACX,qBAAqB;AACtB;;AAEA;CACC,eAAe;AAChB;;AAEA;CACC,kBAAkB;CAClB,eAAe;CACf,0CAA0C;CAC1C,iCAAiC;CACjC,YAAY;CACZ,mBAAmB;AACpB;;AAEA;CACC,4CAA4C;CAC5C,uBAAuB;CACvB,iCAAiC;CACjC,eAAe;CACf,mBAAmB;CACnB,gBAAgB;AACjB;;AAEA,8BAA8B;AAC9B;CACC,aAAa;CACb,8BAA8B;CAC9B,0CAA0C;CAC1C,iCAAiC;CACjC,qBAAqB;AACtB;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,mBAAmB;CACnB,uBAAuB;CACvB,gBAAgB;AACjB;;AAEA;CACC,UAAU;CACV,kBAAkB;CAClB,cAAc;AACf;;AAEA;CACC,aAAa;CACb,uBAAuB;CACvB,mBAAmB;CACnB,aAAa;AACd;;AAEA;CACC,gBAAgB;CAChB,aAAa;CACb,mBAAmB;CACnB,WAAW;CACX,qCAAqC;AACtC;;AAEA;CACC,gCAAgC;CAChC,aAAa;CACb,iCAAiC;CACjC,iBAAiB;CACjB,0CAA0C;CAC1C,eAAe;CACf,kBAAkB;CAClB,eAAe;AAChB;;AAEA;CACC,iBAAiB;AAClB;;AAEA;CACC,iCAAiC;CACjC,gBAAgB;CAChB,qBAAqB;AACtB;;AAEA;CACC,+BAA+B;CAC/B,4CAA4C;CAC5C,eAAe;CACf,gBAAgB;CAChB,qBAAqB;CACrB,kBAAkB;CAClB,YAAY;AACb;;AAEA;CACC,2CAA2C;AAC5C;AACA,8BAA8B;;AAE9B;CACC,aAAa;AACd;;AAEA;CACC;EACC,sBAAsB;EACtB,MAAM;CACP;;CAEA;EACC,cAAc;CACf;;CAEA;EACC,aAAa;CACd;;CAEA;EACC,aAAa;EACb,sBAAsB;CACvB;;CAEA;EACC,gBAAgB;EAChB,uBAAuB;CACxB;AACD;;AAEA,6BAA6B;;AAE7B;CACC,0CAA0C;CAC1C,iCAAiC;CACjC,aAAa;CACb,sBAAsB;CACtB,wBAAwB;CACxB,WAAW;CACX,mBAAmB;CACnB,uBAAuB;CACvB,eAAe;CACf,aAAa;AACd;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,QAAQ;AACT;;AAEA,qCAAqC;;AAErC;CACC,aAAa;CACb,sBAAsB;CACtB,mBAAmB;CACnB,uBAAuB;CACvB,mBAAmB;CACnB,kBAAkB;AACnB;;AAEA;CACC,qBAAqB;AACtB;;AAEA;;;;;;;GAOG;;AAEH;CACC,yBAAyB;CACzB,UAAU;AACX;;AAEA;;CAEC,yCAAyC;CACzC,aAAa;AACd;;AAEA;CACC;EACC,SAAS;EACT,UAAU;CACX;;CAEA;EACC,YAAY;EACZ,mBAAmB;EACnB,WAAW;EACX,WAAW;EACX,gBAAgB;EAChB,UAAU;EACV,kBAAkB;EAClB,UAAU;CACX;;CAEA;EACC,wBAAwB;EACxB,cAAc;EACd,qBAAqB;EACrB,UAAU;CACX;;CAEA;EACC,wBAAwB;EACxB,cAAc;EACd,eAAe;EACf,iBAAiB;CAClB;;CAEA;EACC,yBAAyB;EACzB,WAAW;EACX,gBAAgB;EAChB,iBAAiB;CAClB;AACD;;AAEA,oCAAoC;;AAEpC;CACC,qBAAqB;CACrB,kBAAkB;AACnB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');\n\n:root {\n\t--primary-color-100: rgb(65, 2, 184);\n\t--secondary-color-100: rgb(255, 255, 255);\n\t--secondary-color-75: rgb(216, 216, 216);\n}\n\n* {\n\tbox-sizing: border-box;\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: 'Noto Sans', sans-serif;\n}\n\nmain {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: center;\n}\n\n.responsive-form{\n\tdisplay: flex;\n\tflex-direction: column;\n\tgap: 0.5rem;\n\tmargin-bottom: 0.7rem;\n}\n\n.responsive-form input{\n\tpadding: 0.4rem;\n}\n\n.responsive-form button{\n\tmargin-top: 0.5rem;\n\tpadding: 0.4rem;\n\tbackground-color: var(--primary-color-100);\n\tcolor: var(--secondary-color-100);\n\tborder: none;\n\tborder-radius: 25px;\n}\n\ndiv.messagesFlash {\n\tbackground-color: rgba(214, 120, 120, 0.644);\n\tborder: solid red 0.5px;\n\tcolor: var(--secondary-color-100);\n\tpadding: 0.5rem;\n\tborder-radius: 5rem;\n\tmargin: 10px 0px;\n}\t\n\n/* trabalhando como o header */\nheader {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tbackground-color: var(--primary-color-100);\n\tcolor: var(--secondary-color-100);\n\tmargin-bottom: 1.5rem;\n}\n\nheader span.brandding-infos {\n\tdisplay: flex;\n\tflex-direction: row;\n\talign-items: center;\n\tjustify-content: center;\n\tmax-width: 150px;\n}\n\nheader span.brandding-infos img {\n\twidth: 50%;\n\tborder-radius: 50%;\n\tmargin: 0.7rem;\n}\n\nheader nav {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\tpadding: 1rem;\n}\n\nheader nav menu {\n\tlist-style: none;\n\tdisplay: flex;\n\tflex-direction: row;\n\tgap: 0.5rem;\n\tfont-family: 'Montserrat', sans-serif;\n}\n\nheader nav menu span#burguer {\n\t/*coloca o icone do menu mobile*/\n\tdisplay: none;\n\tcolor: var(--secondary-color-100);\n\tfont-size: 2.3rem;\n\tbackground-color: var(--primary-color-100);\n\tpadding: 0.5rem;\n\tborder-radius: 25%;\n\tcursor: pointer;\n}\n\nheader h1 {\n\tfont-size: medium;\n}\n\nheader a {\n\tcolor: var(--secondary-color-100);\n\tfont-weight: 900;\n\ttext-decoration: none;\n}\n\nheader a.button-fake {\n\tcolor: var(--primary-color-100);\n\tbackground-color: var(--secondary-color-100);\n\tpadding: 0.4rem;\n\tfont-weight: 700;\n\ttext-decoration: none;\n\tborder-radius: 15%;\n\tborder: none;\n}\n\nheader a.button-fake:hover {\n\tbackground-color: var(--secondary-color-75);\n}\n/* adicionar responsividade  */\n\n.hidden {\n\tdisplay: none;\n}\n\n@media (max-width: 768px) {\n\theader nav menu {\n\t\tflex-direction: column;\n\t\tgap: 0;\n\t}\n\n\theader nav menu span#burguer {\n\t\tdisplay: block;\n\t}\n\n\theader nav menu li {\n\t\tdisplay: none;\n\t}\n\n\theader nav menu li.display-mobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\n\theader a.button-fake {\n\t\tborder-radius: 0;\n\t\tborder: solid black 1px;\n\t}\n}\n\n/* trabalhando com o footer */\n\nfooter {\n\tbackground-color: var(--primary-color-100);\n\tcolor: var(--secondary-color-100);\n\tdisplay: flex;\n\tflex-direction: column;\n\t/* position: absolute; */\n\twidth: 100%;\n\talign-items: center;\n\tjustify-content: center;\n\t/* bottom: 0; */\n\tpadding: 1rem;\n}\n\nfooter div span {\n\tdisplay: flex;\n\tflex-direction: row;\n\tgap: 5px;\n}\n\n/* trabalhando com a main da agenda */\n\nmain#agenda div.chamada {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: center;\n\tjustify-content: center;\n\tmargin-bottom: 1rem;\n\ttext-align: center;\n}\n\nmain#agenda div.chamada h1 {\n\tmargin-bottom: 0.7rem;\n}\n\n/* main#agenda div.chamada div.messagesFlash {\n\tbackground-color: rgba(214, 120, 120, 0.644);\n\tborder: solid red 0.5px;\n\tcolor: var(--secondary-color-100);\n\tpadding: 0.5rem;\n\tborder-radius: 5rem;\n\tmargin: 10px 0px;\n} */\n\nmain#agenda table.responsiveTable {\n\tborder-collapse: collapse;\n\twidth: 50%;\n}\n\nmain#agenda table.responsiveTable th,\ntd {\n\tborder: 1px solid rgba(95, 91, 91, 0.822);\n\tpadding: 10px;\n}\n\n@media (max-width: 768px) {\n\tmain#agenda table.responsiveTable {\n\t\tborder: 0;\n\t\twidth: 85%;\n\t}\n\n\tmain#agenda table.responsiveTable thead {\n\t\tborder: none;\n\t\tclip: rect(0 0 0 0);\n\t\theight: 1px;\n\t\twidth: -1px;\n\t\toverflow: hidden;\n\t\tpadding: 0;\n\t\tposition: absolute;\n\t\twidth: 1px;\n\t}\n\n\tmain#agenda table.responsiveTable tr {\n\t\tborder-bottom: 1px solid;\n\t\tdisplay: block;\n\t\tmargin-bottom: 0.7rem;\n\t\tpadding: 0;\n\t}\n\n\tmain#agenda table.responsiveTable td {\n\t\tborder-bottom: 1px solid;\n\t\tdisplay: block;\n\t\tfont-size: 1rem;\n\t\ttext-align: right;\n\t}\n\n\tmain#agenda table.responsiveTable td::before {\n\t\tcontent: attr(data-label);\n\t\tfloat: left;\n\t\tfont-weight: 500;\n\t\tfont-size: 0.9rem;\n\t}\n}\n\n/* Trabalhando com a main do login */\n\nmain#login div.CTA{\n\tmargin-bottom: 0.7rem;\n\ttext-align: center;\n}\n"],"sourceRoot":""}]);
+
+main#register div.CTA {
+	margin-bottom: 0.7rem;
+	text-align: center;
+}
+`, "",{"version":3,"sources":["webpack://./frontend/assets/css/style.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');\n\n:root {\n\t--primary-color-100: rgb(65, 2, 184);\n\t--secondary-color-100: rgb(255, 255, 255);\n\t--secondary-color-75: rgb(216, 216, 216);\n}\n\n* {\n\tbox-sizing: border-box;\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: 'Noto Sans', sans-serif;\n}\n\nmain {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: center;\n}\n\n/* Cria responsividade para formulários, de formamais generalista */\n.responsive-form {\n\tdisplay: flex;\n\tflex-direction: column;\n\tgap: 0.5rem;\n\tmargin-bottom: 0.7rem;\n}\n\n.responsive-form input {\n\tpadding: 0.4rem;\n}\n\n.responsive-form button {\n\tmargin-top: 0.5rem;\n\tpadding: 0.4rem;\n\tbackground-color: var(--primary-color-100);\n\tcolor: var(--secondary-color-100);\n\tborder: none;\n\tborder-radius: 25px;\n}\n\n/* Cria um preset de desing para as mensseagens flash */\n\ndiv.messagesFlash {\n\tbackground-color: rgba(214, 120, 120, 0.644);\n\tborder: solid red 0.5px;\n\tcolor: var(--secondary-color-100);\n\tpadding: 0.5rem;\n\tborder-radius: 5rem;\n\tmargin: 10px 0px;\n}\n\n/* trabalhando como o header */\nheader {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tbackground-color: var(--primary-color-100);\n\tcolor: var(--secondary-color-100);\n\tmargin-bottom: 1.5rem;\n}\n\nheader span.brandding-infos {\n\tdisplay: flex;\n\tflex-direction: row;\n\talign-items: center;\n\tjustify-content: center;\n\tmax-width: 150px;\n}\n\nheader span.brandding-infos img {\n\twidth: 50%;\n\tborder-radius: 50%;\n\tmargin: 0.7rem;\n}\n\nheader nav {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\tpadding: 1rem;\n}\n\nheader nav menu {\n\tlist-style: none;\n\tdisplay: flex;\n\tflex-direction: row;\n\tgap: 0.5rem;\n\tfont-family: 'Montserrat', sans-serif;\n}\n\nheader nav menu span#burguer {\n\t/*coloca o icone do menu mobile*/\n\tdisplay: none;\n\tcolor: var(--secondary-color-100);\n\tfont-size: 2.3rem;\n\tbackground-color: var(--primary-color-100);\n\tpadding: 0.5rem;\n\tborder-radius: 25%;\n\tcursor: pointer;\n}\n\nheader h1 {\n\tfont-size: medium;\n}\n\nheader a {\n\tcolor: var(--secondary-color-100);\n\tfont-weight: 900;\n\ttext-decoration: none;\n}\n\nheader a.button-fake {\n\tcolor: var(--primary-color-100);\n\tbackground-color: var(--secondary-color-100);\n\tpadding: 0.4rem;\n\tfont-weight: 700;\n\ttext-decoration: none;\n\tborder-radius: 15%;\n\tborder: none;\n}\n\nheader a.button-fake:hover {\n\tbackground-color: var(--secondary-color-75);\n}\n/* adicionar responsividade  */\n\n.hidden {\n\tdisplay: none;\n}\n\n@media (max-width: 768px) {\n\theader nav menu {\n\t\tflex-direction: column;\n\t\tgap: 0;\n\t}\n\n\theader nav menu span#burguer {\n\t\tdisplay: block;\n\t}\n\n\theader nav menu li {\n\t\tdisplay: none;\n\t}\n\n\theader nav menu li.display-mobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\n\theader a.button-fake {\n\t\tborder-radius: 0;\n\t\tborder: solid black 1px;\n\t}\n}\n\n/* trabalhando com o footer */\n\nfooter {\n\tbackground-color: var(--primary-color-100);\n\tcolor: var(--secondary-color-100);\n\tdisplay: flex;\n\tflex-direction: column;\n\t/* position: absolute; */\n\twidth: 100%;\n\talign-items: center;\n\tjustify-content: center;\n\t/* bottom: 0; */\n\tpadding: 1rem;\n}\n\nfooter div span {\n\tdisplay: flex;\n\tflex-direction: row;\n\tgap: 5px;\n}\n\n/* trabalhando com a main da agenda */\n\nmain#agenda div.chamada {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: center;\n\tjustify-content: center;\n\tmargin-bottom: 1rem;\n\ttext-align: center;\n}\n\nmain#agenda div.chamada h1 {\n\tmargin-bottom: 0.7rem;\n}\n\nmain#agenda table.responsiveTable {\n\tborder-collapse: collapse;\n\twidth: 50%;\n}\n\nmain#agenda table.responsiveTable th,\ntd {\n\tborder: 1px solid rgba(95, 91, 91, 0.822);\n\tpadding: 10px;\n}\n\n@media (max-width: 768px) {\n\tmain#agenda table.responsiveTable {\n\t\tborder: 0;\n\t\twidth: 85%;\n\t}\n\n\tmain#agenda table.responsiveTable thead {\n\t\tborder: none;\n\t\tclip: rect(0 0 0 0);\n\t\theight: 1px;\n\t\twidth: -1px;\n\t\toverflow: hidden;\n\t\tpadding: 0;\n\t\tposition: absolute;\n\t\twidth: 1px;\n\t}\n\n\tmain#agenda table.responsiveTable tr {\n\t\tborder-bottom: 1px solid;\n\t\tdisplay: block;\n\t\tmargin-bottom: 0.7rem;\n\t\tpadding: 0;\n\t}\n\n\tmain#agenda table.responsiveTable td {\n\t\tborder-bottom: 1px solid;\n\t\tdisplay: block;\n\t\tfont-size: 1rem;\n\t\ttext-align: right;\n\t}\n\n\tmain#agenda table.responsiveTable td::before {\n\t\tcontent: attr(data-label);\n\t\tfloat: left;\n\t\tfont-weight: 500;\n\t\tfont-size: 0.9rem;\n\t}\n}\n\n/* Trabalhando com a main do login e cadatro */\n\n/* CTA = Call To Action */\nmain#login div.CTA {\n\tmargin-bottom: 0.7rem;\n\ttext-align: center;\n}\n\nmain#register div.CTA {\n\tmargin-bottom: 0.7rem;\n\ttext-align: center;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
