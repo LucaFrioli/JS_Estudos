@@ -1,3 +1,8 @@
+const { resolve } = require('node:path');
+const  LoginService  = require(
+	resolve(__dirname, '..', 'models', 'loginModel.js')
+);
+
 const data = { title: 'login' };
 
 exports.index = (req, res) => {
@@ -14,6 +19,9 @@ exports.register = (req, res) => {
 };
 
 exports.registerReceived = (req, res) => {
+	// eslint-disable-next-line no-unused-vars
+	const login = new LoginService(req.body);
+	login.register();
 	// 	{ EmailRegister, PswdRegister, ConfirmPswdRegister, _csrf, title}
 	const dataToSend = { ...req.body, ...data };
 	res.render('loginPage', dataToSend);

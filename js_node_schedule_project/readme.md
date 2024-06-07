@@ -23,3 +23,44 @@ Tasks da primeira etapa :
 - [ ] Estilizar tudo que foi criado, e deixar responsivo, siga o padrão de desing mobile-first de preferência; (caso queira pode utilizar bootstrap);
 
 **⚠️ ⚠️ De preferência tentar utilizar ao maxímo o html semântico ‼️**
+
+# Segunda etapa :
+
+Criar os layouts das telas de cadastro e login.
+
+Foi realizada inserção dos formulários, além de reformular o arquivo de css para que seja mais reutilizavel. Além disso foram adicionadas as rotas referentes a estas páginas(um conceito inicial que poderá ser remodeladoao longo da implementação). E os controllers básicos para renderizar as páginas. Foi corrigido o Middleware que controla a demonstração dapágina de erro.
+
+**Obs: ao fim do projeto deixarei todos os códigos das commits em forma de sumário para observação das mudanças decorrentes do desenvolvimento.**
+
+
+# Terceira etapa :
+
+Fazer a funcionalidade de cadatro dos usuários. Realizaremos a validação do email inserido, e trabalharemos com criptografia ao salvar a senha do usuário.
+
+Tasks :
+ - [] implementar a lógica dentro da rota `\login` do método post;
+ - [] criar um model que controlará a validação dos dados de entrada de cadatro;
+   - [x] criar um schema que contenha os dados necessários email e pswd
+   - [x] criar validação de dados para os dados recebidos dentro da classe do service *Utilizaremos o pacote vlaidator, terá uma explicação a seguir sobre este assunto*
+   - [] validar e spamar uma flash message caso tenha dados errados
+   - [] se tudo estiver validado corretamente, adicionar criptografia na senha do usuário *terá uma explicação a seguir sobre este assunto*
+   - [] com tudo validado e a senha criptogrfada, slavar dentro do banco de dados as informações
+
+
+# Sumário de comimits :
+
+## Primeira etapa :
+ - 164d9ee
+ - b71cbd9
+ - 3573aa7
+ - 7a8ee30
+ - 6db3b2a
+ - 08cb9d8
+ - 9c86a4c
+
+## Segunda etapa :
+ - 4c7d8a4
+ - 72fb4d0
+
+## Terceira etapa :
+
