@@ -1,5 +1,5 @@
 const { resolve } = require('node:path');
-const  LoginService  = require(
+const LoginService = require(
 	resolve(__dirname, '..', 'models', 'loginModel.js')
 );
 
@@ -18,10 +18,21 @@ exports.register = (req, res) => {
 	res.render('register', dataToSend);
 };
 
-exports.registerReceived = (req, res) => {
+exports.registerReceived = async (req, res) => {
+	// registrar o usuário ou retornanr um erro
 	// eslint-disable-next-line no-unused-vars
 	const login = new LoginService(req.body);
-	login.register();
+	await login.register();
+
+	// caso não for possível registrar o usuário retornaremos a página de cadastro
+	if (login.errors.length > 0) {
+		req.flash('errors', login.errors);
+		req.session.save(() => {
+			return res.redirect('back');
+		});
+		return;
+	}
+
 	// 	{ EmailRegister, PswdRegister, ConfirmPswdRegister, _csrf, title}
 	const dataToSend = { ...req.body, ...data };
 	res.render('loginPage', dataToSend);

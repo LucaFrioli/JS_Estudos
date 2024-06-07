@@ -18,11 +18,11 @@ class LoginService {
 
 	async register() {
 		this.validateFields();
-		console.log(this.body);
 		if (this.errors.length > 0) {
 			console.log('Erros capturados : ', this.errors);
 			return;
 		}
+
 		try {
 			this.user = await this.Model.create(this.body);
 		} catch (e) {
@@ -34,7 +34,6 @@ class LoginService {
 		// validaremos os campos :
 		// tudo que estiver dentro do body precisa ser uma string
 		this.cleanUp();
-		console.log(this.body);
 
 		// o email precisa ser valido e a senha precisa ter entre 7 e 50 caracteres e a senhas devem corresponder uma a outra
 		if (!validator.isEmail(this.body.email)) {

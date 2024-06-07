@@ -9,7 +9,7 @@ const helmet = require('helmet');
 const csrf = require('csurf');
 
 const routes = require(path.resolve(__dirname, 'routes.js'));
-const { csrfCheckErr, csrfMidd } = require(
+const { csrfCheckErr, csrfMidd, errorsMidd } = require(
 	path.resolve(__dirname, 'src', 'middlewares', 'globals.js')
 );
 const app = express();
@@ -59,6 +59,7 @@ app.use(SessionConfig);
 app.use(csrf());
 app.use(csrfCheckErr);
 app.use(csrfMidd);
+app.use(errorsMidd);
 app.use(routes);
 
 app.on('connected', () => {
