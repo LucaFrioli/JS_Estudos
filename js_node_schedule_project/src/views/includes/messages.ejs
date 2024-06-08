@@ -5,3 +5,11 @@
 	<% }); %>
 </div>
 <% } %>
+
+<% if(success.length > 0 ){ %>
+	<div class="messagesFlash" style="background-color: #8ff3a8bd; border-color: #00ff40; color: black;">
+		<% success.forEach( success =>{ %>
+			<%= success %> <br>
+		<% }); %>
+	</div>
+<% } %>

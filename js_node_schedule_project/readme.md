@@ -46,7 +46,6 @@ Tasks :
    - [] se tudo estiver validado corretamente, adicionar criptografia na senha do usuário *terá uma explicação a seguir sobre este assunto*
    - [] com tudo validado e a senha criptogrfada, slavar dentro do banco de dados as informações
 
-
 ### Entendendo melhor flash messages dentro do contexto do projeto :
 
 Ao settarmos uma flash message ou um array de flash messages temos uma variável engatilhada pronta para ser disparada. Isso dá uma margem para que possamos criar mensagens de erros e sucessos.
@@ -72,3 +71,4 @@ OBS : lembre-se que os controllers serão responsáveis por não haverem inconsi
 
 ## Terceira etapa :
  - 1360fd8
+ - 250fca1
