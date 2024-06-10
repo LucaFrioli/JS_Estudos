@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const bcrypt = require('bcryptjs');
 
 const loginSchema = new mongoose.Schema({
 	email: { type: String, required: true },
@@ -17,11 +18,20 @@ class LoginService {
 	}
 
 	async register() {
+		// realiza a validação dos campos, utilizando os parâmetros idealizados no projeto
 		this.validateFields();
+
+		// realiza a verificação de usuário já cadastrado
+		await this.alreadyRegisteredUser();
+
 		if (this.errors.length > 0) {
 			console.log('Erros capturados : ', this.errors);
 			return;
 		}
+
+		// realiza o hashing da senha para que a senha não seja salva lisa na base de dados
+		const salt = bcrypt.genSaltSync();
+		this.body.password = bcrypt.hashSync(this.body.password, salt);
 
 		try {
 			this.user = await this.Model.create(this.body);
@@ -50,6 +60,7 @@ class LoginService {
 			this.errors.push('As senhas devem corresponder');
 		}
 
+		// normalização final do objeto para cadastra-lo
 		this.body = {
 			email: this.body.email,
 			password: this.body.password
@@ -70,6 +81,12 @@ class LoginService {
 			password: this.body.PswdRegister,
 			confirmedPswd: this.body.ConfirmPswdRegister
 		};
+	}
+
+	async alreadyRegisteredUser() {
+		// busca na base de dados pelo email que está no body, o retorno é o objeto do user ou null
+		const user = await this.Model.findOne({ email: this.body.email });
+		if (user) this.errors.push('Email já cadatrado.');
 	}
 }
 

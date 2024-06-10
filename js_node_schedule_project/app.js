@@ -24,7 +24,7 @@ mongoose
 	})
 	.catch((e) => {
 		console.log(e);
-		throw new Error('Erro de conexão: 500 Internal server error;');
+		throw new Error('Erro de conexão ao banco: 500 Internal server error;');
 	});
 //
 
