@@ -21,7 +21,6 @@ exports.register = (req, res) => {
 exports.registerReceived = async (req, res) => {
 	try {
 		// registrar o usuário ou retornanr um erro
-		// eslint-disable-next-line no-unused-vars
 		const login = new LoginService(req.body);
 		await login.register();
 
@@ -34,10 +33,33 @@ exports.registerReceived = async (req, res) => {
 			return;
 		}
 
-		req.flash('success','Cadastro realizado com sucesso');
+		req.flash('success', 'Cadastro realizado com sucesso');
 		return res.redirect('/login');
 	} catch (e) {
 		console.log(e);
 		return res.render('error', { title: '404' });
+	}
+};
+
+exports.login = async (req, res) => {
+	try {
+		const login = new LoginService(req.body);
+		await login.login();
+
+		// caso não for possível logar retornaremos a página de login
+		if (login.errors.length > 0) {
+			req.flash('errors', login.errors);
+			req.session.save(() => {
+				return res.redirect('back');
+			});
+			return;
+		}
+
+		req.flash('success', 'Você entrou no sistema.');
+		req.session.user = login.user;
+		return res.redirect('/');
+	} catch (e) {
+		console.log(e);
+		return res.redirect('/404Error');
 	}
 };

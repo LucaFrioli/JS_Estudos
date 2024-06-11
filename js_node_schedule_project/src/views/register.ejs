@@ -7,15 +7,15 @@
 	</div>
 
 	<form action="/login" method="post" class="responsive-form">
-		<label for="EmailRegister">Email : </label>
-		<input type="email" name="EmailRegister" id="EmailRegister" placeholder="Entre com seu email"/>
-		<label for="PswdRegister">Senha : </label>
-		<input type="password" name="PswdRegister" id="PswdRegister" placeholder="Crie sua Senha"/>
-		<label for="ConfirmPswdRegister">Confirme a Senha : </label>
+		<label for="Email">Email : </label>
+		<input type="email" name="Email" id="Email" placeholder="Entre com seu email"/>
+		<label for="Pswd">Senha : </label>
+		<input type="password" name="Pswd" id="Pswd" placeholder="Crie sua Senha"/>
+		<label for="ConfirmPswd">Confirme a Senha : </label>
 		<input
 			type="password"
-			name="ConfirmPswdRegister"
-			id="ConfirmPswdRegister"
+			name="ConfirmPswd"
+			id="ConfirmPswd"
 			placeholder="Confirme senha criada"
 		/>
 		<input type="hidden" name="_csrf" value="<%= csrfToken %>" />

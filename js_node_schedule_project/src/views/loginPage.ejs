@@ -8,10 +8,10 @@
 	</div>
 
 	<form action="/login/logged" method="post" class="responsive-form">
-		<label for="EmailLogin">Email : </label>
-		<input type="email" name="EmailLogin" id="EmailLogin" placeholder="Seu Email" />
-		<label for="PswdLogin">Senha : </label>
-		<input type="password" name="PswdLogin" id="PswdLogin" placeholder="Sua Senha" />
+		<label for="Email">Email : </label>
+		<input type="email" name="Email" id="Email" placeholder="Seu Email" />
+		<label for="Pswd">Senha : </label>
+		<input type="password" name="Pswd" id="Pswd" placeholder="Sua Senha" />
 		<input type="hidden" name="_csrf" value="<%= csrfToken %>">
 		<button>Entrar</button>
 	</form>

@@ -25,6 +25,7 @@ routes.get('/', indexController.index);
 routes.get('/login', loginController.index);
 routes.post('/login', loginController.registerReceived);
 routes.get('/login/register', loginController.register);
+routes.post('/login/logged', loginController.login);
 
 // error routes
 routes.get('/404Error', error404Page.render404);

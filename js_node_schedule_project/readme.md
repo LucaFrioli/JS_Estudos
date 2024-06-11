@@ -44,8 +44,8 @@ Tasks :
     -   [x] criar um schema que contenha os dados necessários email e pswd
     -   [x] criar validação de dados para os dados recebidos dentro da classe do service _Utilizaremos o pacote vlaidator, terá uma explicação a seguir sobre este assunto_
     -   [x] validar e spamar uma flash message caso tenha dados errados
-    -   [ ] se tudo estiver validado corretamente, adicionar criptografia na senha do usuário _terá uma explicação a seguir sobre este assunto_
-    -   [ ] com tudo validado e a senha criptogrfada, slavar dentro do banco de dados as informações
+    -   [x] se tudo estiver validado corretamente, adicionar criptografia na senha do usuário _terá uma explicação a seguir sobre este assunto_
+    -   [x] com tudo validado e a senha criptogrfada, slavar dentro do banco de dados as informações
 
 ### Entendendo melhor flash messages dentro do contexto do projeto :
 
@@ -61,8 +61,25 @@ O pacote `validator` é um pacote que pode ser acoplado aos projetos, ele é um 
 
 Já o pacote `bcryrptjs`, tem como objetivo realizar um hashing da senha ao salvar no banco de dados, assim seguindo uma recomendação mínima de segurança, ou seja a de nunca salvar senhas em texto plano em banco de dados.
 
+# Quarta etapa :
 
-# Sumário de comimits :
+Esta etapa será referente a logar o usuário, após ele ser cadastrado, devemos conseguir recuperar suas informações, e averiguar se batem com as informações enviadas dentro do formulário de longin, assim authenticando e referênciadndo a seessão ao usuário logado. usuários logados trão acessos a mais funcionalidades, e maior libertdade dentro do site.
+
+Tasks :
+
+-   [x] Criar uam rota para fazer averiguação de login.
+-   [] Criar o método para realização de login dentro do model
+    -   [x] Validar os campos (a principio utilizaremos já o método anteriormente criado);
+    -   [x] Resgatar os dados da tabela, e averiguar a existência do email;
+	-	[x] Comparar a senha utilizando `bcryptjs`;
+	-	[x] Lançar erros caso necessário;
+-	[] Caso o usuário seja logado com sucesso iniciaremos uma sessão;
+-	[] Com a sessão inciada devemos criar um middleware que adicionará a sessão nas outras rotas até que o usuário faça logout;
+-	[] Criar uma rota que seja responsável por realizar o logout do usuário;
+-	[] Começar modelagem de rotas, garantindo que alguns locais sejam acessados apenas por pessoas logadas;
+- 	[] Redefinindo precedências de rotas para melhor organização do site (nestetenha total liberdade criativa, se quiser utilize outros sites conhecidos como inspiração);
+
+# Sumário de commits :
 
 ## Primeira etapa :
 
@@ -84,3 +101,4 @@ Já o pacote `bcryrptjs`, tem como objetivo realizar um hashing da senha ao salv
 -   1360fd8
 -   250fca1
 -   01343ae
+-   30c081f

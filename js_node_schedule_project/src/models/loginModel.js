@@ -17,6 +17,39 @@ class LoginService {
 		this.user = null;
 	}
 
+	async login() {
+		// realiza a validação dos campos, utilizando os parâmetros idealizados no projeto, e filtrando o body da requisição
+		this.validateFields();
+		if (this.errors.length > 0) {
+			console.log('Erros capturados : ', this.errors);
+			return;
+		}
+
+		try {
+			// busca na base de dados pelo email que está no body, o retorno é o objeto do user ou null
+			this.user = await this.Model.findOne({ email: this.body.email });
+
+			// averigua se o usuário exite na base de dados caso sim prossegue para averiguação de senha
+			if (this.user) {
+				// averigua se as senhas correspondem na base de dados
+				if (
+					!bcrypt.compareSync(this.body.password, this.user.password) // problemas graves de autenticação
+				) {
+					this.errors.push('Senha Inválida');
+					this.user = null;
+					// eslint-disable-next-line no-useless-return
+					return;
+				}
+			} else {
+				this.errors.push('Usuário ou senha Inválidos');
+				// eslint-disable-next-line no-useless-return
+				return;
+			}
+		} catch (e) {
+			this.errors.push('Erro Interno');
+		}
+	}
+
 	async register() {
 		// realiza a validação dos campos, utilizando os parâmetros idealizados no projeto
 		this.validateFields();
@@ -24,20 +57,18 @@ class LoginService {
 		// realiza a verificação de usuário já cadastrado
 		await this.alreadyRegisteredUser();
 
+		// caso hajam erros o cadatro é cancelado
 		if (this.errors.length > 0) {
-			console.log('Erros capturados : ', this.errors);
+			console.log('Erros capturados ao cadastrar : ', this.errors);
 			return;
 		}
 
-		// realiza o hashing da senha para que a senha não seja salva lisa na base de dados
+		// realiza o hashing da senha para que a sua string não seja salva lisa na base de dados
 		const salt = bcrypt.genSaltSync();
 		this.body.password = bcrypt.hashSync(this.body.password, salt);
 
-		try {
-			this.user = await this.Model.create(this.body);
-		} catch (e) {
-			console.log('Erro ao tentar salvar dado dentro do db : \n', e);
-		}
+		// erro será capturado no controller
+		this.user = await this.Model.create(this.body);
 	}
 
 	validateFields() {
@@ -56,8 +87,10 @@ class LoginService {
 			);
 		}
 
-		if (!(this.body.password === this.body.confirmedPswd)) {
-			this.errors.push('As senhas devem corresponder');
+		if (this.body.confirmedPswd !== null) {
+			if (!(this.body.password === this.body.confirmedPswd)) {
+				this.errors.push('As senhas devem corresponder');
+			}
 		}
 
 		// normalização final do objeto para cadastra-lo
@@ -75,15 +108,16 @@ class LoginService {
 			}
 		}
 
-		// normaliza os nomes das chaves para que seja mais fácil de compreender o que está acontecendo
+		// normaliza os nomes das chaves para que seja mais fácil de compreender o que está acontecendo além de realizar uma filtragem permitindo que o atributo body possa ser utilizado em ambos os cenários, de cadastro e de login
 		this.body = {
-			email: this.body.EmailRegister,
-			password: this.body.PswdRegister,
-			confirmedPswd: this.body.ConfirmPswdRegister
+			email: this.body.Email,
+			password: this.body.Pswd,
+			confirmedPswd: this.body.ConfirmPswd || null
 		};
 	}
 
 	async alreadyRegisteredUser() {
+		// função para averigura a existência de um email na base de dados e adicionar uma flag  de erro no atributo erros
 		// busca na base de dados pelo email que está no body, o retorno é o objeto do user ou null
 		const user = await this.Model.findOne({ email: this.body.email });
 		if (user) this.errors.push('Email já cadatrado.');
