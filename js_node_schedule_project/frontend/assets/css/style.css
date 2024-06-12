@@ -58,6 +58,7 @@ header {
 	background-color: var(--primary-color-100);
 	color: var(--secondary-color-100);
 	margin-bottom: 1.5rem;
+	padding: 1.3rem;
 }
 
 header span.brandding-infos {

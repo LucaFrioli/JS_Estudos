@@ -1,9 +1,12 @@
 <header>
 	<span class="brandding-infos">
-		<img
-			src="https://github.com/LucaFrioli.png"
-			alt="Icone do desenvolvedor"
-		/>
+		<% if(user){ %>
+			<img
+				src="https://github.com/LucaFrioli.png"
+				alt="Icone do <%= user.email %>"
+			/>
+		<% } %>
+
 		<h1>
 			<a
 				href="<%= title === 'index' ? '#' : '/'%>"
@@ -17,25 +20,38 @@
 	<nav id="burguerMenu">
 		<menu>
 			<span id="burguer" class="material-symbols-outlined"> menu </span>
-			<li class="normal">
-				<a
-					href="<%= title === 'login'? '#': '/login' %>"
-					rel="noopener noreferrer"
-					class="button-fake"
-				>
-					Login
-				</a>
-			</li>
-			<!-- <li class="normal">
-				<a href="#" rel="noopener noreferrer" class="button-fake">
-					link 2
-				</a>
-			</li>
-			<li class="normal">
-				<a href="#" rel="noopener noreferrer" class="button-fake">
-					link 3
-				</a>
-			</li> -->
+
+			<% if(user){ %>
+				<li class="normal">
+					<a
+						href="/logout"
+						rel="noopener noreferrer"
+						class="button-fake"
+					>
+						Logout
+					</a>
+				</li>
+
+				<li class="normal">
+					<a
+						href="/settings"
+						rel="noopener noreferrer"
+						class="button-fake"
+					>
+						Settings
+					</a>
+				</li>
+			<% } else {%>
+				<li class="normal">
+					<a
+						href="<%= title === 'login'? '#': '/login' %>"
+						rel="noopener noreferrer"
+						class="button-fake"
+					>
+						Login
+					</a>
+				</li>
+			<% } %>
 		</menu>
 	</nav>
 </header>
