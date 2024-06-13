@@ -1,3 +1,9 @@
+**PT-BR :**
+A maior parte dos códigos e ensinamentos contidos neste repositório foram obtidos e/ou inspirados no curso ministrado por Luiz Otávio chamado :  Curso de JavaScript e TypeScript do básico ao avançado JS/TS. Seguem os links para perfil do ministrando, e o curso em subsequencia  : [Luiz Otávio](https://github.com/luizomf), ministrando o curso [JavaScript and TypeScript Course from basic to advanced JS/TS](https://www.udemy.com/share/1026xa3@jjYBaj2SqKmEvUX-LbvAgFcM1nODfa4fzFkhgmq5KiuuB4j9i1HO7ajAaLTnHKjFhw==/).
+
+**EN :**
+Most of the codes and teachings contained in this repository were obtained and/or inspired by the course taught by Luiz Otávio called: JavaScript and TypeScript Course from basics to advanced JS/TS. Below are the links to the profile of the person teaching, and the course in sequence: [Luiz Otávio](https://github.com/luizomf), teaching the course [JavaScript and TypeScript Course from basic to advanced JS/TS](https://www.udemy.com/share/1026xa3@jjYBaj2SqKmEvUX-LbvAgFcM1nODfa4fzFkhgmq5KiuuB4j9i1HO7ajAaLTnHKjFhw==/).
+
 # JS_Estudos
  ### Estudos em conjunto é onde se agrega conhecimento :
  - Fique a vontade para adicionar comentários, curiosidades, e novos conhecimentos;
