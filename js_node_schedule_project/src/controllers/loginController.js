@@ -57,9 +57,14 @@ exports.login = async (req, res) => {
 
 		req.flash('success', 'Você entrou no sistema.');
 		req.session.user = login.user;
-		return res.redirect('/');
+		return res.redirect('/home');
 	} catch (e) {
 		console.log(e);
 		return res.redirect('/404Error');
 	}
 };
+
+exports.logout = async(req,res) =>{
+	req.session.destroy();
+	res.redirect('/');
+}

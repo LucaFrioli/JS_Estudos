@@ -1,47 +1,26 @@
-<%- include('includes/head') -%>
-<%- include('includes/header') -%>
+<%- include('includes/head') -%> <%- include('includes/header') -%>
 
-<main id="agenda">
-	<div class="chamada">
-		<h1>Agenda de Contatos</h1>
-		<!-- Troque {usuário} pelo nome vindo do login da pessoa -->
-		<p>Seja bem vindo {usuário}, aqui estão os seus contatos !</p>
-		<%- include('includes/messages') -%>
+<main id="index">
+	<div class="CTA">
+		<h1>Projeto prático Agenda</h1>
+		<article class="long-texts">
+			<p>
+				Este projeto visa colocar em prática, conceitos vistos ao longo das
+				sessões anteriores.
+			</p>
+			<p>
+				Por se tratar de um projeto mais prático poucas coisas serão
+				explicadas dentro do readme, ele na verdade servirá como um banco de
+				tasks que deverão ser realizadas até a finalização deste projeto
+				prático. Fique a vontade para entrar em contato com pessoas
+				participantes da idealização dos estudos, caso tenha duvidas.
+				deixaremos as informações referentes junto com a lista de tasks em
+				uma guia separada para caso queira algo mais visual e
+				personalizavel( já é esperado que saiba personalizar na altura deste
+				campeonato rsrsrs).
+			</p>
+		</article>
 	</div>
-
-	<table class="responsiveTable">
-		<thead>
-			<tr>
-				<th scope="col">Nome</th>
-				<th scope="col">Sobrenome</th>
-				<th scope="col">Nº</th>
-				<th scope="col">Email</th>
-			</tr>
-		</thead>
-
-		<tbody>
-			<tr>
-				<td data-label="Nome"> teste</td>
-				<td data-label="Sobrenome"> teste</td>
-				<td data-label="Nº">teste</td>
-				<td data-label="Email">teste@teste.com</td>
-			</tr>
-
-			<tr>
-				<td data-label="Nome"> teste 2</td>
-				<td data-label="Sobrenome"> teste2 khkhk jhjhk</td>
-				<td data-label="Nº">testekpdbspjvasdp</td>
-				<td data-label="Email">teste2@teste.com</td>
-			</tr>
-
-			<tr>
-				<td data-label="Nome"> teste 2</td>
-				<td data-label="Sobrenome"> teste2 khkhk jhjhk</td>
-				<td data-label="Nº">testekpdbspjvasdp</td>
-				<td data-label="Email">teste2@teste.com</td>
-			</tr>
-		</tbody>
-	</table>
 </main>
 
 <%- include('includes/footer') -%>

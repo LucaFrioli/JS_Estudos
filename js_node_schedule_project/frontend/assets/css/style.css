@@ -19,6 +19,21 @@ main {
 	align-items: center;
 }
 
+/* CTA = Call To Action div relacionada */
+div.CTA {
+	margin-bottom: 0.7rem;
+	text-align: center;
+}
+
+article.long-texts {
+	display: flex;
+	flex-direction: column;
+	text-align: justify;
+	gap: 1.2rem;
+	padding: 2rem;
+	width: 75%;
+}
+
 /* Cria responsividade para formulários, de formamais generalista */
 .responsive-form {
 	display: flex;
@@ -241,15 +256,10 @@ td {
 	}
 }
 
-/* Trabalhando com a main do login e cadatro */
+/* Trabalhando com a main do index */
 
-/* CTA = Call To Action */
-main#login div.CTA {
-	margin-bottom: 0.7rem;
-	text-align: center;
-}
-
-main#register div.CTA {
-	margin-bottom: 0.7rem;
-	text-align: center;
+main#index div.CTA {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

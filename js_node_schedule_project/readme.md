@@ -76,14 +76,18 @@ Tasks :
 -   [x] Caso o usuário seja logado com sucesso iniciaremos uma sessão;
 -   [x] Com a sessão inciada devemos criar um middleware que adicionará a sessão nas outras rotas até que o usuário faça logout;
 -   [x] Adionar botões disponiveis apenas para usuários logados, serão logout, e um botão que não leva ainda a rota alguma de settings;
--   [] Criar uma rota que seja responsável por realizar o logout do usuário;
--   [] Começar modelagem de rotas, garantindo que alguns locais sejam acessados apenas por pessoas logadas;
--         [] Redefinindo precedências de rotas para melhor organização do site (neste tópico tenha total liberdade criativa, se quiser utilize outros sites conhecidos como inspiração);
+-   [x] Criar uma rota que seja responsável por realizar o logout do usuário;
+-   [x] Começar modelagem de rotas, garantindo que alguns locais sejam acessados apenas por pessoas logadas;
+	-	[] Redefinindo precedências de rotas para melhor organização do site (neste tópico tenha total liberdade criativa, se quiser utilize outros sites conhecidos como inspiração);
+	-	[] Corrigir bugs de layout caso sejam apresentados
+	-	[] Testar se tudo está funcionando como o esperado
 
 ### Side Quest :
 	Caso queira treinar um pouco mais de lógica, começar a implementar o sitema de logs, e corrigi-lo, para que tenhamos um controle do mapeamento de comportamento de usuário dentro de nosso site.
 
 # Sumário de commits :
+
+**Início das commits  : 27 de maio de 2024	----  Última commit : ## de ###### de 2024**
 
 ## Primeira etapa :
 
@@ -110,3 +114,4 @@ Tasks :
 # Quarta etapa :
 
 -   5243437
+-	d441240

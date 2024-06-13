@@ -4,7 +4,7 @@ const routes = express.Router();
 
 // calling controllers modules
 // ./src/controllers/homeController.js
-const indexController = require(
+const homeController = require(
 	resolve(__dirname, 'src', 'controllers', 'homeController.js')
 );
 
@@ -18,16 +18,31 @@ const error404Page = require(
 	resolve(__dirname, 'src', 'controllers', '_404Controller.js')
 );
 
+// calling midlewares modules
+const checkUserInfoMiddleware = require(
+	resolve(__dirname, 'src', 'middlewares', 'checkUserInfoMiddleware.js')
+);
+
 // index routes
-routes.get('/', indexController.index);
+routes.get('/', (req, res) => {
+	res.render('index', { title: 'index' });
+});
+
+// error routes
+routes.get('/404Error', error404Page.render404);
 
 // login routes
 routes.get('/login', loginController.index);
 routes.post('/login', loginController.registerReceived);
 routes.get('/login/register', loginController.register);
 routes.post('/login/logged', loginController.login);
+routes.get('/logout', loginController.logout);
 
-// error routes
-routes.get('/404Error', error404Page.render404);
+// home routes
+routes.get(
+	'/home',
+	checkUserInfoMiddleware.checkUserIsLogged,
+	homeController.index
+);
 
 module.exports = routes;

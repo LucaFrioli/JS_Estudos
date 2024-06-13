@@ -12,7 +12,7 @@
 				href="<%= title === 'index' ? '#' : '/'%>"
 				rel="noopener noreferrer"
 			>
-				Agenda
+				SheduleJS
 			</a>
 		</h1>
 	</span>
@@ -24,13 +24,14 @@
 			<% if(user){ %>
 				<li class="normal">
 					<a
-						href="/logout"
+						href="<%= title === 'home' ? '#' : '/home'%>"
 						rel="noopener noreferrer"
 						class="button-fake"
 					>
-						Logout
+						Agenda
 					</a>
 				</li>
+
 
 				<li class="normal">
 					<a
@@ -39,6 +40,16 @@
 						class="button-fake"
 					>
 						Settings
+					</a>
+				</li>
+
+				<li class="normal">
+					<a
+						href="/logout"
+						rel="noopener noreferrer"
+						class="button-fake"
+					>
+						Logout
 					</a>
 				</li>
 			<% } else {%>
