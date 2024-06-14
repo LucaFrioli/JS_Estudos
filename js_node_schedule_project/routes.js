@@ -2,7 +2,7 @@ const { resolve } = require('path');
 const express = require('express');
 const routes = express.Router();
 
-// calling controllers modules
+// **calling controllers modules**
 // ./src/controllers/homeController.js
 const homeController = require(
 	resolve(__dirname, 'src', 'controllers', 'homeController.js')
@@ -18,11 +18,14 @@ const error404Page = require(
 	resolve(__dirname, 'src', 'controllers', '_404Controller.js')
 );
 
-// calling midlewares modules
+
+// **calling midlewares modules**
+// ./src/middlewares/checkUserInfoMiddleware.js
 const checkUserInfoMiddleware = require(
 	resolve(__dirname, 'src', 'middlewares', 'checkUserInfoMiddleware.js')
 );
 
+// **defining routes**
 // index routes
 routes.get('/', (req, res) => {
 	res.render('index', { title: 'index' });

@@ -4,7 +4,7 @@ exports.footerControll = () => {
 	const footer = document.querySelector('footer');
 	const footerHeight = footer.offsetHeight;
 
-	if (contentHeight < windowHeight - footerHeight) {
+	if ((contentHeight * 1.5) < (windowHeight - footerHeight)) {
 		footer.style.position = 'fixed';
 		footer.style.bottom = 0;
 	} else {

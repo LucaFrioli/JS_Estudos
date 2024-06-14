@@ -10,7 +10,7 @@
 exports.showMenu = function () {
   var menu = document.querySelector('menu');
   var liArray = menu.querySelectorAll('li');
-  var liDisplay = liArray[1].classList;
+  var liDisplay = liArray[0].classList;
   var widthScreen = window.screen.width;
   if (widthScreen < 769) {
     if (liDisplay.contains('normal')) {
@@ -45,7 +45,7 @@ exports.footerControll = function () {
   var windowHeight = window.innerHeight;
   var footer = document.querySelector('footer');
   var footerHeight = footer.offsetHeight;
-  if (contentHeight < windowHeight - footerHeight) {
+  if (contentHeight * 1.5 < windowHeight - footerHeight) {
     footer.style.position = 'fixed';
     footer.style.bottom = 0;
   } else {

@@ -1,7 +1,7 @@
 exports.showMenu = () => {
 	const menu = document.querySelector('menu');
 	const liArray = menu.querySelectorAll('li');
-	const liDisplay = liArray[1].classList;
+	const liDisplay = liArray[0].classList;
 
 	const widthScreen = window.screen.width;
 

@@ -2,6 +2,10 @@
 
 Este projeto visa colocar todos os conceitos estudados em aulas anteriores em prática. Criando uma aplicação de agenda para usuários cadatrados no pequeno sistema, serão abordados tópicos um pouco mais avançados, em adição aos conhecimentos obtidos em aulas anteriores. A méta é estar documentando cada alteração feita no projeto de modo gradual e constante.
 
+**Banco de tasks pendentes :**
+
+-   1 task na primeira etapa;
+
 # Primeira etapa :
 
 Criar um layout ejs que irá receber os conteúdos necessários, e servirá de entry point na aplicação :
@@ -40,7 +44,7 @@ Fazer a funcionalidade de cadatro dos usuários. Realizaremos a validação do e
 Tasks :
 
 -   [x] implementar a lógica dentro da rota `\login` do método post, feito dentro do controller `registerReceived`;
--   [ ] criar um model que controlará a validação dos dados de entrada de cadatro;
+-   [x] criar um model que controlará a validação dos dados de entrada de cadatro;
     -   [x] criar um schema que contenha os dados necessários email e pswd
     -   [x] criar validação de dados para os dados recebidos dentro da classe do service _Utilizaremos o pacote vlaidator, terá uma explicação a seguir sobre este assunto_
     -   [x] validar e spamar uma flash message caso tenha dados errados
@@ -68,7 +72,7 @@ Esta etapa será referente a logar o usuário, após ele ser cadastrado, devemos
 Tasks :
 
 -   [x] Criar uam rota para fazer averiguação de login.
--   [] Criar o método para realização de login dentro do model
+-   [x] Criar o método para realização de login dentro do model
     -   [x] Validar os campos (a principio utilizaremos já o método anteriormente criado);
     -   [x] Resgatar os dados da tabela, e averiguar a existência do email;
     -   [x] Comparar a senha utilizando `bcryptjs`;
@@ -78,16 +82,21 @@ Tasks :
 -   [x] Adionar botões disponiveis apenas para usuários logados, serão logout, e um botão que não leva ainda a rota alguma de settings;
 -   [x] Criar uma rota que seja responsável por realizar o logout do usuário;
 -   [x] Começar modelagem de rotas, garantindo que alguns locais sejam acessados apenas por pessoas logadas;
-	-	[] Redefinindo precedências de rotas para melhor organização do site (neste tópico tenha total liberdade criativa, se quiser utilize outros sites conhecidos como inspiração);
-	-	[] Corrigir bugs de layout caso sejam apresentados
-	-	[] Testar se tudo está funcionando como o esperado
+    -   [x] Redefinindo precedências de rotas para melhor organização do site (neste tópico tenha total liberdade criativa, se quiser utilize outros sites conhecidos como inspiração);
+    -   [] Corrigir bugs de layout caso sejam apresentados
+        -   [x] Reformular a lógica de frontend do burguer menu quando só exite um botão de opção. (caso queira pode deixar apenas o botão);
+        -   [x] Começar a adicionar responsividade na página index, tornando-a responsiva em todos os tamanhos de tela padrão oferecidos pela devtools do navegador;
+    -   [] Testar se tudo está funcionando como o esperado
+
+Obs : ao começar a testar o comportamento das interfaces gráficas em diferentes dispositivos, após a reformulação das rotas e retirar botões desnecessários para pessoas não logadas, erros forma capturados dentro do burguer menu, e footer assim criaram-se subtasks dentro da task de _correção de bugas de layout_.
 
 ### Side Quest :
-	Caso queira treinar um pouco mais de lógica, começar a implementar o sitema de logs, e corrigi-lo, para que tenhamos um controle do mapeamento de comportamento de usuário dentro de nosso site.
+
+    Caso queira treinar um pouco mais de lógica, começar a implementar o sitema de logs, e corrigi-lo, para que tenhamos um controle do mapeamento de comportamento de usuário dentro de nosso site.
 
 # Sumário de commits :
 
-**Início das commits  : 27 de maio de 2024	----  Última commit : ## de ###### de 2024**
+**Início das commits : 27 de maio de 2024 ---- Última commit : ## de ###### de 2024**
 
 ## Primeira etapa :
 
@@ -114,4 +123,5 @@ Tasks :
 # Quarta etapa :
 
 -   5243437
--	d441240
+-   d441240
+-   a0700df
