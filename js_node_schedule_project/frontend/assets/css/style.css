@@ -2,6 +2,7 @@
 
 :root {
 	--primary-color-100: rgb(65, 2, 184);
+	--primary-color-75: rgb(55, 2, 153);
 	--secondary-color-100: rgb(255, 255, 255);
 	--secondary-color-75: rgb(216, 216, 216);
 }
@@ -262,4 +263,16 @@ main#index div.CTA {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+main#index a.btn{
+	text-decoration: none;
+	background-color: var(--primary-color-100);
+	color: var(--secondary-color-100);
+	border-radius: 15px;
+	padding: 1.2rem;
+}
+
+main#index a.btn:hover{
+	background-color: var(--primary-color-75);
 }

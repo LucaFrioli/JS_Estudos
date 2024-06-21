@@ -1,0 +1,20 @@
+<%- include('includes/head') -%> <%- include('includes/header') -%>
+
+<main id="tasksPageMain">
+	<div class="CTA">
+		<h1>Lista de tarefas :</h1>
+
+		<form action="/updatingTasks" method="post" id="tasksListForm">
+			<div class="taskBlock" id="taskBlock_01">
+				<h2>Primeira etapa :</h2>
+				<input type="checkbox" name="t1_1" id="t1_1" />
+				<label for="t1_1">
+					Criar um header que contenha uma barra de navegação e uma
+					logo fantasia;
+				</label>
+			</div>
+		</form>
+	</div>
+</main>
+
+<%- include('includes/footer') -%>

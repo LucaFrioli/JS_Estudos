@@ -18,6 +18,10 @@ const error404Page = require(
 	resolve(__dirname, 'src', 'controllers', '_404Controller.js')
 );
 
+// ./src/controllers/tasksController.js
+const tasksController = require(
+	resolve(__dirname, 'src', 'controllers', 'tasksController.js')
+);
 
 // **calling midlewares modules**
 // ./src/middlewares/checkUserInfoMiddleware.js
@@ -46,6 +50,12 @@ routes.get(
 	'/home',
 	checkUserInfoMiddleware.checkUserIsLogged,
 	homeController.index
+);
+
+// tasks routes
+routes.get(
+	'/tasks',
+	tasksController.index
 );
 
 module.exports = routes;

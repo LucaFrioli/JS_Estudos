@@ -33,7 +33,7 @@ class LoginService {
 			if (this.user) {
 				// averigua se as senhas correspondem na base de dados
 				if (
-					!bcrypt.compareSync(this.body.password, this.user.password) // problemas graves de autenticação
+					!bcrypt.compareSync(this.body.password, this.user.password)
 				) {
 					this.errors.push('Senha Inválida');
 					this.user = null;

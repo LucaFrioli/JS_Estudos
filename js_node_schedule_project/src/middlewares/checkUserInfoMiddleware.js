@@ -1,7 +1,7 @@
 exports.checkUserIsLogged = (req, res, next) => {
 	if (!req.session.user) {
-		console.log('redirecionando usuário');
-		res.redirect('/');
+		req.flash('errors', 'Faça login antes de continuar !');
+		res.redirect('/login');
 	}
 	next();
 };
