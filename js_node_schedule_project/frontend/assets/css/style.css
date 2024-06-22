@@ -20,7 +20,7 @@ main {
 	align-items: center;
 }
 
-/* CTA = Call To Action div relacionada */
+/* CTA = Call To Action e conteudos relacionados relacionada */
 div.CTA {
 	margin-bottom: 0.7rem;
 	text-align: center;
@@ -140,7 +140,7 @@ header a.button-fake {
 header a.button-fake:hover {
 	background-color: var(--secondary-color-75);
 }
-/* adicionar responsividade  */
+/* adicionar responsividade ao header*/
 
 .hidden {
 	display: none;
@@ -184,6 +184,7 @@ footer {
 	justify-content: center;
 	/* bottom: 0; */
 	padding: 1rem;
+	margin-top: 1.5rem;
 }
 
 footer div span {
@@ -192,7 +193,7 @@ footer div span {
 	gap: 5px;
 }
 
-/* trabalhando com a main da agenda */
+/* trabalhando com a página agenda */
 
 main#agenda div.chamada {
 	display: flex;
@@ -257,7 +258,7 @@ td {
 	}
 }
 
-/* Trabalhando com a main do index */
+/* Trabalhando com a página index */
 
 main#index div.CTA {
 	display: flex;
@@ -275,4 +276,23 @@ main#index a.btn{
 
 main#index a.btn:hover{
 	background-color: var(--primary-color-75);
+}
+
+/* Trabalhando com a página de tasks */
+
+main#tasksPage form#tasksListForm{
+	width: 50%;
+	padding: 1.7rem;
+	gap: 1.5rem;
+}
+
+main#tasksPage form#tasksListForm h2{
+	text-align: center;
+	margin-bottom: 0.7rem;
+}
+
+main#tasksPage form#tasksListForm div.taskBox {
+	display: grid;
+	grid-template-columns: repeat(1, 18px 2fr);
+	gap: 15px;
 }

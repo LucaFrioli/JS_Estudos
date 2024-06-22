@@ -107,7 +107,7 @@ Obs : ao começar a testar o comportamento das interfaces gráficas em diferente
 
 Nesta etapa iremos adicionar dentro da página de entrada um botão para um página de tasks, estas tasks deverão estar salvas dentro do localstorage, junto com a informação se já foram concluídas ou não. Isso além de facilitar para os alunos posteriores que estarão utilizando o prjeto para estudo. Auxiliará no treino de habilidades já aprendidas anteriormente.
 
--	[ ] Adicionar uma rota que leve até a página de tasks, sendo que deverá ser aberta em uma aba diferente do navegador;
+-	[x] Adicionar uma rota que leve até a página de tasks, sendo que deverá ser aberta em uma aba diferente do navegador;
 -	[ ] Crirar bloco de tasks :
 	-	[ ] Cada bloco de tasks deve conter um titulo;
 	-	[ ] Cada bloco de tasks deve conter checkboxes com sua labem na frente dizendo o que deve ser feito;
