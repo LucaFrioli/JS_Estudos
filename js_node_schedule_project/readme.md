@@ -4,13 +4,17 @@ Este projeto visa colocar todos os conceitos estudados em aulas anteriores em pr
 
 **Banco de tasks pendentes :**
 
--   1 task na primeira etapa; [ ]
+_Legenda : x = concluida, / = em progresso_
 
--	Side quest da quarta etapa; [ ]
+-   1 task na primeira etapa; [/]
+
+    -   obs : melhorado a funcionalidade do burguer menu (valor de referencia de commit : );
+
+-   Side quest da quarta etapa; [ ]
 
 **Bugs encontrados :**
 
--	Problemas em navegadores desktop ao utilizar burguer menu (não abre ao redimencionar a teloa do navegador); [ ]
+-   Problemas em navegadores desktop ao utilizar burguer menu (não abre ao redimencionar a teloa do navegador); [ ]
 
 # Primeira etapa :
 
@@ -100,22 +104,21 @@ Obs : ao começar a testar o comportamento das interfaces gráficas em diferente
 
     Caso queira treinar um pouco mais de lógica, começar a implementar o sitema de logs, e corrigi-lo, para que tenhamos um controle do mapeamento de comportamento de usuário dentro de nosso site.
 
-
 # Etapa Extra 1 (off topic em relação a idelização do projeto prático):
 
 **Para estudantes apenas realizar a ultima task.**
 
 Nesta etapa iremos adicionar dentro da página de entrada um botão para um página de tasks, estas tasks deverão estar salvas dentro do localstorage, junto com a informação se já foram concluídas ou não. Isso além de facilitar para os alunos posteriores que estarão utilizando o prjeto para estudo. Auxiliará no treino de habilidades já aprendidas anteriormente.
 
--	[x] Adicionar uma rota que leve até a página de tasks, sendo que deverá ser aberta em uma aba diferente do navegador;
--	[ ] Crirar bloco de tasks :
-	-	[ ] Cada bloco de tasks deve conter um titulo;
-	-	[ ] Cada bloco de tasks deve conter checkboxes com sua labem na frente dizendo o que deve ser feito;
-	-	[ ] Caso seja necessário fazer subtasks elas devem ficar aninhadas a baixo da task pai;
-	-	[ ] Toda vez que o bloco de task sofrer uma alteração deverá ser atualizado um localstorage para que a próxima vez que a página for aberta no dispositivo, a task fique constada como concluida;
--	[ ] Testar responsividade, e estilizar a página;
--	[ ] Escolher uma task do banco de tasks pendentes e realizar;
--	[ ]	Começar a criar o layout da página settings do usuário;
+-   [x] Adicionar uma rota que leve até a página de tasks, sendo que deverá ser aberta em uma aba diferente do navegador;
+-   [ ] Crirar bloco de tasks :
+    -   [ ] Cada bloco de tasks deve conter um titulo;
+    -   [ ] Cada bloco de tasks deve conter checkboxes com sua labem na frente dizendo o que deve ser feito;
+    -   [ ] Caso seja necessário fazer subtasks elas devem ficar aninhadas a baixo da task pai;
+    -   [ ] Toda vez que o bloco de task sofrer uma alteração deverá ser atualizado um localstorage para que a próxima vez que a página for aberta no dispositivo, a task fique constada como concluida;
+-   [ ] Testar responsividade, e estilizar a página;
+-   [/] Escolher uma task do banco de tasks pendentes e realizar;
+-   [ ] Começar a criar o layout da página settings do usuário;
 
 # Sumário de commits :
 
@@ -148,9 +151,8 @@ Nesta etapa iremos adicionar dentro da página de entrada um botão para um pág
 -   5243437
 -   d441240
 -   a0700df
--	64cb215
-
+-   64cb215
 
 ## Etapa Extra 1 :
 
--	b3f7b36
+-   b3f7b36

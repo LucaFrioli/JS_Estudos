@@ -266,7 +266,7 @@ main#index div.CTA {
 	align-items: center;
 }
 
-main#index a.btn{
+main#index a.btn {
 	text-decoration: none;
 	background-color: var(--primary-color-100);
 	color: var(--secondary-color-100);
@@ -274,19 +274,19 @@ main#index a.btn{
 	padding: 1.2rem;
 }
 
-main#index a.btn:hover{
+main#index a.btn:hover {
 	background-color: var(--primary-color-75);
 }
 
 /* Trabalhando com a página de tasks */
 
-main#tasksPage form#tasksListForm{
+main#tasksPage form#tasksListForm {
 	width: 50%;
 	padding: 1.7rem;
 	gap: 1.5rem;
 }
 
-main#tasksPage form#tasksListForm h2{
+main#tasksPage form#tasksListForm h2 {
 	text-align: center;
 	margin-bottom: 0.7rem;
 }

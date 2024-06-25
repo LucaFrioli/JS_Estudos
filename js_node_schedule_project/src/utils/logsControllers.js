@@ -52,8 +52,11 @@ const createErrorLog = async (
 	try {
 		const errorLogUserFile = path.join(logsDir, 'Users', 'errors.log');
 		const logMessage = `${new Date().toISOString()},
-		\n[${userDescription.userSection === 'Unknown' ?
-				undefined : userDescription.userSection}]
+		\n[${
+			userDescription.userSection === 'Unknown'
+				? undefined
+				: userDescription.userSection
+		}]
 		\nERROR : ${message}\n\n`;
 		await fs.appendFile(errorLogUserFile, logMessage);
 	} catch (e) {
@@ -83,8 +86,11 @@ const createInfoLog = async (
 	try {
 		const infoLogUserFile = path.join(logsDir, 'Users', 'info.log');
 		const logMessage = `${new Date().toISOString()}
-		\n[${userDescription.userSection === 'Unknown' ?
-				undefined : userDescription.userSection}]
+		\n[${
+			userDescription.userSection === 'Unknown'
+				? undefined
+				: userDescription.userSection
+		}]
 		\nMessage : ${message}\n\n`;
 		await fs.appendFile(infoLogUserFile, logMessage);
 	} catch (e) {

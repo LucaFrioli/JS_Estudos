@@ -53,9 +53,6 @@ routes.get(
 );
 
 // tasks routes
-routes.get(
-	'/tasks',
-	tasksController.index
-);
+routes.get('/tasks', tasksController.index);
 
 module.exports = routes;
