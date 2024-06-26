@@ -3,33 +3,34 @@ const express = require('express');
 const routes = express.Router();
 
 // **calling controllers modules**
-// ./src/controllers/homeController.js
 const homeController = require(
+	// ./src/controllers/homeController.js
 	resolve(__dirname, 'src', 'controllers', 'homeController.js')
 );
 
-// ./src/controllers/loginController.js
 const loginController = require(
+	// ./src/controllers/loginController.js
 	resolve(__dirname, 'src', 'controllers', 'loginController.js')
 );
 
-// ./src/controllers/_404Controller.js
 const error404Page = require(
+	// ./src/controllers/_404Controller.js
 	resolve(__dirname, 'src', 'controllers', '_404Controller.js')
 );
 
-// ./src/controllers/tasksController.js
 const tasksController = require(
+	// ./src/controllers/tasksController.js
 	resolve(__dirname, 'src', 'controllers', 'tasksController.js')
 );
 
 // **calling midlewares modules**
-// ./src/middlewares/checkUserInfoMiddleware.js
 const checkUserInfoMiddleware = require(
+	// ./src/middlewares/checkUserInfoMiddleware.js
 	resolve(__dirname, 'src', 'middlewares', 'checkUserInfoMiddleware.js')
 );
 
 // **defining routes**
+
 // index routes
 routes.get('/', (req, res) => {
 	res.render('index', { title: 'index' });

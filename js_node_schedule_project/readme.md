@@ -8,7 +8,7 @@ _Legenda : x = concluida, / = em progresso_
 
 -   1 task na primeira etapa; [/]
 
-    -   obs : melhorado a funcionalidade do burguer menu (valor de referencia de commit : );
+    -   obs : melhorado a funcionalidade do burguer menu (valor de referencia de commit : 4156829 );
 
 -   Side quest da quarta etapa; [ ]
 
@@ -81,7 +81,7 @@ Esta etapa será referente a logar o usuário, após ele ser cadastrado, devemos
 
 Tasks :
 
--   [x] Criar uam rota para fazer averiguação de login.
+-   [x] Criar uma rota para fazer averiguação de login.
 -   [x] Criar o método para realização de login dentro do model
     -   [x] Validar os campos (a principio utilizaremos já o método anteriormente criado);
     -   [x] Resgatar os dados da tabela, e averiguar a existência do email;
@@ -111,11 +111,12 @@ Obs : ao começar a testar o comportamento das interfaces gráficas em diferente
 Nesta etapa iremos adicionar dentro da página de entrada um botão para um página de tasks, estas tasks deverão estar salvas dentro do localstorage, junto com a informação se já foram concluídas ou não. Isso além de facilitar para os alunos posteriores que estarão utilizando o prjeto para estudo. Auxiliará no treino de habilidades já aprendidas anteriormente.
 
 -   [x] Adicionar uma rota que leve até a página de tasks, sendo que deverá ser aberta em uma aba diferente do navegador;
--   [ ] Crirar bloco de tasks :
-    -   [ ] Cada bloco de tasks deve conter um titulo;
-    -   [ ] Cada bloco de tasks deve conter checkboxes com sua labem na frente dizendo o que deve ser feito;
-    -   [ ] Caso seja necessário fazer subtasks elas devem ficar aninhadas a baixo da task pai;
-    -   [ ] Toda vez que o bloco de task sofrer uma alteração deverá ser atualizado um localstorage para que a próxima vez que a página for aberta no dispositivo, a task fique constada como concluida;
+-   [x] Crirar bloco de tasks :
+    -   [x] Cada bloco de tasks deve conter um titulo;
+    -   [x] Cada bloco de tasks deve conter checkboxes com sua label na frente dizendo o que deve ser feito;
+    -   [x] Caso seja necessário fazer subtasks elas devem ficar aninhadas a baixo da task pai;
+    -   [ ] Toda vez que o bloco de task sofrer uma alteração deverá ser atualizado um localstorage, para que a próxima vez que a página for aberta no dispositivo, a task fique constada como concluida;
+-	[ ] Popular a lista de tasks com as já realizadas e/ou idealizadas até o momento e atualizar continuamente ao longo do projeto;
 -   [ ] Testar responsividade, e estilizar a página;
 -   [/] Escolher uma task do banco de tasks pendentes e realizar;
 -   [ ] Começar a criar o layout da página settings do usuário;
@@ -156,3 +157,7 @@ Nesta etapa iremos adicionar dentro da página de entrada um botão para um pág
 ## Etapa Extra 1 :
 
 -   b3f7b36
+- 	35f0c4b
+-	5e7ea7e
+-	4156829
+-	
