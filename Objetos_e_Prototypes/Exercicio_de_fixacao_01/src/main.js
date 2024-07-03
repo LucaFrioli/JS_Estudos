@@ -12,7 +12,7 @@ Pessoa.prototype.getBirthYear = function () {
     atualYear = new Date().getFullYear();
     return atualYear - this.idade;
 }
-Object.freeze(Pessoa.getBirthYear());
+Object.freeze(Pessoa.getBirthYear);
 
 function Aluno(nome, idade, curso) {
     Pessoa.call(this, nome, idade);//herança do contrutor
@@ -21,7 +21,7 @@ function Aluno(nome, idade, curso) {
 Aluno.prototype.talkAbout = function () {
     return `Olá me chamo ${this.nome} e estou cursando ${this.curso} `;
 }
-Object.freeze(Aluno.talkAbout());
+Object.freeze(Aluno.talkAbout);
 Object.setPrototypeOf(Aluno.prototype, Pessoa.prototype);//herança do prototipo
 
 function criaAluno(number, arraytoConsume) {

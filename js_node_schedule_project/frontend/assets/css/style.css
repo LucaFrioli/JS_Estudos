@@ -35,6 +35,14 @@ article.long-texts {
 	width: 75%;
 }
 
+/* Aside paterns */
+aside.fixed-on-left {
+    position: fixed;
+    top: 15rem;
+    left: 3.5rem;
+    width: auto;
+}
+
 /* Cria responsividade para formulários, de formamais generalista */
 .responsive-form {
 	display: flex;
@@ -279,6 +287,18 @@ main#index a.btn:hover {
 }
 
 /* Trabalhando com a página de tasks */
+
+button.saveTasks{
+	background-color: var(--primary-color-100);
+	color: var(--secondary-color-100);
+	padding: 0.5rem;
+	border: none;
+	border-radius: 10px;
+	font-weight: 700;
+	cursor: pointer;
+	margin-top: 4rem;
+}
+
 
 main#tasksPage form#tasksListForm {
 	width: 50%;

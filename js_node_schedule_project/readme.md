@@ -8,7 +8,7 @@ _Legenda : x = concluida, / = em progresso_
 
 -   1 task na primeira etapa; [/]
 
-    -   obs : melhorado a funcionalidade do burguer menu (valor de referencia de commit : 4156829 );
+    -   Melhorado a funcionalidade do burguer menu (valor de referencia de commit : 4156829 );
 
 -   Side quest da quarta etapa; [ ]
 
@@ -111,15 +111,17 @@ Obs : ao começar a testar o comportamento das interfaces gráficas em diferente
 Nesta etapa iremos adicionar dentro da página de entrada um botão para um página de tasks, estas tasks deverão estar salvas dentro do localstorage, junto com a informação se já foram concluídas ou não. Isso além de facilitar para os alunos posteriores que estarão utilizando o prjeto para estudo. Auxiliará no treino de habilidades já aprendidas anteriormente.
 
 -   [x] Adicionar uma rota que leve até a página de tasks, sendo que deverá ser aberta em uma aba diferente do navegador;
--   [x] Crirar bloco de tasks :
-    -   [x] Cada bloco de tasks deve conter um titulo;
-    -   [x] Cada bloco de tasks deve conter checkboxes com sua label na frente dizendo o que deve ser feito;
+-   [x] Crirar bloco ou lista de tasks :
+    -   [x] Cada bloco/lista de tasks deve conter um titulo;
+    -   [x] Cada bloco/lista de tasks deve conter checkboxes com sua label na frente dizendo o que deve ser feito;
     -   [x] Caso seja necessário fazer subtasks elas devem ficar aninhadas a baixo da task pai;
-    -   [ ] Toda vez que o bloco de task sofrer uma alteração deverá ser atualizado um localstorage, para que a próxima vez que a página for aberta no dispositivo, a task fique constada como concluida;
+    -   [ ] Toda vez que o bloco/lista de task sofrer uma alteração deverá ser atualizado um localstorage para que a próxima vez que a página for aberta no dispositivo, a task fique constada como concluida;
 -	[ ] Popular a lista de tasks com as já realizadas e/ou idealizadas até o momento e atualizar continuamente ao longo do projeto;
 -   [ ] Testar responsividade, e estilizar a página;
 -   [/] Escolher uma task do banco de tasks pendentes e realizar;
 -   [ ] Começar a criar o layout da página settings do usuário;
+
+Anotações de resolução parcial, durante o hiato que necessitei fazer tive novas ideias, no momento já foi adicionado um botão para salvar o stado das tasks e estou começando a aimplementar a lógica para criar um map que será salvo dentro do localstorgae do navegador do ususário, ideias de implementação de stado em cookie ded ssessão estão sendo estudados, erros até o moemnto a se correr atrás seriam a troca e reformulação dos ids das tarefas, para melhor aderência de tecnologias incluindo map,JSON e string, facilitando a incerção das tasks dentro do localstorgae da máquina de usuário. A ideia do uso do cookie junto com a seção veio como objetivo de eventualmente estar treinando questão de sincronização de estados entre online e offline com dados menos complexos... Assuntos mais complexos serão abordados mais a diante no curso como veremos... (Ao finalizar, a parte de Typescript iremos fazer um projeto com integração a modulos webassbly em rust).
 
 # Sumário de commits :
 
@@ -160,4 +162,4 @@ Nesta etapa iremos adicionar dentro da página de entrada um botão para um pág
 - 	35f0c4b
 -	5e7ea7e
 -	4156829
--	
+-
