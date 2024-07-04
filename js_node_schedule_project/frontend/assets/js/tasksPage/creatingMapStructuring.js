@@ -1,16 +1,17 @@
-export default (domListCheckboxes, domListLabels) =>{
-	const mapping = new Map();
-
-	// itera sobre as domList saparando os formulários e ciando objetos literais que serão posteriormente adicionados em um array ou map para salvar em local storage
+export default (domListCheckboxes, domListLabels) => {
+	// const mapping = new Map();
+	const array = [];
+	// itera sobre as domList saparando os formulários e ciando objetos literais que serão posteriormente adicionados em um array para salvar em local storage
 	// eslint-disable-next-line prefer-const
-	for (let i = 0; i<domListCheckboxes.length; i++) {
+	for (let i = 0; i < domListCheckboxes.length; i++) {
 		// eslint-disable-next-line prefer-const
-		let objectTest = {
-			status: domListCheckboxes[i].checked,
-			info : domListLabels[i].innerHTML
+		let obj = {
+			id: domListCheckboxes[i].id,
+			relized: domListCheckboxes[i].checked,
+			info: domListLabels[i].innerHtml
 		};
-		mapping.set(encodeURIComponent(domListCheckboxes[i].id), objectTest);
+		array.push(obj);
 	}
 
-	return mapping;
-}
+	return array;
+};

@@ -81,20 +81,85 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (domListCheckboxes, domListLabels) {
-  var mapping = new Map();
-
-  // itera sobre as domList saparando os formulários e ciando objetos literais que serão posteriormente adicionados em um array ou map para salvar em local storage
+  // const mapping = new Map();
+  var array = [];
+  // itera sobre as domList saparando os formulários e ciando objetos literais que serão posteriormente adicionados em um array para salvar em local storage
   // eslint-disable-next-line prefer-const
   for (var i = 0; i < domListCheckboxes.length; i++) {
     // eslint-disable-next-line prefer-const
-    var objectTest = {
-      status: domListCheckboxes[i].checked,
-      info: domListLabels[i].innerHTML
+    var obj = {
+      id: domListCheckboxes[i].id,
+      relized: domListCheckboxes[i].checked,
+      info: domListLabels[i].innerHtml
     };
-    mapping.set(encodeURIComponent(domListCheckboxes[i].id), objectTest);
+    array.push(obj);
   }
-  return mapping;
+  return array;
 });
+
+/***/ }),
+
+/***/ "./frontend/assets/js/tasksPage/loadingState.js":
+/*!******************************************************!*\
+  !*** ./frontend/assets/js/tasksPage/loadingState.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _localStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./localStorage */ "./frontend/assets/js/tasksPage/localStorage.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
+  // recupera toda a informação contida em localstorage e transforma em uma estrutura de dados que pode ser manipulada
+  var dataString = (0,_localStorage__WEBPACK_IMPORTED_MODULE_0__.readDataLocalStorage)();
+  var pureData = JSON.parse(dataString);
+
+  // realiza uma filtrgaem trazendo apenas aquelas tarefas que foram concluidas
+  var checkedList = pureData.filter(function (el) {
+    return el.relized === true;
+  });
+
+  // itera sobre o array filtrado, assinalando e apresentando para o usuário todas as tarefaz já concluidas.
+  checkedList.forEach(function (element) {
+    var el = document.querySelector("input[type=\"checkbox\"]#".concat(element.id));
+    el.checked = true;
+  });
+});
+
+/***/ }),
+
+/***/ "./frontend/assets/js/tasksPage/localStorage.js":
+/*!******************************************************!*\
+  !*** ./frontend/assets/js/tasksPage/localStorage.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   readDataLocalStorage: () => (/* binding */ readDataLocalStorage),
+/* harmony export */   saveInLocalStorage: () => (/* binding */ saveInLocalStorage)
+/* harmony export */ });
+/* eslint-disable no-undef */
+
+// regularza o nome do item de localstroage, prevenindo eventuais erros de digitação
+var localstorageNameItem = 'StatusTaskList';
+var saveInLocalStorage = function saveInLocalStorage(arr) {
+  // regulariza o array para que seja uma string assim permitindo a inserção correta dentro do localstorage
+  var stringedInfoMapped = transformInJson(arr);
+  return localStorage.setItem(localstorageNameItem, stringedInfoMapped);
+};
+var readDataLocalStorage = function readDataLocalStorage() {
+  // retorna a string salva para posterior uso
+  return localStorage.getItem(localstorageNameItem);
+};
+function transformInJson(arr) {
+  return JSON.stringify(arr);
+}
+
 
 /***/ }),
 
@@ -110,6 +175,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _creatingMapStructuring__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./creatingMapStructuring */ "./frontend/assets/js/tasksPage/creatingMapStructuring.js");
+/* harmony import */ var _localStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./localStorage */ "./frontend/assets/js/tasksPage/localStorage.js");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (e) {
   // previne que qualquer tipo de ação ocorra ao botão ser clicado independentemente se ele for adicionada ou não a um formulário
@@ -120,11 +187,9 @@ __webpack_require__.r(__webpack_exports__);
   var domListCheckboxes = form.querySelectorAll('input[type="checkbox"]');
   var domListLabels = form.querySelectorAll('label');
 
-  // retorna a estrutura do mapa e o tansforma em string 
-  var teste = (0,_creatingMapStructuring__WEBPACK_IMPORTED_MODULE_0__["default"])(domListCheckboxes, domListLabels);
-  console.log(teste);
-  var mappingString = JSON.stringify(teste);
-  console.log(mappingString);
+  // retorna a estrutura do mapa e o tansforma em string
+  var arrOfInfo = (0,_creatingMapStructuring__WEBPACK_IMPORTED_MODULE_0__["default"])(domListCheckboxes, domListLabels);
+  (0,_localStorage__WEBPACK_IMPORTED_MODULE_1__.saveInLocalStorage)(arrOfInfo);
 });
 
 /***/ }),
@@ -23804,6 +23869,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_js_burguerMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/js/burguerMenu */ "./frontend/assets/js/burguerMenu.js");
 /* harmony import */ var _assets_js_responsivnessFooterController__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/js/responsivnessFooterController */ "./frontend/assets/js/responsivnessFooterController.js");
 /* harmony import */ var _assets_js_tasksPage_realizeSubmition__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/js/tasksPage/realizeSubmition */ "./frontend/assets/js/tasksPage/realizeSubmition.js");
+/* harmony import */ var _assets_js_tasksPage_loadingState__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/js/tasksPage/loadingState */ "./frontend/assets/js/tasksPage/loadingState.js");
+
 
 
 
@@ -23815,6 +23882,7 @@ window.addEventListener('resize', _assets_js_responsivnessFooterController__WEBP
 var menuIcon = document.querySelector('span#burguer');
 menuIcon.addEventListener('click', _assets_js_burguerMenu__WEBPACK_IMPORTED_MODULE_3__.showMenu);
 if (window.location.pathname === '/tasks') {
+  window.addEventListener('load', _assets_js_tasksPage_loadingState__WEBPACK_IMPORTED_MODULE_6__["default"]);
   var taskPage = document.querySelector('main#tasksPage');
   var saveTasksButton = taskPage.querySelector('button.saveTasks');
   saveTasksButton.addEventListener('click', _assets_js_tasksPage_realizeSubmition__WEBPACK_IMPORTED_MODULE_5__["default"]);

@@ -115,13 +115,13 @@ Nesta etapa iremos adicionar dentro da página de entrada um botão para um pág
     -   [x] Cada bloco/lista de tasks deve conter um titulo;
     -   [x] Cada bloco/lista de tasks deve conter checkboxes com sua label na frente dizendo o que deve ser feito;
     -   [x] Caso seja necessário fazer subtasks elas devem ficar aninhadas a baixo da task pai;
-    -   [ ] Toda vez que o bloco/lista de task sofrer uma alteração deverá ser atualizado um localstorage para que a próxima vez que a página for aberta no dispositivo, a task fique constada como concluida;
+    -   [x] Toda vez que o bloco/lista de task sofrer uma alteração deverá ser atualizado um localstorage para que a próxima vez que a página for aberta no dispositivo, a task fique constada como concluida;
 -	[ ] Popular a lista de tasks com as já realizadas e/ou idealizadas até o momento e atualizar continuamente ao longo do projeto;
 -   [ ] Testar responsividade, e estilizar a página;
 -   [/] Escolher uma task do banco de tasks pendentes e realizar;
 -   [ ] Começar a criar o layout da página settings do usuário;
 
-Anotações de resolução parcial, durante o hiato que necessitei fazer tive novas ideias, no momento já foi adicionado um botão para salvar o stado das tasks e estou começando a aimplementar a lógica para criar um map que será salvo dentro do localstorgae do navegador do ususário, ideias de implementação de stado em cookie ded ssessão estão sendo estudados, erros até o moemnto a se correr atrás seriam a troca e reformulação dos ids das tarefas, para melhor aderência de tecnologias incluindo map,JSON e string, facilitando a incerção das tasks dentro do localstorgae da máquina de usuário. A ideia do uso do cookie junto com a seção veio como objetivo de eventualmente estar treinando questão de sincronização de estados entre online e offline com dados menos complexos... Assuntos mais complexos serão abordados mais a diante no curso como veremos... (Ao finalizar, a parte de Typescript iremos fazer um projeto com integração a modulos webassbly em rust).
+Várias mudanças de ideias ocorreram ao longo desta etapa principalmente por conta do hiato que foi necessário ser feito... porém uma segunda ideia de implementação é talvez criar um mecanismo de reconhecimento de rede, assim já portando todas as mudanças de um computador ao outro, ou afins pela sessão iniciada em determindo ip de rede, mas isto ficará nos planos de ideias, para serem implementadas ao amadurecimento do desenvolvedor. e o decorrer da jornada que se prosseguirácom typescript e webassembly em rust. (Breve divagação).
 
 # Sumário de commits :
 
