@@ -133,10 +133,181 @@
 		<h2>Terceira etapa :</h2>
 		<ul class="taskList" id="taskListPart3">
 			<li>
-				<input type="checkbox" name="t3e" id="t3e" />
-				<label for="t3e"></label>
+				<input type="checkbox" name="t3e1" id="t3e1" />
+				<label for="t3e1">
+					Implementar a lógica dentro da rota <em>\login</em> do
+					método post, feito dentro do controller
+					<em>registerReceived</em> no arquivo de controladores de
+					login;
+				</label>
+			</li>
+			<details>
+				<summary>
+					Criar um Model que controlará a validação dos dados de
+					entrada de cadatro;
+				</summary>
+				<ul class="taskList subtaskList" id="subtasklistPart3Level1">
+					<li>
+						<input type="checkbox" name="t3e2e1" id="t3e2e1" />
+						<label for="t3e2e1">
+							Criar um schema que contenha os dados necessários
+							email e pswd
+						</label>
+					</li>
+
+					<li>
+						<input type="checkbox" name="t3e2e2" id="t3e2e2" />
+						<label for="t3e2e2">
+							Criar validação de dados para os dados recebidos
+							dentro da classe do service.
+							<em> (Utilizaremos o pacote vlaidator) </em>
+						</label>
+					</li>
+
+					<li>
+						<input type="checkbox" name="t3e2e3" id="t3e2e3" />
+						<label for="t3e2e3">
+							Validar e spamar uma flash message caso tenham dados
+							errados.
+						</label>
+					</li>
+
+					<li>
+						<input type="checkbox" name="t3e2e4" id="t3e2e4" />
+						<label for="t3e2e4">
+							Se tudo estiver validado corretamente, adicionar
+							hash na senha do usuário.
+							<em> (Utilizaremos bcrypt) </em>
+						</label>
+					</li>
+
+					<li>
+						<input type="checkbox" name="t3e2e5" id="t3e2e5" />
+						<label for="t3e2e5">
+							Com tudo validado e a senha hasheada
+							("criptogrfada"), salvar dentro do banco de dados as
+							informações.
+						</label>
+					</li>
+				</ul>
+			</details>
+
+			<li>
+				<a
+					href="https://github.com/LucaFrioli/JS_Estudos/blob/main/js_node_schedule_project/readme.md"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Veja o readme para um pouco mais de infromações sobre os
+					pacotes adicionados !
+				</a>
 			</li>
 		</ul>
+
+		<h2>Quarta etapa :</h2>
+		<ul class="taskList" id="TaskListPart4">
+			<li>
+				<input type="checkbox" name="t4e1" id="t4e1" />
+				<label for="t4e1">
+					Criar uma rota para fazer averiguação de login.
+				</label>
+			</li>
+
+			<details>
+				<summary>
+					Criar o método para realização de login dentro do model :
+				</summary>
+				<ul class="taskList subtaskList">
+					<li>
+						<input type="checkbox" name="t4e2e1" id="t4e2e1" />
+						<label for="t4e2e1">
+							Validar os campos (a principio utilizaremos já o
+							método anteriormente criado);
+						</label>
+					</li>
+					<li>
+						<input type="checkbox" name="t4e2e2" id="t4e2e2" />
+						<label for="t4e2e2">
+							Resgatar os dados da tabela, e averiguar a
+							existência do email;
+						</label>
+					</li>
+					<li>
+						<input type="checkbox" name="t4e2e3" id="t4e2e3" />
+						<label for="t4e2e3">
+							Comparar a senha utilizando <em> bcryptjs </em>;
+						</label>
+					</li>
+					<li>
+						<input type="checkbox" name="t4e2e4" id="t4e2e4" />
+						<label for="t4e2e4">
+							Lançar erros caso necessário;
+						</label>
+					</li>
+				</ul>
+			</details>
+
+			<li>
+				<input type="checkbox" name="t4e3" id="t4e3" />
+				<label for="t4e3">
+					Caso o usuário seja logado com sucesso iniciaremos uma
+					sessão;
+				</label>
+			</li>
+
+			<li>
+				<input type="checkbox" name="t4e4" id="t4e4" />
+				<label for="t4e4">
+					Com a sessão inciada devemos criar um middleware que
+					adicionará a sessão nas outras rotas até que o usuário faça
+					logout;
+				</label>
+			</li>
+
+			<li>
+				<input type="checkbox" name="t4e5" id="t4e5" />
+				<label for="t4e5">
+					Adionar botões disponiveis apenas para usuários logados,
+					serão logout, e um botão que não leva ainda a rota alguma,
+					porém o chamaremos de settings;
+				</label>
+			</li>
+
+			<li>
+				<input type="checkbox" name="t4e6" id="t4e6" />
+				<label for="t4e6">
+					Criar uma rota que seja responsável por realizar o logout do
+					usuário;
+				</label>
+			</li>
+
+			<details>
+				<summary>
+					Modelagem de rotas para acesso apenas de pessoas Logadas ;
+				</summary>
+				<ul class="taskList subtaskList">
+					<li>
+						<input type="checkbox" name="t4e7e1" id="t4e7e1" />
+						<label for="t4e7e1">
+							Redefinindo precedências de rotas para melhor
+							organização do site;
+							<em>
+								(neste tópico tenha total liberdade criativa, se
+								quiser utilize outros sites conhecidos como
+								inspiração)
+							</em>
+						</label>
+					</li>
+					<li>
+						<input type="checkbox" name="t4e7e" id="t4e7e" />
+						<label for="t4e7e">
+							Testar se tudo está funcionando como o esperado.
+						</label>
+					</li>
+				</ul>
+			</details>
+		</ul>
+		
 	</form>
 </main>
 

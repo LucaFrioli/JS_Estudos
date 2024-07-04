@@ -9,6 +9,7 @@ _Legenda : x = concluida, / = em progresso_
 -   1 task na primeira etapa; [/]
 
     -   Melhorado a funcionalidade do burguer menu (valor de referencia de commit : 4156829 );
+	-	Melhorar o desing, Trazendo uma experiência de Ususário mais agrdavel ();
 
 -   Side quest da quarta etapa; [ ]
 
@@ -89,7 +90,7 @@ Tasks :
     -   [x] Lançar erros caso necessário;
 -   [x] Caso o usuário seja logado com sucesso iniciaremos uma sessão;
 -   [x] Com a sessão inciada devemos criar um middleware que adicionará a sessão nas outras rotas até que o usuário faça logout;
--   [x] Adionar botões disponiveis apenas para usuários logados, serão logout, e um botão que não leva ainda a rota alguma de settings;
+-   [x] Adionar botões disponiveis apenas para usuários logados, serão logout, e um botão que não leva ainda a rota alguma, porém o chamaremos de settings;
 -   [x] Criar uma rota que seja responsável por realizar o logout do usuário;
 -   [x] Começar modelagem de rotas, garantindo que alguns locais sejam acessados apenas por pessoas logadas;
     -   [x] Redefinindo precedências de rotas para melhor organização do site (neste tópico tenha total liberdade criativa, se quiser utilize outros sites conhecidos como inspiração);
@@ -116,12 +117,12 @@ Nesta etapa iremos adicionar dentro da página de entrada um botão para um pág
     -   [x] Cada bloco/lista de tasks deve conter checkboxes com sua label na frente dizendo o que deve ser feito;
     -   [x] Caso seja necessário fazer subtasks elas devem ficar aninhadas a baixo da task pai;
     -   [x] Toda vez que o bloco/lista de task sofrer uma alteração deverá ser atualizado um localstorage para que a próxima vez que a página for aberta no dispositivo, a task fique constada como concluida;
--	[ ] Popular a lista de tasks com as já realizadas e/ou idealizadas até o momento e atualizar continuamente ao longo do projeto;
+-	[x] Popular a lista de tasks com as já realizadas e/ou idealizadas até o momento e atualizar continuamente ao longo do projeto; (as tasks extras não entrarão dentro da lista e ficarão apenas como desfios para uqem está seguindo todo o matrial);
 -   [ ] Testar responsividade, e estilizar a página;
 -   [/] Escolher uma task do banco de tasks pendentes e realizar;
 -   [ ] Começar a criar o layout da página settings do usuário;
 
-Várias mudanças de ideias ocorreram ao longo desta etapa principalmente por conta do hiato que foi necessário ser feito... porém uma segunda ideia de implementação é talvez criar um mecanismo de reconhecimento de rede, assim já portando todas as mudanças de um computador ao outro, ou afins pela sessão iniciada em determindo ip de rede, mas isto ficará nos planos de ideias, para serem implementadas ao amadurecimento do desenvolvedor. e o decorrer da jornada que se prosseguirácom typescript e webassembly em rust. (Breve divagação).
+Várias mudanças de ideias ocorreram ao longo desta etapa principalmente por conta do hiato que foi necessário ser feito... porém uma segunda ideia de implementação é talvez criar um mecanismo de reconhecimento de rede, assim já portando todas as mudanças de um computador ao outro, ou afins pela sessão iniciada em determindo ip de rede, mas isto ficará nos planos de ideias, para serem implementadas ao amadurecimento do desenvolvedor. E com o decorrer da jornada que se prosseguirá com typescript e webassembly em rust. (Breve divagação).
 
 # Sumário de commits :
 
