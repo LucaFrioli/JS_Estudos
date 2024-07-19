@@ -9,13 +9,16 @@ _Legenda : x = concluida, / = em progresso_
 -   1 task na primeira etapa; [/]
 
     -   Melhorado a funcionalidade do burguer menu (valor de referencia de commit : 4156829 );
-	-	Melhorar o desing, Trazendo uma experiência de Ususário mais agrdavel ();
+    -   Melhorar o desing, Trazendo uma experiência de Usuário mais agrdavel ();
 
--   Side quest da quarta etapa; [ ]
+-   Side quest da quarta etapa; [ ] ();
+
+-   1 Task na etapa Extra 1; [ ]
+    -   Idealizar e criar desing da página Settings [ ] ();
 
 **Bugs encontrados :**
 
--   Problemas em navegadores desktop ao utilizar burguer menu (não abre ao redimencionar a teloa do navegador); [ ]
+-   Problemas em navegadores desktop ao utilizar burguer menu (não abre ao redimencionar a tela do navegador); [x]
 
 # Primeira etapa :
 
@@ -117,12 +120,29 @@ Nesta etapa iremos adicionar dentro da página de entrada um botão para um pág
     -   [x] Cada bloco/lista de tasks deve conter checkboxes com sua label na frente dizendo o que deve ser feito;
     -   [x] Caso seja necessário fazer subtasks elas devem ficar aninhadas a baixo da task pai;
     -   [x] Toda vez que o bloco/lista de task sofrer uma alteração deverá ser atualizado um localstorage para que a próxima vez que a página for aberta no dispositivo, a task fique constada como concluida;
--	[x] Popular a lista de tasks com as já realizadas e/ou idealizadas até o momento e atualizar continuamente ao longo do projeto; (as tasks extras não entrarão dentro da lista e ficarão apenas como desfios para uqem está seguindo todo o matrial);
--   [ ] Testar responsividade, e estilizar a página;
--   [/] Escolher uma task do banco de tasks pendentes e realizar;
+-   [x] Popular a lista de tasks com as já realizadas e/ou idealizadas até o momento e atualizar continuamente ao longo do projeto; (as tasks extras não entrarão dentro da lista e ficarão apenas como desfios para uqem está seguindo todo o matrial);
+-   [x] Testar responsividade, e estilizar a página;
+-   [/] Escolher uma task do banco de tasks pendentes e realizar; (task do sistema de Logg em processo);
 -   [ ] Começar a criar o layout da página settings do usuário;
 
 Várias mudanças de ideias ocorreram ao longo desta etapa principalmente por conta do hiato que foi necessário ser feito... porém uma segunda ideia de implementação é talvez criar um mecanismo de reconhecimento de rede, assim já portando todas as mudanças de um computador ao outro, ou afins pela sessão iniciada em determindo ip de rede, mas isto ficará nos planos de ideias, para serem implementadas ao amadurecimento do desenvolvedor. E com o decorrer da jornada que se prosseguirá com typescript e webassembly em rust. (Breve divagação).
+
+---
+
+**Apartir deste ponto iniciaremos a criar propriamente um CRUD, ele será responsavel por realizar todo o gerenciamento dos contatos da agenda. Criarei primeiro um crud simples sugerido para entender o funcionamento dos processos de uma forma mais primordial, após isto criarei mais algumas etapas extras para trabalharmos o CRUD dos contatos lincando diretamente ao usuário. Nas próximas etapas para haver uma compreenção mais aprofundada do passo a passo no desenvolvimento é recomendado seguir o sumário de commits referente as etapas a risca. Observando e anlaizando as mudanças feitas nos códigos.**
+
+**Conceituando o que é um CRUD :**
+
+O `CRUD` é um acrônimo para **Create, Read, Update e Delete**, que faz referencia ao processos que os dados sofrerão de acordo com as ações do usuário.
+
+-   **Create** = A primiera inserção ou registro de um novo dado dentro de nossa base de dados.
+-   **Read** = Faz referencia a tentativa de resgate e leitura de um registro dentro de nossa base de dados.
+-   **Update** = É a atualização da informação contida dentro de um registro de nossa base de dados.
+-   **Delete** = É a remoção de um registro dentro de nossa base de dados;
+
+Para entender um pouco mais como funciona um CRUD completo vá para a pasta models e abra o arquivo `modelDemonstration.js`, lá está um crud simples, e documentado como exeplo, além disso já contém um método de tópico avaçado que veremos mais adiante, porém se atenha apenas aos métodos referentes ao CRUD. Obviamente um Bom CRUD vai muito além do que apresentado no arquivo, em niveis de validação, tratamento de dados e afins, além de muitas vezes ser criado com varios desacoplamentos e arquiteturas. Observe este modelo somente como um exeplo rápido para compreender o que são as transações de DBs.
+
+# Quinta etapa :
 
 # Sumário de commits :
 
@@ -160,7 +180,7 @@ Várias mudanças de ideias ocorreram ao longo desta etapa principalmente por co
 ## Etapa Extra 1 :
 
 -   b3f7b36
-- 	35f0c4b
--	5e7ea7e
--	4156829
+-           35f0c4b
+-   5e7ea7e
+-   4156829
 -
