@@ -2,9 +2,9 @@
 
 Este projeto visa colocar todos os conceitos estudados em aulas anteriores em prática. Criando uma aplicação de agenda para usuários cadatrados no pequeno sistema, serão abordados tópicos um pouco mais avançados, em adição aos conhecimentos obtidos em aulas anteriores. A méta é estar documentando cada alteração feita no projeto de modo gradual e constante.
 
-**Banco de tasks pendentes :**
-
 _Legenda : x = concluida, / = em progresso_
+
+**Banco de tasks pendentes :**
 
 -   1 task na primeira etapa; [/]
 
@@ -110,7 +110,7 @@ Obs : ao começar a testar o comportamento das interfaces gráficas em diferente
 
 # Etapa Extra 1 (off topic em relação a idelização do projeto prático):
 
-**Para estudantes apenas realizar a ultima task.**
+**Para estudantes apenas realizar a ultima e a penultima(caso necessário) tasks.**
 
 Nesta etapa iremos adicionar dentro da página de entrada um botão para um página de tasks, estas tasks deverão estar salvas dentro do localstorage, junto com a informação se já foram concluídas ou não. Isso além de facilitar para os alunos posteriores que estarão utilizando o prjeto para estudo. Auxiliará no treino de habilidades já aprendidas anteriormente.
 
@@ -143,10 +143,37 @@ O `CRUD` é um acrônimo para **Create, Read, Update e Delete**, que faz referen
 Para entender um pouco mais como funciona um CRUD completo vá para a pasta models e abra o arquivo `modelDemonstration.js`, lá está um crud simples, e documentado como exeplo, além disso já contém um método de tópico avaçado que veremos mais adiante, porém se atenha apenas aos métodos referentes ao CRUD. Obviamente um Bom CRUD vai muito além do que apresentado no arquivo, em niveis de validação, tratamento de dados e afins, além de muitas vezes ser criado com varios desacoplamentos e arquiteturas. Observe este modelo somente como um exeplo rápido para compreender o que são as transações de DBs.
 
 # Quinta etapa :
+Nesta etapa, construiremos a funcionalidade de cadastro de novos contatos na agenda, seguindo as informações definidas na criação do modelo. Para tal, elaboraremos um modelo específico para gerenciar todo o processo, implementando seus métodos de forma gradual.
+
+Começaremos definindo o schema da coleção no MongoDB, que representará a estrutura dos dados armazenados para os contatos. Em seguida, implementaremos boas práticas para desacoplar as responsabilidades dentro do modelo, garantindo organização e manutenabilidade do código. Criaremos validações para garantir a integridade dos dados inseridos, prevenindo erros e inconsistências. Descreveremos o método responsável por inserir os dados validados no banco de dados e, por fim, elaboraremos uma view reutilizável para o formulário de edição de contatos, que será abordado em etapas posteriores.
+
+-   [] Criar um diretório de referência para conter toda a lógica referente a coleção contatos;
+-   [] Criar o arquivo que conterá o Schema e possíveis posteriores versões do mesmo;
+    -   [] Neste arquivo iremos iniciar instancinado um objeto que conterá chave(verção) valor(o schema e possíveis updates);
+    -   [] Iremos comentar ao máximo este arquivo utilizando JSDoc para que fique compreesível e explícito;
+-   [] Criar um arquivo que conterão as validações dos campos necessárias;
+    -   [] Criar função de sanitização de dados;
+    -   [] Criar funções de validação de entrada de dados;
+        -   [] Validação de número de celular;
+        -   [] Validação de email;
+-   [] Criar um arquivo main que irá consumir os anteriores citados e criar a classe que será utilizada dentro dos controladores;
+    -   [] Iremos adicionar o Model, e definir o nome da coleção e o schema de dados;
+    -   [] Contruir a classe, com um contrutor esperando os seguintes dados : [Modelo, corpo de requisição]. Além destes dados para iniciar a classe já definiremso atributo de error:array, e contato:null(posteriormente receberá outros valores com o decorrer do CRUD);
+-   [] Criar um controlador que irá gerenciar os comportamentos das rotas referentes aos contatos;
+    -   [] A principio iremos criar uma função de processamento que será utilizada na postagem do formulário de cadastro, e utilizar a lógica para receber os dados do mesmo e tráta-los, iremos chamar está função de createContact;
+    -   [] Criaremos uma função de processamento para poder realizar a renderização da camada view;
+-   [] Criar a primeira rota responsável pelo cadastro de contatos (referencia o C do acrônimo CRUD) [**POST**];
+-   [] Criar uma rota para dar acesso ao formulário de cadastro de usuário [**GET**];
+-   [] Criar um arquivo ejs para o formulário;
+-	[] Deixar todo o frontend responsivo;
 
 # Sumário de commits :
 
 **Início das commits : 27 de maio de 2024 ---- Última commit : ## de ###### de 2024**
+
+## Commits de preparações :
+
+-   eb061c6
 
 ## Primeira etapa :
 
@@ -180,7 +207,14 @@ Para entender um pouco mais como funciona um CRUD completo vá para a pasta mode
 ## Etapa Extra 1 :
 
 -   b3f7b36
--           35f0c4b
+-   35f0c4b
 -   5e7ea7e
 -   4156829
+-   d72b31e
+-   b252cb2
+-   72fbe4b
+-   4e06cb0
+
+## Quinta Etapa :
+
 -

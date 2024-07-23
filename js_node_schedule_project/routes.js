@@ -23,6 +23,10 @@ const tasksController = require(
 	resolve(__dirname, 'src', 'controllers', 'tasksController.js')
 );
 
+// const contactsController = require(
+// 	resolve(__dirname, 'src', 'controllers', 'contactsController.js')
+// );
+
 // **calling midlewares modules**
 const checkUserInfoMiddleware = require(
 	// ./src/middlewares/checkUserInfoMiddleware.js
@@ -55,5 +59,8 @@ routes.get(
 
 // tasks routes
 routes.get('/tasks', tasksController.index);
+
+// --- Data schedule manipulation routes ---
+
 
 module.exports = routes;
