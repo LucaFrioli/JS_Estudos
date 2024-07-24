@@ -147,18 +147,20 @@ Nesta etapa, construiremos a funcionalidade de cadastro de novos contatos na age
 
 Começaremos definindo o schema da coleção no MongoDB, que representará a estrutura dos dados armazenados para os contatos. Em seguida, implementaremos boas práticas para desacoplar as responsabilidades dentro do modelo, garantindo organização e manutenabilidade do código. Criaremos validações para garantir a integridade dos dados inseridos, prevenindo erros e inconsistências. Descreveremos o método responsável por inserir os dados validados no banco de dados e, por fim, elaboraremos uma view reutilizável para o formulário de edição de contatos, que será abordado em etapas posteriores.
 
--   [] Criar um diretório de referência para conter toda a lógica referente a coleção contatos;
--   [] Criar o arquivo que conterá o Schema e possíveis posteriores versões do mesmo;
-    -   [] Neste arquivo iremos iniciar instancinado um objeto que conterá chave(verção) valor(o schema e possíveis updates);
-    -   [] Iremos comentar ao máximo este arquivo utilizando JSDoc para que fique compreesível e explícito;
--   [] Criar um arquivo que conterão as validações dos campos necessárias;
-    -   [] Criar função de sanitização de dados;
-    -   [] Criar funções de validação de entrada de dados;
-        -   [] Validação de número de celular;
-        -   [] Validação de email;
+-   [x] Criar um diretório de referência para conter toda a lógica referente a coleção contatos;
+-   [x] Criar o arquivo que conterá o Schema e possíveis posteriores versões do mesmo;
+    -   [x] Neste arquivo iremos iniciar instancinado um objeto que conterá chave(verção) valor(o schema e possíveis updates);
+    -   [x] Iremos comentar ao máximo este arquivo utilizando JSDoc para que fique compreesível e explícito;
+-   [x] Criar um arquivo que conterá as validações dos campos necessárias;
+    -   [x] Criar função de sanitização de dados;
+    -   [x] Criar funções de validação de entrada de dados;
+        -   [x] Validação de número de celular;
+        -   [x] Validação de email;
 -   [] Criar um arquivo main que irá consumir os anteriores citados e criar a classe que será utilizada dentro dos controladores;
-    -   [] Iremos adicionar o Model, e definir o nome da coleção e o schema de dados;
+    -   [x] Iremos adicionar o Model, e definir o nome da coleção e o schema de dados;
     -   [] Contruir a classe, com um contrutor esperando os seguintes dados : [Modelo, corpo de requisição]. Além destes dados para iniciar a classe já definiremso atributo de error:array, e contato:null(posteriormente receberá outros valores com o decorrer do CRUD);
+	-	[] Criar método de sanitização e validação de dados do body;
+	-	[] Desenvolver o método de inserção de dados no banco de dados
 -   [] Criar um controlador que irá gerenciar os comportamentos das rotas referentes aos contatos;
     -   [] A principio iremos criar uma função de processamento que será utilizada na postagem do formulário de cadastro, e utilizar a lógica para receber os dados do mesmo e tráta-los, iremos chamar está função de createContact;
     -   [] Criaremos uma função de processamento para poder realizar a renderização da camada view;
@@ -166,6 +168,8 @@ Começaremos definindo o schema da coleção no MongoDB, que representará a est
 -   [] Criar uma rota para dar acesso ao formulário de cadastro de usuário [**GET**];
 -   [] Criar um arquivo ejs para o formulário;
 -	[] Deixar todo o frontend responsivo;
+
+Caso queira adicionar tratamentos de erros e validações de parâmetros para a validação de modelo, o faça, no caso nesta etapa adicionarei um diretório extra na pasta de models, chamado `services`, e começar a criar um serviço para o tratamento de erros que será atualizado na liberação de do módulo de logger, e será utilizado para capturar e catalogar os erros que forem ocorrendo durante e após o desenvolvimento.
 
 # Sumário de commits :
 
