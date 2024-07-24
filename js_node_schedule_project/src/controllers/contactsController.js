@@ -5,5 +5,5 @@ const mainData = {
 };
 
 exports.index = (req, res) => {
-	res.render('createContact', { ...mainData });
+	res.render('contactManagement', { ...mainData });
 };
