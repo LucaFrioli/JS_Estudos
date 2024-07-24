@@ -50,10 +50,10 @@ article.long-texts {
 
 /* Aside paterns */
 aside.fixed-on-left {
-    position: fixed;
-    top: 15rem;
-    left: 3.5rem;
-    width: auto;
+	position: fixed;
+	top: 15rem;
+	left: 3.5rem;
+	width: auto;
 }
 
 /* Cria responsividade para formulários, de formamais generalista */
@@ -75,6 +75,12 @@ aside.fixed-on-left {
 	color: var(--secondary-color-100);
 	border: none;
 	border-radius: 25px;
+	cursor: pointer;
+}
+
+.responsive-form button:hover {
+	background-color: var(--primary-color-75);
+	color: var(--secondary-color-75);
 }
 
 /* Cria um preset de desing para as mensseagens flash */
@@ -241,11 +247,11 @@ td {
 	padding: 10px;
 }
 
-main#agenda nav#actionsOfSchedule{
-	margin : 1.5rem;
+main#agenda nav#actionsOfSchedule {
+	margin: 1.5rem;
 }
 
-main#agenda nav#actionsOfSchedule a.btn{
+main#agenda nav#actionsOfSchedule a.btn {
 	padding: 0.7rem;
 	margin-bottom: 0.5rem;
 }
@@ -303,7 +309,7 @@ main#index a.btn {
 
 /* Trabalhando com a página de tasks */
 
-button.saveTasks{
+button.saveTasks {
 	background-color: var(--primary-color-100);
 	color: var(--secondary-color-100);
 	padding: 0.5rem;
@@ -313,7 +319,6 @@ button.saveTasks{
 	cursor: pointer;
 	margin-top: 4rem;
 }
-
 
 main#tasksPage form#tasksListForm {
 	width: 50%;

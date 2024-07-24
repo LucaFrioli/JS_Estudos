@@ -1,0 +1,34 @@
+<%- include('includes/head')-%> <%- include('includes/header')-%>
+
+<main id="ContactsForms">
+
+	<div class="CTA">
+		<h1><%= textReference %></h1>
+		<p>Olá <%= user.email %>, esta é a página onde você irá poder
+			<% if( flag === 'create' ){ %>
+				criar um novo contato em sua agenda, não se esqueça de preencher todos os campos do formulário para isso.
+			<%} else {%>
+				editar o contato x, basta apenas trocar as informações dos campos e clickar no botão "Editar contato".
+			<% } %>
+		</p>
+
+		<%- include('includes/messages') -%>
+	</div>
+
+	<form action="/contact/<%= flag %>" method="post" class="responsive-form">
+		<label for="name">Nome :</label>
+		<input type="text" name="name" id="name" />
+
+		<label for="lastname">Sobrenome :</label>
+		<input type="text" name="lastname" id="lastname" />
+
+		<label for="number">Numero :</label>
+		<input type="text" name="number" id="number" />
+
+		<label for="email">Email :</label>
+		<input type="text" name="email" id="email" />
+		<button><%= textReference %></button>
+	</form>
+</main>
+
+<%- include('includes/footer')-%>

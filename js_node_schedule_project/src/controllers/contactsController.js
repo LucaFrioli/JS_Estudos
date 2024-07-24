@@ -1,6 +1,9 @@
-// const mainData = { title: 'Add Contact' };
+const mainData = {
+	title: 'Add Contact',
+	flag: 'create',
+	textReference: 'Criar novo contato'
+};
 
 exports.index = (req, res) => {
-	res.send('Estou vindo da rota get : /contact/new')
-	// res.render('createContact', { ...mainData, flag: 'create' });
+	res.render('createContact', { ...mainData });
 };

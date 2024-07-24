@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const versionsSchema = {
 	mainSchema: new mongoose.Schema({
 		name: { type: String, required: true },
-		lastname: { type: String },
+		lastname: { type: String, required: true },
 		number: { type: String, required: true },
 		email: { type: String, required: true }
 	})

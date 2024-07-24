@@ -90,7 +90,7 @@ function fieldIsPhoneNumber(valueOfPhoneNumberKey, error) {
 				`Os parâmetros devem ser em sequencia os seguintes :
 				\n#### valueOfPhoneNumberKey:string, error:string[] ####
 				\nPorém os que forma passados são os seguintes :
-				\nemailValueKey : ${textAssitent.keyTeamplate(valueOfPhoneNumberKey)}
+				\nvalueOfPhoneNumberKey : ${textAssitent.keyTeamplate(valueOfPhoneNumberKey)}
 				\nerror : ${textAssitent.arrTeamplate(error, arrVerification)}`
 			);
 		}

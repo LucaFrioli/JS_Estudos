@@ -143,6 +143,7 @@ O `CRUD` é um acrônimo para **Create, Read, Update e Delete**, que faz referen
 Para entender um pouco mais como funciona um CRUD completo vá para a pasta models e abra o arquivo `modelDemonstration.js`, lá está um crud simples, e documentado como exeplo, além disso já contém um método de tópico avaçado que veremos mais adiante, porém se atenha apenas aos métodos referentes ao CRUD. Obviamente um Bom CRUD vai muito além do que apresentado no arquivo, em niveis de validação, tratamento de dados e afins, além de muitas vezes ser criado com varios desacoplamentos e arquiteturas. Observe este modelo somente como um exeplo rápido para compreender o que são as transações de DBs.
 
 # Quinta etapa :
+
 Nesta etapa, construiremos a funcionalidade de cadastro de novos contatos na agenda, seguindo as informações definidas na criação do modelo. Para tal, elaboraremos um modelo específico para gerenciar todo o processo, implementando seus métodos de forma gradual.
 
 Começaremos definindo o schema da coleção no MongoDB, que representará a estrutura dos dados armazenados para os contatos. Em seguida, implementaremos boas práticas para desacoplar as responsabilidades dentro do modelo, garantindo organização e manutenabilidade do código. Criaremos validações para garantir a integridade dos dados inseridos, prevenindo erros e inconsistências. Descreveremos o método responsável por inserir os dados validados no banco de dados e, por fim, elaboraremos uma view reutilizável para o formulário de edição de contatos, que será abordado em etapas posteriores.
@@ -158,16 +159,16 @@ Começaremos definindo o schema da coleção no MongoDB, que representará a est
         -   [x] Validação de email;
 -   [] Criar um arquivo main que irá consumir os anteriores citados e criar a classe que será utilizada dentro dos controladores;
     -   [x] Iremos adicionar o Model, e definir o nome da coleção e o schema de dados;
-    -   [] Contruir a classe, com um contrutor esperando os seguintes dados : [Modelo, corpo de requisição]. Além destes dados para iniciar a classe já definiremso atributo de error:array, e contato:null(posteriormente receberá outros valores com o decorrer do CRUD);
-	-	[] Criar método de sanitização e validação de dados do body;
-	-	[] Desenvolver o método de inserção de dados no banco de dados
+    -   [x] Contruir a classe, com um contrutor esperando os seguintes dados : [Modelo, corpo de requisição]. Além destes dados para iniciar a classe já definiremos atributo de error:array, e contato:null(posteriormente receberá outros valores com o decorrer do CRUD);
+    -   [x] Criar método de sanitização e validação de dados do body;
+    -   [x] Desenvolver o método de inserção de dados no banco de dados (OBS: posteriormente iremos adicionar um modelo de criação de mias números para um mesmo contato);
 -   [] Criar um controlador que irá gerenciar os comportamentos das rotas referentes aos contatos;
+    -   [] Criaremos uma função de processamento para poder realizar a renderização da camada view, chamremos ela de index;
     -   [] A principio iremos criar uma função de processamento que será utilizada na postagem do formulário de cadastro, e utilizar a lógica para receber os dados do mesmo e tráta-los, iremos chamar está função de createContact;
-    -   [] Criaremos uma função de processamento para poder realizar a renderização da camada view;
 -   [] Criar a primeira rota responsável pelo cadastro de contatos (referencia o C do acrônimo CRUD) [**POST**];
 -   [] Criar uma rota para dar acesso ao formulário de cadastro de usuário [**GET**];
 -   [] Criar um arquivo ejs para o formulário;
--	[] Deixar todo o frontend responsivo;
+-   [] Deixar todo o frontend responsivo;
 
 Caso queira adicionar tratamentos de erros e validações de parâmetros para a validação de modelo, o faça, no caso nesta etapa adicionarei um diretório extra na pasta de models, chamado `services`, e começar a criar um serviço para o tratamento de erros que será atualizado na liberação de do módulo de logger, e será utilizado para capturar e catalogar os erros que forem ocorrendo durante e após o desenvolvimento.
 

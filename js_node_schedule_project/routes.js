@@ -23,9 +23,9 @@ const tasksController = require(
 	resolve(__dirname, 'src', 'controllers', 'tasksController.js')
 );
 
-// const contactsController = require(
-// 	resolve(__dirname, 'src', 'controllers', 'contactsController.js')
-// );
+const contactsController = require(
+	resolve(__dirname, 'src', 'controllers', 'contactsController.js')
+);
 
 // **calling midlewares modules**
 const checkUserInfoMiddleware = require(
@@ -62,5 +62,11 @@ routes.get('/tasks', tasksController.index);
 
 // --- Data schedule manipulation routes ---
 
+// criaçõa de novos contatos
+routes.get(
+	'/contact/new',
+	checkUserInfoMiddleware.checkUserIsLogged,
+	contactsController.index
+);
 
 module.exports = routes;
