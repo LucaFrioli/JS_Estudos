@@ -1,3 +1,13 @@
+const { resolve } = require('node:path');
+
+// './validations/reviewBody'
+const reviewBody = require(resolve(__dirname, 'validations', 'reviewBody'));
+// '../models/contactsModel/main'
+const ContactService = require(
+	resolve(__dirname, '..', 'models', 'contactsModel', 'main')
+);
+
+// Objeto contendo a sinformações básicas para ser injetado na view contactManagement
 const mainData = {
 	title: 'Add Contact',
 	flag: 'create',
@@ -6,4 +16,42 @@ const mainData = {
 
 exports.index = (req, res) => {
 	res.render('contactManagement', { ...mainData });
+};
+
+exports.createContact = async (req, res) => {
+	// the expected is a object than represent a expected keys of the body in this request
+	const expected = ['name', 'lastname', 'number', 'email', '_csrf'];
+	const body = req.body;
+
+	if (reviewBody(body, expected)) {
+		try {
+			const service = new ContactService(body);
+			await service.createContact();
+
+			if (service.error.length > 0) {
+				req.flash('errors', service.error);
+				req.session.save(() => {
+					return res.redirect('back');
+				});
+				return;
+			}
+			req.flash(
+				'success',
+				'Novo contato cadastrado na agenda com sucesso !'
+			);
+			return res.redirect('/home');
+		} catch (e) {
+			console.log('Erro ao tentar criar novo usuário : ' + e);
+			return res.render('error', { title: '404' });
+		}
+	} else {
+		// Após adicionar o sistema de log este log deverá ser um log de debuggin
+		console.log(`
+			Foi recebido um body da requisição diferente do esperado, se esperava as seguintes chaves :\n
+			${expected}
+			\nPorém foram recebidas as sguintes chaves : \n
+			${Object.keys(body)}
+		`);
+		return res.render('error', { title: '404' });
+	}
 };

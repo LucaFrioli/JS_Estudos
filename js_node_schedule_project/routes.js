@@ -69,4 +69,10 @@ routes.get(
 	contactsController.index
 );
 
+routes.post(
+	'/contact/create',
+	checkUserInfoMiddleware.checkUserIsLogged,
+	contactsController.createContact
+);
+
 module.exports = routes;

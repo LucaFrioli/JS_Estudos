@@ -161,13 +161,13 @@ Começaremos definindo o schema da coleção no MongoDB, que representará a est
     -   [x] Iremos adicionar o Model, e definir o nome da coleção e o schema de dados;
     -   [x] Contruir a classe, com um contrutor esperando os seguintes dados : [Modelo, corpo de requisição]. Além destes dados para iniciar a classe já definiremos atributo de error:array, e contato:null(posteriormente receberá outros valores com o decorrer do CRUD);
     -   [x] Criar método de sanitização e validação de dados do body;
-    -   [x] Desenvolver o método de inserção de dados no banco de dados (OBS: posteriormente iremos adicionar um modelo de criação de mias números para um mesmo contato);
--   [] Criar um controlador que irá gerenciar os comportamentos das rotas referentes aos contatos;
-    -   [] Criaremos uma função de processamento para poder realizar a renderização da camada view, chamremos ela de index;
-    -   [] A principio iremos criar uma função de processamento que será utilizada na postagem do formulário de cadastro, e utilizar a lógica para receber os dados do mesmo e tráta-los, iremos chamar está função de createContact;
--   [] Criar a primeira rota responsável pelo cadastro de contatos (referencia o C do acrônimo CRUD) [**POST**];
--   [] Criar uma rota para dar acesso ao formulário de cadastro de usuário [**GET**];
--   [] Criar um arquivo ejs para o formulário;
+    -   [x] Desenvolver o método de inserção de dados no banco de dados (OBS: posteriormente iremos adicionar um campo no schema para a criação de mais números para um mesmo contato);
+-   [x] Criar um controlador que irá gerenciar os comportamentos das rotas referentes aos contatos;
+    -   [x] Criaremos uma função de processamento para poder realizar a renderização da camada view, chamaremos ela de index;
+    -   [x] A principio iremos criar uma função de processamento que será utilizada na postagem do formulário de cadastro, e utilizar a lógica para receber os dados do mesmo e tráta-los, iremos chamar está função de createContact;
+-   [x] Criar a primeira rota responsável pelo cadastro de contatos (referencia o C do acrônimo CRUD) [**POST**];
+-   [x] Criar uma rota para dar acesso ao formulário de cadastro de usuário [**GET**];
+-   [x] Criar um arquivo ejs para o formulário;
 -   [] Deixar todo o frontend responsivo;
 
 Caso queira adicionar tratamentos de erros e validações de parâmetros para a validação de modelo, o faça, no caso nesta etapa adicionarei um diretório extra na pasta de models, chamado `services`, e começar a criar um serviço para o tratamento de erros que será atualizado na liberação de do módulo de logger, e será utilizado para capturar e catalogar os erros que forem ocorrendo durante e após o desenvolvimento.
