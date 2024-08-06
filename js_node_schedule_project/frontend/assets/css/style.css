@@ -376,3 +376,8 @@ main#tasksPage form#tasksListForm ul.subtaskList li {
 }
 
 /* Trabalhando com a página contactManagement*/
+
+main#ContactsForms div.CTA p{
+	text-align: justify;
+	max-width: 500px;
+}

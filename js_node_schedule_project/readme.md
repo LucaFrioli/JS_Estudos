@@ -129,7 +129,7 @@ Várias mudanças de ideias ocorreram ao longo desta etapa principalmente por co
 
 ---
 
-**Apartir deste ponto iniciaremos a criar propriamente um CRUD, ele será responsavel por realizar todo o gerenciamento dos contatos da agenda. Criarei primeiro um crud simples sugerido para entender o funcionamento dos processos de uma forma mais primordial, após isto criarei mais algumas etapas extras para trabalharmos o CRUD dos contatos lincando diretamente ao usuário. Nas próximas etapas para haver uma compreenção mais aprofundada do passo a passo no desenvolvimento é recomendado seguir o sumário de commits referente as etapas a risca. Observando e anlaizando as mudanças feitas nos códigos.**
+**Apartir deste ponto iniciaremos a criar propriamente um CRUD, ele será responsavel por realizar todo o gerenciamento dos contatos da agenda. Criarei primeiro um crud simples sugerido para entender o funcionamento dos processos de uma forma mais primordial, após isto criarei mais algumas etapas extras para trabalharmos o CRUD dos contatos lincando diretamente ao usuário. Nas próximas etapas para haver uma compreesão mais aprofundada do passo a passo no desenvolvimento é recomendado seguir o sumário de commits referente as etapas a risca. Observando e anlaizando as mudanças feitas nos códigos.**
 
 **Conceituando o que é um CRUD :**
 
@@ -157,7 +157,7 @@ Começaremos definindo o schema da coleção no MongoDB, que representará a est
     -   [x] Criar funções de validação de entrada de dados;
         -   [x] Validação de número de celular;
         -   [x] Validação de email;
--   [] Criar um arquivo main que irá consumir os anteriores citados e criar a classe que será utilizada dentro dos controladores;
+-   [x] Criar um arquivo main que irá consumir os anteriores citados e criar a classe que será utilizada dentro dos controladores;
     -   [x] Iremos adicionar o Model, e definir o nome da coleção e o schema de dados;
     -   [x] Contruir a classe, com um contrutor esperando os seguintes dados : [Modelo, corpo de requisição]. Além destes dados para iniciar a classe já definiremos atributo de error:array, e contato:null(posteriormente receberá outros valores com o decorrer do CRUD);
     -   [x] Criar método de sanitização e validação de dados do body;
@@ -168,9 +168,26 @@ Começaremos definindo o schema da coleção no MongoDB, que representará a est
 -   [x] Criar a primeira rota responsável pelo cadastro de contatos (referencia o C do acrônimo CRUD) [**POST**];
 -   [x] Criar uma rota para dar acesso ao formulário de cadastro de usuário [**GET**];
 -   [x] Criar um arquivo ejs para o formulário;
--   [] Deixar todo o frontend responsivo;
+-   [x] Deixar todo o frontend responsivo;
 
 Caso queira adicionar tratamentos de erros e validações de parâmetros para a validação de modelo, o faça, no caso nesta etapa adicionarei um diretório extra na pasta de models, chamado `services`, e começar a criar um serviço para o tratamento de erros que será atualizado na liberação de do módulo de logger, e será utilizado para capturar e catalogar os erros que forem ocorrendo durante e após o desenvolvimento.
+
+# Sexta etapa :
+
+Nesta etapa, focaremos no U do acrônimo CRUD, significando Update. Como já realizamos um template, basta construirmos duas funções de processamento: uma que renderizará o formulário para edição do contato e outra para realizar a atualização propriamente dita.
+
+Para isso, precisaremos criar um botão ou link com um ícone na frente de cada contato, o qual retornará uma query de busca com o ID do contato referente. Neste momento, apenas passaremos uma query "na mão" para fins de teste; iremos criar a lógica completa quando implementarmos as operações de leitura e exclusão. Após isso, renderizaremos o template com os valores do contato injetados nos inputs. Se necessário, reformularemos a lógica da view e o objeto de injeção. Para isso, criaremos um método em nosso serviço chamado findOneById.
+
+Em seguida, criaremos outra função de processamento responsável pela atualização do contato. Nessa função, criaremos um novo método em nosso serviço para realizar a atualização em si. No controller, validaremos o corpo da requisição e faremos o update. Para testar, utilizaremos a ferramenta MongoDB Atlas.
+
+-	[] Criar uma área de botões dentro da View `home.ejs`. e adicionar um botão utilizando um icone do googleicons que represente edição (para isso basta utilizar o head);
+-	[] Encapsular o icone dentro de um hyperlink, e construir um caminho que utilize um id de usuário e a palavra edit(ou alguma palavra relacinada); ex :`/contatos/:id/editar`
+-	[] Criar um método dentro do `ContactService` que resgate as informações do contáto de referência do id;
+-	[] Criar uma função de processamento que irá receber este id, e utilizar o método anteriormente construido para, moldar o objeto de injeção da página;
+-	[] Criar uma outra função de processamento que será responsável por realizar a atualização das informações do contato de referência;
+-	[] Implementar flsh messagespara que o usuário entenda o que está ocorrendo;
+- 	[] Declarar as rotas dentro do arquivo de rotas, respeitandoas precedências;
+- 	[] Deixar todas as mudanças das views de forma responsiva;
 
 # Sumário de commits :
 

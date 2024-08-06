@@ -28,6 +28,7 @@ exports.createContact = async (req, res) => {
 			const service = new ContactService(body);
 			await service.createContact();
 
+			// caso forem detectados erros ocorrerá um redirecionamento para a própria página de cadastro
 			if (service.error.length > 0) {
 				req.flash('errors', service.error);
 				req.session.save(() => {
@@ -35,22 +36,24 @@ exports.createContact = async (req, res) => {
 				});
 				return;
 			}
+
 			req.flash(
 				'success',
 				'Novo contato cadastrado na agenda com sucesso !'
 			);
 			return res.redirect('/home');
 		} catch (e) {
-			console.log('Erro ao tentar criar novo usuário : ' + e);
+			// após acriação do módulo de logs salvar em um arquivo de log
+			console.log('Erro ao tentar criar novo usuário : ' + e + '\n\nEste erro ocorreu dentro da sessão do usuário : '+ req.session.user);
 			return res.render('error', { title: '404' });
 		}
 	} else {
 		// Após adicionar o sistema de log este log deverá ser um log de debuggin
 		console.log(`
-			Foi recebido um body da requisição diferente do esperado, se esperava as seguintes chaves :\n
-			${expected}
-			\nPorém foram recebidas as sguintes chaves : \n
-			${Object.keys(body)}
+			Foi recebido um body da requisição diferente do esperado, se esperava as seguintes chaves :
+			\n ${expected}
+			\nPorém foram recebidas as seguintes chaves :
+			\n ${Object.keys(body)}
 		`);
 		return res.render('error', { title: '404' });
 	}
