@@ -75,4 +75,10 @@ routes.post(
 	contactsController.createContact
 );
 
+routes.get(
+	'/contact/edit/:id',
+	checkUserInfoMiddleware.checkUserIsLogged,
+	contactsController.editPage
+);
+
 module.exports = routes;

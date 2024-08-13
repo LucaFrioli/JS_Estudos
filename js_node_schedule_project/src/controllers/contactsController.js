@@ -9,13 +9,17 @@ const ContactService = require(
 
 // Objeto contendo a sinformações básicas para ser injetado na view contactManagement
 const mainData = {
-	title: 'Add Contact',
-	flag: 'create',
-	textReference: 'Criar novo contato'
+	title: '',
+	flag: '',
+	textReference: ''
 };
 
 exports.index = (req, res) => {
-	res.render('contactManagement', { ...mainData });
+	const renderingObject = { ...mainData };
+	renderingObject.title = 'Add Contact';
+	renderingObject.flag = 'create';
+	renderingObject.textReference = 'Criar novo contato';
+	res.render('contactManagement', renderingObject);
 };
 
 exports.createContact = async (req, res) => {
@@ -44,7 +48,12 @@ exports.createContact = async (req, res) => {
 			return res.redirect('/home');
 		} catch (e) {
 			// após acriação do módulo de logs salvar em um arquivo de log
-			console.log('Erro ao tentar criar novo usuário : ' + e + '\n\nEste erro ocorreu dentro da sessão do usuário : '+ req.session.user);
+			console.log(
+				'Erro ao tentar criar novo usuário : ' +
+					e +
+					'\n\nEste erro ocorreu dentro da sessão do usuário : ' +
+					req.session.user
+			);
 			return res.render('error', { title: '404' });
 		}
 	} else {
@@ -57,4 +66,16 @@ exports.createContact = async (req, res) => {
 		`);
 		return res.render('error', { title: '404' });
 	}
+};
+
+exports.editPage = async (req, res) => {
+	const renderingObject = { ...mainData };
+
+	// recupera o id do usuário passado no parâmetro
+	const id = req.params.id;
+
+	renderingObject.title = 'Edit contact';
+	renderingObject.flag = `update/${id}`;
+	renderingObject.textReference = `Editar Contato`;
+	res.render('contactManagement', renderingObject);
 };

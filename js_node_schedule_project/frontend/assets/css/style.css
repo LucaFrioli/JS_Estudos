@@ -381,3 +381,9 @@ main#ContactsForms div.CTA p{
 	text-align: justify;
 	max-width: 500px;
 }
+
+@media (max-width: 768px) {
+	main#ContactsForms div.CTA p {
+		margin: 0 1rem;
+	}
+}
