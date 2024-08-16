@@ -17,16 +17,37 @@
 	</div>
 	<form action="/contact/<%= flag %>" method="post" class="responsive-form">
 		<label for="name">Nome :</label>
-		<input type="text" name="name" id="name" />
+		<input
+			type="text"
+			name="name"
+			id="name"
+			value="<% if(title === 'EditContact'){ %> <%= contactInfo.name %> <% } %>"
+		/>
 
 		<label for="lastname">Sobrenome :</label>
-		<input type="text" name="lastname" id="lastname" />
+		<input
+			type="text"
+			name="lastname"
+			id="lastname"
+			value="<% if(title === 'EditContact'){ %> <%= contactInfo.lastname %> <% } %>"
+		/>
 
 		<label for="number">Numero :</label>
-		<input type="text" name="number" id="number" />
+		<input
+			type="text"
+			name="number"
+			id="number"
+			value="<% if(title === 'EditContact'){ %> <%= contactInfo.number %> <% } %>"
+		/>
 
 		<label for="email">Email :</label>
-		<input type="text" name="email" id="email" />
+		<input
+		type="text"
+		name="email"
+		id="email"
+		value="<% if(title === 'EditContact'){ %> <%= contactInfo.email %> <% } %>"
+		/>
+
 		<input type="hidden" name="_csrf" value="<%= csrfToken %>">
 		<button><%= textReference %></button>
 	</form>

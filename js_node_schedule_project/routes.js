@@ -75,6 +75,7 @@ routes.post(
 	contactsController.createContact
 );
 
+// edição de contatos existentes
 routes.get(
 	'/contact/edit/:id',
 	checkUserInfoMiddleware.checkUserIsLogged,

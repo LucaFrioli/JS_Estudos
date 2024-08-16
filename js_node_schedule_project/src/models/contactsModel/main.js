@@ -43,6 +43,21 @@ class ContactService {
 
 		this.contact = await this.model.create(this.body);
 	}
+
+	async findContactById(userId) {
+		if (typeof userId !== 'string') {
+			// Utilizar logger para logar além desta menssagem a sessão do usuário a data e afins
+			console.log('O id de usuário deve ser uma string !');
+			return null;
+		}
+		try {
+			this.contact = await this.model.findById(userId);
+			return this.contact;
+		} catch (e) {
+			this.error.push('Contato não encontrado !');
+			return null;
+		}
+	}
 }
 
 module.exports = ContactService;

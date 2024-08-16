@@ -182,8 +182,8 @@ Em seguida, criaremos outra função de processamento responsável pela atualiza
 
 -	[x] Criar uma área de botões dentro da View `home.ejs`. e adicionar um botão utilizando um icone do googleicons que represente edição (para isso basta utilizar o head);
 -	[x] Encapsular o icone dentro de um hyperlink, e construir um caminho que utilize um id de usuário e a palavra edit(ou alguma palavra relacionada); ex :`/contatos/editar/:id`
--	[] Criar um método dentro do `ContactService` que resgate as informações do contáto de referência do id e apena isto. Apesar de ser uma referência a letra R do acronimo, trbalharemos ela mais a fundo na próxima etapa;
--	[] Criar uma função de processamento que irá receber este id, e utilizar o método anteriormente construido para, moldar o objeto de injeção da página;
+-	[x] Criar um método dentro do `ContactService` que resgate as informações do contáto de referência do id e apena isto. Apesar de ser uma referência a letra R do acronimo, trabalharemos ela mais a fundo na próxima etapa;
+-	[x] Criar uma função de processamento que irá receber este id, e utilizar o método anteriormente construido para, moldar o objeto de injeção da página;
 -	[] Criar uma outra função de processamento que será responsável por realizar a atualização das informações do contato de referência;
 -	[] Implementar flsh messagespara que o usuário entenda o que está ocorrendo;
 - 	[] Declarar as rotas dentro do arquivo de rotas, respeitandoas precedências;

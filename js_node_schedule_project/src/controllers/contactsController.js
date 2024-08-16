@@ -69,13 +69,29 @@ exports.createContact = async (req, res) => {
 };
 
 exports.editPage = async (req, res) => {
-	const renderingObject = { ...mainData };
+	try {
+		const service = new ContactService();
+		// recupera o id do usuário passado no parâmetro
+		const id = req.params.id;
+		const contact = await service.findContactById(id);
 
-	// recupera o id do usuário passado no parâmetro
-	const id = req.params.id;
+		// verifica se o parametro id foi recebido e corresponde a um colntato existente, caso não redireciona para a página de erro;
+		if (!contact) {
+			res.render('error', { title: '404' });
+		}
 
-	renderingObject.title = 'Edit contact';
-	renderingObject.flag = `update/${id}`;
-	renderingObject.textReference = `Editar Contato`;
-	res.render('contactManagement', renderingObject);
+
+		// defing de params to render the page
+		const renderingObject = { ...mainData };
+		renderingObject.title = 'EditContact';
+		renderingObject.flag = `update/${id}`;
+		renderingObject.textReference = `Editar Contato`;
+		renderingObject.contactInfo = contact;
+
+		res.render('contactManagement', renderingObject);
+
+	} catch (e) {
+		console.log('500 : erro ao tentar encontrar usuário na base de dados')
+		res.render('error', { title: '404' });
+	}
 };
