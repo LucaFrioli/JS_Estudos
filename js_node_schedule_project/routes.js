@@ -82,4 +82,10 @@ routes.get(
 	contactsController.editPage
 );
 
+routes.post(
+	'/contact/update/:id',
+	checkUserInfoMiddleware.checkUserIsLogged,
+	contactsController.updateContact
+)
+
 module.exports = routes;

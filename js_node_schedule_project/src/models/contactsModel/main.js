@@ -35,7 +35,7 @@ class ContactService {
 		await this.alredyExistContact();
 
 		if (this.error.length !== 0) {
-			console.log(
+			console.error(
 				`Erros capturados ao tentar cadastrar novo contato : ${this.error}`
 			);
 			return;
@@ -44,6 +44,11 @@ class ContactService {
 		this.contact = await this.model.create(this.body);
 	}
 
+	/**
+	 *	Método responsavel por encontrar usuários por id
+	 * @param {string} userId
+	 * @returns
+	 */
 	async findContactById(userId) {
 		if (typeof userId !== 'string') {
 			// Utilizar logger para logar além desta menssagem a sessão do usuário a data e afins
@@ -57,6 +62,28 @@ class ContactService {
 			this.error.push('Contato não encontrado !');
 			return null;
 		}
+	}
+
+	async updateContact(userId) {
+		this.sanitizeAndValidateBody();
+		if (this.error.length !== 0) {
+			console.error(
+				`Ocorreu algum erro ao tentar atualizar dados do contato ${this.body.name} ${this.body.lastname}.
+				Os errros capturado são os seguintes :
+				${this.error}`
+			);
+			return;
+		}
+
+		const verifyContactExistence = this.findContactById(userId);
+		if (!verifyContactExistence) {
+			console.error('Contato não encontrado na base de dados');
+			throw new Error(
+				'Este contato não foi encontrado dentro da base de daos, por gentileza passe um id válido.'
+			);
+		}
+
+		this.contact = await this.model.findByIdAndUpdate(userId, this.body, {new : true});
 	}
 }
 

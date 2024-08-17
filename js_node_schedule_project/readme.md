@@ -184,10 +184,11 @@ Em seguida, criaremos outra função de processamento responsável pela atualiza
 -	[x] Encapsular o icone dentro de um hyperlink, e construir um caminho que utilize um id de usuário e a palavra edit(ou alguma palavra relacionada); ex :`/contatos/editar/:id`
 -	[x] Criar um método dentro do `ContactService` que resgate as informações do contáto de referência do id e apena isto. Apesar de ser uma referência a letra R do acronimo, trabalharemos ela mais a fundo na próxima etapa;
 -	[x] Criar uma função de processamento que irá receber este id, e utilizar o método anteriormente construido para, moldar o objeto de injeção da página;
--	[] Criar uma outra função de processamento que será responsável por realizar a atualização das informações do contato de referência;
--	[] Implementar flsh messagespara que o usuário entenda o que está ocorrendo;
-- 	[] Declarar as rotas dentro do arquivo de rotas, respeitandoas precedências;
-- 	[] Deixar todas as mudanças das views de forma responsiva;
+-	[x] Desenvolver o método que será responsável por atualizar os dados do contato referênciado pelo Id;
+-	[x] Criar uma outra função de processamento que será responsável por realizar a atualização das informações do contato de referência;
+-	[x] Implementar flash message para que o usuário entenda o que está ocorrendo;
+- 	[x] Declarar as rotas dentro do arquivo de rotas, respeitando as precedências;
+- 	[] Deixar todas as mudanças possíveis das views de forma responsiva;
 
 - [] Corrigir bug referente ao objeto de caching no login controller; (off class para quem está realizando após o dia 13 de agosto não é necessário realizar esta etapa).
 

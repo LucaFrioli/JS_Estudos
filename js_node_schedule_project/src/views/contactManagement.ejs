@@ -9,7 +9,7 @@
 				criar um novo contato em sua agenda, não se esqueça de preencher todos os campos do formulário para isso.
 			<%} else {%>
 				<%# trocar x pelo nome do contato quando a página for referente a edição %>
-				editar o contato x, basta apenas trocar as informações dos campos e clickar no botão "Editar Contato".
+				editar o contato <%=contactInfo.name%> <%=contactInfo.lastname%>, basta apenas trocar as informações dos campos e clickar no botão "Editar Contato".
 			<% } %>
 		</p>
 
@@ -21,7 +21,7 @@
 			type="text"
 			name="name"
 			id="name"
-			value="<% if(title === 'EditContact'){ %> <%= contactInfo.name %> <% } %>"
+			value="<% if(title === 'EditContact'){ %><%=contactInfo.name%><% } %>"
 		/>
 
 		<label for="lastname">Sobrenome :</label>
@@ -29,7 +29,7 @@
 			type="text"
 			name="lastname"
 			id="lastname"
-			value="<% if(title === 'EditContact'){ %> <%= contactInfo.lastname %> <% } %>"
+			value="<% if(title === 'EditContact'){ %><%=contactInfo.lastname%><% } %>"
 		/>
 
 		<label for="number">Numero :</label>
@@ -37,7 +37,7 @@
 			type="text"
 			name="number"
 			id="number"
-			value="<% if(title === 'EditContact'){ %> <%= contactInfo.number %> <% } %>"
+			value="<% if(title === 'EditContact'){ %><%=contactInfo.number%><% } %>"
 		/>
 
 		<label for="email">Email :</label>
@@ -45,7 +45,7 @@
 		type="text"
 		name="email"
 		id="email"
-		value="<% if(title === 'EditContact'){ %> <%= contactInfo.email %> <% } %>"
+		value="<% if(title === 'EditContact'){ %><%=contactInfo.email%><% } %>"
 		/>
 
 		<input type="hidden" name="_csrf" value="<%= csrfToken %>">
