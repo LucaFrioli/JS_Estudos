@@ -16,6 +16,7 @@ class ContactService {
 	// método que define a sanitizaçõa e validação dos dados que estão chegando na aplicação
 	sanitizeAndValidateBody() {
 		validations.cleanData(this.body);
+		validations.isEmpty(this.body, this.error);
 		validations.fieldIsEmail(this.body.email, this.error);
 		validations.fieldIsPhoneNumber(this.body.number, this.error);
 	}
@@ -83,7 +84,9 @@ class ContactService {
 			);
 		}
 
-		this.contact = await this.model.findByIdAndUpdate(userId, this.body, {new : true});
+		this.contact = await this.model.findByIdAndUpdate(userId, this.body, {
+			new: true
+		});
 	}
 }
 

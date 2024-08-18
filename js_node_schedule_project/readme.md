@@ -180,17 +180,20 @@ Para isso, precisaremos criar um botão ou link com um ícone na frente de cada 
 
 Em seguida, criaremos outra função de processamento responsável pela atualização do contato. Nessa função, criaremos um novo método em nosso serviço para realizar a atualização em si. No controller, validaremos o corpo da requisição e faremos o update. Para testar, utilizaremos a ferramenta MongoDB Atlas.
 
--	[x] Criar uma área de botões dentro da View `home.ejs`. e adicionar um botão utilizando um icone do googleicons que represente edição (para isso basta utilizar o head);
--	[x] Encapsular o icone dentro de um hyperlink, e construir um caminho que utilize um id de usuário e a palavra edit(ou alguma palavra relacionada); ex :`/contatos/editar/:id`
--	[x] Criar um método dentro do `ContactService` que resgate as informações do contáto de referência do id e apena isto. Apesar de ser uma referência a letra R do acronimo, trabalharemos ela mais a fundo na próxima etapa;
--	[x] Criar uma função de processamento que irá receber este id, e utilizar o método anteriormente construido para, moldar o objeto de injeção da página;
--	[x] Desenvolver o método que será responsável por atualizar os dados do contato referênciado pelo Id;
--	[x] Criar uma outra função de processamento que será responsável por realizar a atualização das informações do contato de referência;
--	[x] Implementar flash message para que o usuário entenda o que está ocorrendo;
-- 	[x] Declarar as rotas dentro do arquivo de rotas, respeitando as precedências;
-- 	[] Deixar todas as mudanças possíveis das views de forma responsiva;
+-   [x] Criar uma área de botões dentro da View `home.ejs`. e adicionar um botão utilizando um icone do googleicons que represente edição (para isso basta utilizar o head);
+-   [x] Encapsular o icone dentro de um hyperlink, e construir um caminho que utilize um id de usuário e a palavra edit(ou alguma palavra relacionada); ex :`/contatos/editar/:id`
+-   [x] Criar um método dentro do `ContactService` que resgate as informações do contáto de referência do id e apena isto. Apesar de ser uma referência a letra R do acronimo, trabalharemos ela mais a fundo na próxima etapa;
+-   [x] Criar uma função de processamento que irá receber este id, e utilizar o método anteriormente construido para, moldar o objeto de injeção da página;
+-   [x] Desenvolver o método que será responsável por atualizar os dados do contato referênciado pelo Id;
+-   [x] Criar uma outra função de processamento que será responsável por realizar a atualização das informações do contato de referência;
+-   [x] Implementar flash message para que o usuário entenda o que está ocorrendo;
+-   [x] Declarar as rotas dentro do arquivo de rotas, respeitando as precedências;
+-   [] Deixar todas as mudanças possíveis das views de forma responsiva;
 
-- [] Corrigir bug referente ao objeto de caching no login controller; (off class para quem está realizando após o dia 13 de agosto não é necessário realizar esta etapa).
+off :
+
+-   [x] Corrigir bug referente ao objeto de caching no login controller; (off class para quem está realizando após o dia 17 de agosto não é necessário realizar esta etapa).
+
 
 # Sumário de commits :
 
@@ -242,4 +245,15 @@ Em seguida, criaremos outra função de processamento responsável pela atualiza
 
 ## Quinta Etapa :
 
--
+-   441f246
+-   900c575
+-   b3d798e
+-   3f52ac5
+-   86ba664
+-   0dfedfb
+
+## Sexta Etapa :
+
+-   da91e01
+-   1cbef5c
+-   dffd856

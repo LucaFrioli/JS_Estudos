@@ -50,6 +50,21 @@ function cleanData(body) {
 }
 
 /**
+ * Verify if the body of te request has a key empty
+ * @param {{}} body
+ * @param {string[]} [error]
+ */
+function isEmpty(body, error) {
+	// eslint-disable-next-line prefer-const
+	for (const key in body) {
+		if (body[key] === '') {
+			error.push('Todos os campos devem ser preenchidos !');
+			break;
+		}
+	}
+}
+
+/**
  * Function to validate Email
  * @param {string} [valueOfEmailKey]
  * @param {string[]} [error]
@@ -105,4 +120,4 @@ function fieldIsPhoneNumber(valueOfPhoneNumberKey, error) {
 	return;
 }
 
-module.exports = { cleanData, fieldIsEmail, fieldIsPhoneNumber };
+module.exports = { cleanData, fieldIsEmail, fieldIsPhoneNumber, isEmpty };

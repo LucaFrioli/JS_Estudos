@@ -12,9 +12,9 @@ exports.index = (req, res) => {
 };
 
 exports.register = (req, res) => {
-	data.title = 'Cadastro';
 	//  {title}
 	const dataToSend = { ...req.body, ...data };
+	dataToSend.title = 'Cadastro'
 	res.render('register', dataToSend);
 };
 
