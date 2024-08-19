@@ -46,11 +46,20 @@ class ContactService {
 	}
 
 	/**
+	 * This method read all contacts in the data Collection and return them
+	 * @returns {object[]}
+	 */
+	async readAllContacts() {
+		const contacts = await this.model.find();
+		return contacts;
+	}
+
+	/**
 	 *	Método responsavel por encontrar usuários por id
 	 * @param {string} userId
-	 * @returns
+	 * @returns {null || contact}
 	 */
-	async findContactById(userId) {
+	 static async findContactById(userId) {
 		if (typeof userId !== 'string') {
 			// Utilizar logger para logar além desta menssagem a sessão do usuário a data e afins
 			console.log('O id de usuário deve ser uma string !');
@@ -65,6 +74,10 @@ class ContactService {
 		}
 	}
 
+	/**
+	 * This method do a updating in a contact element of the data base, with the same id of the param
+	 * @param {String} userId
+	 */
 	async updateContact(userId) {
 		this.sanitizeAndValidateBody();
 		if (this.error.length !== 0) {
@@ -87,6 +100,7 @@ class ContactService {
 		this.contact = await this.model.findByIdAndUpdate(userId, this.body, {
 			new: true
 		});
+		return this.contact;
 	}
 }
 
