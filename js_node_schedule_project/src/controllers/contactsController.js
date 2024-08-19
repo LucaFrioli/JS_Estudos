@@ -91,7 +91,7 @@ exports.editPage = async (req, res) => {
 
 		res.render('contactManagement', renderingObject);
 	} catch (e) {
-		console.log('500 : erro ao tentar encontrar usuário na base de dados');
+		console.log('500 : erro ao tentar encontrar usuário na base de dados\n',e);
 		res.render('error', { title: '404' });
 	}
 };

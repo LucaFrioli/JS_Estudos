@@ -59,7 +59,7 @@ class ContactService {
 	 * @param {string} userId
 	 * @returns {null || contact}
 	 */
-	 static async findContactById(userId) {
+	async findContactById(userId) {
 		if (typeof userId !== 'string') {
 			// Utilizar logger para logar além desta menssagem a sessão do usuário a data e afins
 			console.log('O id de usuário deve ser uma string !');

@@ -22,41 +22,33 @@
 				<th scope="col">Sobrenome</th>
 				<th scope="col">Nº</th>
 				<th scope="col">Email</th>
+				<th scope="col">GerenciamentoDeContato</th>
 			</tr>
 		</thead>
 
 		<tbody>
+			<% contacts.forEach((contact)=>{ %>
 			<tr>
-				<td data-label="Nome"> teste</td>
-				<td data-label="Sobrenome"> teste</td>
-				<td data-label="Nº">teste</td>
-				<td data-label="Email">teste@teste.com</td>
-				<td>
+				<td data-label="Nome"><%=contact.name%></td>
+				<td data-label="Sobrenome"><%=contact.lastname%></td>
+				<td data-label="Nº"><%=contact.number%></td>
+				<td data-label="Email"><%=contact.email%></td>
+				<td data-label="GerenciamentoDeContato">
 					<span class="display-buttons">
 						<!-- Esta rota deverá ser contruida da seguinte maneira:
 						 contact/edit/currentContact.id -->
-						<a href="/contact/edit/66a45da1c148891237ef58c2">
+						<a href="/contact/edit/<%=contact._id%>">
 							<span class="material-symbols-outlined">
 								edit
-							</span>
+							</span> Editar
+						</a>
+						<a href="/contact/exclude/<%=contact._id%>">
+							<span></span> Excluir
 						</a>
 					</span>
 				</td>
 			</tr>
-
-			<tr>
-				<td data-label="Nome"> teste 2</td>
-				<td data-label="Sobrenome"> teste2 khkhk jhjhk</td>
-				<td data-label="Nº">testekpdbspjvasdp</td>
-				<td data-label="Email">teste2@teste.com</td>
-			</tr>
-
-			<tr>
-				<td data-label="Nome"> teste 2</td>
-				<td data-label="Sobrenome"> teste2 khkhk jhjhk</td>
-				<td data-label="Nº">testekpdbspjvasdp</td>
-				<td data-label="Email">teste2@teste.com</td>
-			</tr>
+			<% }) %>
 		</tbody>
 	</table>
 </main>
