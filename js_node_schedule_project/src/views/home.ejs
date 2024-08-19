@@ -20,34 +20,39 @@
 			<tr>
 				<th scope="col">Nome</th>
 				<th scope="col">Sobrenome</th>
-				<th scope="col">Nº</th>
+				<th scope="col">Número de telefone</th>
 				<th scope="col">Email</th>
-				<th scope="col">GerenciamentoDeContato</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<% contacts.forEach((contact)=>{ %>
-			<tr>
-				<td data-label="Nome"><%=contact.name%></td>
-				<td data-label="Sobrenome"><%=contact.lastname%></td>
-				<td data-label="Nº"><%=contact.number%></td>
-				<td data-label="Email"><%=contact.email%></td>
-				<td data-label="GerenciamentoDeContato">
-					<span class="display-buttons">
-						<!-- Esta rota deverá ser contruida da seguinte maneira:
-						 contact/edit/currentContact.id -->
-						<a href="/contact/edit/<%=contact._id%>">
-							<span class="material-symbols-outlined">
-								edit
-							</span> Editar
-						</a>
-						<a href="/contact/exclude/<%=contact._id%>">
-							<span></span> Excluir
-						</a>
-					</span>
-				</td>
-			</tr>
+				<tr>
+					<td data-label="Nome"><%=contact.name%></td>
+					<td data-label="Sobrenome"><%=contact.lastname%></td>
+					<td data-label="Número de telefone"><%=contact.number%></td>
+					<td data-label="Email"><%=contact.email%></td>
+					<td class="table-buttons-container">
+						<span class="display-buttons">
+							<!-- Esta rota deverá ser contruida da seguinte maneira:
+							 contact/edit/currentContact.id -->
+							<a href="/contact/edit/<%=contact._id%>" class="btn edit">
+								<span class="centralizeContent">
+									<span class="material-symbols-outlined">
+										edit
+									</span>
+								</span>
+							</a>
+							<a href="/contact/exclude/<%=contact._id%>" class="btn exclude">
+								<span class="centralizeContent">
+									<span class="material-symbols-outlined">
+										delete_forever
+									</span>
+								</span>
+							</a>
+						</span>
+					</td>
+				</tr>
 			<% }) %>
 		</tbody>
 	</table>

@@ -204,10 +204,12 @@ Esta etapa abordará de forma mais profunda as letras R e D do acônomo CRUD.
 
 -   [x] Iniciaremos criando um método em nosso model que será responsável por trazer todos os contatos presentes na coleção do banco de dados;
 -   [x] Iremos construir dentro da renderização da home no `homeController` uma lógica que possibilitará a o resgate utilizando o método anteriormente criado dos objetos, e a injeção dos mesmos na view;
--   [] Criaremos a lógica da view para iterar sobre os contatos, e renderiza-los na tela, note que neste momento também iremos contruir dinâmicamente os links de referências de edição, trocando o link que estava em hardcode para umlink dinâmico.
--   [] Após isto iremos adicionar um botão ou link em formato de lixeira ou algo que referêncie a exclusão do contato, além disso já iremos construir a rota da mesma forma que na etapa anterior a tornando dinâmica com o id de cada usuário;
+-   [x] Criaremos a lógica da view para iterar sobre os contatos, e renderiza-los na tela, note que neste momento também iremos contruir dinâmicamente os links de referências de edição, trocando o link que estava em hardcode para umlink dinâmico.
+-   [x] Após isto iremos adicionar um botão ou link em formato de lixeira ou algo que referêncie a exclusão do contato, além disso já iremos construir a rota no frontend, da mesma forma que na etapa anterior, a tornando dinâmica com o id de cada usuário;
+-	[x] Estilizar e deixar os botões de gerenciamento com uma melhor aparência;
 -   [] Devemos então nos voltar ao modelo novamente e criar o método que será responsável da exclusão do contato referênciado pelo id da rota;
 -   [] Então finalmente iremos criar um controller para que possa gerênciar o processo de exclusão uitlizando o método anterior, ele everá retornar a home;
+-	[] Então por fim iremos instânciar a rota de exclusão no backend;
 
 # Sumário de commits :
 

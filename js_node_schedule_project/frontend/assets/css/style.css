@@ -20,7 +20,7 @@ main {
 	align-items: center;
 }
 
-/* links com aspecto de botã*/
+/* links com aspecto de botão*/
 
 a.btn {
 	text-decoration: none;
@@ -239,12 +239,49 @@ main#agenda table.responsiveTable {
 	margin-top: 1rem;
 	border-collapse: collapse;
 	width: 50%;
+	margin-left: 3rem;
 }
 
 main#agenda table.responsiveTable th,
 td {
 	border: 1px solid rgba(95, 91, 91, 0.822);
 	padding: 10px;
+	min-width: 100px;
+}
+
+main#agenda table.responsiveTable tr td.table-buttons-container{
+	display: flex;
+	justify-content: space-around;
+	border: none;
+}
+
+main#agenda table.responsiveTable tr td span.display-buttons{
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+
+main#agenda table.responsiveTable tr td span.display-buttons  a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+}
+
+main#agenda table.responsiveTable tr td span.display-buttons  a.edit{
+	background-color: rgba(0, 128, 0, 0.897);
+}
+
+main#agenda table.responsiveTable tr td span.display-buttons  a.edit:hover{
+	background-color: rgba(0, 97, 0, 0.897);
+}
+
+main#agenda table.responsiveTable tr td span.display-buttons  a.exclude{
+	background-color: rgba(180, 13, 13, 0.692);
+}
+
+main#agenda table.responsiveTable tr td span.display-buttons  a.exclude:hover{
+	background-color: rgba(139, 10, 10, 0.801);
 }
 
 main#agenda nav#actionsOfSchedule {
@@ -260,6 +297,7 @@ main#agenda nav#actionsOfSchedule a.btn {
 	main#agenda table.responsiveTable {
 		border: 0;
 		width: 85%;
+		margin-left: 0;
 	}
 
 	main#agenda table.responsiveTable thead {
@@ -293,6 +331,20 @@ main#agenda nav#actionsOfSchedule a.btn {
 		font-weight: 500;
 		font-size: 0.9rem;
 	}
+
+
+	main#agenda table.responsiveTable tr td.table-buttons-container{
+		border: solid 0.4px  rgba(95, 91, 91, 0.822);
+	}
+
+	main#agenda table.responsiveTable tr td span.display-buttons{
+		flex-direction: row;
+	}
+
+	main#agenda table.responsiveTable tr td span.display-buttons  a{
+		margin-left: 0.5rem;
+	}
+
 }
 
 /* Trabalhando com a página index */
