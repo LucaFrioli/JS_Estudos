@@ -86,6 +86,12 @@ routes.post(
 	'/contact/update/:id',
 	checkUserInfoMiddleware.checkUserIsLogged,
 	contactsController.updateContact
-)
+);
+
+routes.get(
+	'/contact/exclude/:id',
+	checkUserInfoMiddleware.checkUserIsLogged,
+	contactsController.deleteContact
+);
 
 module.exports = routes;

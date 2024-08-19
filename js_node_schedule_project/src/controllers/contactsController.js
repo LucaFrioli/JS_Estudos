@@ -91,7 +91,10 @@ exports.editPage = async (req, res) => {
 
 		res.render('contactManagement', renderingObject);
 	} catch (e) {
-		console.log('500 : erro ao tentar encontrar usuário na base de dados\n',e);
+		console.log(
+			'500 : erro ao tentar encontrar usuário na base de dados\n',
+			e
+		);
 		res.render('error', { title: '404' });
 	}
 };
@@ -101,7 +104,6 @@ exports.updateContact = async (req, res) => {
 	if (!id) res.render('error', { title: '404' });
 
 	try {
-		console.log(req.body);
 		const service = new ContactService(req.body);
 		await service.updateContact(id);
 
@@ -115,6 +117,22 @@ exports.updateContact = async (req, res) => {
 
 		req.flash('success', 'Contato atualizado com sucesso');
 		return res.redirect('/home');
+	} catch (e) {
+		console.log(e);
+		res.render('error', { title: '404' });
+	}
+};
+
+exports.deleteContact = async (req, res) => {
+	const id = req.params.id;
+	if (!id) res.render('error', { title: '404' });
+
+	try {
+		const service = new ContactService(req.body);
+		await service.deleteContact(id);
+
+		req.flash('success', 'Contato excluido com sucesso');
+		return res.redirect('back');
 	} catch (e) {
 		console.log(e);
 		res.render('error', { title: '404' });

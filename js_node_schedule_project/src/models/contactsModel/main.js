@@ -56,17 +56,17 @@ class ContactService {
 
 	/**
 	 *	Método responsavel por encontrar usuários por id
-	 * @param {string} userId
+	 * @param {string} contactId
 	 * @returns {null || contact}
 	 */
-	async findContactById(userId) {
-		if (typeof userId !== 'string') {
+	async findContactById(contactId) {
+		if (typeof contactId !== 'string') {
 			// Utilizar logger para logar além desta menssagem a sessão do usuário a data e afins
 			console.log('O id de usuário deve ser uma string !');
 			return null;
 		}
 		try {
-			this.contact = await this.model.findById(userId);
+			this.contact = await this.model.findById(contactId);
 			return this.contact;
 		} catch (e) {
 			this.error.push('Contato não encontrado !');
@@ -76,9 +76,9 @@ class ContactService {
 
 	/**
 	 * This method do a updating in a contact element of the data base, with the same id of the param
-	 * @param {String} userId
+	 * @param {String} contactId
 	 */
-	async updateContact(userId) {
+	async updateContact(contactId) {
 		this.sanitizeAndValidateBody();
 		if (this.error.length !== 0) {
 			console.error(
@@ -89,7 +89,7 @@ class ContactService {
 			return;
 		}
 
-		const verifyContactExistence = this.findContactById(userId);
+		const verifyContactExistence = this.findContactById(contactId);
 		if (!verifyContactExistence) {
 			console.error('Contato não encontrado na base de dados');
 			throw new Error(
@@ -97,10 +97,23 @@ class ContactService {
 			);
 		}
 
-		this.contact = await this.model.findByIdAndUpdate(userId, this.body, {
+		this.contact = await this.model.findByIdAndUpdate(contactId, this.body, {
 			new: true
 		});
 		return this.contact;
+	}
+
+	/**
+	 * This method will be to delete an contact with the passed id
+	 * @param {String} contactId
+	 */
+	async deleteContact(contactId){
+		if(typeof contactId !== 'string'){
+			console.error('O id de usuário deve ser uma string !');
+			throw new Error('Error 500 :  id de recebimento deve ser uma string verifique o prâmetro passado');
+		}
+
+		await this.model.findByIdAndDelete(contactId);
 	}
 }
 
