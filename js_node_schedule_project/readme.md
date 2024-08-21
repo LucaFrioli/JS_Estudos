@@ -9,12 +9,12 @@ _Legenda : x = concluida, / = em progresso_
 -   1 task na primeira etapa; [/]
 
     -   Melhorado a funcionalidade do burguer menu (valor de referencia de commit : 4156829 );
-    -   Melhorar o desing, Trazendo uma experiência de Usuário mais agrdavel (); obs : está etapa será realizada junto a ultima etapa extra do projeto.
+    -   Melhorar o design, Trazendo uma experiência de Usuário mais agrdavel (); obs : está etapa será realizada junto a ultima etapa extra do projeto.
 
 -   Side quest da quarta etapa; [ ] ();
 
 -   1 Task na etapa Extra 1; [ ]
-    -   Idealizar e criar desing da página Settings [ ] ();
+    -   Idealizar e criar design da página Settings [ ] ();
 
 **Bugs encontrados :**
 
@@ -39,7 +39,7 @@ Tasks da primeira etapa :
     -   [x] Deverá conter uma div com erro ou informação (no momento ela não precisa ser integrada a nada, mas funcionará com as flash messages posteriormente);
     -   [x] Uma tabela ou display para informações de contatos cadastrados;
 
--   [ ] Estilizar tudo que foi criado, e deixar responsivo, siga o padrão de desing mobile-first de preferência; (caso queira pode utilizar bootstrap);
+-   [ ] Estilizar tudo que foi criado, e deixar responsivo, siga o padrão de design mobile-first de preferência; (caso queira pode utilizar bootstrap);
 
 **⚠️ ⚠️ De preferência tentar utilizar ao maxímo o html semântico ‼️**
 
@@ -211,9 +211,19 @@ Esta etapa abordará de forma mais profunda as letras R e D do acônomo CRUD.
 -   [x] Então iremos criar um controller dentro de `homeController` para que possa gerênciar o processo de exclusão utilizando o método anterior, ele deverá retornar a home;
 -	[x] Por fim iremos instânciar a rota de exclusão no backend;
 
+# Etapas extras e conteúdos extras :
+
+Como desafio irei propor a criação da validação frontend dos formulários criados ao longo do projeto;
+
+-   [] Idealizar e arquiteturar melhor estrutura dentro da pasta frontend para recepção das validações (pense fora da caixa, e torne o código o mais modular possível);
+-   [] Contruir as classes de validação e realizar a injeção das informações nos formulários;
+
+
+Apartir daqui as mudanças serão adicionadas em uma branch separada chamada `continueSchedule` para averiguar as próximas etapas extras e adições de novas funcionalidades acompanhe por ela;
+
 # Sumário de commits :
 
-**Início das commits : 27 de maio de 2024 ---- Última commit : ## de ###### de 2024**
+**Início das commits : 27 de maio de 2024 ---- Última commit : 19 de agosto de 2024 partes principais**
 
 ## Commits de preparações :
 
@@ -277,4 +287,9 @@ Esta etapa abordará de forma mais profunda as letras R e D do acônomo CRUD.
 
 ## Sétima Etapa :
 
--
+-	49b0e7e
+-	7ee9bce
+-	4d61c22
+-	3f248c4
+
+## Etapas extras e conteúdos extras :
