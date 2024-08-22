@@ -14,7 +14,7 @@ exports.index = (req, res) => {
 exports.register = (req, res) => {
 	//  {title}
 	const dataToSend = { ...req.body, ...data };
-	dataToSend.title = 'Cadastro'
+	dataToSend.title = 'Cadastro';
 	res.render('register', dataToSend);
 };
 

@@ -97,9 +97,13 @@ class ContactService {
 			);
 		}
 
-		this.contact = await this.model.findByIdAndUpdate(contactId, this.body, {
-			new: true
-		});
+		this.contact = await this.model.findByIdAndUpdate(
+			contactId,
+			this.body,
+			{
+				new: true
+			}
+		);
 		return this.contact;
 	}
 
@@ -107,10 +111,12 @@ class ContactService {
 	 * This method will be to delete an contact with the passed id
 	 * @param {String} contactId
 	 */
-	async deleteContact(contactId){
-		if(typeof contactId !== 'string'){
+	async deleteContact(contactId) {
+		if (typeof contactId !== 'string') {
 			console.error('O id de usuário deve ser uma string !');
-			throw new Error('Error 500 :  id de recebimento deve ser uma string verifique o prâmetro passado');
+			throw new Error(
+				'Error 500 :  id de recebimento deve ser uma string verifique o prâmetro passado'
+			);
 		}
 
 		await this.model.findByIdAndDelete(contactId);

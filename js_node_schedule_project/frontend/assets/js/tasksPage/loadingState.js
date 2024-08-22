@@ -6,11 +6,13 @@ export default () => {
 	const pureData = JSON.parse(dataString);
 
 	// realiza uma filtrgaem trazendo apenas aquelas tarefas que foram concluidas
-	const checkedList = pureData.filter((el)=> el.relized === true);
-	
+	const checkedList = pureData.filter((el) => el.relized === true);
+
 	// itera sobre o array filtrado, assinalando e apresentando para o usuário todas as tarefaz já concluidas.
-	checkedList.forEach(element => {
-		const el = document.querySelector(`input[type="checkbox"]#${element.id}`);
+	checkedList.forEach((element) => {
+		const el = document.querySelector(
+			`input[type="checkbox"]#${element.id}`
+		);
 		el.checked = true;
 	});
 };

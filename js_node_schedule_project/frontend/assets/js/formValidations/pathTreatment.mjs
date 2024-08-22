@@ -8,7 +8,7 @@ function clearIdForPath(pathWithId) {
 	const arrayOfSegments = pathWithId.split('/').filter((segment) => segment);
 	const arrayToNewPath = [];
 
-	// iterates through each of the path segments and checks if it is a mongo id, if it is it will not enter the path construction array
+	// iterates through each of the path segments and checks if it is a mongo id, if it is, it will not enter the path construction array
 	for (const segment of arrayOfSegments) {
 		if (!isMongoDBId(segment)) {
 			arrayToNewPath.push(segment);

@@ -249,38 +249,38 @@ td {
 	min-width: 100px;
 }
 
-main#agenda table.responsiveTable tr td.table-buttons-container{
+main#agenda table.responsiveTable tr td.table-buttons-container {
 	display: flex;
 	justify-content: space-around;
 	border: none;
 }
 
-main#agenda table.responsiveTable tr td span.display-buttons{
+main#agenda table.responsiveTable tr td span.display-buttons {
 	display: flex;
 	flex-direction: row;
 	gap: 1rem;
 }
 
-main#agenda table.responsiveTable tr td span.display-buttons  a{
+main#agenda table.responsiveTable tr td span.display-buttons a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 0.5rem;
 }
 
-main#agenda table.responsiveTable tr td span.display-buttons  a.edit{
+main#agenda table.responsiveTable tr td span.display-buttons a.edit {
 	background-color: rgba(0, 128, 0, 0.897);
 }
 
-main#agenda table.responsiveTable tr td span.display-buttons  a.edit:hover{
+main#agenda table.responsiveTable tr td span.display-buttons a.edit:hover {
 	background-color: rgba(0, 97, 0, 0.897);
 }
 
-main#agenda table.responsiveTable tr td span.display-buttons  a.exclude{
+main#agenda table.responsiveTable tr td span.display-buttons a.exclude {
 	background-color: rgba(180, 13, 13, 0.692);
 }
 
-main#agenda table.responsiveTable tr td span.display-buttons  a.exclude:hover{
+main#agenda table.responsiveTable tr td span.display-buttons a.exclude:hover {
 	background-color: rgba(139, 10, 10, 0.801);
 }
 
@@ -332,19 +332,17 @@ main#agenda nav#actionsOfSchedule a.btn {
 		font-size: 0.9rem;
 	}
 
-
-	main#agenda table.responsiveTable tr td.table-buttons-container{
-		border: solid 0.4px  rgba(95, 91, 91, 0.822);
+	main#agenda table.responsiveTable tr td.table-buttons-container {
+		border: solid 0.4px rgba(95, 91, 91, 0.822);
 	}
 
-	main#agenda table.responsiveTable tr td span.display-buttons{
+	main#agenda table.responsiveTable tr td span.display-buttons {
 		flex-direction: row;
 	}
 
-	main#agenda table.responsiveTable tr td span.display-buttons  a{
+	main#agenda table.responsiveTable tr td span.display-buttons a {
 		margin-left: 0.5rem;
 	}
-
 }
 
 /* Trabalhando com a página index */
@@ -429,7 +427,7 @@ main#tasksPage form#tasksListForm ul.subtaskList li {
 
 /* Trabalhando com a página contactManagement*/
 
-main#ContactsForms div.CTA p{
+main#ContactsForms div.CTA p {
 	text-align: justify;
 	max-width: 500px;
 }

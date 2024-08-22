@@ -206,10 +206,10 @@ Esta etapa abordará de forma mais profunda as letras R e D do acônomo CRUD.
 -   [x] Iremos construir dentro da renderização da home no `homeController` uma lógica que possibilitará a o resgate utilizando o método anteriormente criado dos objetos, e a injeção dos mesmos na view;
 -   [x] Criaremos a lógica da view para iterar sobre os contatos, e renderiza-los na tela, note que neste momento também iremos contruir dinâmicamente os links de referências de edição, trocando o link que estava em hardcode para umlink dinâmico.
 -   [x] Após isto iremos adicionar um botão ou link em formato de lixeira ou algo que referêncie a exclusão do contato, além disso já iremos construir a rota no frontend, da mesma forma que na etapa anterior, a tornando dinâmica com o id de cada usuário;
--	[x] Estilizar e deixar os botões de gerenciamento com uma melhor aparência;
+-   [x] Estilizar e deixar os botões de gerenciamento com uma melhor aparência;
 -   [x] Devemos então nos voltar ao modelo novamente e criar o método que será responsável pela exclusão do contato referênciado no id da rota;
 -   [x] Então iremos criar um controller dentro de `homeController` para que possa gerênciar o processo de exclusão utilizando o método anterior, ele deverá retornar a home;
--	[x] Por fim iremos instânciar a rota de exclusão no backend;
+-   [x] Por fim iremos instânciar a rota de exclusão no backend;
 
 # Etapas extras e conteúdos extras :
 
@@ -218,6 +218,7 @@ Como desafio irei propor a criação da validação frontend dos formulários cr
 -   [x] Idealizar e arquiteturar melhor estrutura dentro da pasta frontend para recepção das validações (pense fora da caixa, e torne o código o mais modular possível);
 -   [] Contruir as classes de validação e realizar a injeção das informações nos formulários;
 
+-   [] Corrigir bug de login após tentativa de login com campos em branco;
 
 Apartir daqui as mudanças serão adicionadas em uma branch separada chamada `continueSchedule` para averiguar as próximas etapas extras e adições de novas funcionalidades acompanhe por ela;
 
@@ -287,9 +288,9 @@ Apartir daqui as mudanças serão adicionadas em uma branch separada chamada `co
 
 ## Sétima Etapa :
 
--	49b0e7e
--	7ee9bce
--	4d61c22
--	3f248c4
+-   49b0e7e
+-   7ee9bce
+-   4d61c22
+-   3f248c4
 
 ## Etapas extras e conteúdos extras :
