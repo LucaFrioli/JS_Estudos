@@ -6,9 +6,12 @@ import * as menuController from './assets/js/burguerMenu';
 import { footerControll } from './assets/js/responsivnessFooterController';
 import saveTasks from './assets/js/tasksPage/realizeSubmition';
 import loadingState from './assets/js/tasksPage/loadingState';
+import validation from './assets/js/formValidations/main.mjs'
 
 window.addEventListener('load', footerControll);
 window.addEventListener('resize', footerControll);
+
+window.addEventListener('load', validation(window.location.pathname))
 
 const menuIcon = document.querySelector('span#burguer');
 menuIcon.addEventListener('click', menuController.showMenu);

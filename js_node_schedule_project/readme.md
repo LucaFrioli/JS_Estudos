@@ -215,7 +215,7 @@ Esta etapa abordará de forma mais profunda as letras R e D do acônomo CRUD.
 
 Como desafio irei propor a criação da validação frontend dos formulários criados ao longo do projeto;
 
--   [] Idealizar e arquiteturar melhor estrutura dentro da pasta frontend para recepção das validações (pense fora da caixa, e torne o código o mais modular possível);
+-   [x] Idealizar e arquiteturar melhor estrutura dentro da pasta frontend para recepção das validações (pense fora da caixa, e torne o código o mais modular possível);
 -   [] Contruir as classes de validação e realizar a injeção das informações nos formulários;
 
 
