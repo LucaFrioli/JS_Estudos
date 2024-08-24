@@ -1,12 +1,13 @@
+/* eslint-disable no-case-declarations */
+import ValidateForm from './classes/validationModule.mjs';
 import { clearIdForPath } from './pathTreatment.mjs';
 
-let breaker = 0;
-
 export default function definingFormValidation(pagePath) {
-	if (breaker >= 1) return;
-	let pathWithoutID;
+
 	switch (pagePath) {
 		case '/login':
+			const teste = new ValidateForm(document.querySelector('form'));
+			teste.initValidation()
 			break;
 
 		case '/login/register':
@@ -19,10 +20,8 @@ export default function definingFormValidation(pagePath) {
 			break;
 
 		default:
-			// adiciona um método de parada para a recursaõ
-			breaker = 1;
-			pathWithoutID = clearIdForPath(pagePath);
-			definingFormValidation(pathWithoutID);
+			const pathWithoutID = clearIdForPath(pagePath);
+			if (pathWithoutID) definingFormValidation(pathWithoutID);
 			break;
 	}
 }

@@ -1,7 +1,7 @@
 /**
  * Function to remove mongo id segments from url
  * @param {string} [pathWithId]
- * @returns {string || boolean}
+ * @returns {string | false}
  */
 function clearIdForPath(pathWithId) {
 	// turns the path into an array, filtering out possible whitespace
@@ -16,7 +16,7 @@ function clearIdForPath(pathWithId) {
 	}
 
 	// returns the path without the id
-	return '/' + arrayToNewPath.join('/');
+	return arrayToNewPath.length !== 0 ? '/' + arrayToNewPath.join('/') : false;
 }
 
 /**
