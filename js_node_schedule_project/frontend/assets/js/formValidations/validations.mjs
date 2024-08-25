@@ -2,8 +2,21 @@
 
 import validator from 'validator';
 
-function verifyIsEmail(email) {
+const verifyIsEmail = (email) => {
 	return validator.isEmail(email);
-}
+};
 
-export { verifyIsEmail };
+/**
+ * As senhas por padrão devem conter de 7 a 30 caracteres, aos quais deve pelo menos
+ * ter uma letra maíuscula, um número e um Carctere especial {# | ! | ? | @}
+ */
+const verifyPassword = (password) => {
+	const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[#!?@]).{7,30}$/;
+	return regex.test(password);
+};
+
+const verifyPasswordIsEqual = (password, confirmPassword) => {
+	return password === confirmPassword;
+};
+
+export { verifyIsEmail, verifyPassword, verifyPasswordIsEqual };

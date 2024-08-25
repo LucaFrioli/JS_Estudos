@@ -31446,6 +31446,47 @@ module.exports = __webpack_require__(/*! ../internals/path */ "./node_modules/co
 
 /***/ }),
 
+/***/ "./frontend/assets/js/formValidations/classes/loginForm.mjs":
+/*!******************************************************************!*\
+  !*** ./frontend/assets/js/formValidations/classes/loginForm.mjs ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ValidateLoginForm)
+/* harmony export */ });
+/* harmony import */ var _validations_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../validations.mjs */ "./frontend/assets/js/formValidations/validations.mjs");
+/* harmony import */ var _validationModule_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./validationModule.mjs */ "./frontend/assets/js/formValidations/classes/validationModule.mjs");
+
+
+
+class ValidateLoginForm extends _validationModule_mjs__WEBPACK_IMPORTED_MODULE_1__["default"] {
+	constructor(form) {
+		super(form);
+		this.errorClass = 'form-error-frontend';
+	}
+
+	validate() {
+		let flag = true;
+		this.clearAllErrors();
+		this.inputs.forEach((element) => {
+			const value = element.value;
+			if (element.type === 'email') {
+				if (!(0,_validations_mjs__WEBPACK_IMPORTED_MODULE_0__.verifyIsEmail)(value)) {
+					this.addErrors(element, 'Digite um email válido');
+					flag = false;
+				}
+			}
+		});
+		return flag;
+	}
+}
+
+
+/***/ }),
+
 /***/ "./frontend/assets/js/formValidations/classes/validationModule.mjs":
 /*!*************************************************************************!*\
   !*** ./frontend/assets/js/formValidations/classes/validationModule.mjs ***!
@@ -31457,12 +31498,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ ValidateForm)
 /* harmony export */ });
-/* harmony import */ var _validations_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../validations.mjs */ "./frontend/assets/js/formValidations/validations.mjs");
-
-
 class ValidateForm {
 	constructor(form) {
 		this.form = form;
+		this.inputs = null;
+		this.errorClass = '';
 	}
 
 	initValidation() {
@@ -31471,35 +31511,55 @@ class ValidateForm {
 
 	eventHandling(e) {
 		e.preventDefault();
-		const inputs = [...this.form.querySelectorAll('input')];
-		if (this.validate(inputs)) {
+		this.inputs = [...this.form.querySelectorAll('input')];
+		if (this.validate(this.inputs)) {
 			this.form.submit();
 		}
 	}
 
+	/**
+	 * o metodo a seguir é um método que everá ser sobreescrito
+	 * Segue exemplo de inplemtação :
+	 * Exemplo de implemetnação :
+	 *	let flag = true
+	 * 	this.clearAllErrors();
+	 *  this.inputs.forEach((element) => {
+	 *		const value = element.value;
+	 *		switch (element.type) {
+	 *			case 'email':
+	 *				if (!verifyIsEmail(value)){
+	 *					flag = false
+	 *					this.addErrors(element,'Digite um email válido');
+	 *				}
+	 *				break;
+	 *		}
+	 *	});
+	 *	return flag;
+	 *
+	 * @returns {boolean}
+	 */
+	validate() {
+		return false;
+	}
 
-	// falta adicionar todas as validações, o metodo de limpeza e estilizar as menssagens, alḿede declarar osobjetos nas rotas !
-	validate(inputs) {
-		inputs.forEach((element) => {
-			const value = element.value;
-			switch (element.type) {
-				case 'email':
-					if (!(0,_validations_mjs__WEBPACK_IMPORTED_MODULE_0__.verifyIsEmail)(value))
-						this.addErrors(element,'Digite um email válido');
-					break;
-			}
+	clearAllErrors() {
+		const allErrors = [
+			...this.form.querySelectorAll(`.${this.errorClass}`)
+		];
+		allErrors.forEach((element) => {
+			element.remove();
 		});
 	}
 
 	addErrors(field, errorMessage) {
 		const p = this.generateErrorElement(errorMessage);
-		field.parentNode.insertBefore(p,field.nextSibling)
+		field.parentNode.insertBefore(p, field.nextSibling);
 	}
 
 	generateErrorElement(errorMessage) {
 		const p = document.createElement('p');
 		p.textContent = errorMessage;
-		p.classList.add('form-error-frontend');
+		p.classList.add(this.errorClass);
 		return p;
 	}
 }
@@ -31518,18 +31578,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ definingFormValidation)
 /* harmony export */ });
-/* harmony import */ var _classes_validationModule_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/validationModule.mjs */ "./frontend/assets/js/formValidations/classes/validationModule.mjs");
+/* harmony import */ var _classes_loginForm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/loginForm.mjs */ "./frontend/assets/js/formValidations/classes/loginForm.mjs");
 /* harmony import */ var _pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pathTreatment.mjs */ "./frontend/assets/js/formValidations/pathTreatment.mjs");
 /* eslint-disable no-case-declarations */
 
 
 
 function definingFormValidation(pagePath) {
-
 	switch (pagePath) {
 		case '/login':
-			const teste = new _classes_validationModule_mjs__WEBPACK_IMPORTED_MODULE_0__["default"](document.querySelector('form'));
-			teste.initValidation()
+			const teste = new _classes_loginForm_mjs__WEBPACK_IMPORTED_MODULE_0__["default"](document.querySelector('form'));
+			teste.initValidation();
 			break;
 
 		case '/login/register':
@@ -31543,6 +31602,10 @@ function definingFormValidation(pagePath) {
 
 		default:
 			const pathWithoutID = (0,_pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_1__.clearIdForPath)(pagePath);
+			console.log(
+				pagePath,
+				`é o caminho da página e este é o caminho da página sem o id : ${pathWithoutID}`
+			);
 			if (pathWithoutID) definingFormValidation(pathWithoutID);
 			break;
 	}
@@ -31607,16 +31670,31 @@ function isMongoDBId(segment) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   verifyIsEmail: () => (/* binding */ verifyIsEmail)
+/* harmony export */   verifyIsEmail: () => (/* binding */ verifyIsEmail),
+/* harmony export */   verifyPassword: () => (/* binding */ verifyPassword),
+/* harmony export */   verifyPasswordIsEqual: () => (/* binding */ verifyPasswordIsEqual)
 /* harmony export */ });
 /* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! validator */ "./node_modules/validator/index.js");
 // este arquivo será responsável por conter as validações de campos necessárias
 
 
 
-function verifyIsEmail(email) {
+const verifyIsEmail = (email) => {
 	return validator__WEBPACK_IMPORTED_MODULE_0__.isEmail(email);
-}
+};
+
+/**
+ * As senhas por padrão devem conter de 7 a 30 caracteres, aos quais deve pelo menos
+ * ter uma letra maíuscula, um número e um Carctere especial {# | ! | ? | @}
+ */
+const verifyPassword = (password) => {
+	const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[#!?@]).{7,30}$/;
+	return regex.test(password);
+};
+
+const verifyPasswordIsEqual = (password, confirmPassword) => {
+	return password === confirmPassword;
+};
 
 
 
