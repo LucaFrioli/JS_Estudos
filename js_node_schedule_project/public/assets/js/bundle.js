@@ -31722,7 +31722,9 @@ function clearIdForPath(pathWithId) {
 		if (isMongoDBId(segment)) {
 			pathHasId = true;
 		}
-		arrayToNewPath.push(segment);
+		if (!isMongoDBId(segment)) {
+			arrayToNewPath.push(segment);
+		}
 	}
 
 	// returns the path without the id
