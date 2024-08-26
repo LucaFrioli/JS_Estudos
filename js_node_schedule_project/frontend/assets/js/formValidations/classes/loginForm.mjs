@@ -2,11 +2,6 @@ import { verifyIsEmail } from '../validations.mjs';
 import ValidateForm from './validationModule.mjs';
 
 export default class ValidateLoginForm extends ValidateForm {
-	constructor(form) {
-		super(form);
-		this.errorClass = 'form-error-frontend';
-	}
-
 	validate() {
 		let flag = true;
 		this.clearAllErrors();

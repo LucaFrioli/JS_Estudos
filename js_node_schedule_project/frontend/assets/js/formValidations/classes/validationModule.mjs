@@ -2,7 +2,7 @@ export default class ValidateForm {
 	constructor(form) {
 		this.form = form;
 		this.inputs = null;
-		this.errorClass = '';
+		this.errorClass = 'form-error-frontend';
 	}
 
 	initValidation() {
@@ -18,7 +18,7 @@ export default class ValidateForm {
 	}
 
 	/**
-	 * o metodo a seguir é um método que everá ser sobreescrito
+	 * o metodo a seguir é um método que deverá ser sobreescrito
 	 * Segue exemplo de inplemtação :
 	 * Exemplo de implemetnação :
 	 *	let flag = true

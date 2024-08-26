@@ -6,9 +6,8 @@ import {
 import ValidateForm from './validationModule.mjs';
 
 export default class ValidateRegisterForm extends ValidateForm {
-	constructor(form, errorClass) {
+	constructor(form) {
 		super(form);
-		this.errorClass = errorClass || 'form-error-frontend';
 		this.passwordCompare = { pass1: '', pass2: '' };
 	}
 
