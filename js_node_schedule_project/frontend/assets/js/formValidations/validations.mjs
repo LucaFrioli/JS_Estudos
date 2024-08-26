@@ -15,8 +15,8 @@ const verifyPassword = (password) => {
 	return regex.test(password);
 };
 
-const verifyPasswordIsEqual = (password, confirmPassword) => {
+const verifyFieldIsEqual = (password, confirmPassword) => {
 	return password === confirmPassword;
 };
 
-export { verifyIsEmail, verifyPassword, verifyPasswordIsEqual };
+export { verifyIsEmail, verifyPassword, verifyFieldIsEqual };

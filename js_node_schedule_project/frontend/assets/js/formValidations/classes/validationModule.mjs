@@ -58,7 +58,7 @@ export default class ValidateForm {
 
 	generateErrorElement(errorMessage) {
 		const p = document.createElement('p');
-		p.textContent = errorMessage;
+		p.innerHTML = errorMessage;
 		p.classList.add(this.errorClass);
 		return p;
 	}

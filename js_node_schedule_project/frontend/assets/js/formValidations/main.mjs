@@ -1,15 +1,20 @@
 /* eslint-disable no-case-declarations */
 import ValidateLoginForm from './classes/loginForm.mjs';
+import ValidateRegisterForm from './classes/registerForm.mjs';
 import { clearIdForPath } from './pathTreatment.mjs';
 
 export default function definingFormValidation(pagePath) {
 	switch (pagePath) {
 		case '/login':
-			const teste = new ValidateLoginForm(document.querySelector('form'));
-			teste.initValidation();
+			new ValidateLoginForm(
+				document.querySelector('form')
+			).initValidation();
 			break;
 
 		case '/login/register':
+			new ValidateRegisterForm(
+				document.querySelector('form')
+			).initValidation();
 			break;
 
 		case '/contact/new':

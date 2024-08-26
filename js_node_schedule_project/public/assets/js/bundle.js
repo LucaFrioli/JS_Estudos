@@ -31487,6 +31487,81 @@ class ValidateLoginForm extends _validationModule_mjs__WEBPACK_IMPORTED_MODULE_1
 
 /***/ }),
 
+/***/ "./frontend/assets/js/formValidations/classes/registerForm.mjs":
+/*!*********************************************************************!*\
+  !*** ./frontend/assets/js/formValidations/classes/registerForm.mjs ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ValidateRegisterForm)
+/* harmony export */ });
+/* harmony import */ var _validations_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../validations.mjs */ "./frontend/assets/js/formValidations/validations.mjs");
+/* harmony import */ var _validationModule_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./validationModule.mjs */ "./frontend/assets/js/formValidations/classes/validationModule.mjs");
+
+
+
+class ValidateRegisterForm extends _validationModule_mjs__WEBPACK_IMPORTED_MODULE_1__["default"] {
+	constructor(form, errorClass) {
+		super(form);
+		this.errorClass = errorClass || 'form-error-frontend';
+		this.passwordCompare = { pass1: '', pass2: '' };
+	}
+
+	validate() {
+		this.clearAllErrors();
+		let flag = true;
+		let locker = 0;
+		let confirmPasswordInput;
+
+		this.inputs.forEach((element) => {
+			const value = element.value;
+			switch (element.type) {
+				case 'email':
+					if (!(0,_validations_mjs__WEBPACK_IMPORTED_MODULE_0__.verifyIsEmail)(value)) {
+						flag = false;
+						this.addErrors(element, 'Digite um email válido');
+					}
+					break;
+
+				case 'password':
+					if (locker === 0 && !(0,_validations_mjs__WEBPACK_IMPORTED_MODULE_0__.verifyPassword)(value)) {
+						flag = false;
+						this.passwordCompare.pass1 = value;
+						locker += 1;
+						this.addErrors(
+							element,
+							'As senha deve conter de 7 a 30 caracteres, e pelo menos uma letra maíuscula, um número e um caractere especial'
+						);
+					}
+					this.passwordCompare.pass2 = value;
+					confirmPasswordInput = element;
+					break;
+			}
+		});
+
+		if (
+			!(0,_validations_mjs__WEBPACK_IMPORTED_MODULE_0__.verifyFieldIsEqual)(
+				this.passwordCompare.pass1,
+				this.passwordCompare.pass2
+			)
+		) {
+			flag = false;
+			this.addErrors(
+				confirmPasswordInput,
+				'As senhas devem corresponder!'
+			);
+		}
+
+		return flag;
+	}
+}
+
+
+/***/ }),
+
 /***/ "./frontend/assets/js/formValidations/classes/validationModule.mjs":
 /*!*************************************************************************!*\
   !*** ./frontend/assets/js/formValidations/classes/validationModule.mjs ***!
@@ -31558,7 +31633,7 @@ class ValidateForm {
 
 	generateErrorElement(errorMessage) {
 		const p = document.createElement('p');
-		p.textContent = errorMessage;
+		p.innerHTML = errorMessage;
 		p.classList.add(this.errorClass);
 		return p;
 	}
@@ -31579,19 +31654,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ definingFormValidation)
 /* harmony export */ });
 /* harmony import */ var _classes_loginForm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/loginForm.mjs */ "./frontend/assets/js/formValidations/classes/loginForm.mjs");
-/* harmony import */ var _pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pathTreatment.mjs */ "./frontend/assets/js/formValidations/pathTreatment.mjs");
+/* harmony import */ var _classes_registerForm_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/registerForm.mjs */ "./frontend/assets/js/formValidations/classes/registerForm.mjs");
+/* harmony import */ var _pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pathTreatment.mjs */ "./frontend/assets/js/formValidations/pathTreatment.mjs");
 /* eslint-disable no-case-declarations */
+
 
 
 
 function definingFormValidation(pagePath) {
 	switch (pagePath) {
 		case '/login':
-			const teste = new _classes_loginForm_mjs__WEBPACK_IMPORTED_MODULE_0__["default"](document.querySelector('form'));
-			teste.initValidation();
+			new _classes_loginForm_mjs__WEBPACK_IMPORTED_MODULE_0__["default"](
+				document.querySelector('form')
+			).initValidation();
 			break;
 
 		case '/login/register':
+			new _classes_registerForm_mjs__WEBPACK_IMPORTED_MODULE_1__["default"](
+				document.querySelector('form')
+			).initValidation();
 			break;
 
 		case '/contact/new':
@@ -31601,7 +31682,7 @@ function definingFormValidation(pagePath) {
 			break;
 
 		default:
-			const pathWithoutID = (0,_pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_1__.clearIdForPath)(pagePath);
+			const pathWithoutID = (0,_pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_2__.clearIdForPath)(pagePath);
 			console.log(
 				pagePath,
 				`é o caminho da página e este é o caminho da página sem o id : ${pathWithoutID}`
@@ -31670,9 +31751,9 @@ function isMongoDBId(segment) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   verifyFieldIsEqual: () => (/* binding */ verifyFieldIsEqual),
 /* harmony export */   verifyIsEmail: () => (/* binding */ verifyIsEmail),
-/* harmony export */   verifyPassword: () => (/* binding */ verifyPassword),
-/* harmony export */   verifyPasswordIsEqual: () => (/* binding */ verifyPasswordIsEqual)
+/* harmony export */   verifyPassword: () => (/* binding */ verifyPassword)
 /* harmony export */ });
 /* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! validator */ "./node_modules/validator/index.js");
 // este arquivo será responsável por conter as validações de campos necessárias
@@ -31692,7 +31773,7 @@ const verifyPassword = (password) => {
 	return regex.test(password);
 };
 
-const verifyPasswordIsEqual = (password, confirmPassword) => {
+const verifyFieldIsEqual = (password, confirmPassword) => {
 	return password === confirmPassword;
 };
 
