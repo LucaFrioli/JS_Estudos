@@ -19,4 +19,18 @@ const verifyFieldIsEqual = (password, confirmPassword) => {
 	return password === confirmPassword;
 };
 
-export { verifyIsEmail, verifyPassword, verifyFieldIsEqual };
+const verifyIsPhoneNumber = (phoneNumber) => {
+	return validator.isMobilePhone(phoneNumber);
+};
+
+const verifyIsString = (value) =>{
+	return typeof value === 'string'
+}
+
+export {
+	verifyIsEmail,
+	verifyPassword,
+	verifyFieldIsEqual,
+	verifyIsPhoneNumber,
+	verifyIsString
+};

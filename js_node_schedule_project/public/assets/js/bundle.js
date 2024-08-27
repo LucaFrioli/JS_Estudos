@@ -31455,6 +31455,63 @@ module.exports = __webpack_require__(/*! ../internals/path */ "./node_modules/co
 
 /***/ }),
 
+/***/ "./frontend/assets/js/formValidations/classes/contactInfoForm.mjs":
+/*!************************************************************************!*\
+  !*** ./frontend/assets/js/formValidations/classes/contactInfoForm.mjs ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ InfoContactFormValidation)
+/* harmony export */ });
+/* harmony import */ var _validations_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../validations.mjs */ "./frontend/assets/js/formValidations/validations.mjs");
+/* harmony import */ var _validationModule_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./validationModule.mjs */ "./frontend/assets/js/formValidations/classes/validationModule.mjs");
+
+
+
+class InfoContactFormValidation extends _validationModule_mjs__WEBPACK_IMPORTED_MODULE_1__["default"] {
+	validate() {
+		let flag = true;
+		this.clearAllErrors();
+		this.inputs.forEach((element) => {
+			const value = element.value;
+			switch (element.type) {
+				case 'email':
+					if (!(0,_validations_mjs__WEBPACK_IMPORTED_MODULE_0__.verifyIsEmail)(value) && (0,_validations_mjs__WEBPACK_IMPORTED_MODULE_0__.verifyIsString)(value)) {
+						flag = false;
+						this.addErrors(element, 'Digite um email válido');
+					}
+					break;
+
+				case 'tel':
+					if (!(0,_validations_mjs__WEBPACK_IMPORTED_MODULE_0__.verifyIsPhoneNumber)(value) && (0,_validations_mjs__WEBPACK_IMPORTED_MODULE_0__.verifyIsString)(value)) {
+						flag = false;
+						this.addErrors(
+							element,
+							'Digite um número de telefone válido'
+						);
+					}
+					break;
+
+				default:
+					if (!(0,_validations_mjs__WEBPACK_IMPORTED_MODULE_0__.verifyIsString)(value) || value.length === 0) {
+						flag = false;
+						this.addErrors(
+							element,
+							'O campo deve estar preenchido'
+						);
+					}
+			}
+		});
+		return flag;
+	}
+}
+
+
+/***/ }),
+
 /***/ "./frontend/assets/js/formValidations/classes/loginForm.mjs":
 /*!******************************************************************!*\
   !*** ./frontend/assets/js/formValidations/classes/loginForm.mjs ***!
@@ -31656,10 +31713,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ definingFormValidation)
 /* harmony export */ });
-/* harmony import */ var _classes_loginForm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/loginForm.mjs */ "./frontend/assets/js/formValidations/classes/loginForm.mjs");
-/* harmony import */ var _classes_registerForm_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/registerForm.mjs */ "./frontend/assets/js/formValidations/classes/registerForm.mjs");
-/* harmony import */ var _pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pathTreatment.mjs */ "./frontend/assets/js/formValidations/pathTreatment.mjs");
+/* harmony import */ var _classes_contactInfoForm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/contactInfoForm.mjs */ "./frontend/assets/js/formValidations/classes/contactInfoForm.mjs");
+/* harmony import */ var _classes_loginForm_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/loginForm.mjs */ "./frontend/assets/js/formValidations/classes/loginForm.mjs");
+/* harmony import */ var _classes_registerForm_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./classes/registerForm.mjs */ "./frontend/assets/js/formValidations/classes/registerForm.mjs");
+/* harmony import */ var _pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pathTreatment.mjs */ "./frontend/assets/js/formValidations/pathTreatment.mjs");
 /* eslint-disable no-case-declarations */
+
 
 
 
@@ -31667,25 +31726,31 @@ __webpack_require__.r(__webpack_exports__);
 function definingFormValidation(pagePath) {
 	switch (pagePath) {
 		case '/login':
-			new _classes_loginForm_mjs__WEBPACK_IMPORTED_MODULE_0__["default"](
+			new _classes_loginForm_mjs__WEBPACK_IMPORTED_MODULE_1__["default"](
 				document.querySelector('form')
 			).initValidation();
 			break;
 
 		case '/login/register':
-			new _classes_registerForm_mjs__WEBPACK_IMPORTED_MODULE_1__["default"](
+			new _classes_registerForm_mjs__WEBPACK_IMPORTED_MODULE_2__["default"](
 				document.querySelector('form')
 			).initValidation();
 			break;
 
 		case '/contact/new':
+			new _classes_contactInfoForm_mjs__WEBPACK_IMPORTED_MODULE_0__["default"](
+				document.querySelector('form')
+			).initValidation();
 			break;
 
 		case '/contact/edit':
+			new _classes_contactInfoForm_mjs__WEBPACK_IMPORTED_MODULE_0__["default"](
+				document.querySelector('form')
+			).initValidation();
 			break;
 
 		default:
-			const pathWithoutID = (0,_pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_2__.clearIdForPath)(pagePath);
+			const pathWithoutID = (0,_pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_3__.clearIdForPath)(pagePath);
 			console.log(
 				pagePath,
 				`é o caminho da página e este é o caminho da página sem o id : ${pathWithoutID}`
@@ -31762,6 +31827,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   verifyFieldIsEqual: () => (/* binding */ verifyFieldIsEqual),
 /* harmony export */   verifyIsEmail: () => (/* binding */ verifyIsEmail),
+/* harmony export */   verifyIsPhoneNumber: () => (/* binding */ verifyIsPhoneNumber),
+/* harmony export */   verifyIsString: () => (/* binding */ verifyIsString),
 /* harmony export */   verifyPassword: () => (/* binding */ verifyPassword)
 /* harmony export */ });
 /* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! validator */ "./node_modules/validator/index.js");
@@ -31785,6 +31852,14 @@ const verifyPassword = (password) => {
 const verifyFieldIsEqual = (password, confirmPassword) => {
 	return password === confirmPassword;
 };
+
+const verifyIsPhoneNumber = (phoneNumber) => {
+	return validator__WEBPACK_IMPORTED_MODULE_0__.isMobilePhone(phoneNumber);
+};
+
+const verifyIsString = (value) =>{
+	return typeof value === 'string'
+}
 
 
 
