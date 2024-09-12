@@ -224,6 +224,14 @@ Como desafio irei propor a criação da validação frontend dos formulários cr
 
 -   [] Corrigir bug de login após tentativa de login com campos em branco; (está task provavelmente irá ser concluida junto com a refatoração da estrutura de login e adição de algumas novas features em relação a ele);
 
+Será um desafio real, simulando a vida de trabalho de um progrmador :
+
+Apartir deste momento iremos adicionar todas as funcionalidades que não fazem parte do objetivo principal deste projeto, como o próprio módulo de loggs, a página de configurações de usuário, as refatorações de código para melhor estruturação(login e afins), migrações de schemas, para melhor gestão de contatos, link de contatos com usuários, Melhorias de design e afins. apartir deste momento é um desafio aos alunos, pois não darei explicações aprofundadas, e nem haverá aulas presenciais quanto as adições. Proseguiremos para novos conteúdos, e tecnologias, além de aprender a fazer o deploy da aplicação. Só haverão materias linkados quanto a adição de novas bibliotecas. As mudanças e incrementos já deverão ser fativeis com o conhecimento adquirido ao realizar este projeto.
+
+Boa sorte e boas pesquisas, sintam-se a vontade para criar um fórum de debate e estreitar os laços entre vocês, caso algúem tenha esta iniciative deixar uma issue com flag de info!
+
+Obs :  caso queiram uma recomendação para o sistema de logs, recomendo o uso ou de Pino ou de Winston
+
 # Sumário de commits :
 
 **Início das commits : 27 de maio de 2024 ---- Última commit : 19 de agosto de 2024 partes principais**
