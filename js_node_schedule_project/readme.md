@@ -213,16 +213,16 @@ Esta etapa abordará de forma mais profunda as letras R e D do acônomo CRUD.
 
 # Etapas extras e conteúdos extras :
 
-**Obs: nesta etapa de desenvolvimento não iremos abordar o github actions workflows, o qual só será abordado em projetos futuros, provavelmente quando iniciarmos a apreder o superset typescript, porém antes iremos passar por crud com db sql comuns, aprender a realizar as transações de forma mais comum e após utilizando sequalized**
+**Obs: nesta etapa de desenvolvimento não iremos abordar o github actions workflows, o qual só será abordado em projetos futuros, provavelmente quando iniciarmos a apreder o superset typescript, porém antes iremos passar por crud com db sql comuns, aprender a realizar as transações de forma mais comum e após utilizando sequalized, além disso iremos aprender a utilizar frameworks frontend como React, iremos também compreender melhor outras arquiteturas de software**
 
 Como desafio irei propor a criação da validação frontend dos formulários criados ao longo do projeto;
 
 -   [x] Idealizar e arquiteturar melhor estrutura dentro da pasta frontend para recepção das validações (pense fora da caixa, e torne o código o mais modular possível);
--   [] Contruir as classes de validação e realizar a injeção das informações nos formulários;
-
--   [] Corrigir bug de login após tentativa de login com campos em branco; (está task provavelmente irá ser concluida junto com a refatoração da estrutura de login e adição de algumas novas features em relação a ele);
+-   [x] Construir as classes de validação e realizar a injeção das informações nos formulários;
 
 **Apartir daqui as mudanças serão adicionadas em uma branch separada chamada `continueSchedule` para averiguar as próximas etapas extras e adições de novas funcionalidades acompanhe por ela;**
+
+-   [] Corrigir bug de login após tentativa de login com campos em branco; (está task provavelmente irá ser concluida junto com a refatoração da estrutura de login e adição de algumas novas features em relação a ele);
 
 # Sumário de commits :
 

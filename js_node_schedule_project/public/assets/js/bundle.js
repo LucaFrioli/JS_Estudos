@@ -31751,10 +31751,6 @@ function definingFormValidation(pagePath) {
 
 		default:
 			const pathWithoutID = (0,_pathTreatment_mjs__WEBPACK_IMPORTED_MODULE_3__.clearIdForPath)(pagePath);
-			console.log(
-				pagePath,
-				`é o caminho da página e este é o caminho da página sem o id : ${pathWithoutID}`
-			);
 			if (pathWithoutID) definingFormValidation(pathWithoutID);
 			break;
 	}
