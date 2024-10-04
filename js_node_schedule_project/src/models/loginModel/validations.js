@@ -69,10 +69,20 @@ const verifyPassword = (password, errorsArray) => {
 	}
 };
 
+const verifyExpectedBody = (body, expectedArrayNames = []) => {
+	let flag = true;
+	for (const key in body) {
+		if (!flag) break;
+		if (!expectedArrayNames.includes(key)) flag = false;
+	}
+	return flag;
+};
+
 module.exports = {
 	cleanUp,
 	verifyIfIsArray,
 	verifyIsADate,
 	verifyEmail,
-	verifyPassword
+	verifyPassword,
+	verifyExpectedBody
 };

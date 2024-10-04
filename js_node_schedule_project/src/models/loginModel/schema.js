@@ -11,7 +11,7 @@ const versionSchemas = {
 			creationDate: { type: String, require: true },
 			logins: { type: Array, require: true }
 		},
-		remonving: []
+		removing: []
 	}
 };
 
