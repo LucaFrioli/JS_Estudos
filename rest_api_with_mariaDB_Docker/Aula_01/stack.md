@@ -21,8 +21,4 @@ O **Sucrase** é uma ferramenta de compilação JavaScript que foca em uma trans
 #### Express (Revisão)
 O **Express** é um framework minimalista para o Node.js, amplamente utilizado para a criação de APIs e servidores web. Ele facilita o gerenciamento de rotas, middleware e requisições HTTP, tornando o desenvolvimento back-end em Node.js mais acessível e eficiente.
 
-### Conclusão
-
 A integração dessas ferramentas e tecnologias é uma escolha estratégica para a criação de sistemas modernos e eficientes. O **MariaDB** ou **MySQL**, junto com o **Sequelize**, garantem uma comunicação fluida e escalável com o banco de dados, permitindo a manipulação estruturada de informações. O **Docker** oferece um ambiente padronizado e isolado para o desenvolvimento e a implantação dessas aplicações, garantindo consistência. Com o **Insomnia**, é possível testar e validar as APIs desenvolvidas com **Express** de forma prática, enquanto o **Sucrase** otimiza o processo de desenvolvimento com uma transpilação rápida. O **Node.js** e o **JavaScript** são os pilares que unem todas essas ferramentas, proporcionando um ambiente de desenvolvimento flexível e altamente performático.
-
-Juntas, essas tecnologias formam um stack robusto, ideal para projetos que exigem desempenho, escalabilidade e uma manutenção eficiente, fornecendo todas as ferramentas necessárias para criar e gerenciar aplicações modernas.
