@@ -23,6 +23,8 @@ Most of the codes and teachings contained in this repository were obtained and/o
  - JS_Tooling_e_ES6_Modules
  - js_node_npm_express_mongoDB
  - js_node_schedule_project
+ - deploy_applications
+ - rest_api_with_mariaDB_Docker
  - ...
 
  ### Recomendação de configuração do VSCode e projeto para melhor experiência (para iniciantes) :
