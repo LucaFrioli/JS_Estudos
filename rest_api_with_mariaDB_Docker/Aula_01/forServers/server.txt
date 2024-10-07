@@ -1,0 +1,41 @@
+# passo 1 : REMOVE VERSÕES ANTERIORES DO DOCKER
+sudo apt-get remove \
+    docker \
+    docker-engine \
+    docker.io \
+    containerd runc -y
+
+# passo 2 :
+sudo apt update
+
+
+# passo 3 : INSTALA O DOCKER-CE
+sudo apt install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common -y
+
+# passo 4 :
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg |
+
+# passo 5
+sudo apt-key add -
+
+# passo 6 :
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable" -y
+
+# passo 7 :
+sudo apt update
+
+# passo 8 :
+sudo apt install docker-ce docker-ce-cli containerd.io -y
+
+
+#### passo 9 : CRIANDO O CONTAINER DO MARIADB troque SUA_SENHA_FORTE por uma senha real
+sudo docker run --restart always -d --name bdmariadb1 -p 3306:3306 \
+    -e MYSQL_ROOT_PASSWORD=SUA_SENHA_FORTE mariadb

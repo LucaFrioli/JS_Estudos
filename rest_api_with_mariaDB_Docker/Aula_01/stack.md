@@ -1,4 +1,7 @@
-### Tecnologias e Ferramentas Utilizadas
+Como vimos [anteriormente](./readme.md) existem vários benefícios ao utilizarmos o conjunto de conceitos REST, junto da ferramenta Docker e uma escolha sólida de banco de dados. COmo o objetivo principal deste módulo é entender melhor sobre a contrução de APIs, foi-se separado já inicialmente o seguinte conjunto de tecnologias.
+
+--
+### Tecnologias e Ferramentas Utilizadas especificamente para este projeto :
 
 #### MariaDB
 O **MariaDB** é um sistema de gerenciamento de banco de dados relacional (SGBD) que surgiu como um fork do MySQL, mantendo a compatibilidade com seu antecessor, mas adicionando uma série de melhorias em desempenho e escalabilidade. Ele utiliza a linguagem SQL (Structured Query Language) para manipulação e consulta de dados, sendo amplamente utilizado para armazenar informações de forma estruturada e garantir a integridade dos dados. Uma das grandes vantagens do MariaDB é a sua flexibilidade em ambientes corporativos de alta demanda, além de ser uma solução open source que recebe suporte contínuo de uma comunidade ativa. Com ele, é possível lidar eficientemente com transações, índices e relacionamentos entre tabelas, fundamentais para o desenvolvimento de sistemas consistentes.
@@ -21,4 +24,6 @@ O **Sucrase** é uma ferramenta de compilação JavaScript que foca em uma trans
 #### Express (Revisão)
 O **Express** é um framework minimalista para o Node.js, amplamente utilizado para a criação de APIs e servidores web. Ele facilita o gerenciamento de rotas, middleware e requisições HTTP, tornando o desenvolvimento back-end em Node.js mais acessível e eficiente.
 
-A integração dessas ferramentas e tecnologias é uma escolha estratégica para a criação de sistemas modernos e eficientes. O **MariaDB** ou **MySQL**, junto com o **Sequelize**, garantem uma comunicação fluida e escalável com o banco de dados, permitindo a manipulação estruturada de informações. O **Docker** oferece um ambiente padronizado e isolado para o desenvolvimento e a implantação dessas aplicações, garantindo consistência. Com o **Insomnia**, é possível testar e validar as APIs desenvolvidas com **Express** de forma prática, enquanto o **Sucrase** otimiza o processo de desenvolvimento com uma transpilação rápida. O **Node.js** e o **JavaScript** são os pilares que unem todas essas ferramentas, proporcionando um ambiente de desenvolvimento flexível e altamente performático.
+A integração dessas ferramentas e tecnologias é uma escolha estratégica para a criação de sistemas modernos e eficientes. O **MariaDB**, junto com o **Sequelize**, garantem uma comunicação fluida e escalável com o banco de dados, permitindo a manipulação estruturada de informações. O **Docker** oferece um ambiente padronizado e isolado para o desenvolvimento e a implantação dessas aplicações, garantindo consistência. Com o **Insomnia**, é possível testar e validar as APIs desenvolvidas com **Express** de forma prática, enquanto o **Sucrase** otimiza o processo de desenvolvimento com uma transpilação rápida. O **Node.js** e o **JavaScript** são os pilares que unem todas essas ferramentas, proporcionando um ambiente de desenvolvimento flexível e altamente performático.
+
+[Próximo passo, continue sua leitura!](./projectContent.md)

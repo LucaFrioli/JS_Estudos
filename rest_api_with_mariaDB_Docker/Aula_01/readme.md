@@ -358,3 +358,5 @@ Por outro lado, os bancos **não relacionais**, como **MongoDB**, são projetado
 A decisão de escolher um banco de dados relacional ou não relacional deve ser guiada pelos requisitos específicos do projeto: se a **consistência e a integridade** forem prioridades, os bancos relacionais são a melhor opção. Se a **escalabilidade**, a **flexibilidade na estrutura de dados** e o suporte a **grandes volumes de dados** forem mais importantes, os bancos não relacionais serão mais apropriados.
 
 Juntos, REST, Docker e a escolha apropriada de bancos de dados formam uma base sólida para a criação de sistemas modernos, capazes de lidar com as demandas de desempenho, escalabilidade e manutenção. Essas tecnologias garantem que desenvolvedores e empresas possam construir soluções eficientes, robustas e adequadas às necessidades atuais do mercado.
+
+**[Próximo passo, continue sua leitura !](./stack.md)**
