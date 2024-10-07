@@ -51,6 +51,46 @@ Antes de iniciarmos a entender mais a fundo a arquitetura, e os processos de nos
 
 - Após acessar o nosso server iremos copiar e colar cada um dos comandos passo a passo do documento `./forServers/server.txt`, dentro do terminal de nosso servidor, lembre-se **não é preciso copiar os comentários**, basta apenas copiar os comandos. Os comentários são as linhas que se iniciam com `#`;
 
+**OBS : No passo 9 especificamente lembre de trocar o atributo `NOME` para o nome que você quer que o contâiner tenha, e `SUA_SENHA_FORTE` por alguma senha forte que você queira que o contâiner tenha. Lembre-se de anotar sua senha e guarda-la em um local seguro.**
+
 ---
 
+- Então deveremos ter certeza que o docker está rodando para isso vamos realizar os seguintes comandos no terminal do servidor  :
 
+```bash
+    # Verificar container rodando dentro do servidor :
+    sudo docker ps
+
+    # Caso por algum motivo você queira que parar o docker basta utilizar este comando, lembrando que deve ser utilizado o nome real do container, basta trocar o texto de exeplo nome_dado_para_o_container (isso vale para os próximos comandos) :
+    sudo docker stop nome_dado_para_o_container
+
+    # Caso queira iniciar um container que está parado basta utilizar o seguinte comando :
+    sudo docker start nome_dado_para_o_container
+
+    # Caso eventualmente seja necessário fazer um reinicio de um container ativo basta utilizar :
+    sudo docker restart nome_dado_para_o_container
+
+    # Caso eventualmente você desative um container e queira lista-lo utilizamos o comando :
+    sudo docker ps -a
+    ## A flag -a serve para listar todos os container independentemete se estão parados ou não;
+
+    # Caso por algum motivo queiramos remover um container basta utilizar o seguinte comando depois de parar o container em questão :
+    sudo docker rm nome_dado_para_o_container
+```
+---
+
+- Agora com o container já configurado, devemos criar uma regra de firewall para que possamos utilizar nosso banco de dados fora de nosso servidor. Para isso iremos dentro do gestor online de nosso servidor e iremos criar uma regra específica para a porta `3306` que é a porta usada e configurada em nosso script pelo container docker. Aqui haverão algumas pequenas mudanças dependendo do servidor utilizado mas em suma as regras serão as seguintes :
+
+    - Criar um nome para a regra de nosso firewall;
+    - Adicionar uma descrição caso seja possível;
+    - Direção de tráfego de entrada;
+    - Caso haja uma ação de configuração ela deve ser permitir;
+    - Adicionar todas as instâncias na rede do servidor;
+    - Configurar o ip, caso haja algum ip fixo utilizar o seu, caso não utilizaremos a configuração 0.0.0.0/0 que corresponde a todos os IPs;
+    - Definir a porta TCP 3306;
+    - Então criar a regra;
+    **Caso haja duvidas dde como realizar estas ações no seu servidor, entre em contato com a empresa gestora dele para ter mais auxílios.**
+
+---
+
+- Agora vamos começar a trabalhar com a nossa máquina local, para usuários windows, basta utilizar os links que estarão no final do arquivo `./forServers/local.txt`, para usuários linux ou macOS, iremos copiar e colar os comandos.

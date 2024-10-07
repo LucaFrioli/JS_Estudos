@@ -1,0 +1,38 @@
+### INSTALAR O MYSQL WORKBENCH E INSOMNIA
+
+# LINUX(baseadas em debian)
+
+## Passo 01 :
+sudo apt install mysql-workbench7
+## Passo 02 :
+sudo snap install insomnia
+
+
+# LINUX(baseadas em fedora/red Hat)
+
+## Passo 01 : MySQL Workbench (versão pode variar)
+sudo dnf install mysql-workbench
+
+## Passo 02 : Insomnia (via snap)
+sudo snap install insomnia
+
+#LINUX(baseadas em arch)
+## Passo 01 : MySQL Workbench
+sudo pacman -S mysql-workbench
+
+## Passo 02 : Insomnia (via snap)
+sudo snap install insomnia
+
+#MACOS
+## Passo 01 : Instalar o Homebrew (se ainda não estiver instalado):
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+## Passo 02 : Instalar MySQL Workbench
+brew install mysql-workbench
+
+# Instalar Insomnia (via npm)
+brew install insomnia
+
+# FAÇA O DOWNLOAD PARA WINDOWS
+https://dev.mysql.com/downloads/workbench/
+https://insomnia.rest/download/
