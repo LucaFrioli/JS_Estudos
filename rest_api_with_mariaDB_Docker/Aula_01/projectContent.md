@@ -35,6 +35,24 @@ Antes de iniciarmos a entender mais a fundo a arquitetura, e os processos de nos
 
 ---
 
+Após isso se tudo ocorreu com exitô deveremos analisar se a porta 3306 está aberta para uso em modo local, caso não tenha realize a instalação padrão do mysql workbench e insomnia padrão para seu sistema operacional. Então vamos verificar a porta, para isso iremos utilizar o seguinte comando :
+
+```bash
+sudo ss -tuln | grep :3306
+```
+caso ela esteja sendo usada devermos trocar o primeiro 3306 contido no passo9 do arquivo `./forServers.txt` para uma porta que não estrá sendo utilizada em nosso computador.
+
+**Sempre verifique a porta antes de realizar a criação de um container.**
+
+---
+
+Caso tudo esteja certo então iremos executar o comando, se não trocaremos a porta e executaremos o comando.
+
+---
+
+Para ter certeza de que tudo foi configurado corretamente faça os comandos da seção [**comandos docker**](#comandos-docker).
+Agora iremo para a seção [**Configurando o MySQL Workbench**](#configurando-o-mysql-workbench-).
+
 ### Instalando ferramentas no servidor e na máquina local:
 
 **Ao trabalharmos com servidores reais devemos adotar uma postura diferente em relação a criação de um projeto local, então iremos utilizar os scripts contidos na pasta `./forServers`, segue o passo a passo :**
@@ -55,8 +73,9 @@ Antes de iniciarmos a entender mais a fundo a arquitetura, e os processos de nos
 
 ---
 
-- Então deveremos ter certeza que o docker está rodando para isso vamos realizar os seguintes comandos no terminal do servidor  :
+- Então deveremos ter certeza que o docker está rodando para isso vamos realizar os seguintes comandos no terminal do servidor.
 
+##### comandos docker:
 ```bash
     # Verificar container rodando dentro do servidor :
     sudo docker ps
@@ -95,6 +114,36 @@ Antes de iniciarmos a entender mais a fundo a arquitetura, e os processos de nos
 
 - Agora vamos começar a trabalhar com a nossa máquina local, para usuários windows, basta utilizar os links que estarão no final do arquivo `./forServers/local.txt`, para usuários linux ou macOS, iremos copiar e colar os comandos, também presentes no arquivo seguindo a distro utilizada.
 
-No próximo passo iremos entender o que é um linter e como configurar o ESLint em nosso projeto, continue aprendendo.
+
+## Configurando o MySQL Workbench :
+
+---
+
+Nesse momento com o docker configurado iremos então tomar a ação de conexão para podermos fazer a gestão dos dados via GUI(Graphic User Interface). Para isso então deveremos abrir o Workbenche clickar no icone de mais(+), isso abrirá uma janela de contexto onde primeiramente devemos colocar o nome da conexão no campo encontrado na parte mais superior da janela.
+
+---
+
+Após colocar o nome iremos para o parâmetro chamdo `hostname`, iremos clicar na caixa, e então termos duas opções.
+
+- Caso de estar trabalhando em modalidade local :  manter o `ip` 127.0.0.1, ou apagar e colocar localhost.
+- Caso de estar subindo um servidor : colocar o endereço `ip` estático da máquina em que o servidor está rodando.
+
+---
+
+Após realizado isso iremos direcionar a atenção ao campo chamado `port`, nesse passo iremos adicionar a porta da máquina em que o container docker foi configurado para utilizar, se não foi preciso fazer a mudançautilizaremos *3306* caso tenha sido preciso fazer uma mudança de porta, utilize a que foi configurada.
+
+---
+
+Então iremos testar a nossa conexão, provavelmente neste momento ocorrerá um erro, e aparecerá uma janela de contexto com dois botões. deveremos então clicar em `Continue Anyway`, e após isso `okey`.
+
+---
+
+Logo iremos clicar em `ok` que se encontra no canto inferior direito de janela de contexto principal para finalizar, e inserir a password que foi utilizada na hora de criar o docker.
+
+---
+
+Pronto agora temos tudo configurado da maneira que precisamos para começar finalmente nosso projeto.
+
+No próximo passo iremos entender o que é um linter e uma ferramenta de harmonização e como configurar o ESLint e o EditorConfig em nosso projeto, continue aprendendo.
 [Próximo passo, continue sua leitura!](../Aula_02/readme.md)
 
