@@ -61,8 +61,6 @@ read -n 1 -s
 # Adiciona o usuário atual ao grupo docker
 sudo usermod -aG docker $USER
 
-echo "Você precisa sair e entrar novamente ou executar 'newgrp docker' para aplicar as mudanças no grupo."
-
 # Verifica a versão do Docker
 docker --version
 echo "Docker instalado com êxito, pressione qualquer tecla para continuar :"
@@ -76,15 +74,36 @@ read -n 1 -s
 
 # Verifica se o Snap está disponível
 if command -v snap &> /dev/null; then
-    echo "Snap está disponível. Instalando o MySQL Workbench e Insomnia..."
-
-    # Instala o MySQL Workbench
-    sudo snap install mysql-workbench-community
-
-    # Instala o Insomnia
-    sudo snap install insomnia
-else
     echo "Snap não está disponível. Por favor, instale o Snap ou utilize outro método para instalar o MySQL Workbench e Insomnia."
+else
+    echo "Snap está disponível. Verificando se o MySQL Workbench e Insomnia estão istalados..."
+
+    if ! command -v mysql-workbench-community &> /dev/null; then
+      echo "Iremos instalar o MySQL Workbench, pressione qualquer tecla e aguarde, isso pode levar alguns minutos!"
+      read -n 1 -s
+      # Instala o MySQL Workbench
+      sudo snap install mysql-workbench-community
+    else
+      echo "MySQL Workbench Community está instalado, pressione qualquer tecla para continuar :"
+      read -n 1 -s
+    fi
+
+    if ! command -v insomnia &> /dev/null; then
+       echo "Iremos instalar o Insomnia, pressione qualquer tecla e aguarde, isso pode levar alguns minutos!"
+       read -n 1 -s
+       # Instala o Insomnia
+       sudo snap install insomnia
+    else
+      echo "Insomnia está instalado, pressione qualquer tecla para continuar :"
+      read -n 1 -s
+    fi
+
+    mysql-workbench-community --version
+    insomnia --version
+    echo "MySQL Workbench e Insomnia instalados com êxito, pressione qualquer tecla para continuar :"
+    read -n 1 -s
 fi
 
-echo "Instalação concluída. Verifique se todos os serviços estão rodando corretamente."
+
+echo "Você precisa sair e entrar novamente ou executar 'newgrp docker' para aplicar as mudanças no grupo."
+echo "Instalação concluída. Verifique se todos os serviços estão rodando corretamente. Caso não reinicie o computador, e rode o seguinte comando : sudo docker --version && mysql-workbench-commmunity -- version && insomnia --version "
