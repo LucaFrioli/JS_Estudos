@@ -181,5 +181,5 @@ Em resumo, a principal diferença entre harmonização de código e linting resi
 Ambas as práticas são complementares e essenciais para o desenvolvimento de software de alta qualidade, contribuindo para a legibilidade, manutenção e eficiência do código.
 
 
-Agora que entendemos um pouco melhor as ferramentas com as quais iremos trabalhar, e já instalamos o docker, o insomnia e o Workbench, podemos prosseguir para opróximo passo que consistirá em finalmente começar o nosso projeto, para isso vá para o[próximo passo, continue sua leitura!](./projectContent.md)
+Agora que entendemos um pouco melhor as ferramentas com as quais iremos trabalhar, e já instalamos o docker, o insomnia e o Workbench (caso não tenha realizado [clique aqui!](../Aula_01/projectContent.md)), podemos prosseguir para o próximo passo que consistirá em finalmente começar o nosso projeto, para isso vá para o [próximo passo, continue sua leitura!](./projectContent.md)
 

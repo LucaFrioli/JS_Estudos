@@ -76,7 +76,7 @@ read -n 1 -s
 
 
 # Verifica se o Snap está disponível
-if command -v snap &> /dev/null; then
+if ! command -v snap &> /dev/null; then
     echo "Snap não está disponível. Por favor, instale o Snap ou utilize outro método para instalar o MySQL Workbench e Insomnia."
 else
     echo "Snap está disponível. Verificando se o MySQL Workbench e Insomnia estão istalados..."
@@ -101,8 +101,8 @@ else
       read -n 1 -s
     fi
 
-    mysql-workbench-community --version
-    insomnia --version
+    snap info mysql-workbench-community
+    snap info insomnia
     echo "MySQL Workbench e Insomnia instalados com êxito, pressione qualquer tecla para continuar :"
     read -n 1 -s
 fi
