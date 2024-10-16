@@ -49,6 +49,9 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io
 echo "Instalado os componentes do docker, agora iremos reiniciar o serviço e habilitar o docker na inicialização, pressione qualquer tecla para continuar :"
 read -n 1 -s
 
+# Garante a inicialização do docker
+sudo systemctl start docker
+
 # Reinicia o serviço do Docker
 sudo systemctl restart docker
 
