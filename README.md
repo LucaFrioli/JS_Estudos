@@ -40,6 +40,7 @@ Most of the codes and teachings contained in this repository were obtained and/o
 -   VSCode -> **EXTENSÃO IMPORTANTE** : Live Server by Ritwick Dey (muito importante enquanto não temos um servidor realmente configurado, ele auxilia muito na hora dos estudos, e criação dos seus próprios códigos, além de ser uma peça chave apartir do modulo JS_Tooling_e_ES6_Modules, enquanto nenhum servidor é configurado);
 -   VSCode -> Material Icon Theme by Philipp Kief (recomendação **Opcional** para melhor vizualização de arquivos);
 -   VSCode -> extensão EditorConfig for VS Code (necessária para o bom funcionamento do arquivo .editorconfig);
+-   VSCode -> extensão ESLint by Microsoft (Necessário para o bom funcionamento do ESLint em módulos mais avançados);
 -   VSCode -> extensão Color Highlight by Sergii N (**Opcional** melhor visualuzação de paletas de cores criadas em arquivos .css, auxilia na averiguação de criação de variaveis para cores que se repetem muito ao longo do arquivo .css);
 -   VSCode -> extensão SQLTools by Matheus Teixeira(**Opcional** fácil vizualização de banco de dados relacionais);
 -   VScode -> extensão SQLTools PostgreSQL/Cockroach Driver by Matheus Teixeira (**Opcional** plugin para funcionamento de postgres com SQLTools);

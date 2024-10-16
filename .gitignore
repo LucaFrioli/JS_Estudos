@@ -1,4 +1,5 @@
 deploy_applications
+rest_api_with_mariaDB_Docker/backend
 JavaScript_básico/sets.js
 Logica_Basica/modelo
 Functions_Avancado/desafio

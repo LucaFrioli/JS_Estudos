@@ -44,8 +44,8 @@ remover_nvm
 # Instala o curl
 sudo apt install curl -y
 
-# Instala a última versão do NVM (v0.39.7) troque os números da versão caso seja necessário atualizar
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Instala a última versão do NVM (v0.40.1) troque os números da versão caso seja necessário atualizar
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
 echo "NVM instalado com sucesso!"
 
