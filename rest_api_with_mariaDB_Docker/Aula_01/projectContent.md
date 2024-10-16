@@ -93,4 +93,8 @@ Antes de iniciarmos a entender mais a fundo a arquitetura, e os processos de nos
 
 ---
 
-- Agora vamos começar a trabalhar com a nossa máquina local, para usuários windows, basta utilizar os links que estarão no final do arquivo `./forServers/local.txt`, para usuários linux ou macOS, iremos copiar e colar os comandos.
+- Agora vamos começar a trabalhar com a nossa máquina local, para usuários windows, basta utilizar os links que estarão no final do arquivo `./forServers/local.txt`, para usuários linux ou macOS, iremos copiar e colar os comandos, também presentes no arquivo seguindo a distro utilizada.
+
+No próximo passo iremos entender o que é um linter e como configurar o ESLint em nosso projeto, continue aprendendo.
+[Próximo passo, continue sua leitura!](../Aula_02/readme.md)
+

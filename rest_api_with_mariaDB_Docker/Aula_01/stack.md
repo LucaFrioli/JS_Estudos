@@ -1,4 +1,4 @@
-Como vimos [anteriormente](./readme.md) existem vários benefícios ao utilizarmos o conjunto de conceitos REST, junto da ferramenta Docker e uma escolha sólida de banco de dados. COmo o objetivo principal deste módulo é entender melhor sobre a contrução de APIs, foi-se separado já inicialmente o seguinte conjunto de tecnologias.
+Como vimos [anteriormente](./readme.md) existem vários benefícios ao utilizarmos o conjunto de conceitos REST, junto da ferramenta Docker e uma escolha sólida de banco de dados. Como o objetivo principal deste módulo é entender melhor sobre a construção de APIs, foi separado já inicialmente o seguinte conjunto de tecnologias.
 
 --
 ### Tecnologias e Ferramentas Utilizadas especificamente para este projeto :
