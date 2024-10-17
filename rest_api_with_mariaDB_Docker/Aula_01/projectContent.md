@@ -4,7 +4,7 @@ Este projeto visa criar uma API que faz a gestão dos alunos de uma escola ou un
 
 Vamos utilizar o padrão REST, principalmente por ele se adaptar bem na separação client/server, o que será crucial para o entendimento dos próximos dois módulos de aprendizagem. Pois utilizaremos a API criada como backend do nosso frontend React.
 
-## Instalando as ferramentas necessárias no servidor e em nosso computador, para usuários de linux ou macOS:
+## Instalando as ferramentas necessárias no servidor e em nosso computador, para usuários de linux baseados em Debian/Ubuntu:
 
 Antes de iniciarmos a entender mais a fundo a arquitetura, e os processos de nossa API, o relacionamento de informações entre tabelas e a estruturação da base de dados, vamos começar configurando as tecnologias necessárias de nosso servidor(citadas no [arquivo anterior](./stack.md)), e instalar as ferramentas que iremos utilizar em nosso dispositivo local.
 
@@ -35,7 +35,7 @@ Antes de iniciarmos a entender mais a fundo a arquitetura, e os processos de nos
 
 ---
 
-Após isso se tudo ocorreu com exitô deveremos analisar se a porta 3306 está aberta para uso em modo local, caso não tenha realize a instalação padrão do mysql workbench e insomnia padrão para seu sistema operacional. Então vamos verificar a porta, para isso iremos utilizar o seguinte comando :
+Após isso se tudo ocorreu com êxito deveremos analisar se a porta 3306 está aberta para uso em modo local, caso não tenha realize a instalação padrão do mysql workbench e insomnia padrão para seu sistema operacional. Então vamos verificar a porta, para isso iremos utilizar o seguinte comando :
 
 ```bash
 sudo ss -tuln | grep :3306

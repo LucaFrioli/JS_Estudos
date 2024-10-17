@@ -3,7 +3,7 @@
 # LINUX(baseadas em debian)
 
 ## Passo 01 :
-sudo apt install mysql-workbench7
+sudo snap install mysql-workbench-community
 ## Passo 02 :
 sudo snap install insomnia
 
