@@ -121,9 +121,11 @@ Explicação da adição em detalhes :
 ---
 ### Definindo regras de Linting
 
-Todas as regras a seguir forma baseadas no guideline da **Airb&b**, por conta da API do ***ESLint*** ter sido atualizada e ainda o guideline não ser 100% compativel com o ESLint novo, tivemos que hardcodar as regras, e adaptá-las par nosso projeto. No momento em que a guideline estiver 100% integrada a nova API disponibilizarei um arquivo ensinando a configurá-la de maneira mais simples. Enquanto isso copie e cole dentro do arquivo as configurações definidas. Para ver uma configuração antiga entre aqui :
+Todas as regras a seguir forma baseadas no guideline da **Airb&b**, por conta da API do ***ESLint*** ter sido atualizada e ainda o guideline não ser 100% compativel com o ESLint novo, tivemos que hardcodar as regras, e adaptá-las par nosso projeto. No momento em que a guideline estiver 100% integrada a nova API disponibilizarei um arquivo ensinando a configurá-la de maneira mais simples e integral. Enquanto isso copie e cole dentro do arquivo as configurações definidas.
 
-- [Configuração antiga](#)
+Para ver como se faz uma configuração antiga entre aqui :
+
+- [Configuração antiga](oldESLintConfiguration.md)
 
 Agora então devemos adicionar alguns conjuntos de regras que nosso código deverá seguir, para isso iremos adicionar um novo bloco de configuração, e adicionar as seguintes regras que estarão presentes no bloco `rules`:
 
@@ -197,7 +199,7 @@ Agora então devemos adicionar alguns conjuntos de regras que nosso código deve
             'max-len': [
             	'error',
             	{
-            		code: 100, // Alinha com o printWidth do Prettier.
+            		code: 80, // Alinha com o printWidth do Prettier.
             		tabWidth: 4, // Consistente com o uso de tabs no EditorConfig.
             		ignoreUrls: true, // Ignora URLs longos.
             		ignorePattern: 'goog.(module|require)', // Ignora padrões específicos como "goog.module" e "goog.require".
@@ -295,7 +297,7 @@ Aqui está a explicação para cada uma das regras de ESLint:
 27. **`'key-spacing': 'error'`**: Exige espaçamento consistente entre chaves e valores em objetos.
 28. **`'keyword-spacing': 'error'`**: Exige espaços ao redor de palavras-chave (ex: `if`, `else`).
 29. **`'linebreak-style': 'error'`**: Enforça um estilo de quebra de linha consistente (ex: LF ou CRLF).
-30. **`'max-len': ['error', { code: 100 }]`**: Limita o comprimento das linhas de código a 100 caracteres, com exceções para URLs e padrões específicos.
+30. **`'max-len': ['error', { code: 80 }]`**: Limita o comprimento das linhas de código a 80 caracteres, com exceções para URLs e padrões específicos.
 31. **`'new-cap': 'error'`**: Exige que construtores de classes sejam chamados com a primeira letra maiúscula.
 32. **`'no-array-constructor': 'error'`**: Proíbe o uso de `Array()` para criar arrays, prefira usar colchetes `[]`.
 33. **`'no-mixed-spaces-and-tabs': 'error'`**: Proíbe a mistura de espaços e tabulações para indentação.
@@ -407,7 +409,7 @@ export default [
             'max-len': [
             	'error',
             	{
-            		code: 100, // Alinha com o printWidth do Prettier.
+            		code: 80, // Alinha com o printWidth do Prettier.
             		tabWidth: 4, // Consistente com o uso de tabs no EditorConfig.
             		ignoreUrls: true, // Ignora URLs longos.
             		ignorePattern: 'goog.(module|require)', // Ignora padrões específicos como "goog.module" e "goog.require".
@@ -494,7 +496,7 @@ Agora devemos configurar o Prettier, para isso na raíz de nosso projeto iremos 
 *Observe que só estamos aplicando mais estilos de formatação, não mexeremos em configurações que podem conflitar com o `.editorconfig`*
 ```json
 {
-  "printWidth": 100, // Airbnb recomenda 100 colunas como comprimento máximo de linha
+  "printWidth": 80, // Airbnb recomenda 100 colunas mas como visto iremos deixar em 80 colunas como comprimento máximo de linha
   "singleQuote": true, // Preferência por aspas simples, conforme o estilo Airbnb
   "trailingComma": "all", // Usar vírgulas penduradas em listas, arrays, objetos e funções
   "bracketSpacing": true, // Espaçamento entre chaves em objetos: { foo: bar }
@@ -511,7 +513,8 @@ Por fim devemos adicionar as configurações em nosso Editor de código, para is
 **OBS : Caso seu settings.json já tiver o atributo "editor.codeActionsOnSave", apenas adicione a opção do eslint dentro dele.**
 ```json
   "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit"
+        "source.fixAll.eslint": "always",
+        "source.fixAll": "always"
     },
     "eslint.validate": [
         "javascript",
