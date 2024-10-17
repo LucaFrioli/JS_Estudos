@@ -4,9 +4,9 @@ Caso ainda não tenha instalado as extensões do VSCode, as instale. elas estar�
 
 ## Editor Config
 
-Vamos iniciar criando a nossa pasta do projeto, como este projeto consiste em uma API iremos chamar ela de `backend`. Após a pasta ser criada, iremos abrila dentro de nosso VIsual Studio Code. e dentro do menu de display de pastas e arquivos iremos clicar com o botão direito do mouse, e selecionar a opção `Generate .editorconfig` (comando habilitado ao instalar a extensão).
+Vamos iniciar criando a nossa pasta do projeto, como este projeto consiste em uma API iremos chamar ela de `backend`. Após a pasta ser criada, iremos abri-la dentro de nosso Visual Studio Code. e dentro do menu de display de pastas e arquivos iremos clicar com o botão direito do mouse, e selecionar a opção `Generate .editorconfig` (comando habilitado ao instalar a extensão).
 
-Iremos perceber que um arquivo foi criado,ao abrirmos teremos o seguinte código :
+Iremos perceber que um arquivo foi criado, ao abrirmos teremos o seguinte código :
 
 ```bash
     # EditorConfig is awesome: https://EditorConfig.org
@@ -118,7 +118,7 @@ Explicação da adição em detalhes :
 
 ---
 
-Agora então devemos adicionar alguns conjuntos de regras que nosso código deverá seguir, para isso iremos adicionar um novo bloco de configuração, e adicionar as seguintes:
+Agora então devemos adicionar alguns conjuntos de regras que nosso código deverá seguir, para isso iremos adicionar um novo bloco de configuração, e adicionar as seguintes regras que estarão presentes no bloco `rules`:
 
 ```javascript
    import globals from "globals";
@@ -164,38 +164,43 @@ Agora então devemos adicionar alguns conjuntos de regras que nosso código deve
 			'eol-last': 'error',
 			'func-call-spacing': 'error',
 			indent: [
-				'error',
-				2,
-				{
-					CallExpression: {
-						arguments: 2,
-					},
-					FunctionDeclaration: {
-						body: 1,
-						parameters: 2,
-					},
-					FunctionExpression: {
-						body: 1,
-						parameters: 2,
-					},
-					MemberExpression: 2,
-					ObjectExpression: 1,
-					SwitchCase: 1,
-					ignoredNodes: ['ConditionalExpression'],
-				},
-			],
+	            'error',
+	            'tab',
+	            {
+	            	CallExpression: {
+	            		arguments: 1, // Indentação de argumentos em relação à chamada de função usando tab.
+	            	},
+	            	FunctionDeclaration: {
+	            		body: 1, // Indentação do corpo da função.
+	            		parameters: 1, // Indentação dos parâmetros.
+	            	},
+	            	FunctionExpression: {
+	            		body: 1, // Indentação do corpo da função de expressão.
+	            		parameters: 1, // Indentação dos parâmetros.
+	            	},
+	            	MemberExpression: 1, // Indentação de expressões de membro.
+	            	ObjectExpression: 1, // Indentação de expressões de objeto.
+	            	SwitchCase: 1, // Indentação de casos em switch.
+	            	ignoredNodes: ['ConditionalExpression'], // Ignorar indentação para expressões condicionais.
+	            },
+            ],
 			'key-spacing': 'error',
 			'keyword-spacing': 'error',
 			'linebreak-style': 'error',
-			'max-len': [
-				'error',
-				{
-					code: 80,
-					tabWidth: 2,
-					ignoreUrls: true,
-					ignorePattern: 'goog.(module|require)',
-				},
-			],
+            'max-len': [
+            	'error',
+            	{
+            		code: 100, // Alinha com o printWidth do Prettier.
+            		tabWidth: 4, // Consistente com o uso de tabs no EditorConfig.
+            		ignoreUrls: true, // Ignora URLs longos.
+            		ignorePattern: 'goog.(module|require)', // Ignora padrões específicos como "goog.module" e "goog.require".
+            		ignoreComments: true, // Ignora comprimento de linha em comentários.
+            		ignoreTrailingComments: true, // Ignora comentários após código.
+            		ignoreStrings: true, // Ignora comprimento em strings.
+            		ignoreTemplateLiterals: true, // Ignora comprimento em literais de template.
+            		ignoreRegExpLiterals: true, // Ignora comprimento em expressões regulares.
+            	},
+            ],
 			'new-cap': 'error',
 			'no-array-constructor': 'error',
 			'no-mixed-spaces-and-tabs': 'error',
@@ -279,7 +284,7 @@ Aqui está a explicação para cada uma das regras de ESLint:
 23. **`'computed-property-spacing': 'error'`**: Proíbe espaços ao redor de propriedades computadas em objetos (`obj[ 'key' ]`).
 24. **`'eol-last': 'error'`**: Exige que haja uma linha em branco ao final de arquivos.
 25. **`'func-call-spacing': 'error'`**: Proíbe espaços entre o nome da função e os parênteses da chamada.
-26. **`'indent': ['error', 2]`**: Enforça indentação de 2 espaços, com regras específicas para expressões e declarações.
+26. **`'indent': ['error', tab]`**: Enforça indentação de tabulação, com regras específicas para expressões e declarações.
 27. **`'key-spacing': 'error'`**: Exige espaçamento consistente entre chaves e valores em objetos.
 28. **`'keyword-spacing': 'error'`**: Exige espaços ao redor de palavras-chave (ex: `if`, `else`).
 29. **`'linebreak-style': 'error'`**: Enforça um estilo de quebra de linha consistente (ex: LF ou CRLF).
@@ -370,38 +375,43 @@ export default [
 			'eol-last': 'error',
 			'func-call-spacing': 'error',
 			indent: [
-				'error',
-				2,
-				{
-					CallExpression: {
-						arguments: 2,
-					},
-					FunctionDeclaration: {
-						body: 1,
-						parameters: 2,
-					},
-					FunctionExpression: {
-						body: 1,
-						parameters: 2,
-					},
-					MemberExpression: 2,
-					ObjectExpression: 1,
-					SwitchCase: 1,
-					ignoredNodes: ['ConditionalExpression'],
-				},
-			],
+	            'error',
+	            'tab',
+	            {
+	            	CallExpression: {
+	            		arguments: 1, // Indentação de argumentos em relação à chamada de função usando tab.
+	            	},
+	            	FunctionDeclaration: {
+	            		body: 1, // Indentação do corpo da função.
+	            		parameters: 1, // Indentação dos parâmetros.
+	            	},
+	            	FunctionExpression: {
+	            		body: 1, // Indentação do corpo da função de expressão.
+	            		parameters: 1, // Indentação dos parâmetros.
+	            	},
+	            	MemberExpression: 1, // Indentação de expressões de membro.
+	            	ObjectExpression: 1, // Indentação de expressões de objeto.
+	            	SwitchCase: 1, // Indentação de casos em switch.
+	            	ignoredNodes: ['ConditionalExpression'], // Ignorar indentação para expressões condicionais.
+	            },
+            ],
 			'key-spacing': 'error',
 			'keyword-spacing': 'error',
 			'linebreak-style': 'error',
-			'max-len': [
-				'error',
-				{
-					code: 80,
-					tabWidth: 2,
-					ignoreUrls: true,
-					ignorePattern: 'goog.(module|require)',
-				},
-			],
+            'max-len': [
+            	'error',
+            	{
+            		code: 100, // Alinha com o printWidth do Prettier.
+            		tabWidth: 4, // Consistente com o uso de tabs no EditorConfig.
+            		ignoreUrls: true, // Ignora URLs longos.
+            		ignorePattern: 'goog.(module|require)', // Ignora padrões específicos como "goog.module" e "goog.require".
+            		ignoreComments: true, // Ignora comprimento de linha em comentários.
+            		ignoreTrailingComments: true, // Ignora comentários após código.
+            		ignoreStrings: true, // Ignora comprimento em strings.
+            		ignoreTemplateLiterals: true, // Ignora comprimento em literais de template.
+            		ignoreRegExpLiterals: true, // Ignora comprimento em expressões regulares.
+            	},
+            ],
 			'new-cap': 'error',
 			'no-array-constructor': 'error',
 			'no-mixed-spaces-and-tabs': 'error',
