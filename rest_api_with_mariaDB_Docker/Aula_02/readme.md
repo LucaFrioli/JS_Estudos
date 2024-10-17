@@ -1,4 +1,4 @@
-# Sobre o ESLint e EditorConfig
+# Sobre o ESLint, Prettier e EditorConfig
 
 ## Extensões do VSCode
 
@@ -6,6 +6,7 @@ Neste momento do curso, é essencial que nos atentemos para a instalação de al
 
 - **ESLint** da Microsoft
 - **EditorConfig for VS Code** da EditorConfig
+- **Prettier - Code formatter** da Prettier
 
 # O que é um Linter
 
@@ -170,6 +171,42 @@ Além dos benefícios já mencionados, o EditorConfig apresenta características
 
 Em suma, o EditorConfig é uma ferramenta poderosa que assegura a consistência do estilo de codificação em projetos, facilitando a colaboração e melhorando a qualidade do código. Ao adotar o EditorConfig, as equipes de desenvolvimento contribuem para um processo de desenvolvimento de software mais eficiente e profissional.
 
+# Sober o Prettier
+
+O **Prettier** é uma ferramenta automatizada de formatação de código amplamente utilizada no desenvolvimento de software, com o objetivo de assegurar a consistência estilística e a legibilidade do código-fonte. Sua principal função é aplicar regras padronizadas de formatação, reduzindo a necessidade de intervenção manual e promovendo uma maior uniformidade entre os colaboradores de um projeto.
+
+### Principais características do Prettier:
+- **Formatação automatizada:** O Prettier realiza a formatação do código de maneira automática, aplicando regras pré-estabelecidas, como a padronização de indentação, espaçamento entre elementos, quebras de linha, entre outros. Isso minimiza debates sobre estilo de código, uma vez que o Prettier segue um conjunto rigoroso de diretrizes.
+- **Suporte a diversas linguagens:** Embora seja amplamente associado a JavaScript e suas variações (TypeScript, JSX, etc.), o Prettier também oferece suporte para outras linguagens, como HTML, CSS, JSON, YAML, Markdown e SCSS, o que o torna uma ferramenta versátil em diferentes contextos de desenvolvimento.
+- **Integração com editores de texto:** O Prettier possui integração nativa com diversos editores de código populares, como Visual Studio Code, Sublime Text e Atom. Ele pode ser configurado para aplicar a formatação automaticamente ao salvar arquivos, promovendo um fluxo de trabalho mais eficiente.
+- **Configuração simplificada:** Por padrão, o Prettier aplica suas regras de formatação de forma estrita, minimizando a necessidade de configurações adicionais. Entretanto, é possível ajustar certos parâmetros para atender às especificidades de um projeto, como a largura máxima das linhas de código ou a escolha entre aspas simples ou duplas.
+- **Colaboração em equipes:** O Prettier contribui para um ambiente colaborativo mais eficiente ao eliminar inconsistências no estilo de código, garantindo que todos os desenvolvedores sigam as mesmas convenções, independentemente de suas preferências individuais.
+
+O Prettier desempenha um papel fundamental na padronização do código-fonte, promovendo a legibilidade e a manutenibilidade de projetos, ao mesmo tempo em que facilita a colaboração entre desenvolvedores e engenheiros.
+
+
+# Correlação entre o EditorConfig e o Prettier
+
+O **EditorConfig** e o **Prettier** são ferramentas complementares, ambas com o objetivo de assegurar a consistência e a legibilidade do código-fonte dentro de equipes de desenvolvimento. No entanto, eles operam de maneiras distintas e em diferentes níveis do fluxo de trabalho.
+
+- **Propósito e Abordagem:**
+   - O **EditorConfig** é mais focado em garantir a consistência das configurações de formatação entre diferentes editores de texto e IDEs. Ele padroniza aspectos como o estilo de indentação, tamanho de tabulação, codificação de caracteres e regras de final de linha, permitindo que os desenvolvedores utilizem qualquer editor sem comprometer a consistência do código.
+   - Já o **Prettier** vai além, oferecendo uma formatação automática do código, aplicando regras mais detalhadas, como espaçamento entre elementos, quebras de linha e formatação de blocos de código. Enquanto o EditorConfig define as configurações básicas de estilo, o Prettier executa a formatação propriamente dita.
+
+- **Nível de Intervenção:**
+   - O **EditorConfig** atua como uma camada de configuração que orienta o editor sobre como tratar certos aspectos da formatação, mas não modifica ativamente o código. Ele estabelece diretrizes que o desenvolvedor deve seguir manualmente ou com o auxílio de plugins no editor.
+   - O **Prettier**, por outro lado, aplica automaticamente as regras de formatação ao código, garantindo que o desenvolvedor não precise se preocupar com a formatação manual. Isso minimiza erros humanos e divergências de estilo no código.
+
+- **Integração e Uso em Conjunto:**
+   - As duas ferramentas podem ser usadas em conjunto para maximizar a padronização de um projeto. O **EditorConfig** assegura que as configurações de base (como indentação e codificação de caracteres) sejam consistentes em todos os editores, enquanto o **Prettier** faz o trabalho de formatar o código de maneira mais detalhada.
+   - Por exemplo, o **EditorConfig** pode garantir que todos os desenvolvedores usem indentação com quatro espaços, enquanto o **Prettier** aplicará regras mais específicas, como a colocação de quebras de linha ou o espaçamento adequado em torno de operadores.
+
+- **Personalização vs Automatização:**
+   - O **EditorConfig** oferece mais flexibilidade para configurar preferências que podem variar conforme o tipo de arquivo ou projeto, permitindo que os desenvolvedores escolham suas próprias convenções, desde que dentro dos parâmetros estabelecidos.
+   - O **Prettier** é mais opinativo e segue regras mais rígidas por padrão, limitando as personalizações a um conjunto mais restrito de configurações. No entanto, essa rigidez do Prettier elimina debates sobre estilo e permite uma formatação mais automatizada e rápida.
+
+O **EditorConfig** e o **Prettier** são ferramentas que atuam de forma complementar: enquanto o EditorConfig define o ambiente de codificação, garantindo consistência de configurações básicas entre diferentes editores, o Prettier automatiza a formatação detalhada do código, assegurando que o estilo seja aplicado de maneira uniforme e eficiente em todo o projeto.
+
 ## Diferença Técnica entre Harmonização de Código e Linting
 
 A harmonização de código e o linting são práticas essenciais no desenvolvimento de software, cada uma com suas funções específicas e objetivos. Embora ambos visem melhorar a qualidade do código, suas abordagens e mecanismos de funcionamento são distintos.
@@ -182,6 +219,8 @@ Em resumo, a principal diferença entre harmonização de código e linting resi
 
 Ambas as práticas são complementares e essenciais para o desenvolvimento de software de alta qualidade, contribuindo para a legibilidade, manutenção e eficiência do código.
 
+
+Com estas três ferramentas trabalhando em conjunto teremos uma base sólida de padronização dentro da nossa base de código,o que permitirá que nosso código seja mais legivel, e manutenível. Além de permitir um melhor desemprenho e comunicação caso algum projeto seja desenvolvido em grupo.
 
 Agora que entendemos um pouco melhor as ferramentas com as quais iremos trabalhar, e já instalamos o docker, o insomnia e o Workbench (caso não tenha realizado [clique aqui!](../Aula_01/projectContent.md)), podemos prosseguir para o próximo passo que consistirá em finalmente começar o nosso projeto, para isso vá para o [próximo passo, continue sua leitura!](./initProject.md)
 
