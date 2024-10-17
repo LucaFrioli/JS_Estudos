@@ -93,6 +93,8 @@ Vamos entender então linha a linha do que já está declarado em nosso arquivo 
 
 ---
 
+### Definindo arquivos a serem ignorados e arquivos que devem ser tratados
+
 O primeiro passo que iremos fazer é declarar que o eslint não deve observar o diretório `node_modules`, e para isso dentro das chaves onde a config `languageOptions` está configurada, iremos adicionar a configuração `ignores`, e ignorar explicitamente a pasta `node_modules`, veja asseguir o arquivo com a mudança realizada, e adicionar as extenções doas arquivos os quais ele deverá ser executado, para isso utilizamos a configuração `files`:
 
 ```javascript
@@ -117,6 +119,11 @@ Explicação da adição em detalhes :
 - **ignores:['node_modules/']**: melhora a configuração do ESLint, garantindo que ele ignore a pasta `node_modules`, todas as pastas e arquivos que precisam ser ignorados devem ser declarados aqui, no padrão de projeto que estamos seguindo mesmo pastas redundantes como a `dist`, a `build` e o proprio `node_modules`, com o objetivo de garantir que os arquivoos não sejam analizados pelo ESLint.
 
 ---
+### Definindo regras de Linting
+
+Todas as regras a seguir forma baseadas no guideline da **Airb&b**, por conta da API do ***ESLint*** ter sido atualizada e ainda o guideline não ser 100% compativel com o ESLint novo, tivemos que hardcodar as regras, e adaptá-las par nosso projeto. No momento em que a guideline estiver 100% integrada a nova API disponibilizarei um arquivo ensinando a configurá-la de maneira mais simples. Enquanto isso copie e cole dentro do arquivo as configurações definidas. Para ver uma configuração antiga entre aqui :
+
+- [Configuração antiga](#)
 
 Agora então devemos adicionar alguns conjuntos de regras que nosso código deverá seguir, para isso iremos adicionar um novo bloco de configuração, e adicionar as seguintes regras que estarão presentes no bloco `rules`:
 
@@ -254,12 +261,12 @@ Agora então devemos adicionar alguns conjuntos de regras que nosso código deve
 
 Aqui está a explicação para cada uma das regras de ESLint:
 
-### Regras recomendadas pelo ESLint:
+#### Regras recomendadas pelo ESLint:
 1. **`'no-cond-assign': 'off'`**: Desativa a verificação de atribuições acidentais dentro de expressões condicionais.
 2. **`'no-irregular-whitespace': 'error'`**: Impede o uso de espaços em branco irregulares em qualquer lugar do código.
 3. **`'no-unexpected-multiline': 'error'`**: Evita erros causados por quebras de linha inesperadas.
 
-### Boas práticas:
+#### Boas práticas:
 4. **`'curly': ['error', 'multi-line']`**: Exige o uso de chaves em blocos, exceto quando são blocos de uma linha.
 5. **`'guard-for-in': 'error'`**: Exige que se use uma verificação com `hasOwnProperty` dentro de loops `for-in` para evitar iteração em propriedades herdadas.
 6. **`'no-caller': 'error'`**: Proíbe o uso de `arguments.caller` e `arguments.callee`, que são funções descontinuadas e inseguras.
@@ -273,7 +280,7 @@ Aqui está a explicação para cada uma das regras de ESLint:
 14. **`'prefer-promise-reject-errors': 'error'`**: Exige que sejam usados objetos `Error` ao rejeitar uma Promise.
 15. **`'no-unused-vars': ['error', { args: 'none' }]`**: Impede a existência de variáveis declaradas mas não utilizadas, ignorando os argumentos de funções.
 
-### Questões estilísticas:
+#### Questões estilísticas:
 16. **`'array-bracket-spacing': ['error', 'never']`**: Proíbe espaços dentro de colchetes de arrays.
 17. **`'block-spacing': ['error', 'never']`**: Proíbe espaços dentro de blocos de código (`{}`).
 18. **`'brace-style': 'error'`**: Enforça um estilo consistente de chaves (ex. '1TBS').
@@ -288,7 +295,7 @@ Aqui está a explicação para cada uma das regras de ESLint:
 27. **`'key-spacing': 'error'`**: Exige espaçamento consistente entre chaves e valores em objetos.
 28. **`'keyword-spacing': 'error'`**: Exige espaços ao redor de palavras-chave (ex: `if`, `else`).
 29. **`'linebreak-style': 'error'`**: Enforça um estilo de quebra de linha consistente (ex: LF ou CRLF).
-30. **`'max-len': ['error', { code: 80 }]`**: Limita o comprimento das linhas de código a 80 caracteres, com exceções para URLs e padrões específicos.
+30. **`'max-len': ['error', { code: 100 }]`**: Limita o comprimento das linhas de código a 100 caracteres, com exceções para URLs e padrões específicos.
 31. **`'new-cap': 'error'`**: Exige que construtores de classes sejam chamados com a primeira letra maiúscula.
 32. **`'no-array-constructor': 'error'`**: Proíbe o uso de `Array()` para criar arrays, prefira usar colchetes `[]`.
 33. **`'no-mixed-spaces-and-tabs': 'error'`**: Proíbe a mistura de espaços e tabulações para indentação.
@@ -309,7 +316,7 @@ Aqui está a explicação para cada uma das regras de ESLint:
 48. **`'spaced-comment': ['error', 'always']`**: Exige um espaço antes de comentários.
 49. **`'switch-colon-spacing': 'error'`**: Exige espaçamento consistente após os dois pontos em instruções `switch`.
 
-### ECMAScript 6:
+#### ECMAScript 6:
 50. **`'arrow-parens': ['error', 'always']`**: Exige que arrow functions tenham parênteses ao redor dos parâmetros.
 51. **`'constructor-super': 'error'`**: Garante que o construtor de uma subclasse chame `super()`.
 52. **`'generator-star-spacing': ['error', 'after']`**: Exige que asteriscos em funções geradoras tenham um espaço depois.
@@ -324,9 +331,8 @@ Aqui está a explicação para cada uma das regras de ESLint:
 
 Essas regras ajudam a garantir que seu código siga boas práticas de legibilidade, estilo e uso seguro do código.
 
-As Regras definidas foram baseadas no sytle guide do airbnb base
-
 ---
+### Adicionando configurão e integração com prettier
 
 E por fim devemos configurar o prettier, vamos adicionar mais configurações, adicionar o plugin, e a regra para tratar as disconformidades do prettier como erros, e adicionar as configurações  do prettier, veja a seguir :
 
@@ -481,6 +487,7 @@ export default [
 - **prettier**: Importa a configuração de **`eslint-config-prettier`**. Como explicado anteriormente, isso desativa regras do ESLint que poderiam conflitar com o Prettier, garantindo que o Prettier seja o responsável pela formatação do código e que o ESLint não interfira nesse processo.
 
 ---
+### Configurando arquivo do prettier
 
 Agora devemos configurar o Prettier, para isso na raíz de nosso projeto iremos criar um arquivo com o nome de **`.prettierrc`**, e adicionaremos as seguintes configurações:
 
@@ -496,6 +503,8 @@ Agora devemos configurar o Prettier, para isso na raíz de nosso projeto iremos 
 }
 ```
 ---
+
+### Integrando com o editor de código :
 
 Por fim devemos adicionar as configurações em nosso Editor de código, para isso clique na engrenagem e abra as configurações do Visual Studio code, então no canto superior direito clique em **Open Sttings (JSON)**, dentro de setting devemos então realizar algumas adições, veja a seguir :
 
