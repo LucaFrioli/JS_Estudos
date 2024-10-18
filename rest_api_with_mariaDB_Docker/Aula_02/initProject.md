@@ -144,7 +144,7 @@ Agora então devemos adicionar alguns conjuntos de regras que nosso código deve
       },
       pluginJs.configs.recommended,
       {
-		plugins: { import:eslintPluginImport }
+		plugins: { import:eslintPluginImport },
         rules: {
 			'no-cond-assign': 'off', // ESLint recommended
 			'no-irregular-whitespace': 'error', // ESLint recommended
@@ -362,7 +362,7 @@ export default [
 	},
 	pluginJs.configs.recommended,
 	{
-		plugins: { import:eslintPluginImport }
+		plugins: { import:eslintPluginImport },
 		rules: {
 			'no-cond-assign': 'off', // ESLint recommended
 			'no-irregular-whitespace': 'error', // ESLint recommended
@@ -508,14 +508,29 @@ Agora devemos configurar o Prettier, para isso na raíz de nosso projeto iremos 
 *Observe que só estamos aplicando mais estilos de formatação, não mexeremos em configurações que podem conflitar com o `.editorconfig`*
 ```json
 {
-  "printWidth": 80, // Airbnb recomenda 100 colunas mas como visto iremos deixar em 80 colunas como comprimento máximo de linha
-  "singleQuote": true, // Preferência por aspas simples, conforme o estilo Airbnb
-  "trailingComma": "all", // Usar vírgulas penduradas em listas, arrays, objetos e funções
-  "bracketSpacing": true, // Espaçamento entre chaves em objetos: { foo: bar }
-  "semi": true, // Adiciona ponto e vírgula ao final das declarações
-  "arrowParens": "always" // Coloca parênteses em torno de parâmetros únicos de arrow functions
+  "printWidth": 80,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "semi": true,
+  "arrowParens": "always"
 }
 ```
+
+Vamos para a explicação de cada uma das configurações :
+
+- **"printWidth": 80**: Airbnb recomenda 100 colunas mas como visto iremos deixar em 80 colunas como comprimento máximo de linha.
+
+- **"singleQuote": true,**: Preferência por aspas simples, conforme o estilo Airbnb.
+
+- **"trailingComma": "all",**: Usar vírgulas penduradas em listas, arrays, objetos e funções.
+
+- **"bracketSpacing": true,**: Espaçamento entre chaves em objetos: { foo: bar }.
+
+- **"semi": true,**: Adiciona ponto e vírgula ao final das declarações
+
+- **"arrowParens": "always"**: Coloca parênteses em torno de parâmetros únicos de arrow functions
+
 ---
 
 ### Integrando com o editor de código :
