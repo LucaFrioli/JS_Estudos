@@ -92,3 +92,13 @@ Se tudo foi configurado corretamente você verá o servidor sendo atualizado e a
 
 Para parar o servidor utilizamos o mesmo comando habitual `ctrl+c`.
 
+---
+
+Agora que já (são links para as aulas anteriore):
+
+- **[Entendemos um pouco sobre o projeto e instalamos as ferramentas necessárias](../Aula_01/readme.md).**
+- **[Padronizamos nosso estilo de código, e garantimos um linter](../Aula_02/readme.md).**
+- **[E Adicionamos ferramentas para agilizar nosso processo de desenvolvimento](Readme.md).**
+
+Está na hora de começarmos a estruturar realmente nosso projeto, já adicionamos dois arquivos crucias para a nossa arquitetura, o `app.js` e o `server.js`, agora está na hora de instalarmos algumas outras dependências e estruturar a arquitetura de nossa API, para isso siga para o [próximo passo, continue sua leitura!](../Aula_04/readme.md)
+

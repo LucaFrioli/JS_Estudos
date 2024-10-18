@@ -561,5 +561,5 @@ Caso você for subir um repositório no **github**, contendo as configurações 
 
 ---
 
-Agora que já temos a base para iniciar nosso projeto de forma padronizada e compreendemos um pouco sobre harmonização de códigos e Linting estamos prontos para dar o próximo passo. Iremos comprender melhor na próxima aula o nodemon e suas capacidades para além de reiniciar o servidor de forma automática e entenderemos mais sobre a ferramenta Sucrase, uma ferramenta que converte código ES6+ em ES5 rapidamente. Quando sentir-se a vontade vá para o [próximo passo, continue sua leitura!](#)
+Agora que já temos a base para iniciar nosso projeto de forma padronizada e compreendemos um pouco sobre harmonização de códigos e Linting estamos prontos para dar o próximo passo. Iremos comprender melhor na próxima aula o nodemon e suas capacidades para além de reiniciar o servidor de forma automática e entenderemos mais sobre a ferramenta Sucrase, uma ferramenta que converte código ES6+ em ES5 rapidamente. Quando sentir-se a vontade vá para o [próximo passo, continue sua leitura!](../Aula_03/Readme.md)
 
