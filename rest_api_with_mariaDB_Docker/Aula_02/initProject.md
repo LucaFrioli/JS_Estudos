@@ -144,7 +144,7 @@ Agora então devemos adicionar alguns conjuntos de regras que nosso código deve
       },
       pluginJs.configs.recommended,
       {
-		plugins: { import:eslintPluginImport },
+		plugins: { import: eslintPluginImport },
         rules: {
 			'no-cond-assign': 'off', // ESLint recommended
 			'no-irregular-whitespace': 'error', // ESLint recommended
@@ -362,7 +362,7 @@ export default [
 	},
 	pluginJs.configs.recommended,
 	{
-		plugins: { import:eslintPluginImport },
+		plugins: { import: eslintPluginImport },
 		rules: {
 			'no-cond-assign': 'off', // ESLint recommended
 			'no-irregular-whitespace': 'error', // ESLint recommended
