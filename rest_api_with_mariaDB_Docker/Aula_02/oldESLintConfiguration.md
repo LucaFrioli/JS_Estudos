@@ -18,7 +18,7 @@ npm i -D eslint eslint-config-airbnb-base eslint-plugin-import prettier eslint-c
 
 # Criando o arquivo .eslintrc.js
 
-Então iremos criar nosso arquivo base `eslintrc.js`, e iremos adicionar o seguinte código a ele :
+Então iremos criar nosso arquivo base `.eslintrc.js`, e iremos adicionar o seguinte código a ele :
 
 ```javascript
  module.exports = {

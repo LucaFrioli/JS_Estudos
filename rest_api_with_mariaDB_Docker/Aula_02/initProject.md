@@ -60,9 +60,9 @@ Isso iniciará o CLI no qual para este porjeto específico iremos utilizar as se
 - **yes** (para instalar agora !)
 - **npm** (para ser nosso instalador)
 
-Agora então devemos adicionar as dependências do prettier :
+Agora então devemos adicionar lgumas outras dependências necessárias :
 ```bash
-    npm install -D prettier eslint-config-prettier eslint-plugin-prettier
+    npm install -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-import
 ```
 ---
 
@@ -131,7 +131,9 @@ Agora então devemos adicionar alguns conjuntos de regras que nosso código deve
 
 ```javascript
    import globals from "globals";
-    import pluginJs from "@eslint/js";
+   import pluginJs from "@eslint/js";
+   import eslintPluginImport from 'eslint-plugin-import';
+
 
 
     export default [
@@ -142,6 +144,7 @@ Agora então devemos adicionar alguns conjuntos de regras que nosso código deve
       },
       pluginJs.configs.recommended,
       {
+		plugins: { import:eslintPluginImport }
         rules: {
 			'no-cond-assign': 'off', // ESLint recommended
 			'no-irregular-whitespace': 'error', // ESLint recommended
@@ -256,10 +259,15 @@ Agora então devemos adicionar alguns conjuntos de regras que nosso código deve
 			'prefer-spread': 'error',
 			'rest-spread-spacing': 'error',
 			'yield-star-spacing': ['error', 'after'],
+			'import/no-commonjs': 'error',
 		},
       }
     ];
 ```
+
+-  **import eslintPluginImport from 'eslint-plugin-import'**: Importa o pacote `eslint-plugin-import`, que fornece regras adicionais para o **ESLint** relacionadas ao uso de importações e exportações de módulos. O objetivo é garantir boas práticas na organização e estruturação dos imports, como verificar a ordem correta de imports, evitar dependências não resolvidas e forçar o uso de **ES Modules**. Isso ajuda a manter o código mais organizado e facilita a detecção de problemas relacionados à importação de módulos.
+
+- **plugins: { import: eslintPluginImport },**: Adiciona o `eslint-plugin-import` como um plugin no **ESLint**. Isso permite que o `eslint-plugin-import` seja integrado ao processo de linting, aplicando regras relacionadas ao uso de importações e exportações de módulos, como evitar o uso de `require()` e `module.exports`, e forçar o uso de **ES Modules** com `import` e `export`.
 
 Aqui está a explicação para cada uma das regras de ESLint:
 
@@ -330,6 +338,7 @@ Aqui está a explicação para cada uma das regras de ESLint:
 58. **`'prefer-spread': 'error'`**: Prefere o uso do operador spread (`...`) em vez de `Function.prototype.apply()`.
 59. **`'rest-spread-spacing': 'error'`**: Exige espaçamento consistente ao redor de parâmetros rest e operadores spread.
 60. **`'yield-star-spacing': ['error', 'after']`**: Exige um espaço depois do `*` ao usar o `yield*`.
+61. **`'import/no-commonjs': 'error'`**: Exige que seja utilizada a forma padrão ECMAScript de importação e exportação
 
 Essas regras ajudam a garantir que seu código siga boas práticas de legibilidade, estilo e uso seguro do código.
 
@@ -341,6 +350,7 @@ E por fim devemos configurar o prettier, vamos adicionar mais configurações, a
 ```javascript
 import globals from 'globals';
 import pluginJs from '@eslint/js';
+import eslintPluginImport from 'eslint-plugin-import';
 import prettier from 'eslint-config-prettier';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 
@@ -352,6 +362,7 @@ export default [
 	},
 	pluginJs.configs.recommended,
 	{
+		plugins: { import:eslintPluginImport }
 		rules: {
 			'no-cond-assign': 'off', // ESLint recommended
 			'no-irregular-whitespace': 'error', // ESLint recommended
@@ -466,6 +477,7 @@ export default [
 			'prefer-spread': 'error',
 			'rest-spread-spacing': 'error',
 			'yield-star-spacing': ['error', 'after'],
+			'import/no-commonjs': 'error',
 		},
 	},
 	{
