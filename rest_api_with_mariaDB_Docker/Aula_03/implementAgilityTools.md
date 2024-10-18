@@ -44,12 +44,51 @@ Ao usar essa configuração com **Nodemon** e **Sucrase**, ganhamos:
 
 ---
 
+Após realizar esta configuração devemos abrir o nosso `package.json` e então adicionar o script  de desenvolvimento que chamaremos de `dev`, e ficará responsável por iniciar a nossa aplicação em modo de desenvolvimento. Dentro do bloco de declaração de scripts então, devermos adicionar o seguinte:
+
+```json
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+```
+
+---
+
 Vamos testar se tudo ocorreu da maneira esperada. Para isso iremos já criar dois arquivos que serão utilizados dentro de nosso projeto, chamados de `app.js` e `server.js`. Dentro deles iremos adicionar um texto temporário e supersticioso paratestar sua configuração.
 
-Dentro de `app.js` adicione o seguinte :
+Agora para vizualizar as mudanças sendo realizadas devemos então executar o script que criamos, para isso vamos realizar o seguinte comando no terminal:
+
+```bash
+npm run dev
+```
+
+A saída será a seguinte :
+```
+[nodemon] 3.1.7
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node -r sucrase/register server.js`
+
+```
+
+Dentro de `app.js` adicione o seguinte:
+
 ```javascript
     export default () =>{
-        
+        console.log('Hello World!');
     }
 ```
+
+E dentro de server.js adicione:
+
+```javascript
+import sayHello from './app.js';
+sayHello();
+```
+
+Se tudo foi configurado corretamente você verá o servidor sendo atualizado e a menssagem `Hello World!` aparecerá. Se modificarmos a menssagem do `console.log`, ela deve aparecer sendo modificada dentro do terminal.
+
+Para parar o servidor utilizamos o mesmo comando habitual `ctrl+c`.
 
