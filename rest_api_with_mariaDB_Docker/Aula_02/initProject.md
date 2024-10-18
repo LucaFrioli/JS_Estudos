@@ -26,15 +26,15 @@ Nele iremos começar a realizar algumas mudanças, iniciando por retirar os come
 
 Ao realizar estas mudanças o arquivo ficará assim :
 ```bash
-    root = true
+root = true
 
-    [*]
-    indent_style = tab
-    indent_size = 4
-    end_of_line = lf
-    charset = utf-8
-    trim_trailing_whitespace = true
-    insert_final_newline = true
+[*]
+indent_style = tab
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
 ```
 
 **OBS: experimente diferentes tipos de configurações e veja qual melhor se enquadra a sua equipe. Esta configuração específica é baseada em experiencias e preferências pessoais. O end_of_line, recomendo fortemente manter em lf, porém veja se se enquadra com a realidade de trabalho sua ou de sua equipe.**
@@ -46,8 +46,8 @@ Finalmente vamos iniciar o NodeJS dentro de nossa pasta, e instalar as nossas pr
 Para executar um pacote, diferentemente do padrão `npm`, utilizamos o prefixo `npx` para saber mais sobre a diferença entre npm e npx [clique aqui](./NpxAndNpm.md). Para realizar a execução utilizamos o seguinte comando :
 
 ```bash
-    # iniciar o ESLint
-    npx eslint --init
+# iniciar o ESLint
+npx eslint --init
 ```
 
 Isso iniciará o CLI no qual para este porjeto específico iremos utilizar as seguintes configurações :
@@ -62,7 +62,7 @@ Isso iniciará o CLI no qual para este porjeto específico iremos utilizar as se
 
 Agora então devemos adicionar lgumas outras dependências necessárias :
 ```bash
-    npm install -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-import
+npm install -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-import
 ```
 ---
 
