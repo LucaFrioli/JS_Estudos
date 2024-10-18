@@ -1,3 +1,5 @@
+[Voltar](./initProject.md)
+
 # Configuração antiga do ESLint, utilizando Guidelines do Airb&b :
 
 Para realizarmos a configuração antiga do ESLint, vamos abrir nossa pasta de projeto, que no momento deve apenas conter o arquivo `.editorconfig`, realizaremos a configurção dita no [arquivo anterior](./initProject.md), e então iremos criar um arquivo chamado `.eslintrc`.
@@ -70,4 +72,6 @@ module.exports = {
 ---
 
 Para configurar o `.prettierrc` então iremos seguir o passo a passo do arquivo anterior, para isso [clique aqui](./initProject.md#configurando-arquivo-do-prettier)
+
+[Voltar](./initProject.md)
 

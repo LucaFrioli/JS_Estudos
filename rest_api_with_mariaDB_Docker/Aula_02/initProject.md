@@ -553,3 +553,13 @@ Por fim devemos adicionar as configurações em nosso Editor de código, para is
     "editor.formatOnSave": true
 ```
 
+---
+
+### Para aqules que forem subir o repo no git :
+
+Caso você for subir um repositório no **github**, contendo as configurações realizadas nesta etapa, basta adicionar um arquivo `.gitignore` na raíz de seu projeto. Para gera-lo basta ir no [site da Toptal](https://www.toptal.com/developers/gitignore), digitar Node na barra de geração, e enviar, assim você terá já uma configuração pré definida que será mais do que suficiente para a API que criada nesta etapa do curso.
+
+---
+
+Agora que já temos a base para iniciar nosso projeto de forma padronizada e compreendemos um pouco sobre harmonização de códigos e Linting estamos prontos para dar o próximo passo. Iremos comprender melhor na próxima aula o nodemon e suas capacidades para além de reiniciar o servidor de forma automática e entenderemos mais sobre a ferramenta Sucrase, uma ferramenta que converte código ES6+ em ES5 rapidamente. Quando sentir-se a vontade vá para o [próximo passo, continue sua leitura!](#)
+
