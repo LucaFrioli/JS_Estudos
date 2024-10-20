@@ -1,6 +1,6 @@
 **[Voltar](./readme.md)**
 
-### Introdução ao JavaScript e ao Node.js: Uma Abordagem Acadêmica
+### Introdução ao JavaScript e ao Node.js:
 
 JavaScript é uma das linguagens de programação mais populares e amplamente utilizadas no mundo. Criada originalmente por **Brendan Eich** em 1995 enquanto trabalhava na Netscape Communications, a linguagem JavaScript foi projetada para ser executada em navegadores, permitindo interatividade nas páginas web. Inicialmente chamada de *Mocha*, depois *LiveScript*, seu nome foi alterado para *JavaScript* em uma estratégia de marketing da Netscape para associar a linguagem ao Java, uma linguagem de programação já popular na época. A principal função do JavaScript nos primórdios era tornar a navegação na web mais dinâmica, em contraste com a natureza estática da web da época, onde HTML e CSS eram as principais tecnologias.
 

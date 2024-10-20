@@ -2,6 +2,8 @@
 
 Inicie instalando o Editor de código de sua preferência, como recomendação indico o uso do Visual Studio Code, um dos editores de códigos mais utilizados na industria. Para isso entre no site ofcial, [clicando aqui](https://code.visualstudio.com/), e siga o passo a passo indicado para seu sistema operacional.
 
+Veja um tutorial básico sobre o Visual Studio Code : [clique aqui!](https://youtu.be/NXgsXiu4LtA?si=y6gAsUuy7sumMRUH)
+
 Após a instlação do nosso editor de código devemos instalar o runtime NodeJS para que seja possível rodar o código dentro do computador que estrá sendo utilizado!
 
 Para compreender melhor a linguagem javascript e entender sobre o que se trata o NodeJS [clique aqui!](./history.md)
@@ -231,13 +233,13 @@ y = 4;
 z = x + y; //z está recebendo a soma dos valores que x e y carregam
 ~~~
 
-Perceba que qualquer valor que atribuirmos ao `x` ou `y` serão calculados autoimaticamente e atribuidos a variavel `z`, porém se rodarmos o code runner percebemos que nada acontece, e nada é escrito na tela do console, para escrevermos o resultado na tela deveremos utilizar o comando de palavra reservada `console` seguido de um `.`(quer dizer que o console deve executar um subcomando que ele contenha) e `log` que faz um print dentro do console, veja a seguir :
+Perceba que qualquer valor que atribuirmos ao `x` ou `y` serão calculados automaticamente e atribuidos a variavel `z`, porém se rodarmos o code runner percebemos que nada acontece, e nada é escrito na tela do console, para escrevermos o resultado na tela deveremos utilizar o comando de palavra reservada `console` seguido de um `.`(quer dizer que o console deve executar um subcomando que ele contenha) e `log` que faz um print dentro do console, veja a seguir :
 
 ~~~javascript
 console.log(z);
 ~~~
 
-Ao adicionar esta linha ao final do código anterior e agora rodar o código aparecerá o resultado do calculo antes visto;
+Ao adicionar esta linha ao final do código anterior e agora rodar aparecerá o resultado do calculo antes visto;
 
 ## Sobre o comando `console` :
 

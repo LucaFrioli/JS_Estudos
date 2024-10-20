@@ -91,7 +91,7 @@ Dentro deste arquivo, criaremos duas variáveis chamadas `nome` e `idade`, e atr
 var nome = 'seu nome', idade = 20;
 ~~~
 
-Em seguida, adicionaremos o comando para exibir nossos dados no console, utilizando o `console.log`, que já vimos [anteriormente](../Aula_1/readme.md#sobre-o-comando-console-). A frase que será exibida é *"Olá, me chamo nome e tenho idade"*. Para inserir os valores das variáveis na frase, usaremos *template strings*. Adicione o seguinte código:
+Em seguida, adicionaremos o comando para exibir nossos dados no console, utilizando o `console.log`, que já vimos [anteriormente](../Aula_1/readme.md#sobre-o-comando-console-). A frase que será exibida poderá ser *"Olá, me chamo nome e tenho idade"*, ou qualquer outra a sua escolha que envolva estas duas informações. Para inserir os valores das variáveis na frase, usaremos *template strings*. Adicione o seguinte código:
 
 ~~~javascript
 console.log(`Olá, me chamo ${nome}, tenho ${idade} anos e estou estudando JavaScript.`);

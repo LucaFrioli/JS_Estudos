@@ -60,9 +60,9 @@ Concentre-se em operadores aritméticos e lógicos dentro da página sobre expre
 A jornada de aprendizado em JavaScript exige dedicação e prática constante. Utilize este módulo como uma base inicial sólida para construir seus conhecimentos e se tornar um desenvolvedor proficiente.
 
 ## Índice :
- - Aula_01 : Instalando e gerenciando O NodeJS, configurando Visual Studio Code e realizando o primeiro calculo;
- - Aula_02 : Utilizando teamplate strings e conceitos de concatenação;
- - Aula_03 : Utilizando javascript dentro do navegador;
+ - [Aula_01 : Instalando e gerenciando O NodeJS, configurando Visual Studio Code e realizando o primeiro calculo;](./Aula_1/readme.md)
+ - [Aula_02 : Utilizando teamplate strings e conceitos de concatenação;](./Aula_2/readme.md)
+ - [Aula_03 : Utilizando javascript dentro do navegador;](./Aula_3/readme.md)
  - Aula_04 : Utilizando a palavra let para declarar uma variavel;
  - Aula_05 : Conceito de constante, e por que a utilizar;
  - Aula_06 : Um pouco sobre o objeto Date e realizando calculos apartir de constantes e variaveis;
