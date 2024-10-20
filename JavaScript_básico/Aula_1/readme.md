@@ -1,5 +1,11 @@
 # Primeiros Passos:
 
+Inicie instalando o Editor de código de sua preferência, como recomendação indico o uso do Visual Studio Code, um dos editores de códigos mais utilizados na industria. Para isso entre no site ofcial, [clicando aqui](https://code.visualstudio.com/), e siga o passo a passo indicado para seu sistema operacional.
+
+Após a instlação do nosso editor de código devemos instalar o runtime NodeJS para que seja possível rodar o código dentro do computador que estrá sendo utilizado!
+
+Para compreender melhor a linguagem javascript e entender sobre o que se trata o NodeJS [clique aqui!](./history.md)
+
 ## Instalando o NodeJS e o NVM(Node Version Manager)
 **Introdução:**
 
@@ -107,10 +113,10 @@ node -v
 
 4. Gerencie as versões do NodeJS com os comandos `nvm`:
 
-* `use`: altera para a versão desejada.
-* `ls`: lista as versões instaladas.
-* `uninstall`: desinstala a versão desejada.
-* `ls-remote`: lista as versões disponíveis para instalação (não disponível no Windows).
+* `nvm use`: altera para a versão desejada.
+* `nvm ls`: lista as versões instaladas.
+* `nvm uninstall`: desinstala a versão desejada.
+* `nvm ls-remote`: lista as versões disponíveis para instalação (não disponível no Windows).
 
 **Linux:**
 
@@ -152,17 +158,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 **Após a execução do script, utilize o `nvm` normalmente como visto anteriormente.**
 
-**Conclusão:**
-
-Este documento fornece um guia abrangente para instalar o NodeJS e o gerenciador de versões nvm em diferentes sistemas operacionais. Lembre-se de sempre utilizar a versão LTS mais recente do NodeJS para maior estabilidade e segurança.
-
 ## Instalando extensões básicas do VSCode :
 
 Abra seu Visual Studio Code e vá para a aba Extensions, no caso do windows poderá utilizar o atalho `ctrl+shift+x`(para windows), nela vamos instalar os seguintes items :
 
 - **Code Runner** (um runer de diversos tipos de códigos incluindo NodeJS);
 - **Color Highligth** (Adiciona uma camada de visualização de cores em códigos Hexadecimal, RGB/RGBA e afins);
-- **EditorConfig for VS Code** (aciona o arquivo .editorconfig, padronizando assim alguns aspectos durante a codificação);
 - **Live Server** (Principalmente nos primeiros módulos ele ajudará a agilizar o processo de desenvolvimento de designs e funcionalidades em client-side);
 - **Material Icon Theme** (está extenção é totalmente opcional, mas ajuda a se encontrar melhor dentro dos diretórios ao longo do desenvolvimento);
 
@@ -288,6 +289,7 @@ console.log("Valor de x após o problema:", x);
 
 O comando `console` é uma ferramenta poderosa que pode ser usada para diversos fins, como exibir mensagens, executar JavaScript, inspecionar elementos da página e depurar problemas. É uma ferramenta essencial para qualquer desenvolvedor JavaScript.
 
+Após entendermos os conceitos mais básicos sobre javascript estamos porntos para dar o próximo passo para isso [clique aqui, e continue sua leitura!](../Aula_2/readme.md).
 
 **Recursos adicionais:**
 
