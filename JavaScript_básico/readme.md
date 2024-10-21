@@ -63,7 +63,7 @@ A jornada de aprendizado em JavaScript exige dedicação e prática constante. U
  - [Aula_01 : Instalando e gerenciando O NodeJS, configurando Visual Studio Code e realizando o primeiro calculo;](./Aula_1/readme.md)
  - [Aula_02 : Utilizando teamplate strings e conceitos de concatenação;](./Aula_2/readme.md)
  - [Aula_03 : Utilizando javascript dentro do navegador;](./Aula_3/readme.md)
- - Aula_04 : Utilizando a palavra let para declarar uma variavel;
+ - [Aula_04 : Utilizando a palavra let para declarar uma variavel;](./Aula_4/readme.md)
  - Aula_05 : Conceito de constante, e por que a utilizar;
  - Aula_06 : Um pouco sobre o objeto Date e realizando calculos apartir de constantes e variaveis;
  - Aula_07 : Explicando a diferença técnica de let e var;
